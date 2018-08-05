@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB118CAE2115A62400238A85 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB118CAD2115A62400238A85 /* CircleButton.swift */; };
+		BB118CB02115BF5B00238A85 /* LockVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB118CAF2115BF5B00238A85 /* LockVC.swift */; };
 		BB3958B620FCA5100038DB53 /* iransansmobilefanum.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB3958B520FCA4220038DB53 /* iransansmobilefanum.ttf */; };
 		BB3958BB20FCB43D0038DB53 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3958BA20FCB43D0038DB53 /* RoundedButton.swift */; };
 		BB3958BE20FDFF2F0038DB53 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3958BD20FDFF2F0038DB53 /* LogInVC.swift */; };
@@ -20,6 +22,7 @@
 		BBA8963620FC89240098980B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBA8963420FC89240098980B /* Main.storyboard */; };
 		BBA8963820FC89260098980B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBA8963720FC89260098980B /* Assets.xcassets */; };
 		BBA8963B20FC89260098980B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBA8963920FC89260098980B /* LaunchScreen.storyboard */; };
+		BBAB362A211713570031273A /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAB3629211713570031273A /* ProfileVC.swift */; };
 		BBAE0E2121045B2C00CF4FF2 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAE0E2021045B2C00CF4FF2 /* HomeVC.swift */; };
 		BBAE0E2321045B4A00CF4FF2 /* ConversationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAE0E2221045B4A00CF4FF2 /* ConversationVC.swift */; };
 		BBAE0E25210465CB00CF4FF2 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAE0E24210465CB00CF4FF2 /* BaseTabBarController.swift */; };
@@ -39,6 +42,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB118CAD2115A62400238A85 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
+		BB118CAF2115BF5B00238A85 /* LockVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockVC.swift; sourceTree = "<group>"; };
 		BB3958B520FCA4220038DB53 /* iransansmobilefanum.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iransansmobilefanum.ttf; sourceTree = "<group>"; };
 		BB3958BA20FCB43D0038DB53 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		BB3958BD20FDFF2F0038DB53 /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
@@ -54,6 +59,7 @@
 		BBA8963720FC89260098980B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBA8963A20FC89260098980B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BBA8963C20FC89260098980B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBAB3629211713570031273A /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		BBAE0E2021045B2C00CF4FF2 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		BBAE0E2221045B4A00CF4FF2 /* ConversationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationVC.swift; sourceTree = "<group>"; };
 		BBAE0E24210465CB00CF4FF2 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
@@ -72,16 +78,6 @@
 		BBB0D45520FF704E000CAC15 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFrameworksBuildPhase section */
-		BBA8962A20FC89240098980B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
 /* Begin PBXGroup section */
 		BB3958B420FCA40D0038DB53 /* font */ = {
 			isa = PBXGroup;
@@ -94,6 +90,7 @@
 		BB3958B720FCAABA0038DB53 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				BB118CAD2115A62400238A85 /* CircleButton.swift */,
 				BB3958BA20FCB43D0038DB53 /* RoundedButton.swift */,
 				BB3958C220FF5F9E0038DB53 /* PadingLable.swift */,
 				BBAE0E24210465CB00CF4FF2 /* BaseTabBarController.swift */,
@@ -112,6 +109,8 @@
 				BBAE0E2021045B2C00CF4FF2 /* HomeVC.swift */,
 				BBAE0E2221045B4A00CF4FF2 /* ConversationVC.swift */,
 				BBAE0E3621074B5C00CF4FF2 /* ChatVC.swift */,
+				BB118CAF2115BF5B00238A85 /* LockVC.swift */,
+				BBAB3629211713570031273A /* ProfileVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -192,7 +191,6 @@
 			buildConfigurationList = BBA8963F20FC89260098980B /* Build configuration list for PBXNativeTarget "WeYouMaster" */;
 			buildPhases = (
 				BBA8962920FC89240098980B /* Sources */,
-				BBA8962A20FC89240098980B /* Frameworks */,
 				BBA8962B20FC89240098980B /* Resources */,
 			);
 			buildRules = (
@@ -272,15 +270,18 @@
 				BBAE0E3721074B5C00CF4FF2 /* ChatVC.swift in Sources */,
 				BB3958C120FF30080038DB53 /* Collection.swift in Sources */,
 				BB4194A121033FE400823353 /* CollectionDetailVC.swift in Sources */,
+				BB118CAE2115A62400238A85 /* CircleButton.swift in Sources */,
 				BB3958BB20FCB43D0038DB53 /* RoundedButton.swift in Sources */,
 				BBB0D45120FF68AF000CAC15 /* CollectionCell.swift in Sources */,
 				BBAE0E2F2107427100CF4FF2 /* InputTextCell.swift in Sources */,
 				BBAE0E2D2105FCD300CF4FF2 /* Conversation.swift in Sources */,
 				BB3958C320FF5F9E0038DB53 /* PadingLable.swift in Sources */,
+				BBAB362A211713570031273A /* ProfileVC.swift in Sources */,
 				BBB0D44E20FF66A9000CAC15 /* CollectionVC.swift in Sources */,
 				BB3958BE20FDFF2F0038DB53 /* LogInVC.swift in Sources */,
 				BBA8963120FC89240098980B /* AppDelegate.swift in Sources */,
 				BB4194A521035E5400823353 /* Content.swift in Sources */,
+				BB118CB02115BF5B00238A85 /* LockVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

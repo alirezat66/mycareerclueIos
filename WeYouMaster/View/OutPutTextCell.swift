@@ -12,8 +12,12 @@ class OutPutTextCell: UITableViewCell {
 
     @IBOutlet weak var lblText: UILabel!
     
+    @IBOutlet weak var backView: UIView!
     public func updateView(message : Message) {
         lblText.text = message.content
+      
+        backView.layer.cornerRadius = 5
+        backView.layer.masksToBounds = true
        /* let maskPath = UIBezierPath(roundedRect: lblText.bounds, byRoundingCorners: [.topLeft, .bottomLeft, .bottomRight], cornerRadii: CGSize(width: 5, height: 5))
         let maskLayer = CAShapeLayer()
         maskLayer.frame = lblText.bounds
