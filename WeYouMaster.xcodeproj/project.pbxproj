@@ -14,6 +14,11 @@
 		BB3958BE20FDFF2F0038DB53 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3958BD20FDFF2F0038DB53 /* LogInVC.swift */; };
 		BB3958C120FF30080038DB53 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3958C020FF30080038DB53 /* Collection.swift */; };
 		BB3958C320FF5F9E0038DB53 /* PadingLable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3958C220FF5F9E0038DB53 /* PadingLable.swift */; };
+		BB3C1E2F211AE72A00075EEB /* StepTwoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C1E2E211AE72A00075EEB /* StepTwoController.swift */; };
+		BB3C1E31211B16D100075EEB /* StepThreeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C1E30211B16D100075EEB /* StepThreeController.swift */; };
+		BB3C1E33211B194B00075EEB /* SplashCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C1E32211B194B00075EEB /* SplashCV.swift */; };
+		BB3C1E36211B289000075EEB /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C1E35211B289000075EEB /* Utility.swift */; };
+		BB3C1E38211B984200075EEB /* StepOneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C1E37211B984200075EEB /* StepOneVC.swift */; };
 		BB4194A121033FE400823353 /* CollectionDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4194A021033FE400823353 /* CollectionDetailVC.swift */; };
 		BB4194A321035C8E00823353 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4194A221035C8E00823353 /* DetailCell.swift */; };
 		BB4194A521035E5400823353 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4194A421035E5400823353 /* Content.swift */; };
@@ -39,6 +44,7 @@
 		BBB0D45120FF68AF000CAC15 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB0D45020FF68AF000CAC15 /* CollectionCell.swift */; };
 		BBB0D45320FF701E000CAC15 /* myImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BBB0D45220FF701E000CAC15 /* myImage.jpg */; };
 		BBB0D45620FF704E000CAC15 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB0D45520FF704E000CAC15 /* DataService.swift */; };
+		BBF5F79E2118554500397B7D /* DLRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF5F79D2118554500397B7D /* DLRadioButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +55,11 @@
 		BB3958BD20FDFF2F0038DB53 /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		BB3958C020FF30080038DB53 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		BB3958C220FF5F9E0038DB53 /* PadingLable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadingLable.swift; sourceTree = "<group>"; };
+		BB3C1E2E211AE72A00075EEB /* StepTwoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTwoController.swift; sourceTree = "<group>"; };
+		BB3C1E30211B16D100075EEB /* StepThreeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepThreeController.swift; sourceTree = "<group>"; };
+		BB3C1E32211B194B00075EEB /* SplashCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashCV.swift; sourceTree = "<group>"; };
+		BB3C1E35211B289000075EEB /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		BB3C1E37211B984200075EEB /* StepOneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepOneVC.swift; sourceTree = "<group>"; };
 		BB4194A021033FE400823353 /* CollectionDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailVC.swift; sourceTree = "<group>"; };
 		BB4194A221035C8E00823353 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		BB4194A421035E5400823353 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
@@ -76,6 +87,9 @@
 		BBB0D45020FF68AF000CAC15 /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		BBB0D45220FF701E000CAC15 /* myImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = myImage.jpg; sourceTree = "<group>"; };
 		BBB0D45520FF704E000CAC15 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		BBF5F795211850DC00397B7D /* WeYouMaster-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WeYouMaster-Bridging-Header.h"; sourceTree = "<group>"; };
+		BBF5F79C2118554500397B7D /* DLRadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DLRadioButton.h; path = "../../../Downloads/DLRadioButton-master/DLRadioButton/DLRadioButton.h"; sourceTree = "<group>"; };
+		BBF5F79D2118554500397B7D /* DLRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DLRadioButton.m; path = "../../../Downloads/DLRadioButton-master/DLRadioButton/DLRadioButton.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -111,6 +125,10 @@
 				BBAE0E3621074B5C00CF4FF2 /* ChatVC.swift */,
 				BB118CAF2115BF5B00238A85 /* LockVC.swift */,
 				BBAB3629211713570031273A /* ProfileVC.swift */,
+				BB3C1E2E211AE72A00075EEB /* StepTwoController.swift */,
+				BB3C1E30211B16D100075EEB /* StepThreeController.swift */,
+				BB3C1E32211B194B00075EEB /* SplashCV.swift */,
+				BB3C1E37211B984200075EEB /* StepOneVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -127,9 +145,18 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		BB3C1E34211B286200075EEB /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				BB3C1E35211B289000075EEB /* Utility.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
 		BBA8962420FC89240098980B = {
 			isa = PBXGroup;
 			children = (
+				BBF5F795211850DC00397B7D /* WeYouMaster-Bridging-Header.h */,
 				BBA8962F20FC89240098980B /* WeYouMaster */,
 				BBA8962E20FC89240098980B /* Products */,
 			);
@@ -146,6 +173,7 @@
 		BBA8962F20FC89240098980B /* WeYouMaster */ = {
 			isa = PBXGroup;
 			children = (
+				BB3C1E34211B286200075EEB /* utils */,
 				BBB0D45420FF7034000CAC15 /* Services */,
 				BBB0D44F20FF66E7000CAC15 /* View */,
 				BB3958BF20FF2F520038DB53 /* Model */,
@@ -158,6 +186,8 @@
 				BBA8963720FC89260098980B /* Assets.xcassets */,
 				BBA8963920FC89260098980B /* LaunchScreen.storyboard */,
 				BBA8963C20FC89260098980B /* Info.plist */,
+				BBF5F79C2118554500397B7D /* DLRadioButton.h */,
+				BBF5F79D2118554500397B7D /* DLRadioButton.m */,
 			);
 			path = WeYouMaster;
 			sourceTree = "<group>";
@@ -214,6 +244,7 @@
 				TargetAttributes = {
 					BBA8962C20FC89240098980B = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 				};
 			};
@@ -259,16 +290,21 @@
 				BBAE0E312107428B00CF4FF2 /* OutPutTextCell.swift in Sources */,
 				BBAE0E2121045B2C00CF4FF2 /* HomeVC.swift in Sources */,
 				BBAE0E2721048C7D00CF4FF2 /* HomeCell.swift in Sources */,
+				BB3C1E33211B194B00075EEB /* SplashCV.swift in Sources */,
 				BBAE0E25210465CB00CF4FF2 /* BaseTabBarController.swift in Sources */,
 				BB4194A321035C8E00823353 /* DetailCell.swift in Sources */,
 				BBAE0E3921075F3F00CF4FF2 /* PaddedLabel.swift in Sources */,
 				BBAE0E332107433800CF4FF2 /* Message.swift in Sources */,
 				BBAE0E2B2105FBDF00CF4FF2 /* ConversationCell.swift in Sources */,
+				BBF5F79E2118554500397B7D /* DLRadioButton.m in Sources */,
 				BBAE0E2321045B4A00CF4FF2 /* ConversationVC.swift in Sources */,
 				BBA8963320FC89240098980B /* SignInVC.swift in Sources */,
+				BB3C1E31211B16D100075EEB /* StepThreeController.swift in Sources */,
 				BBAE0E352107451B00CF4FF2 /* User.swift in Sources */,
+				BB3C1E38211B984200075EEB /* StepOneVC.swift in Sources */,
 				BBAE0E3721074B5C00CF4FF2 /* ChatVC.swift in Sources */,
 				BB3958C120FF30080038DB53 /* Collection.swift in Sources */,
+				BB3C1E2F211AE72A00075EEB /* StepTwoController.swift in Sources */,
 				BB4194A121033FE400823353 /* CollectionDetailVC.swift in Sources */,
 				BB118CAE2115A62400238A85 /* CircleButton.swift in Sources */,
 				BB3958BB20FCB43D0038DB53 /* RoundedButton.swift in Sources */,
@@ -279,6 +315,7 @@
 				BBAB362A211713570031273A /* ProfileVC.swift in Sources */,
 				BBB0D44E20FF66A9000CAC15 /* CollectionVC.swift in Sources */,
 				BB3958BE20FDFF2F0038DB53 /* LogInVC.swift in Sources */,
+				BB3C1E36211B289000075EEB /* Utility.swift in Sources */,
 				BBA8963120FC89240098980B /* AppDelegate.swift in Sources */,
 				BB4194A521035E5400823353 /* Content.swift in Sources */,
 				BB118CB02115BF5B00238A85 /* LockVC.swift in Sources */,
@@ -425,6 +462,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = WeYouMaster/Info.plist;
@@ -432,8 +470,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = ir.greencode.WeYouMaster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WeYouMaster-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -443,6 +484,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = WeYouMaster/Info.plist;
@@ -450,8 +492,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = ir.greencode.WeYouMaster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WeYouMaster-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

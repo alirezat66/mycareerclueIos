@@ -14,6 +14,10 @@ class SignInVC: UIViewController {
     @IBOutlet weak var edtMob: UITextField!
     @IBAction func getVerifCode(_ sender: Any) {
         let num : String = edtMob.text!
+        
+       
+        if(Utility.isValidNumber(number: num)){
+        
         let StoryBoard   = UIStoryboard(name: "Main", bundle: nil)
         let lockVC = StoryBoard.instantiateViewController(withIdentifier: "lockpage" ) as? LockVC
         lockVC?.stringPassed = num
@@ -22,7 +26,11 @@ class SignInVC: UIViewController {
         //    self.navigationController?.pushViewController(lockVC!, animated: true)
       //  performSegueWithIdentifier("mySegue", sender: nil)
 
-        edtMob.text = "09"
+        
+        }else{
+            Utility.showToast(message: "شماره وارد شده صحیح نمی باشد.", myView: self.view)
+        }
+        edtMob.text = ""
     }
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -73,6 +73,9 @@ class LockVC: UIViewController {
         if(verCode.count == 5){
             if(verCode == "12345"){
                 let StoryBoard   = UIStoryboard(name: "Main", bundle: nil)
+                let userDefaults = UserDefaults.standard
+                userDefaults.set(1, forKey: "loginState")
+                userDefaults.set(stringPassed, forKey: "phone")
                 let profile = StoryBoard.instantiateViewController(withIdentifier: "profilePage" ) as? ProfileVC
                 profile?.phoneNumber = stringPassed
                 self.present(profile!, animated: true, completion: nil)
