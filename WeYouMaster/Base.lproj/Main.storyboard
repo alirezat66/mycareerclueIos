@@ -277,6 +277,9 @@
                                 <state key="normal" title="ورود">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnLogin:" destination="LQh-eP-eli" eventType="touchUpInside" id="nAb-QW-iU6"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="c3t-Hk-GwT">
                                 <rect key="frame" x="16" y="612" width="343" height="39"/>
@@ -327,6 +330,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Z3k-cz-FW8"/>
                     </view>
+                    <connections>
+                        <outlet property="edtEmail" destination="2We-Ep-ugQ" id="V3x-P3-dDn"/>
+                        <outlet property="edtPass" destination="a2b-4z-HCK" id="4gf-4Q-hR3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g3q-e9-7gl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2295,7 +2302,7 @@
         <image name="data_collection_img" width="1000" height="532"/>
         <image name="folder" width="24" height="24"/>
         <image name="home" width="24" height="24"/>
-        <image name="ic_launcher_foreground-29" width="29" height="29"/>
+        <image name="ic_launcher_foreground-29" width="43" height="43"/>
         <image name="ic_menu_white" width="48" height="48"/>
         <image name="left-arrow" width="20" height="20"/>
         <image name="like" width="64" height="64"/>
