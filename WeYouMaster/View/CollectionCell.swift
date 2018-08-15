@@ -22,18 +22,23 @@ class CollectionCell: UITableViewCell {
         contentView.frame = UIEdgeInsetsInsetRect(contentView.frame, UIEdgeInsetsMake(8, 8, 8, 8))
     }
     func updateView(collection : Collection)  {
-        collectionOwnerImage.image = UIImage(named: collection.img)
+       // collectionOwnerImage.image = UIImage(named: collection.img)
         collectionOwnerImage.layer.cornerRadius = collectionOwnerImage.frame.size.width/2
         collectionOwnerImage.clipsToBounds = true
         
-        collectionTitle.text = collection.title
-        let name  = collection.fName + " " + collection.lName
+        collectionTitle.text = collection.Collection_Title
+        let name  = collection.owner_name + " " + collection.owner_lName
         collectionOwner.text = name
-        let mosharekat = "(" + String(collection.numberOfPost) + "مشارکت " + ")"
+        let mosharekat = "(" + String(collection.collection_posts_number) + "مشارکت " + ")"
         collectionNumberFields.text = mosharekat
         
-        collectionOwnerLocation.text = collection.place
-        
-        collectionPrice.text = collection.price
+        collectionOwnerLocation.text = collection.collection_place
+        var price : String
+        if(collection.collection_price==""){
+            price = "رایگان"
+        }else{
+            price = collection.collection_price + " تومان"
+        }
+        collectionPrice.text = price
     }
 }

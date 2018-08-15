@@ -7,25 +7,27 @@
 //
 
 import Foundation
-struct  Collection {
-    public var fName : String
-    public var lName : String
-    public var title : String
-    public var price : String
-    public var place : String
-    public var numberOfPost : UInt
-    public var img : String
+struct  Collection : Decodable {
+  
+    public var Owner :String
+    public var owner_name :String
+    public var owner_lName :String
+    public var ownerDegree :String
+    public var collection_owner_image :String
+    public var collection_image : String
+    public var collection_place : String
+    public var collection_posts_number : Int
+    public var collection_price : String
+    public var Collection_Title : String
+    public var Collection_Description :String
+    public var Link : String
+    public var Align : String
     
-    init(fName:String, lName: String,title : String ,
-         price:String , place:String,
-         numberOfPost:UInt,img : String){
-        self.fName = fName
-        self.lName = lName
-        self.title = title
-        self.price = price
-        self.place = place
-        self.numberOfPost = numberOfPost
-        self.img = img
-    }
     
+
+
 }
+    
+    
+    
+

@@ -8,15 +8,21 @@
  
 import UIKit
 
-class CollectionVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
-    
+class CollectionVC: UIViewController,UITableViewDelegate , UITableViewDataSource {
+    let spinnerIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+     let alertController = UIAlertController(title: nil, message: "لطفا منتظر بمانید ...\n\n", preferredStyle: .alert)
+    var myCollections : [Collection] = []
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return DataService.instance.getCollections().count
+       return myCollections.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
+        
+        
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionCell") as? CollectionCell{
-            let collection = DataService.instance.getCollections()[indexPath.row]
+            let collection = myCollections[indexPath.row]
             cell.updateView(collection:collection)
             return cell
         }else{
@@ -29,21 +35,48 @@ class CollectionVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
         super.viewDidLoad()
         collectionTV.dataSource = self
         collectionTV.delegate = self
-
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let StoryBoard  = UIStoryboard(name: "Main", bundle: nil)
-        let DVC  = StoryBoard.instantiateViewController(withIdentifier:"CollectionDetailVC" ) as? CollectionDetailVC
-        let collection = DataService.instance.getCollections()[indexPath.row]
-        let name = collection.fName + " " + collection.lName
-        DVC?.getName = name
-        DVC?.getCity = collection.place
-        DVC?.getTitle = collection.title
-        DVC?.getImage = UIImage(named: collection.img)!
-        self.navigationController?.pushViewController(DVC!, animated: true)
+        
+       
+        
+      
+        spinnerIndicator.center = CGPoint(x: 135.0, y: 65.5)
+        spinnerIndicator.color = UIColor.black
+        spinnerIndicator.startAnimating()
+        
+        alertController.view.addSubview(spinnerIndicator)
+        self.present(alertController, animated: false, completion: nil)
         
         
+        getCloolections()
     }
+   
+    func getCloolections(){
+        WebCaller.getCollection { (collections , error) in
+            if let error = error{
+                print(error)
+                return
+            }
+            guard let collections = collections else{
+                print("error getting collections")
+                return
+            }
+            
+            
+            for collect in collections.records{
+                self.myCollections.append(collect)
+            }
+            self.updateUI()
+            
+            
+        }
+    }
+    
+    func updateUI(){
+        DispatchQueue.main.async{
+        self.collectionTV.reloadData()
+        self.alertController.dismiss(animated: true, completion: nil);
 
-  
+        }
+    }
+   
 }

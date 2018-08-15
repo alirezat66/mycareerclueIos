@@ -26,7 +26,7 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         isOpenMenu  = !isOpenMenu
     }
     @IBOutlet weak var menu: UIView!
-    @IBOutlet weak var imgProfile: UIImageView!
+    @IBOutlet weak var imgProfile: UIButton!
     @IBOutlet weak var menuWidth: NSLayoutConstraint!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return DataService.instance.getContent().count
@@ -49,8 +49,14 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         homeTable.delegate = self
         imgProfile.layer.cornerRadius = imgProfile.frame.size.width/2
         imgProfile.clipsToBounds = true
+        
+       
+        
         // Do any additional setup after loading the view.
     }
 
 
+    
+    
+    
 }

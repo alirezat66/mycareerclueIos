@@ -9,7 +9,7 @@
 import UIKit
 
 class LogInVC: UIViewController {
-
+    
     @IBOutlet weak var edtEmail: UITextField!
     @IBOutlet weak var edtPass: UITextField!
     @IBAction func backBtn(_ sender: UIButton) {
@@ -27,48 +27,62 @@ class LogInVC: UIViewController {
             if((edtPass.text?.count)!>0){
                   let email = edtEmail.text
                   let pass = edtPass.text
+                getLogin(email!, pass!,self)
                 
-                let myUrl = NSURL(string: "https://www.weyoumaster.com/api/login/")
-                var request  = URLRequest(url: myUrl! as URL)
-                request.httpMethod = "POST"
-                let postString = "emailaddress=" + email! + "&password=" + pass!
-                request.httpBody = postString.data(using: String.Encoding.utf8)
-               let session = URLSession.shared
-               
-                let task = session.dataTask(with: request){
-                    (data: Data?, response: URLResponse?, error: Error?) in
-                    
-                    if error != nil
-                    {
-                        print("error=\(error)")
-                        return
-                    }
-                    
-                    // You can print out response object
-                    print("response = \(response)")
-                    
-                    //Let's convert response sent from a server side script to a NSDictionary object:
-                    do {
-                        let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
-                        print(json!)
-                     /*   if let parseJSON = json {
-                            
-                            // Now we can access value of First Name by its key
-                            let firstNameValue = parseJSON["firstName"] as? String
-                            print("firstNameValue: \(firstNameValue)")
-                        }*/
-                    } catch {
-                        print(error)
-                    }
-                }
-                task.resume()
+            
                 
-                
-                    
+            
                 
             }
         }
     }
+
+func getLogin(_ email: String,_ pass : String,_ myVc : LogInVC) {
+        WebCaller.getLogin(email,pass, completionHandler: { (todo, error) in
+            if let error = error {
+                // got an error in getting the data, need to handle it
+                print(error)
+                return
+            }
+            guard let todo = todo else {
+                print("error getting first todo: result is nil")
+                return
+            }
+            print("1")
+            let StoryBoard   = UIStoryboard(name: "Main", bundle: nil)
+            
+            print("2")
+            DispatchQueue.main.async {
+                
+                
+                 let userDefaults = UserDefaults.standard
+                 userDefaults.set(todo.Owner, forKey: "owner")
+                 userDefaults.set(todo.Email, forKey: "email")
+                 userDefaults.set(todo.First_Name, forKey: "fName")
+                 userDefaults.set(todo.Industry, forKey: "industry")
+                 userDefaults.set(todo.City, forKey: "City")
+                 userDefaults.set(todo.Job_Position, forKey: "job")
+                 userDefaults.set(todo.Last_Name, forKey: "lName")
+                 userDefaults.set(todo.Profile_photo_link, forKey: "profilePhoto")
+                userDefaults.set(todo.total_contributions, forKey: "totalPost")
+                userDefaults.set(todo.Website, forKey: "webSite")
+                userDefaults.set(todo.Sold_sofar, forKey: "sales")
+                userDefaults.set(todo.LinkedIn, forKey: "linkedIn")
+                userDefaults.set(3, forKey: "loginState")
+
+                let home = StoryBoard.instantiateViewController(withIdentifier: "BaseBar" ) as? BaseTabBarController
+                print("3")
+                
+                self.present(home!, animated: true, completion: nil)
+            }
+            
+
+            // success :)
+            
+          
+            
+        })
     
 
+    }
 }

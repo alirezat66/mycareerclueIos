@@ -10,13 +10,13 @@ import Foundation
 class DataService {
     static let instance = DataService()
     
-    private let collections = [
-        Collection(fName: "علیرضا", lName: "تقی زاده", title: "برنامه نویسی اندروید", price: "رایگان", place: "تهران", numberOfPost: 5, img: "myImage.jpg"),
+   /* private let collections = [
+      /*  Collection(fName: "علیرضا", lName: "تقی زاده", title: "برنامه نویسی اندروید", price: "رایگان", place: "تهران", numberOfPost: 5, img: "myImage.jpg"),
         Collection(fName: "حسن", lName: "حسینی", title: "مدیریت", price: "۱۲۰۰۰ تومان", place: "واشنگتن", numberOfPost: 12, img: "myImage.jpg"),
         Collection(fName: "آرزو", lName: "اقبالی", title: "گرافیک بازی", price: "رایگان", place: "تهران", numberOfPost: 5, img: "myImage.jpg"),
-        Collection(fName:"رحیم", lName: "حسینی", title: "مدیریت", price: "۱۴... تومان", place: "واشنگتن", numberOfPost: 12, img: "myImage.jpg")
+        Collection(fName:"رحیم", lName: "حسینی", title: "مدیریت", price: "۱۴... تومان", place: "واشنگتن", numberOfPost: 12, img: "myImage.jpg")*/
     ]
-    
+    */
     private let contents = [
         Content(fName: "علیرضا", lName: "تقی زاده", education: "کارشناس ارشد", location: "تهران", collectionName: "", title: "عنوان مطلب ۱", contentText:"کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.", contentType: 2, linkAddress: "https://www.nature.com/articles/nature26142", likeByMe: false, imgSource: "https://www.weyoumaster.com/img/__mco/publishing/5_u_1_2.jpg", hasMore: true, price: "رایگان",ownerPic: "myImage.jpg"),
         Content(fName: "علیرضا", lName : "حسنی", education: "کارشناس ارشد", location: "تهران", collectionName: "", title: "عنوان مطلب ۱", contentText:"کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع", contentType: 1, linkAddress: "https://www.nature.com/articles/nature26142", likeByMe: false, imgSource: "", hasMore: true, price: "۱۴ هزار تومان",ownerPic: "myImage.jpg"),
@@ -42,9 +42,9 @@ class DataService {
         return ConversationList
     }
     
-    func getCollections() -> [Collection] {
-        return collections
-    }
+ /*   func getCollections() -> [Collection] {
+        return nil
+    }*/
     func getContent() -> [Content] {
         return contents
     }

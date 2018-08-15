@@ -35,7 +35,7 @@ class SplashCV: UIViewController {
                     }
                 else if( state == 3){
                     let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-                    let home = storyBoard.instantiateViewController(withIdentifier: "homeVC") as! HomeVC
+                    let home = storyBoard.instantiateViewController(withIdentifier: "BaseBar") as! BaseTabBarController
                     
                     self.present(home, animated: true, completion: nil)
                     // do something here when a highscore exists
