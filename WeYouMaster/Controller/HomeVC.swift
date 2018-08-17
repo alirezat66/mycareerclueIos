@@ -60,8 +60,21 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         imgProfile.layer.cornerRadius = imgProfile.frame.size.width/2
         imgProfile.clipsToBounds = true
         
-       
         
+        let userDefaults = UserDefaults.standard
+        var Profile_photo_link = userDefaults.value(forKey: "profilePhoto") as! String
+        let url = URL(string: Profile_photo_link)
+        
+      
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url!) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.imgProfile.setImage(image, for: UIControlState.normal)
+                    }
+                }
+            }
+        }
         // Do any additional setup after loading the view.
     }
 

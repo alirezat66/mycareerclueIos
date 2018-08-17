@@ -53,18 +53,26 @@ class DashboardVC: UIViewController {
         lblrole.text = Industry
         lblPlace.text = City
         lblSale.text = Sold_sofar
+     
         let url = URL(string: Profile_photo_link)
-        let data = try? Data(contentsOf: url!)
         
-        if let imageData = data {
-            let image = UIImage(data: imageData)
-            imgProfile.image = image
+        
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url!) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.imgProfile.image = image
+                    }
+                }
+            }
         }
+        
         
         // Do any additional setup after loading the view.
     }
 
     @IBAction func openLinkedIn(_ sender: Any) {
+        
          let userDefaults = UserDefaults.standard
         var LinkedIn : String
         LinkedIn = userDefaults.value(forKey: "linkedIn") as! String

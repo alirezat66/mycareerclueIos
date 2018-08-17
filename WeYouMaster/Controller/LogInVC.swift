@@ -9,9 +9,12 @@
 import UIKit
 
 class LogInVC: UIViewController {
-    
+    let spinnerIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+
+     let alertController = UIAlertController(title: nil, message: "لطفا منتظر بمانید ...\n\n", preferredStyle: .alert)
     @IBOutlet weak var edtEmail: UITextField!
     @IBOutlet weak var edtPass: UITextField!
+    @IBOutlet weak var lblError: UILabel!
     @IBAction func backBtn(_ sender: UIButton) {
         self.dismiss(animated: true)
     }
@@ -21,12 +24,26 @@ class LogInVC: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    func startLoading() {
+        spinnerIndicator.center = CGPoint(x: 135.0, y: 65.5)
+        spinnerIndicator.color = UIColor.black
+        spinnerIndicator.startAnimating()
+        alertController.view.addSubview(spinnerIndicator)
+        self.present(alertController, animated: false, completion: nil)
+        
+    }
+    func dissmissLoading(){
+        self.alertController.dismiss(animated: true, completion: nil);
+    }
     @IBAction func btnLogin(_ sender: Any) {
       
         if((edtEmail.text?.count)!>0){
             if((edtPass.text?.count)!>0){
+                lblError.text = ""
                   let email = edtEmail.text
                   let pass = edtPass.text
+                
+              startLoading()
                 getLogin(email!, pass!,self)
                 
             
@@ -38,14 +55,24 @@ class LogInVC: UIViewController {
     }
 
 func getLogin(_ email: String,_ pass : String,_ myVc : LogInVC) {
+    
+    
         WebCaller.getLogin(email,pass, completionHandler: { (todo, error) in
-            if let error = error {
+            if error != nil {
+               
                 // got an error in getting the data, need to handle it
-                print(error)
+                DispatchQueue.main.async{
+                     self.dissmissLoading()
+                    self.lblError.text = "نام کاربری و یا کلمه عبور نادرست است."
+                }
                 return
             }
             guard let todo = todo else {
-                print("error getting first todo: result is nil")
+                
+                DispatchQueue.main.async{
+                    self.dissmissLoading()
+                    self.lblError.text = "نام کاربری و یا کلمه عبور نادرست است."
+                }
                 return
             }
             print("1")
@@ -54,7 +81,7 @@ func getLogin(_ email: String,_ pass : String,_ myVc : LogInVC) {
             print("2")
             DispatchQueue.main.async {
                 
-                
+
                  let userDefaults = UserDefaults.standard
                  userDefaults.set(todo.Owner, forKey: "owner")
                  userDefaults.set(todo.Email, forKey: "email")
@@ -72,7 +99,8 @@ func getLogin(_ email: String,_ pass : String,_ myVc : LogInVC) {
 
                 let home = StoryBoard.instantiateViewController(withIdentifier: "BaseBar" ) as? BaseTabBarController
                 print("3")
-                
+                self.alertController.dismiss(animated: true, completion: nil);
+
                 self.present(home!, animated: true, completion: nil)
             }
             
