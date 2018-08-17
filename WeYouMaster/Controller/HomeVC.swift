@@ -25,6 +25,16 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         }
         isOpenMenu  = !isOpenMenu
     }
+    @IBAction func btnClose(_ sender: Any) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let splash = storyBoard.instantiateViewController(withIdentifier: "splash") as! SplashCV
+        let domain = Bundle.main.bundleIdentifier!
+        UserDefaults.standard.removePersistentDomain(forName: domain)
+        UserDefaults.standard.synchronize()
+        
+        self.present(splash, animated: true, completion: nil)
+        
+    }
     @IBOutlet weak var menu: UIView!
     @IBOutlet weak var imgProfile: UIButton!
     @IBOutlet weak var menuWidth: NSLayoutConstraint!

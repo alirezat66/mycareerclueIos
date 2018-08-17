@@ -53,6 +53,13 @@ class DashboardVC: UIViewController {
         lblrole.text = Industry
         lblPlace.text = City
         lblSale.text = Sold_sofar
+        let url = URL(string: Profile_photo_link)
+        let data = try? Data(contentsOf: url!)
+        
+        if let imageData = data {
+            let image = UIImage(data: imageData)
+            imgProfile.image = image
+        }
         
         // Do any additional setup after loading the view.
     }
