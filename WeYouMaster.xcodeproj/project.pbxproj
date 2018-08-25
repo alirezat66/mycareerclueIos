@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75773E53FACB2AEEA3A3F6E4 /* Pods_WeYouMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC902F30B60C5EE58A7ED1D1 /* Pods_WeYouMaster.framework */; };
 		BB118CAE2115A62400238A85 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB118CAD2115A62400238A85 /* CircleButton.swift */; };
 		BB118CB02115BF5B00238A85 /* LockVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB118CAF2115BF5B00238A85 /* LockVC.swift */; };
 		BB3958B620FCA5100038DB53 /* iransansmobilefanum.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB3958B520FCA4220038DB53 /* iransansmobilefanum.ttf */; };
@@ -14,6 +15,7 @@
 		BB3958BE20FDFF2F0038DB53 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3958BD20FDFF2F0038DB53 /* LogInVC.swift */; };
 		BB3958C120FF30080038DB53 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3958C020FF30080038DB53 /* Collection.swift */; };
 		BB3958C320FF5F9E0038DB53 /* PadingLable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3958C220FF5F9E0038DB53 /* PadingLable.swift */; };
+		BB3A83A721312BD9001FFE2F /* ContentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3A83A621312BD8001FFE2F /* ContentList.swift */; };
 		BB3C1E2F211AE72A00075EEB /* StepTwoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C1E2E211AE72A00075EEB /* StepTwoController.swift */; };
 		BB3C1E31211B16D100075EEB /* StepThreeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C1E30211B16D100075EEB /* StepThreeController.swift */; };
 		BB3C1E33211B194B00075EEB /* SplashCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C1E32211B194B00075EEB /* SplashCV.swift */; };
@@ -54,6 +56,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5280BC1127C140460917C54C /* Pods-WeYouMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeYouMaster.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeYouMaster/Pods-WeYouMaster.release.xcconfig"; sourceTree = "<group>"; };
+		72FFC982F931C4D90FC135FC /* Pods-WeYouMaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeYouMaster.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeYouMaster/Pods-WeYouMaster.debug.xcconfig"; sourceTree = "<group>"; };
+		AC902F30B60C5EE58A7ED1D1 /* Pods_WeYouMaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeYouMaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB118CAD2115A62400238A85 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		BB118CAF2115BF5B00238A85 /* LockVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockVC.swift; sourceTree = "<group>"; };
 		BB3958B520FCA4220038DB53 /* iransansmobilefanum.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iransansmobilefanum.ttf; sourceTree = "<group>"; };
@@ -61,6 +66,7 @@
 		BB3958BD20FDFF2F0038DB53 /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		BB3958C020FF30080038DB53 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		BB3958C220FF5F9E0038DB53 /* PadingLable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadingLable.swift; sourceTree = "<group>"; };
+		BB3A83A621312BD8001FFE2F /* ContentList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentList.swift; sourceTree = "<group>"; };
 		BB3C1E2E211AE72A00075EEB /* StepTwoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTwoController.swift; sourceTree = "<group>"; };
 		BB3C1E30211B16D100075EEB /* StepThreeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepThreeController.swift; sourceTree = "<group>"; };
 		BB3C1E32211B194B00075EEB /* SplashCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashCV.swift; sourceTree = "<group>"; };
@@ -104,7 +110,35 @@
 		BBF5F79D2118554500397B7D /* DLRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DLRadioButton.m; path = "../../../Downloads/DLRadioButton-master/DLRadioButton/DLRadioButton.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFrameworksBuildPhase section */
+		9900F6EDA7976841AAEA002F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75773E53FACB2AEEA3A3F6E4 /* Pods_WeYouMaster.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
 /* Begin PBXGroup section */
+		2CE1074BF2A674A7B02A36BD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				72FFC982F931C4D90FC135FC /* Pods-WeYouMaster.debug.xcconfig */,
+				5280BC1127C140460917C54C /* Pods-WeYouMaster.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AF196389C6365E97331C4641 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC902F30B60C5EE58A7ED1D1 /* Pods_WeYouMaster.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BB3958B420FCA40D0038DB53 /* font */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +192,7 @@
 				BBAE0E342107451B00CF4FF2 /* User.swift */,
 				BB3C1E39211EDBD900075EEB /* LoginResponse.swift */,
 				BBB75C8E212457F000C1CAA9 /* CollectionList.swift */,
+				BB3A83A621312BD8001FFE2F /* ContentList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -176,6 +211,8 @@
 				BBF5F795211850DC00397B7D /* WeYouMaster-Bridging-Header.h */,
 				BBA8962F20FC89240098980B /* WeYouMaster */,
 				BBA8962E20FC89240098980B /* Products */,
+				2CE1074BF2A674A7B02A36BD /* Pods */,
+				AF196389C6365E97331C4641 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -238,8 +275,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BBA8963F20FC89260098980B /* Build configuration list for PBXNativeTarget "WeYouMaster" */;
 			buildPhases = (
+				5D6EC31F11B60BF8C0990D13 /* [CP] Check Pods Manifest.lock */,
 				BBA8962920FC89240098980B /* Sources */,
 				BBA8962B20FC89240098980B /* Resources */,
+				9900F6EDA7976841AAEA002F /* Frameworks */,
+				761F4ADEB7A763D1A15CFF8F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -299,6 +339,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5D6EC31F11B60BF8C0990D13 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WeYouMaster-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		761F4ADEB7A763D1A15CFF8F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WeYouMaster/Pods-WeYouMaster-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeYouMaster/Pods-WeYouMaster-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BBA8962920FC89240098980B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -315,6 +394,7 @@
 				BB3C1E3E211EDEE800075EEB /* WebCaller.swift in Sources */,
 				BBB75C892122FDB700C1CAA9 /* DashboardVC.swift in Sources */,
 				BBAE0E3921075F3F00CF4FF2 /* PaddedLabel.swift in Sources */,
+				BB3A83A721312BD9001FFE2F /* ContentList.swift in Sources */,
 				BBAE0E332107433800CF4FF2 /* Message.swift in Sources */,
 				BBAE0E2B2105FBDF00CF4FF2 /* ConversationCell.swift in Sources */,
 				BBF5F79E2118554500397B7D /* DLRadioButton.m in Sources */,
@@ -484,6 +564,7 @@
 		};
 		BBA8964020FC89260098980B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72FFC982F931C4D90FC135FC /* Pods-WeYouMaster.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "";
 				CLANG_ENABLE_MODULES = YES;
@@ -506,6 +587,7 @@
 		};
 		BBA8964120FC89260098980B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5280BC1127C140460917C54C /* Pods-WeYouMaster.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "";
 				CLANG_ENABLE_MODULES = YES;

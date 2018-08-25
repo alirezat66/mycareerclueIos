@@ -8,17 +8,19 @@
 
 import UIKit
 
-class CollectionDetailVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class CollectionDetailVC:
+
+UIViewController,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return DataService.instance.getContent().count
+       return 1 //DataService.instance.getContent().count
     }
-    
+    var myContent : [Content] = []
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "DetailCell") as? DetailCell{
-            let content = DataService.instance.getContent()[indexPath.row]
+            let content = myContent[indexPath.row] //DataService.instance.getContent()[indexPath.row]
         cell.updateView(content: content)
         return cell
         }else {

@@ -7,10 +7,9 @@
 //
  
 import UIKit
-
+import SVProgressHUD
 class CollectionVC: UIViewController,UITableViewDelegate , UITableViewDataSource {
-    let spinnerIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
-     let alertController = UIAlertController(title: nil, message: "لطفا منتظر بمانید ...\n\n", preferredStyle: .alert)
+   
     var myCollections : [Collection] = []
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        return myCollections.count
@@ -39,14 +38,8 @@ class CollectionVC: UIViewController,UITableViewDelegate , UITableViewDataSource
        
         
       
-        spinnerIndicator.center = CGPoint(x: 135.0, y: 65.5)
-        spinnerIndicator.color = UIColor.black
-        spinnerIndicator.startAnimating()
-        
-        alertController.view.addSubview(spinnerIndicator)
-        self.present(alertController, animated: false, completion: nil)
-        
-        
+      
+        SVProgressHUD.show(withStatus: "لطفا منتظر بمانید ... \n\n")
         getCloolections()
     }
    
@@ -74,8 +67,7 @@ class CollectionVC: UIViewController,UITableViewDelegate , UITableViewDataSource
     func updateUI(){
         DispatchQueue.main.async{
         self.collectionTV.reloadData()
-        self.alertController.dismiss(animated: true, completion: nil);
-
+        SVProgressHUD.dismiss()
         }
     }
    

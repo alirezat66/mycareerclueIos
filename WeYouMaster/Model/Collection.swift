@@ -22,9 +22,6 @@ struct  Collection : Decodable {
     public var Collection_Description :String
     public var Link : String
     public var Align : String
-    
-    
-
 
 }
     

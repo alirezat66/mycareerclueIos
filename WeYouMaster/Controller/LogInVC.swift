@@ -57,6 +57,8 @@ class LogInVC: UIViewController {
 func getLogin(_ email: String,_ pass : String,_ myVc : LogInVC) {
     
     
+        
+    
         WebCaller.getLogin(email,pass, completionHandler: { (todo, error) in
             if error != nil {
                

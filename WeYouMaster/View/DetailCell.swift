@@ -43,12 +43,12 @@ class DetailCell: UITableViewCell {
     
     func updateView(content : Content) {
         
-        let titleStr = content.title+"("+content.price+")"
+        let titleStr = content.title
         lblTitle.text = titleStr
         
-        if content.price != "رایگان"{
+       
             btnOutlet.isEnabled = false
-        }
+        
         if content.contentType == 2 {
             imageFromServerURL(urlString: content.imgSource)
             

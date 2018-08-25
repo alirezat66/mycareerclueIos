@@ -23,8 +23,27 @@ class CollectionCell: UITableViewCell {
     }
     func updateView(collection : Collection)  {
        // collectionOwnerImage.image = UIImage(named: collection.img)
+        
+        
+        
         collectionOwnerImage.layer.cornerRadius = collectionOwnerImage.frame.size.width/2
         collectionOwnerImage.clipsToBounds = true
+        
+        if(collection.collection_owner_image != "")
+        {
+            let url = URL(string : collection.collection_owner_image)
+        
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url!) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.collectionOwnerImage.image = image
+                    }
+                }
+            }
+        }
+        }
+        
         
         collectionTitle.text = collection.Collection_Title
         let name  = collection.owner_name + " " + collection.owner_lName
@@ -39,6 +58,7 @@ class CollectionCell: UITableViewCell {
         }else{
             price = collection.collection_price + " تومان"
         }
+        collectionOwnerLocation.text = collection.ownerDegree
         collectionPrice.text = price
     }
 }

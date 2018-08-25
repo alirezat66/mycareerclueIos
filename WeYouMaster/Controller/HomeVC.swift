@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
+    
+    
+    var myContent : [Content] = []
     var isOpenMenu = false
     @IBAction func menuBtn(_ sender: Any) {
         if(isOpenMenu){
@@ -35,16 +39,20 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         self.present(splash, animated: true, completion: nil)
         
     }
+    
+   
+    
     @IBOutlet weak var menu: UIView!
     @IBOutlet weak var imgProfile: UIButton!
     @IBOutlet weak var menuWidth: NSLayoutConstraint!
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DataService.instance.getContent().count
+        return myContent.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell") as? HomeCell {
-            cell.updateView(content: DataService.instance.getContent()[indexPath.row])
+            cell.updateView(content: myContent[indexPath.row])
             return cell
         }else{
             return HomeCell()
@@ -61,8 +69,11 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         imgProfile.clipsToBounds = true
         
         
+        
+        
+        
         let userDefaults = UserDefaults.standard
-        var Profile_photo_link = userDefaults.value(forKey: "profilePhoto") as! String
+        let Profile_photo_link = userDefaults.value(forKey: "profilePhoto") as! String
         let url = URL(string: Profile_photo_link)
         
       
@@ -76,9 +87,40 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             }
         }
         // Do any additional setup after loading the view.
+        
+        SVProgressHUD.show(withStatus: "لطفا منتظر بمانید ... \n\n")
+       
+        getFeeds()
+        
+        
+        
     }
 
-
+    func getFeeds(){
+        WebCaller.getFeeds(20, 1) { (contents, error) in
+            if let error = error{
+                print(error)
+                return
+            }
+            guard let contentList = contents else{
+                print("error getting collections")
+                return
+            }
+            for content in (contentList.records) {
+                self.myContent.append(content)
+            }
+            self.updateUI()
+        }
+    }
+    
+    func updateUI(){
+        DispatchQueue.main.async{
+            self.homeTable.reloadData()
+            SVProgressHUD.dismiss()
+            //self.alertController.dismiss(animated: true, completion: nil);
+            
+        }
+    }
     
     
     
