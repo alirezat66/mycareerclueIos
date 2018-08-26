@@ -10,7 +10,11 @@ import UIKit
 
 class HomeCell: UITableViewCell {
 
-   
+    @IBAction func btnCollection(_ sender: Any) {
+        print(btnCollection.titleLabel?.text)
+    }
+    @IBOutlet weak var btnCollection: UIButton!
+    
     @IBOutlet weak var imgPerson: UIImageView!
     @IBOutlet weak var lblOwner: UILabel!
     @IBOutlet weak var heightOutlet: NSLayoutConstraint!
@@ -23,9 +27,11 @@ class HomeCell: UITableViewCell {
     @IBOutlet weak var btnShowLink: UIButton!
     @IBOutlet weak var btnMoreOutLet: UIButton!
     @IBOutlet weak var lblTitle: UILabel!
-    @IBOutlet weak var lblCollection: UILabel!
     @IBOutlet weak var lblPlaceAndTime: UILabel!
     @IBOutlet weak var lblEducation: UILabel!
+    
+    
+    
     var likeCounter : Int = 0
     var contentText : String = ""
     @IBAction func btnAttach(_ sender: Any) {
@@ -88,29 +94,36 @@ class HomeCell: UITableViewCell {
         isLiked = !isLiked
         if isLiked {
             likeCounter  = likeCounter + 1
-            btnLikeOutlet.titleLabel!.font  =  UIFont(name: btnLikeOutlet.titleLabel!.font.fontName, size: 16)!
+            btnLikeOutlet.titleLabel!.font  =  UIFont(name: btnLikeOutlet.titleLabel!.font.fontName, size: 21)!
 
         }else{
             likeCounter = likeCounter - 1
             
-            btnLikeOutlet.titleLabel!.font  =  UIFont(name: btnLikeOutlet.titleLabel!.font.fontName, size: 12)!
+            btnLikeOutlet.titleLabel!.font  =  UIFont(name: btnLikeOutlet.titleLabel!.font.fontName, size: 19)!
         }
         lblLikeCounter.text = "(" + String( likeCounter) + ")"
     }
     
+    
     @IBOutlet weak var lblCollectionTitle: UILabel!
     public func updateView(content : Content){
-        
         heightOutlet.constant = 70
         contentText = content.contentText
         if(content.allignment != "rtl"){
             lblTitle.textAlignment = .left
             lblContent.textAlignment = .left
+        }else {
+            lblTitle.textAlignment = .right
+            lblContent.textAlignment = .right
         }
         if(content.collectionName == ""){
-            lblCollection.isHidden = true
+            btnCollection.isHidden = true
             lblCollectionTitle.isHidden = true
             layoutIfNeeded()
+        }else{
+            
+            btnCollection.isHidden = false
+            lblCollectionTitle.isHidden = false
         }
         if(content.ownerPic != "")
         {
@@ -136,15 +149,18 @@ class HomeCell: UITableViewCell {
         if(content.linkAddress==""){
             btnShowLink.isHidden = true
             layoutIfNeeded()
+        }else{
+            btnShowLink.isHidden = false
         }
         imgPerson.layer.cornerRadius = imgPerson.frame.size.width/2
         imgPerson.clipsToBounds = true
         let name = content.fName + " " + content.lName
         lblOwner.text = name
         lblTitle.text = content.title
-        lblCollection.text = content.collectionName
+        btnCollection.setTitle(content.collectionName, for: .normal)
+
         lblEducation.text = content.education
-        lblPlaceAndTime.text = content.location
+        lblPlaceAndTime.text = content.date + " | " +  content.location
         lblContent.text = content.contentText
         likeCounter = content.likeCount
         lblLikeCounter.text = "(" + String( content.likeCount) + ")"
@@ -154,9 +170,9 @@ class HomeCell: UITableViewCell {
             isLiked = false
         }
         if isLiked {
-            btnLikeOutlet.titleLabel!.font  =  UIFont(name: btnLikeOutlet.titleLabel!.font.fontName, size: 16)!
+            btnLikeOutlet.titleLabel!.font  =  UIFont(name: btnLikeOutlet.titleLabel!.font.fontName, size: 21)!
         }else{
-            btnLikeOutlet.titleLabel!.font  =  UIFont(name: btnLikeOutlet.titleLabel!.font.fontName, size: 12)!
+            btnLikeOutlet.titleLabel!.font  =  UIFont(name: btnLikeOutlet.titleLabel!.font.fontName, size: 19)!
             
         }
         if(content.contentText.count>200){
