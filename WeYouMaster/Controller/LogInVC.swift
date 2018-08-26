@@ -95,6 +95,7 @@ func getLogin(_ email: String,_ pass : String,_ myVc : LogInVC) {
                  userDefaults.set(todo.Profile_photo_link, forKey: "profilePhoto")
                 userDefaults.set(todo.total_contributions, forKey: "totalPost")
                 userDefaults.set(todo.Website, forKey: "webSite")
+                userDefaults.set(todo.bio, forKey: "bio")
                 userDefaults.set(todo.Sold_sofar, forKey: "sales")
                 userDefaults.set(todo.LinkedIn, forKey: "linkedIn")
                 userDefaults.set(3, forKey: "loginState")

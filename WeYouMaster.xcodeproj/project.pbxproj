@@ -10,12 +10,14 @@
 		75773E53FACB2AEEA3A3F6E4 /* Pods_WeYouMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC902F30B60C5EE58A7ED1D1 /* Pods_WeYouMaster.framework */; };
 		BB118CAE2115A62400238A85 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB118CAD2115A62400238A85 /* CircleButton.swift */; };
 		BB118CB02115BF5B00238A85 /* LockVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB118CAF2115BF5B00238A85 /* LockVC.swift */; };
+		BB176C54213333A700F3F79B /* NormalResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB176C53213333A700F3F79B /* NormalResponse.swift */; };
 		BB3958B620FCA5100038DB53 /* iransansmobilefanum.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB3958B520FCA4220038DB53 /* iransansmobilefanum.ttf */; };
 		BB3958BB20FCB43D0038DB53 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3958BA20FCB43D0038DB53 /* RoundedButton.swift */; };
 		BB3958BE20FDFF2F0038DB53 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3958BD20FDFF2F0038DB53 /* LogInVC.swift */; };
 		BB3958C120FF30080038DB53 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3958C020FF30080038DB53 /* Collection.swift */; };
 		BB3958C320FF5F9E0038DB53 /* PadingLable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3958C220FF5F9E0038DB53 /* PadingLable.swift */; };
 		BB3A83A721312BD9001FFE2F /* ContentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3A83A621312BD8001FFE2F /* ContentList.swift */; };
+		BB3A83A92132CFAB001FFE2F /* AddFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3A83A82132CFAB001FFE2F /* AddFeedVC.swift */; };
 		BB3C1E2F211AE72A00075EEB /* StepTwoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C1E2E211AE72A00075EEB /* StepTwoController.swift */; };
 		BB3C1E31211B16D100075EEB /* StepThreeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C1E30211B16D100075EEB /* StepThreeController.swift */; };
 		BB3C1E33211B194B00075EEB /* SplashCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C1E32211B194B00075EEB /* SplashCV.swift */; };
@@ -61,12 +63,14 @@
 		AC902F30B60C5EE58A7ED1D1 /* Pods_WeYouMaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeYouMaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB118CAD2115A62400238A85 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		BB118CAF2115BF5B00238A85 /* LockVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockVC.swift; sourceTree = "<group>"; };
+		BB176C53213333A700F3F79B /* NormalResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalResponse.swift; sourceTree = "<group>"; };
 		BB3958B520FCA4220038DB53 /* iransansmobilefanum.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iransansmobilefanum.ttf; sourceTree = "<group>"; };
 		BB3958BA20FCB43D0038DB53 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		BB3958BD20FDFF2F0038DB53 /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		BB3958C020FF30080038DB53 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		BB3958C220FF5F9E0038DB53 /* PadingLable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadingLable.swift; sourceTree = "<group>"; };
 		BB3A83A621312BD8001FFE2F /* ContentList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentList.swift; sourceTree = "<group>"; };
+		BB3A83A82132CFAB001FFE2F /* AddFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeedVC.swift; sourceTree = "<group>"; };
 		BB3C1E2E211AE72A00075EEB /* StepTwoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTwoController.swift; sourceTree = "<group>"; };
 		BB3C1E30211B16D100075EEB /* StepThreeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepThreeController.swift; sourceTree = "<group>"; };
 		BB3C1E32211B194B00075EEB /* SplashCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashCV.swift; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 				BB3C1E32211B194B00075EEB /* SplashCV.swift */,
 				BB3C1E37211B984200075EEB /* StepOneVC.swift */,
 				BBB75C882122FDB700C1CAA9 /* DashboardVC.swift */,
+				BB3A83A82132CFAB001FFE2F /* AddFeedVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -193,6 +198,7 @@
 				BB3C1E39211EDBD900075EEB /* LoginResponse.swift */,
 				BBB75C8E212457F000C1CAA9 /* CollectionList.swift */,
 				BB3A83A621312BD8001FFE2F /* ContentList.swift */,
+				BB176C53213333A700F3F79B /* NormalResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -388,6 +394,7 @@
 				BBAE0E2121045B2C00CF4FF2 /* HomeVC.swift in Sources */,
 				BBAE0E2721048C7D00CF4FF2 /* HomeCell.swift in Sources */,
 				BB3C1E33211B194B00075EEB /* SplashCV.swift in Sources */,
+				BB176C54213333A700F3F79B /* NormalResponse.swift in Sources */,
 				BBB75C872122E50F00C1CAA9 /* CardView.swift in Sources */,
 				BBAE0E25210465CB00CF4FF2 /* BaseTabBarController.swift in Sources */,
 				BB4194A321035C8E00823353 /* DetailCell.swift in Sources */,
@@ -413,6 +420,7 @@
 				BBB0D45120FF68AF000CAC15 /* CollectionCell.swift in Sources */,
 				BBAE0E2F2107427100CF4FF2 /* InputTextCell.swift in Sources */,
 				BBAE0E2D2105FCD300CF4FF2 /* Conversation.swift in Sources */,
+				BB3A83A92132CFAB001FFE2F /* AddFeedVC.swift in Sources */,
 				BBB75C8F212457F000C1CAA9 /* CollectionList.swift in Sources */,
 				BB3958C320FF5F9E0038DB53 /* PadingLable.swift in Sources */,
 				BBAB362A211713570031273A /* ProfileVC.swift in Sources */,
