@@ -10,6 +10,9 @@ import UIKit
 import SVProgressHUD
 class AddFeedVC: UIViewController, UITableViewDataSource,UITableViewDelegate{
     
+    @IBAction func imgBackAct(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     @IBOutlet weak var imgProfile: UIImageView!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblrole: UILabel!
