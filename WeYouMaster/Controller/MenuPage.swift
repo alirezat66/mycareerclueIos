@@ -11,7 +11,7 @@ import UIKit
 class MenuPage: UIViewController {
 
     @IBAction func btnBack(_ sender: Any) {
-        self.dismiss(animated: false, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     @IBAction func btnExit(_ sender: Any) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
@@ -22,7 +22,12 @@ class MenuPage: UIViewController {
         
         self.present(splash, animated: true, completion: nil)
     }
+    @IBAction func callToUsBtn(_ sender: Any) {
+       
+        UIApplication.shared.open(URL(string: "https://www.t.me/shafiei83")!, options: [:])
 
+    }
+    
     override func viewDidLoad() {
         
     }
