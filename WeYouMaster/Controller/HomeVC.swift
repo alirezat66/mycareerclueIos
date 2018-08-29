@@ -15,9 +15,17 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     var myContent : [Content] = []
     var isOpenMenu = false
-   
-   
-   
+    
+    
+    @IBOutlet weak var imgNot1: UIButton!
+    @IBOutlet weak var imgNot2: UIButton!
+    @IBOutlet weak var imgNot3: UIButton!
+    @IBOutlet weak var imgNot4: UIButton!
+    @IBOutlet weak var imgNot5: UIButton!
+    @IBOutlet weak var imgNot6: UIButton!
+    @IBOutlet weak var imgNot7: UIButton!
+    @IBOutlet weak var imgNot8: UIButton!
+    @IBOutlet weak var imgNot9: UIButton!
     
     @IBOutlet weak var imgProfile: UIButton!
 
@@ -34,10 +42,26 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         }
     }
     
-
+    func makeButtonCirc(obj : UIButton) {
+        obj.layer.cornerRadius = obj.layer.frame.width/2
+        obj.clipsToBounds = true
+    }
     @IBOutlet weak var homeTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        makeButtonCirc(obj: imgNot1)
+        makeButtonCirc(obj: imgNot2)
+        makeButtonCirc(obj: imgNot3)
+        makeButtonCirc(obj: imgNot4)
+        makeButtonCirc(obj: imgNot5)
+        makeButtonCirc(obj: imgNot6)
+        makeButtonCirc(obj: imgNot7)
+        makeButtonCirc(obj: imgNot8)
+        makeButtonCirc(obj: imgNot9)
+        
+        imgNot1.backgroundColor = UIColor.red
+        imgNot3.backgroundColor = UIColor.blue
         homeTable.dataSource = self
         homeTable.delegate = self
         imgProfile.layer.cornerRadius = imgProfile.frame.size.width/2

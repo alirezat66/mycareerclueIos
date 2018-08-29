@@ -25,8 +25,27 @@ struct Content : Decodable {
     public var additionalSource : String
     public var ownerPic : String
     public var allignment : String // rtl or ltr
-    
-    
+    public var owner_id : String
+    init (){
+        postId = ""
+        fName = ""
+        lName = ""
+        education = ""
+        date = ""
+        location = ""
+        collectionName = ""
+        title = ""
+        contentText = ""
+        contentType = 1
+        linkAddress = ""
+        likeCount  = 0
+        likeByMe = 0
+        imgSource = ""
+        additionalSource = ""
+        ownerPic = ""
+        allignment = ""
+        owner_id=""
+    }
     
     
 }

@@ -48,6 +48,11 @@
 		BBAE0E352107451B00CF4FF2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAE0E342107451B00CF4FF2 /* User.swift */; };
 		BBAE0E3721074B5C00CF4FF2 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAE0E3621074B5C00CF4FF2 /* ChatVC.swift */; };
 		BBAE0E3921075F3F00CF4FF2 /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAE0E3821075F3F00CF4FF2 /* PaddedLabel.swift */; };
+		BBAEA02D2135EA7500B8773C /* LikeCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAEA02C2135EA7500B8773C /* LikeCommentCell.swift */; };
+		BBAEA02F2135EB1900B8773C /* LikeFollow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAEA02E2135EB1900B8773C /* LikeFollow.swift */; };
+		BBAEA0312135ECB300B8773C /* FollowCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAEA0302135ECB300B8773C /* FollowCommentCell.swift */; };
+		BBAEA0332135EDB000B8773C /* CommentLikeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAEA0322135EDB000B8773C /* CommentLikeVC.swift */; };
+		BBAEA0352135EE2900B8773C /* LikeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAEA0342135EE2900B8773C /* LikeList.swift */; };
 		BBB0D44E20FF66A9000CAC15 /* CollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB0D44D20FF66A9000CAC15 /* CollectionVC.swift */; };
 		BBB0D45120FF68AF000CAC15 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB0D45020FF68AF000CAC15 /* CollectionCell.swift */; };
 		BBB0D45320FF701E000CAC15 /* myImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BBB0D45220FF701E000CAC15 /* myImage.jpg */; };
@@ -108,6 +113,11 @@
 		BBAE0E342107451B00CF4FF2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BBAE0E3621074B5C00CF4FF2 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		BBAE0E3821075F3F00CF4FF2 /* PaddedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedLabel.swift; sourceTree = "<group>"; };
+		BBAEA02C2135EA7500B8773C /* LikeCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeCommentCell.swift; sourceTree = "<group>"; };
+		BBAEA02E2135EB1900B8773C /* LikeFollow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeFollow.swift; sourceTree = "<group>"; };
+		BBAEA0302135ECB300B8773C /* FollowCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowCommentCell.swift; sourceTree = "<group>"; };
+		BBAEA0322135EDB000B8773C /* CommentLikeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentLikeVC.swift; sourceTree = "<group>"; };
+		BBAEA0342135EE2900B8773C /* LikeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeList.swift; sourceTree = "<group>"; };
 		BBB0D44D20FF66A9000CAC15 /* CollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionVC.swift; sourceTree = "<group>"; };
 		BBB0D45020FF68AF000CAC15 /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		BBB0D45220FF701E000CAC15 /* myImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = myImage.jpg; sourceTree = "<group>"; };
@@ -195,6 +205,7 @@
 				BB7BE65B21340AC8008EC1F3 /* MenuPage.swift */,
 				BBEDB0CA21355DD9004BE37E /* AboutUsVC.swift */,
 				BBEDB0D0213564C4004BE37E /* QAVC.swift */,
+				BBAEA0322135EDB000B8773C /* CommentLikeVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -213,6 +224,8 @@
 				BB3A83A621312BD8001FFE2F /* ContentList.swift */,
 				BB176C53213333A700F3F79B /* NormalResponse.swift */,
 				BBEDB0CE213563D3004BE37E /* QA.swift */,
+				BBAEA02E2135EB1900B8773C /* LikeFollow.swift */,
+				BBAEA0342135EE2900B8773C /* LikeList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -277,6 +290,8 @@
 				BBAE0E302107428B00CF4FF2 /* OutPutTextCell.swift */,
 				BB3C1E3B211EDE7F00075EEB /* BackendError.swift */,
 				BBEDB0CC21356392004BE37E /* QACell.swift */,
+				BBAEA02C2135EA7500B8773C /* LikeCommentCell.swift */,
+				BBAEA0302135ECB300B8773C /* FollowCommentCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -406,6 +421,7 @@
 			files = (
 				BBB0D45620FF704E000CAC15 /* DataService.swift in Sources */,
 				BBAE0E312107428B00CF4FF2 /* OutPutTextCell.swift in Sources */,
+				BBAEA0332135EDB000B8773C /* CommentLikeVC.swift in Sources */,
 				BBAE0E2121045B2C00CF4FF2 /* HomeVC.swift in Sources */,
 				BBAE0E2721048C7D00CF4FF2 /* HomeCell.swift in Sources */,
 				BB3C1E33211B194B00075EEB /* SplashCV.swift in Sources */,
@@ -424,11 +440,13 @@
 				BBAE0E2B2105FBDF00CF4FF2 /* ConversationCell.swift in Sources */,
 				BBF5F79E2118554500397B7D /* DLRadioButton.m in Sources */,
 				BBAE0E2321045B4A00CF4FF2 /* ConversationVC.swift in Sources */,
+				BBAEA02D2135EA7500B8773C /* LikeCommentCell.swift in Sources */,
 				BBA8963320FC89240098980B /* SignInVC.swift in Sources */,
 				BB3C1E31211B16D100075EEB /* StepThreeController.swift in Sources */,
 				BBAE0E352107451B00CF4FF2 /* User.swift in Sources */,
 				BB3C1E38211B984200075EEB /* StepOneVC.swift in Sources */,
 				BBEDB0CD21356392004BE37E /* QACell.swift in Sources */,
+				BBAEA0352135EE2900B8773C /* LikeList.swift in Sources */,
 				BBAE0E3721074B5C00CF4FF2 /* ChatVC.swift in Sources */,
 				BB3C1E3C211EDE7F00075EEB /* BackendError.swift in Sources */,
 				BB3958C120FF30080038DB53 /* Collection.swift in Sources */,
@@ -436,6 +454,8 @@
 				BB4194A121033FE400823353 /* CollectionDetailVC.swift in Sources */,
 				BB118CAE2115A62400238A85 /* CircleButton.swift in Sources */,
 				BB3958BB20FCB43D0038DB53 /* RoundedButton.swift in Sources */,
+				BBAEA02F2135EB1900B8773C /* LikeFollow.swift in Sources */,
+				BBAEA0312135ECB300B8773C /* FollowCommentCell.swift in Sources */,
 				BBEDB0CF213563D3004BE37E /* QA.swift in Sources */,
 				BBB0D45120FF68AF000CAC15 /* CollectionCell.swift in Sources */,
 				BBAE0E2F2107427100CF4FF2 /* InputTextCell.swift in Sources */,

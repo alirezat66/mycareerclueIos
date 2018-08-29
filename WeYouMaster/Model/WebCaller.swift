@@ -106,6 +106,104 @@ public class WebCaller {
         
         
     }
+    
+    static func getLikes(_ per_page: Int ,_ current_page: Int,_ owner:String , completionHandler: @escaping (LikeList?, Error?) -> Void) {
+        let endpoint = "https://www.weyoumaster.com/api/my_notifications"
+        guard let url = URL(string: endpoint)
+            else {
+                print("Error: cannot create URL")
+                let error = BackendError.urlError(reason: "Could not construct URL")
+                completionHandler(nil, error)
+                return
+        }
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+          let postString = "itemPerPage=" + String(per_page) + "&currentPage=" + String(current_page) + "&owner=" + owner
+        
+         urlRequest.httpBody = postString.data(using: String.Encoding.utf8)
+        
+        
+        let session = URLSession.shared
+        let task = session.dataTask(with: urlRequest, completionHandler: {
+            (data, response, error) in
+            // handle response to request
+            // check for error
+            guard error == nil else {
+                completionHandler(nil, error!)
+                return
+            }
+            // make sure we got data in the response
+            guard let responseData = data else {
+                print("Error: did not receive data")
+                let error = BackendError.objectSerialization(reason: "No data in response")
+                completionHandler(nil, error)
+                return
+            }
+            
+            // parse the result as JSON
+            // then create a Todo from the JSON
+            do {
+                print(responseData)
+                let  contentL  = try JSONDecoder().decode(LikeList.self,from: responseData)
+                completionHandler(contentL,nil)
+                
+            } catch {
+                // error trying to convert the data to JSON using JSONSerialization.jsonObject
+                completionHandler(nil, error)
+                return
+            }
+        })
+        task.resume()
+        
+        
+    }
+    
+    static func likeAndDisLike(_ like_status: Int ,_ liker_id: String,_ postId:String , liked_id : String , completionHandler: @escaping (Int?, Error?) -> Void) {
+        let endpoint = "https://www.weyoumaster.com/api/like_dislike"
+        guard let url = URL(string: endpoint)
+            else {
+                print("Error: cannot create URL")
+                let error = BackendError.urlError(reason: "Could not construct URL")
+                completionHandler(nil, error)
+                return
+        }
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        let postString = "like_status=" + String(like_status) + "&liker_id=" + liker_id + "&postId=" + postId + "&liked_id=" + liked_id
+        urlRequest.httpBody = postString.data(using: String.Encoding.utf8)
+        
+        
+        let session = URLSession.shared
+        let task = session.dataTask(with: urlRequest, completionHandler: {
+            (data, response, error) in
+            // handle response to request
+            // check for error
+            guard error == nil else {
+                completionHandler(nil, error!)
+                return
+            }
+            // make sure we got data in the response
+            guard let responseData = data else {
+                print("Error: did not receive data")
+                let error = BackendError.objectSerialization(reason: "No data in response")
+                completionHandler(nil, error)
+                return
+            }
+            
+            // parse the result as JSON
+            // then create a Todo from the JSON
+            
+                print(responseData)
+                
+                completionHandler(1,nil)
+                
+            
+        })
+        task.resume()
+        
+        
+    }
+    
     static func getLogin(_ email: String ,_ pass: String, completionHandler: @escaping (LoginResponse?, Error?) -> Void) {
         // set up URLRequest with URL
         let endpoint = "https://www.weyoumaster.com/api/login/"

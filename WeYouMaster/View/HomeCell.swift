@@ -11,7 +11,6 @@ import UIKit
 class HomeCell: UITableViewCell {
 
     @IBAction func btnCollection(_ sender: Any) {
-        print(btnCollection.titleLabel?.text)
     }
     @IBOutlet weak var btnCollection: UIButton!
     
@@ -33,6 +32,7 @@ class HomeCell: UITableViewCell {
     
     
     var likeCounter : Int = 0
+    var myContent  : Content = Content()
     var contentText : String = ""
     @IBAction func btnAttach(_ sender: Any) {
         guard let url = URL(string: "https://www.dataplusscience.com/VizConfusion.html") else {
@@ -93,10 +93,13 @@ class HomeCell: UITableViewCell {
     @IBAction func btnLike(_ sender: Any) {
         isLiked = !isLiked
         if isLiked {
+            
+            callLike()
             likeCounter  = likeCounter + 1
             btnLikeOutlet.titleLabel!.font  =  UIFont(name: btnLikeOutlet.titleLabel!.font.fontName, size: 21)!
 
         }else{
+            callDisLike()
             likeCounter = likeCounter - 1
             
             btnLikeOutlet.titleLabel!.font  =  UIFont(name: btnLikeOutlet.titleLabel!.font.fontName, size: 19)!
@@ -104,9 +107,60 @@ class HomeCell: UITableViewCell {
         lblLikeCounter.text = "(" + String( likeCounter) + ")"
     }
     
-    
+    func callLike() {
+        let userDefaults = UserDefaults.standard
+        
+        
+        
+        
+        
+        
+        let owner = userDefaults.value(forKey: "owner") as! String
+        
+        
+        WebCaller.likeAndDisLike(0, owner, myContent.postId , liked_id: myContent.owner_id) { (state, error) in
+            if let error = error{
+                print(error)
+                return
+            }
+            guard let state = state else{
+                print("error getting collections")
+                return
+            }
+            if(state == 1 ){
+                print("like done")
+            }
+        }
+    }
+    func callDisLike() {
+        let userDefaults = UserDefaults.standard
+        
+        
+        
+        
+        
+        
+        let owner = userDefaults.value(forKey: "owner") as! String
+        
+        
+        WebCaller.likeAndDisLike(1, owner, myContent.postId,liked_id: myContent.owner_id) { (state, error) in
+            if let error = error{
+                print(error)
+                return
+            }
+            guard let state = state else{
+                print("error getting collections")
+                return
+            }
+            if(state == 1 ){
+                print("like done")
+            }
+        }
+        
+    }
     @IBOutlet weak var lblCollectionTitle: UILabel!
     public func updateView(content : Content){
+        self.myContent = content
         heightOutlet.constant = 70
         contentText = content.contentText
         if(content.allignment != "rtl"){
