@@ -11,6 +11,9 @@ import SVProgressHUD
 
 class CommentLikeOtherVC: UIViewController, UITableViewDelegate , UITableViewDataSource {
     
+    @IBAction func btnBack(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     @IBOutlet weak var tableView : UITableView!
     var myLikes : [LikeFollow] = []
     override func viewDidLoad() {
@@ -66,7 +69,7 @@ class CommentLikeOtherVC: UIViewController, UITableViewDelegate , UITableViewDat
         
         
         
-        let owner = userDefaults.value(forKey: "owner") as! String
+        let owner = userDefaults.value(forKey: "otherUser") as! String
         
         
         WebCaller.getLikes(20, 1,owner) { (likeList, error) in

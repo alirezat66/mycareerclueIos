@@ -2207,7 +2207,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="درباره ویومستر" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTM-Sc-PjW">
-                                        <rect key="frame" x="194" y="13.000000000000002" width="110" height="30.666666666666671"/>
+                                        <rect key="frame" x="194" y="13.333333333333334" width="110" height="30.333333333333329"/>
                                         <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="19"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -2238,7 +2238,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="چگونه بفروشم؟" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7JZ-h4-Om2">
-                                <rect key="frame" x="84.666666666666686" y="72" width="151" height="40"/>
+                                <rect key="frame" x="85" y="72" width="151" height="40"/>
                                 <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="25"/>
                                 <color key="textColor" red="0.25376215577125549" green="0.0020293910056352615" blue="0.56782013177871704" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -2253,13 +2253,13 @@
                                                 <rect key="frame" x="16" y="8" width="288" height="220"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نحوه فروش در ویومستر" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZK-8y-fPg">
-                                                        <rect key="frame" x="60.666666666666686" y="10" width="168" height="29"/>
+                                                        <rect key="frame" x="60" y="10.000000000000002" width="168" height="28.666666666666671"/>
                                                         <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="18"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="8ec-y3-59K">
-                                                        <rect key="frame" x="8" y="51" width="272" height="157"/>
+                                                        <rect key="frame" x="8" y="50.666666666666643" width="272" height="157.33333333333337"/>
                                                         <string key="text">مجموعه های خود را تولید کنید، به صورت آهسته و پیوسته مشارکت ایجاد کرده و آنها را در مجموعه ها قرار دهید، سپس سیستم بازاریابی فوق مدرن ویومستر مجموعه های شما را به فروش می رساند و پول نقد در حساب PayPal یا حساب بانکی ایران به شما تحویل می هد</string>
                                                         <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -3167,7 +3167,7 @@
                                                                         <constraint firstAttribute="width" constant="60" id="qbB-VD-eOU"/>
                                                                     </constraints>
                                                                     <connections>
-                                                                        <action selector="imageClicked:" destination="GaZ-T3-WdR" eventType="touchUpInside" id="Wu7-hV-D3J"/>
+                                                                        <action selector="imageClicked:" destination="GaZ-T3-WdR" eventType="touchUpInside" id="QP7-Yg-OdK"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
@@ -3439,161 +3439,172 @@
                                         <state key="normal" title="بازگشت" image="left-arrow">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="btnBack:" destination="2eA-to-6mt" eventType="touchUpInside" id="Uev-ep-nFR"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.38981151580810547" green="0.025615619495511055" blue="0.95886391401290894" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="JFk-6a-PxS" firstAttribute="centerY" secondItem="rKz-T5-CcT" secondAttribute="centerY" id="a68-Jg-6gA"/>
-                                    <constraint firstAttribute="height" constant="56" id="bIL-Li-uQ9"/>
+                                    <constraint firstAttribute="height" constant="56" id="aFo-nn-kD0"/>
                                     <constraint firstItem="JFk-6a-PxS" firstAttribute="leading" secondItem="rKz-T5-CcT" secondAttribute="leading" constant="16" id="eFE-cV-O3f"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="56" id="oRt-on-Wft"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JFk-6a-PxS" secondAttribute="trailing" constant="20" symbolic="YES" id="obI-Iz-CGV"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AnN-zi-Ies">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="215" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nko-YB-YCc">
                                 <rect key="frame" x="0.0" y="56" width="414" height="631"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="CollectionCell" rowHeight="217" id="eiw-XS-S9P" customClass="CollectionCellOtherTVC" customModule="WeYouMaster" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="217"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="CollectionCell" rowHeight="215" id="fTB-Vb-YHs" customClass="CollectionCellOtherTVC" customModule="WeYouMaster" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="215"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eiw-XS-S9P" id="g0I-TT-Iil">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="216.66666666666666"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fTB-Vb-YHs" id="cu0-z5-6kW" customClass="CardView" customModule="WeYouMaster" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="214.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7IA-Pv-Mid">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="216.66666666666666"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="33v-nt-ma5" customClass="CardView" customModule="WeYouMaster" customModuleProvider="target">
+                                                    <rect key="frame" x="28" y="15" width="358" height="184.66666666666666"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Lg-6F-hXt">
-                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="106"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mmv-0X-a30">
+                                                            <rect key="frame" x="16" y="0.0" width="326" height="184.66666666666666"/>
                                                             <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="dbf-LZ-QUu">
-                                                                    <rect key="frame" x="8" y="0.0" width="398" height="88.333333333333329"/>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oFf-dQ-YTV">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="326" height="92.333333333333329"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۱۴۰۰۰ تومان" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VnF-QN-C3J">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="78" height="31"/>
-                                                                            <color key="backgroundColor" red="1" green="0.42745098040000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="height" constant="31" id="Gh4-S4-OMj"/>
-                                                                            </constraints>
-                                                                            <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="17"/>
-                                                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="برنامه نویسی آی او اس" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61m-gV-iay">
-                                                                            <rect key="frame" x="0.0" y="31" width="398" height="30.333333333333329"/>
-                                                                            <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="19"/>
-                                                                            <color key="textColor" red="0.1647058824" green="0.34901960780000002" blue="0.42745098040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="( ۱۳۶ مشارکت )" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wC7-oc-8Ec">
-                                                                            <rect key="frame" x="0.0" y="61.333333333333343" width="398" height="27"/>
-                                                                            <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="17"/>
-                                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                    </subviews>
-                                                                    <constraints>
-                                                                        <constraint firstItem="61m-gV-iay" firstAttribute="leading" secondItem="dbf-LZ-QUu" secondAttribute="leading" id="CB0-Kp-bKi"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="wC7-oc-8Ec" secondAttribute="trailing" id="jeS-sQ-jtT"/>
-                                                                        <constraint firstItem="wC7-oc-8Ec" firstAttribute="leading" secondItem="dbf-LZ-QUu" secondAttribute="leading" id="n7G-iU-rwu"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="61m-gV-iay" secondAttribute="trailing" id="xdN-3g-R41"/>
-                                                                    </constraints>
-                                                                </stackView>
-                                                            </subviews>
-                                                            <color key="backgroundColor" white="0.91891818579999995" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <constraints>
-                                                                <constraint firstItem="dbf-LZ-QUu" firstAttribute="leading" secondItem="5Lg-6F-hXt" secondAttribute="leading" constant="8" id="56u-X8-LL3"/>
-                                                                <constraint firstAttribute="height" constant="106" id="WiT-mf-qpp"/>
-                                                                <constraint firstItem="dbf-LZ-QUu" firstAttribute="top" secondItem="5Lg-6F-hXt" secondAttribute="top" id="rKE-ft-VOb"/>
-                                                                <constraint firstAttribute="trailing" secondItem="dbf-LZ-QUu" secondAttribute="trailing" constant="8" id="rgO-UK-FhR"/>
-                                                            </constraints>
-                                                        </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fla-BO-3gH">
-                                                            <rect key="frame" x="0.0" y="106" width="414" height="110.66666666666669"/>
-                                                            <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Pof-Qs-sSb">
-                                                                    <rect key="frame" x="8" y="25.333333333333343" width="398" height="60"/>
-                                                                    <subviews>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="BAA-k5-bmf">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="330" height="60"/>
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="OiV-aY-hre">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="326" height="92.333333333333329"/>
                                                                             <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="الناز محمدی" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XN9-RZ-W2n">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="330" height="33.666666666666664"/>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="251" text="۱۴۰۰۰ تومان" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mC-Tr-FNA">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="131" height="27"/>
+                                                                                    <color key="backgroundColor" red="1" green="0.42745098040000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <constraints>
+                                                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="131" id="Vxg-Ph-BM5"/>
+                                                                                    </constraints>
                                                                                     <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="17"/>
-                                                                                    <nil key="textColor"/>
+                                                                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="شیراز" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbK-r6-xF3">
-                                                                                    <rect key="frame" x="0.0" y="37.666666666666657" width="330" height="22.333333333333329"/>
-                                                                                    <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="14"/>
-                                                                                    <nil key="textColor"/>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="برنامه نویسی آی او اس" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aa4-nw-2eF">
+                                                                                    <rect key="frame" x="0.0" y="31" width="326" height="30.333333333333329"/>
+                                                                                    <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="19"/>
+                                                                                    <color key="textColor" red="0.1647058824" green="0.34901960780000002" blue="0.42745098040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <nil key="highlightedColor"/>
+                                                                                </label>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="( ۱۳۶ مشارکت )" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s4Y-LU-NjA">
+                                                                                    <rect key="frame" x="0.0" y="65.333333333333329" width="326" height="27"/>
+                                                                                    <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="17"/>
+                                                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                             </subviews>
-                                                                        </stackView>
-                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B0a-Yi-oGO">
-                                                                            <rect key="frame" x="338" y="0.0" width="60" height="60"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="height" constant="60" id="89n-e3-yCG"/>
-                                                                                <constraint firstAttribute="width" constant="60" id="qY1-Rb-Bmx"/>
+                                                                                <constraint firstAttribute="trailing" secondItem="aa4-nw-2eF" secondAttribute="trailing" id="0ra-pZ-wdR"/>
+                                                                                <constraint firstItem="s4Y-LU-NjA" firstAttribute="leading" secondItem="OiV-aY-hre" secondAttribute="leading" id="FcU-Fx-PBj"/>
+                                                                                <constraint firstAttribute="trailing" secondItem="s4Y-LU-NjA" secondAttribute="trailing" id="O0M-1g-rQu"/>
+                                                                                <constraint firstItem="aa4-nw-2eF" firstAttribute="leading" secondItem="OiV-aY-hre" secondAttribute="leading" id="YFY-Sw-Qk8"/>
                                                                             </constraints>
-                                                                            <connections>
-                                                                                <action selector="imageClicked:" destination="eiw-XS-S9P" eventType="touchUpInside" id="p0J-qo-CBX"/>
-                                                                            </connections>
-                                                                        </button>
+                                                                        </stackView>
                                                                     </subviews>
-                                                                </stackView>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <constraints>
+                                                                        <constraint firstItem="OiV-aY-hre" firstAttribute="top" secondItem="oFf-dQ-YTV" secondAttribute="top" id="2fg-l6-KcT"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="OiV-aY-hre" secondAttribute="trailing" id="Nva-Xr-spX"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="OiV-aY-hre" secondAttribute="bottom" id="SG6-wX-wDm"/>
+                                                                        <constraint firstItem="OiV-aY-hre" firstAttribute="leading" secondItem="oFf-dQ-YTV" secondAttribute="leading" id="aMI-SA-1Gm"/>
+                                                                    </constraints>
+                                                                </view>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pdj-ku-6n7">
+                                                                    <rect key="frame" x="0.0" y="92.333333333333343" width="326" height="92.333333333333343"/>
+                                                                    <subviews>
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Siy-NN-M3L">
+                                                                            <rect key="frame" x="8" y="16" width="310" height="60"/>
+                                                                            <subviews>
+                                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BWN-zu-jCq">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="244" height="49.333333333333336"/>
+                                                                                    <subviews>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="الناز محمدی" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYt-Qw-Smz">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="244" height="27"/>
+                                                                                            <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="17"/>
+                                                                                            <nil key="textColor"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="شیراز" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdR-FN-bo6">
+                                                                                            <rect key="frame" x="0.0" y="27.000000000000014" width="244" height="22.333333333333329"/>
+                                                                                            <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="14"/>
+                                                                                            <nil key="textColor"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                    </subviews>
+                                                                                </stackView>
+                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bg-Z7-CXA">
+                                                                                    <rect key="frame" x="250" y="0.0" width="60" height="60"/>
+                                                                                    <constraints>
+                                                                                        <constraint firstAttribute="height" constant="60" id="QOW-n5-pE0"/>
+                                                                                        <constraint firstAttribute="width" constant="60" id="aKa-5E-LNq"/>
+                                                                                    </constraints>
+                                                                                    <connections>
+                                                                                        <action selector="imageClicked:" destination="fTB-Vb-YHs" eventType="touchUpInside" id="wxf-C6-HkX"/>
+                                                                                    </connections>
+                                                                                </button>
+                                                                            </subviews>
+                                                                        </stackView>
+                                                                    </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstItem="Siy-NN-M3L" firstAttribute="leading" secondItem="Pdj-ku-6n7" secondAttribute="leading" constant="8" id="4Pc-Q2-Vdj"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="Siy-NN-M3L" secondAttribute="trailing" constant="8" id="BVC-Bo-2wT"/>
+                                                                        <constraint firstItem="Siy-NN-M3L" firstAttribute="centerY" secondItem="Pdj-ku-6n7" secondAttribute="centerY" id="VPc-Fl-hh5"/>
+                                                                    </constraints>
+                                                                </view>
                                                             </subviews>
-                                                            <constraints>
-                                                                <constraint firstAttribute="trailing" secondItem="Pof-Qs-sSb" secondAttribute="trailing" constant="8" id="BZi-Z5-bXy"/>
-                                                                <constraint firstItem="Pof-Qs-sSb" firstAttribute="centerY" secondItem="fla-BO-3gH" secondAttribute="centerY" id="Qrq-Mw-cXt"/>
-                                                                <constraint firstItem="Pof-Qs-sSb" firstAttribute="leading" secondItem="fla-BO-3gH" secondAttribute="leading" constant="8" id="zdB-eB-mfg"/>
-                                                            </constraints>
-                                                        </view>
+                                                        </stackView>
                                                     </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstItem="5Lg-6F-hXt" firstAttribute="top" secondItem="7IA-Pv-Mid" secondAttribute="top" id="Vl0-hU-jvN"/>
+                                                        <constraint firstItem="mmv-0X-a30" firstAttribute="top" secondItem="33v-nt-ma5" secondAttribute="top" id="FJe-H3-chw"/>
+                                                        <constraint firstAttribute="trailing" secondItem="mmv-0X-a30" secondAttribute="trailing" constant="16" id="Pv2-jG-jDX"/>
+                                                        <constraint firstAttribute="bottom" secondItem="mmv-0X-a30" secondAttribute="bottom" id="UxW-na-Heu"/>
+                                                        <constraint firstItem="mmv-0X-a30" firstAttribute="leading" secondItem="33v-nt-ma5" secondAttribute="leading" constant="16" id="kSd-y1-ZYQ"/>
                                                     </constraints>
-                                                </stackView>
+                                                </view>
                                             </subviews>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="7IA-Pv-Mid" secondAttribute="trailing" id="4x8-Wg-nso"/>
-                                                <constraint firstItem="7IA-Pv-Mid" firstAttribute="top" secondItem="g0I-TT-Iil" secondAttribute="top" id="76f-AA-e28"/>
-                                                <constraint firstItem="7IA-Pv-Mid" firstAttribute="leading" secondItem="g0I-TT-Iil" secondAttribute="leading" id="Q02-eu-uIj"/>
-                                                <constraint firstItem="7IA-Pv-Mid" firstAttribute="top" secondItem="g0I-TT-Iil" secondAttribute="top" id="cLp-Ar-27R"/>
-                                                <constraint firstAttribute="trailing" secondItem="7IA-Pv-Mid" secondAttribute="trailing" id="jWd-w1-nnM"/>
-                                                <constraint firstItem="7IA-Pv-Mid" firstAttribute="leading" secondItem="g0I-TT-Iil" secondAttribute="leading" id="pAb-0g-39B"/>
-                                                <constraint firstItem="7IA-Pv-Mid" firstAttribute="centerY" secondItem="g0I-TT-Iil" secondAttribute="centerY" id="uvt-DD-DdT"/>
+                                                <constraint firstItem="33v-nt-ma5" firstAttribute="centerY" secondItem="cu0-z5-6kW" secondAttribute="centerY" id="Cna-FM-GMU"/>
+                                                <constraint firstItem="33v-nt-ma5" firstAttribute="leading" secondItem="cu0-z5-6kW" secondAttribute="leadingMargin" constant="8" id="HIn-yg-xfl"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="33v-nt-ma5" secondAttribute="trailing" constant="8" id="SSY-vC-Ha4"/>
+                                                <constraint firstItem="33v-nt-ma5" firstAttribute="centerX" secondItem="cu0-z5-6kW" secondAttribute="centerX" id="oVk-jD-stJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="collectionNumberFields" destination="wC7-oc-8Ec" id="mfe-FL-Me0"/>
-                                            <outlet property="collectionOwner" destination="XN9-RZ-W2n" id="cWs-Jk-vhZ"/>
-                                            <outlet property="collectionOwnerImage" destination="B0a-Yi-oGO" id="Q9J-d4-Aoa"/>
-                                            <outlet property="collectionOwnerLocation" destination="bbK-r6-xF3" id="B5o-D3-2Jq"/>
-                                            <outlet property="collectionPrice" destination="VnF-QN-C3J" id="dKU-8L-kDG"/>
-                                            <outlet property="collectionTitle" destination="61m-gV-iay" id="TEh-9t-CcL"/>
+                                            <outlet property="collectionNumberFields" destination="s4Y-LU-NjA" id="WL3-K0-C4q"/>
+                                            <outlet property="collectionOwner" destination="uYt-Qw-Smz" id="vAQ-45-fhD"/>
+                                            <outlet property="collectionOwnerImage" destination="1bg-Z7-CXA" id="3p3-uw-fS9"/>
+                                            <outlet property="collectionOwnerLocation" destination="kdR-FN-bo6" id="LVL-UE-TfI"/>
+                                            <outlet property="collectionPrice" destination="0mC-Tr-FNA" id="ycR-Aa-vJY"/>
+                                            <outlet property="collectionTitle" destination="aa4-nw-2eF" id="5CW-ah-w96"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <sections/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="rKz-T5-CcT" firstAttribute="leading" secondItem="SHw-Fd-2ew" secondAttribute="leading" id="3r2-G1-Jjm"/>
-                            <constraint firstItem="rKz-T5-CcT" firstAttribute="trailing" secondItem="SHw-Fd-2ew" secondAttribute="trailing" id="QbQ-Nd-YES"/>
-                            <constraint firstItem="AnN-zi-Ies" firstAttribute="leading" secondItem="SHw-Fd-2ew" secondAttribute="leading" id="W8d-jA-HKR"/>
-                            <constraint firstItem="rKz-T5-CcT" firstAttribute="top" secondItem="MiB-wb-qh9" secondAttribute="top" id="gCz-gg-zun"/>
-                            <constraint firstItem="AnN-zi-Ies" firstAttribute="bottom" secondItem="SHw-Fd-2ew" secondAttribute="bottom" id="gv0-A0-wk9"/>
-                            <constraint firstItem="AnN-zi-Ies" firstAttribute="top" secondItem="rKz-T5-CcT" secondAttribute="bottom" id="nJE-Ao-YXV"/>
-                            <constraint firstItem="AnN-zi-Ies" firstAttribute="trailing" secondItem="SHw-Fd-2ew" secondAttribute="trailing" id="vnq-18-6tO"/>
+                            <constraint firstItem="nko-YB-YCc" firstAttribute="centerX" secondItem="MiB-wb-qh9" secondAttribute="centerX" id="4WT-qy-3Kd"/>
+                            <constraint firstItem="rKz-T5-CcT" firstAttribute="leading" secondItem="SHw-Fd-2ew" secondAttribute="leading" id="Bw2-re-vPY"/>
+                            <constraint firstItem="rKz-T5-CcT" firstAttribute="trailing" secondItem="SHw-Fd-2ew" secondAttribute="trailing" id="aJc-8w-FZQ"/>
+                            <constraint firstItem="rKz-T5-CcT" firstAttribute="top" secondItem="MiB-wb-qh9" secondAttribute="top" id="aQ3-hU-Xxi"/>
+                            <constraint firstItem="nko-YB-YCc" firstAttribute="bottom" secondItem="SHw-Fd-2ew" secondAttribute="bottom" id="alm-yj-kkG"/>
+                            <constraint firstItem="nko-YB-YCc" firstAttribute="top" secondItem="rKz-T5-CcT" secondAttribute="bottom" id="cdy-Dn-p1G"/>
+                            <constraint firstItem="nko-YB-YCc" firstAttribute="leading" secondItem="SHw-Fd-2ew" secondAttribute="leading" id="naY-Lh-duW"/>
+                            <constraint firstItem="nko-YB-YCc" firstAttribute="trailing" secondItem="SHw-Fd-2ew" secondAttribute="trailing" id="uLp-bP-KnU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SHw-Fd-2ew"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="folder" selectedImage="folder" id="NHk-mA-krk"/>
                     <connections>
-                        <outlet property="collectionTV" destination="AnN-zi-Ies" id="uJp-Tc-r5z"/>
+                        <outlet property="collectionTV" destination="nko-YB-YCc" id="njk-u7-nwg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QTq-EI-28k" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3951,6 +3962,9 @@
                                         <state key="normal" title="بازگشت" image="left-arrow">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="btnBack:" destination="mma-n4-kEz" eventType="touchUpInside" id="Dq9-3t-gMk"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.38981151580810547" green="0.025615619495511055" blue="0.95886391401290894" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

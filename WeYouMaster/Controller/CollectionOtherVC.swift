@@ -11,6 +11,9 @@ import SVProgressHUD
 
 class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataSource {
     
+    @IBAction func btnBack(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     var myCollections : [CollectionOther] = []
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myCollections.count
