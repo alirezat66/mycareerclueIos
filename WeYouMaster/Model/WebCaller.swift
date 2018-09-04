@@ -110,6 +110,58 @@ public class WebCaller {
         
         
     }
+    
+    
+    static func getUserFeed(_ per_page: Int ,_ current_page: Int,_ owner :String , completionHandler: @escaping (OtherContentList?, Error?) -> Void) {
+        let endpoint = "https://www.weyoumaster.com/api/my_contributions"
+        guard let url = URL(string: endpoint)
+            else {
+                print("Error: cannot create URL")
+                let error = BackendError.urlError(reason: "Could not construct URL")
+                completionHandler(nil, error)
+                return
+        }
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        let postString = "owner=" + owner
+        urlRequest.httpBody = postString.data(using: String.Encoding.utf8)
+        
+        
+        let session = URLSession.shared
+        let task = session.dataTask(with: urlRequest, completionHandler: {
+            (data, response, error) in
+            // handle response to request
+            // check for error
+            guard error == nil else {
+                completionHandler(nil, error!)
+                return
+            }
+            // make sure we got data in the response
+            guard let responseData = data else {
+                print("Error: did not receive data")
+                let error = BackendError.objectSerialization(reason: "No data in response")
+                completionHandler(nil, error)
+                return
+            }
+            
+            // parse the result as JSON
+            // then create a Todo from the JSON
+            do {
+                print(responseData)
+                let  contentL  = try JSONDecoder().decode(OtherContentList.self,from: responseData)
+                completionHandler(contentL,nil)
+                
+            } catch {
+                // error trying to convert the data to JSON using JSONSerialization.jsonObject
+                completionHandler(nil, error)
+                return
+            }
+        })
+        task.resume()
+        
+        
+    }
+    
     static func getFeedsOfCollection(_ collectionId :String , completionHandler: @escaping (CollectionPost?, Error?) -> Void) {
         let endpoint = "https://www.weyoumaster.com/api/contributions_of_a_collection"
         guard let url = URL(string: endpoint)
@@ -250,6 +302,54 @@ public class WebCaller {
                 
                 completionHandler(1,nil)
                 
+            
+        })
+        task.resume()
+        
+        
+    }
+    
+    
+    
+    static func followDisFollow(_ follow_status: Int ,_ follower_id: String,_ followed_id : String , completionHandler: @escaping (Int?, Error?) -> Void) {
+        let endpoint = "https://www.weyoumaster.com/api/follow_unfollow"
+        guard let url = URL(string: endpoint)
+            else {
+                print("Error: cannot create URL")
+                let error = BackendError.urlError(reason: "Could not construct URL")
+                completionHandler(nil, error)
+                return
+        }
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        let postString = "follow_status=" + String(follow_status) + "&follower_id=" + follower_id + "&followed_id=" + followed_id
+        urlRequest.httpBody = postString.data(using: String.Encoding.utf8)
+        
+        
+        let session = URLSession.shared
+        let task = session.dataTask(with: urlRequest, completionHandler: {
+            (data, response, error) in
+            // handle response to request
+            // check for error
+            guard error == nil else {
+                completionHandler(nil, error!)
+                return
+            }
+            // make sure we got data in the response
+            guard let responseData = data else {
+                print("Error: did not receive data")
+                let error = BackendError.objectSerialization(reason: "No data in response")
+                completionHandler(nil, error)
+                return
+            }
+            
+            // parse the result as JSON
+            // then create a Todo from the JSON
+            
+            print(responseData)
+            
+            completionHandler(1,nil)
+            
             
         })
         task.resume()

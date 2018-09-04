@@ -1,16 +1,17 @@
 //
-//  CommentLikeVC.swift
+//  CommentLikeOtherVC.swift
 //  WeYouMaster
 //
-//  Created by alireza on 8/29/18.
+//  Created by alireza on 9/4/18.
 //  Copyright © 2018 alireza. All rights reserved.
 //
 
 import UIKit
 import SVProgressHUD
-class CommentLikeVC: UIViewController, UITableViewDelegate , UITableViewDataSource {
 
-   @IBOutlet weak var tableView : UITableView!
+class CommentLikeOtherVC: UIViewController, UITableViewDelegate , UITableViewDataSource {
+    
+    @IBOutlet weak var tableView : UITableView!
     var myLikes : [LikeFollow] = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +19,7 @@ class CommentLikeVC: UIViewController, UITableViewDelegate , UITableViewDataSour
         tableView.dataSource = self
         SVProgressHUD.show(withStatus: "لطفا منتظر بمانید ... \n\n")
         getLikes()
-
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         myLikes = []
@@ -27,7 +28,7 @@ class CommentLikeVC: UIViewController, UITableViewDelegate , UITableViewDataSour
         tableView.dataSource = self
         SVProgressHUD.show(withStatus: "لطفا منتظر بمانید ... \n\n")
         getLikes()
-
+        
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myLikes.count
@@ -56,7 +57,7 @@ class CommentLikeVC: UIViewController, UITableViewDelegate , UITableViewDataSour
             return cell
         }
     }
-  
+    
     func getLikes(){
         let userDefaults = UserDefaults.standard
         
@@ -91,4 +92,5 @@ class CommentLikeVC: UIViewController, UITableViewDelegate , UITableViewDataSour
             
         }
     }
+
 }

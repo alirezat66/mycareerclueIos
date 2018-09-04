@@ -22,11 +22,20 @@ class ProfileOtherVC: UIViewController {
     var getRole = String()
     var getImage = String()
     var profileId = String()
+    var followedByMe = Int()
     @IBAction func backPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func followPressed(_ sender: Any) {
+        if(followedByMe==0){
+            follow()
+        }else{
+            unFollow()
+        }
     }
+  
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         lblName.text = getName
@@ -49,7 +58,75 @@ class ProfileOtherVC: UIViewController {
                 }
             }
         }
+        if(followedByMe==0){
+            btnFollowOutlet.setTitle("رصد کن", for: .normal)
+        }else{
+            btnFollowOutlet.setTitle("در حال رصد", for: .normal)
+        }
+    }
+    
+  
+    @IBAction func btnActions(_ sender: Any) {
         
+        let userDefaults = UserDefaults.standard
+        let a = profileId
+        userDefaults.set(profileId, forKey: "otherUser")
+        
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let home = storyBoard.instantiateViewController(withIdentifier: "BaseTwo") as! BaseTabBarController
+        
+        self.present(home, animated: true, completion: nil)
+    }
+    func follow() {
+        let userDefaults = UserDefaults.standard
+        let owner = userDefaults.value(forKey: "owner") as! String
+        WebCaller.followDisFollow(0, owner, profileId) { (state, error) in
+            if let error = error{
+                print(error)
+                return
+            }
+            guard let state = state else{
+                print("error getting collections")
+                return
+            }
+            if(state == 1 ){
+                
+                
+                DispatchQueue.main.async(execute: { () -> Void in
+                    self.followedByMe  = 1
+                    self.btnFollowOutlet.setTitle("در حال رصد", for: .normal)
+                    print("follow ok")
+                })
+                
+            }
+        }
+    }
+    
+    
+    func unFollow() {
+        let userDefaults = UserDefaults.standard
+        let owner = userDefaults.value(forKey: "owner") as! String
+        WebCaller.followDisFollow(1, owner, profileId) { (state, error) in
+            if let error = error{
+                print(error)
+                return
+            }
+            guard let state = state else{
+                print("error getting collections")
+                return
+            }
+            if(state == 1 ){
+                
+                
+                DispatchQueue.main.async(execute: { () -> Void in
+                    self.followedByMe  = 0
+                    self.btnFollowOutlet.setTitle("رصد کن", for: .normal)
+                    print("unFollow ok")
+
+                })
+                
+            }
+        }
     }
 
 }
