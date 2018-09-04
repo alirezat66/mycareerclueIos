@@ -36,6 +36,10 @@
 		BB968CE3213EAF16009DE929 /* OtherContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB968CE2213EAF16009DE929 /* OtherContent.swift */; };
 		BB968CE5213EB034009DE929 /* OtherContentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB968CE4213EB034009DE929 /* OtherContentList.swift */; };
 		BB968CE7213EB207009DE929 /* HomeOtherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB968CE6213EB207009DE929 /* HomeOtherCell.swift */; };
+		BB968CE9213EBA84009DE929 /* CollectionOther.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB968CE8213EBA84009DE929 /* CollectionOther.swift */; };
+		BB968CEB213EBB76009DE929 /* CollectionCellOtherTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB968CEA213EBB76009DE929 /* CollectionCellOtherTVC.swift */; };
+		BB968CED213EBDD6009DE929 /* ListOfCollectionOther.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB968CEC213EBDD6009DE929 /* ListOfCollectionOther.swift */; };
+		BB968CEF213EC007009DE929 /* CollectionOtherList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB968CEE213EC007009DE929 /* CollectionOtherList.swift */; };
 		BBA8963120FC89240098980B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8963020FC89240098980B /* AppDelegate.swift */; };
 		BBA8963320FC89240098980B /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8963220FC89240098980B /* SignInVC.swift */; };
 		BBA8963620FC89240098980B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBA8963420FC89240098980B /* Main.storyboard */; };
@@ -110,6 +114,10 @@
 		BB968CE2213EAF16009DE929 /* OtherContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherContent.swift; sourceTree = "<group>"; };
 		BB968CE4213EB034009DE929 /* OtherContentList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherContentList.swift; sourceTree = "<group>"; };
 		BB968CE6213EB207009DE929 /* HomeOtherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeOtherCell.swift; sourceTree = "<group>"; };
+		BB968CE8213EBA84009DE929 /* CollectionOther.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionOther.swift; sourceTree = "<group>"; };
+		BB968CEA213EBB76009DE929 /* CollectionCellOtherTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCellOtherTVC.swift; sourceTree = "<group>"; };
+		BB968CEC213EBDD6009DE929 /* ListOfCollectionOther.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfCollectionOther.swift; sourceTree = "<group>"; };
+		BB968CEE213EC007009DE929 /* CollectionOtherList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionOtherList.swift; sourceTree = "<group>"; };
 		BBA8962D20FC89240098980B /* WeYouMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeYouMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBA8963020FC89240098980B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBA8963220FC89240098980B /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -232,6 +240,7 @@
 				BBF1317C213E17C600B49D11 /* ProfileOtherVC.swift */,
 				BB968CDC213EA60D009DE929 /* CommentLikeOtherVC.swift */,
 				BB968CDE213EA628009DE929 /* CollectionOtherVC.swift */,
+				BB968CEC213EBDD6009DE929 /* ListOfCollectionOther.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -257,6 +266,8 @@
 				BBF1317A213D6A2000B49D11 /* CollectionCollect.swift */,
 				BB968CE2213EAF16009DE929 /* OtherContent.swift */,
 				BB968CE4213EB034009DE929 /* OtherContentList.swift */,
+				BB968CE8213EBA84009DE929 /* CollectionOther.swift */,
+				BB968CEE213EC007009DE929 /* CollectionOtherList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -325,6 +336,7 @@
 				BBAEA0302135ECB300B8773C /* FollowCommentCell.swift */,
 				BBF13172213D5D4300B49D11 /* OtherFeed.swift */,
 				BB968CE6213EB207009DE929 /* HomeOtherCell.swift */,
+				BB968CEA213EBB76009DE929 /* CollectionCellOtherTVC.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -463,6 +475,7 @@
 				BB3C1E33211B194B00075EEB /* SplashCV.swift in Sources */,
 				BB176C54213333A700F3F79B /* NormalResponse.swift in Sources */,
 				BBEDB0D1213564C4004BE37E /* QAVC.swift in Sources */,
+				BB968CEF213EC007009DE929 /* CollectionOtherList.swift in Sources */,
 				BBB75C872122E50F00C1CAA9 /* CardView.swift in Sources */,
 				BB7BE65C21340AC8008EC1F3 /* MenuPage.swift in Sources */,
 				BBAE0E25210465CB00CF4FF2 /* BaseTabBarController.swift in Sources */,
@@ -483,6 +496,7 @@
 				BBA8963320FC89240098980B /* SignInVC.swift in Sources */,
 				BB3C1E31211B16D100075EEB /* StepThreeController.swift in Sources */,
 				BBAE0E352107451B00CF4FF2 /* User.swift in Sources */,
+				BB968CED213EBDD6009DE929 /* ListOfCollectionOther.swift in Sources */,
 				BB3C1E38211B984200075EEB /* StepOneVC.swift in Sources */,
 				BBF1317B213D6A2000B49D11 /* CollectionCollect.swift in Sources */,
 				BBEDB0CD21356392004BE37E /* QACell.swift in Sources */,
@@ -503,6 +517,7 @@
 				BBAE0E2F2107427100CF4FF2 /* InputTextCell.swift in Sources */,
 				BBAE0E2D2105FCD300CF4FF2 /* Conversation.swift in Sources */,
 				BB3A83A92132CFAB001FFE2F /* AddFeedVC.swift in Sources */,
+				BB968CEB213EBB76009DE929 /* CollectionCellOtherTVC.swift in Sources */,
 				BBB75C8F212457F000C1CAA9 /* CollectionList.swift in Sources */,
 				BB968CDD213EA60D009DE929 /* CommentLikeOtherVC.swift in Sources */,
 				BB3958C320FF5F9E0038DB53 /* PadingLable.swift in Sources */,
@@ -514,6 +529,7 @@
 				BB968CE7213EB207009DE929 /* HomeOtherCell.swift in Sources */,
 				BB4194A521035E5400823353 /* Content.swift in Sources */,
 				BB3C1E3A211EDBD900075EEB /* LoginResponse.swift in Sources */,
+				BB968CE9213EBA84009DE929 /* CollectionOther.swift in Sources */,
 				BB118CB02115BF5B00238A85 /* LockVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

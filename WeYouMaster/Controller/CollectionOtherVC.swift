@@ -11,14 +11,14 @@ import SVProgressHUD
 
 class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataSource {
     
-    var myCollections : [Collection] = []
+    var myCollections : [CollectionOther] = []
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myCollections.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionCell") as? CollectionCell{
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionCell") as? CollectionCellOtherTVC{
             let collection = myCollections[indexPath.row]
             cell.updateView(collection:collection)
            
@@ -59,7 +59,9 @@ class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataS
     }
     
     func getCloolections(){
-        WebCaller.getCollection(20,1,owner: "24",userId: "-1") { (collections , error) in
+        let userDefaults = UserDefaults.standard
+        let owner = userDefaults.value(forKey: "otherUser") as! String
+        WebCaller.getCollectionOther(20,1,owner: "24",userId: owner) { (collections , error) in
             if let error = error{
                 print(error)
                 return
@@ -70,7 +72,7 @@ class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataS
             }
             
             
-            for collect in collections.records{
+            for collect in collections.collections{
                 self.myCollections.append(collect)
             }
             self.updateUI()

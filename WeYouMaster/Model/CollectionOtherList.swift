@@ -1,5 +1,5 @@
 //
-//  OtherContentList.swift
+//  CollectionOtherList.swift
 //  WeYouMaster
 //
 //  Created by alireza on 9/4/18.
@@ -7,6 +7,6 @@
 //
 
 import Foundation
-struct OtherContentList : Decodable {
-    public var records : [OtherContent]
+struct CollectionOtherList : Decodable {
+    public var collections : [CollectionOther]
 }
