@@ -10,17 +10,24 @@ import UIKit
 
 class CollectionCell: UITableViewCell {
 
-    
+    var onButtonTapped : (() -> Void)? = nil
     @IBOutlet weak var collectionTitle : UILabel!
     @IBOutlet weak var collectionNumberFields : UILabel!
     @IBOutlet weak var collectionOwner : UILabel!
     @IBOutlet weak var collectionOwnerLocation : UILabel!
-    @IBOutlet weak var collectionOwnerImage : UIImageView!
+    @IBOutlet weak var collectionOwnerImage : UIButton!
     @IBOutlet weak var collectionPrice : UILabel!
     override func layoutSubviews() {
         super.layoutSubviews()
         contentView.frame = UIEdgeInsetsInsetRect(contentView.frame, UIEdgeInsetsMake(8, 8, 8, 8))
     }
+    @IBAction func imageClicked(_ sender: Any) {
+        
+        if let onButtonTapped = self.onButtonTapped {
+            onButtonTapped()
+        }
+    }
+    
     func updateView(collection : Collection)  {
        // collectionOwnerImage.image = UIImage(named: collection.img)
         
@@ -37,7 +44,7 @@ class CollectionCell: UITableViewCell {
             if let data = try? Data(contentsOf: url!) {
                 if let image = UIImage(data: data) {
                     DispatchQueue.main.async {
-                        self?.collectionOwnerImage.image = image
+                        self?.collectionOwnerImage.setBackgroundImage(image, for: .normal)
                     }
                 }
             }
@@ -60,5 +67,10 @@ class CollectionCell: UITableViewCell {
         }
         collectionOwnerLocation.text = collection.ownerDegree
         collectionPrice.text = price
+        
+        
+      
+        
     }
+   
 }

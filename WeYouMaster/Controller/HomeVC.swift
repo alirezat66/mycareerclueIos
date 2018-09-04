@@ -104,7 +104,10 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     }
 
     func getFeeds(){
-        WebCaller.getFeeds(20, 1) { (contents, error) in
+        let userDefaults = UserDefaults.standard
+        let owner = userDefaults.value(forKey: "owner") as! String
+        WebCaller.getFeeds(50, 1,owner
+        ) { (contents, error) in
             if let error = error{
                 print(error)
                 return

@@ -118,7 +118,7 @@ class HomeCell: UITableViewCell {
         let owner = userDefaults.value(forKey: "owner") as! String
         
         
-        WebCaller.likeAndDisLike(0, owner, myContent.postId , liked_id: myContent.owner_id) { (state, error) in
+        WebCaller.likeAndDisLike(0, owner, myContent.postId! , liked_id: myContent.owner_id!) { (state, error) in
             if let error = error{
                 print(error)
                 return
@@ -143,7 +143,7 @@ class HomeCell: UITableViewCell {
         let owner = userDefaults.value(forKey: "owner") as! String
         
         
-        WebCaller.likeAndDisLike(1, owner, myContent.postId,liked_id: myContent.owner_id) { (state, error) in
+        WebCaller.likeAndDisLike(1, owner, myContent.postId!,liked_id: myContent.owner_id!) { (state, error) in
             if let error = error{
                 print(error)
                 return
@@ -162,7 +162,7 @@ class HomeCell: UITableViewCell {
     public func updateView(content : Content){
         self.myContent = content
         heightOutlet.constant = 70
-        contentText = content.contentText
+        contentText = content.contentText!
         if(content.allignment != "rtl"){
             lblTitle.textAlignment = .left
             lblContent.textAlignment = .left
@@ -182,7 +182,7 @@ class HomeCell: UITableViewCell {
         if(content.ownerPic != "")
         {
             self.loader.startAnimating()
-            let url = URL(string : content.ownerPic)
+            let url = URL(string : content.ownerPic!)
             
             DispatchQueue.global().async { [weak self] in
                 if let data = try? Data(contentsOf: url!) {
@@ -208,16 +208,16 @@ class HomeCell: UITableViewCell {
         }
         imgPerson.layer.cornerRadius = imgPerson.frame.size.width/2
         imgPerson.clipsToBounds = true
-        let name = content.fName + " " + content.lName
+        let name = content.fName! + " " + content.lName!
         lblOwner.text = name
         lblTitle.text = content.title
         btnCollection.setTitle(content.collectionName, for: .normal)
 
         lblEducation.text = content.education
-        lblPlaceAndTime.text = content.date + " | " +  content.location
+        lblPlaceAndTime.text = content.date! + " | " +  content.location!
         lblContent.text = content.contentText
-        likeCounter = content.likeCount
-        lblLikeCounter.text = "(" + String( content.likeCount) + ")"
+        likeCounter = content.likeCount!
+        lblLikeCounter.text = "(" + String( content.likeCount!) + ")"
         if(content.likeByMe==1){
             isLiked = true
         }else{
@@ -229,7 +229,7 @@ class HomeCell: UITableViewCell {
             btnLikeOutlet.titleLabel!.font  =  UIFont(name: btnLikeOutlet.titleLabel!.font.fontName, size: 19)!
             
         }
-        if(content.contentText.count>200){
+        if(content.contentText!.count>200){
             btnMoreOutLet.isHidden = false
         }else{
             btnMoreOutLet.isHidden = true
@@ -237,7 +237,7 @@ class HomeCell: UITableViewCell {
         }
         
         if content.contentType == 2 {
-            imageFromServerURL(urlString: content.imgSource)
+            imageFromServerURL(urlString: content.imgSource!)
             
         }else {
             imgConstrant.constant = 0

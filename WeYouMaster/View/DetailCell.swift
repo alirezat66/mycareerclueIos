@@ -50,7 +50,7 @@ class DetailCell: UITableViewCell {
             btnOutlet.isEnabled = false
         
         if content.contentType == 2 {
-            imageFromServerURL(urlString: content.imgSource)
+            imageFromServerURL(urlString: content.imgSource!)
             
         }else {
             viewImageConstraint.constant = 0

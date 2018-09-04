@@ -9,7 +9,9 @@
 import Foundation
 public class WebCaller {
     
-    static func getCollection(completionHandler: @escaping (CollectionList?, Error?) -> Void){
+    static func getCollection(_ items_per_page : Int ,_ startPage :Int ,
+                              owner : String  , userId : String ,
+                              completionHandler: @escaping (CollectionList?, Error?) -> Void){
         let endpoint = "https://www.weyoumaster.com/api/collections/"
         
         guard let url = URL(string: endpoint)
@@ -21,7 +23,8 @@ public class WebCaller {
         }
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
-        let postString = ""
+        let postString = "items_per_page=" + String(items_per_page) + "&startPage=" + String(startPage) +
+            "&owner=" + owner  + "&userId=" + userId
         urlRequest.httpBody = postString.data(using: String.Encoding.utf8)
         
         // Make request
@@ -57,7 +60,7 @@ public class WebCaller {
         })
         task.resume()
     }
-    static func getFeeds(_ per_page: Int ,_ current_page: Int, completionHandler: @escaping (ContentList?, Error?) -> Void) {
+    static func getFeeds(_ per_page: Int ,_ current_page: Int,_ viewer_id :String , completionHandler: @escaping (ContentList?, Error?) -> Void) {
         let endpoint = "https://www.weyoumaster.com/api/feed"
         guard let url = URL(string: endpoint)
             else {
@@ -68,8 +71,9 @@ public class WebCaller {
         }
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
-      /*  let postString = "itemPerPage=" + String(per_page) + "&currentPage=" + String(current_page)
-        urlRequest.httpBody = postString.data(using: String.Encoding.utf8)*/
+        let postString = "itemPerPage=" + String(per_page) + "&currentPage=" + String(current_page) +
+            "&viewer_id=" + viewer_id
+        urlRequest.httpBody = postString.data(using: String.Encoding.utf8)
         
         
         let session = URLSession.shared
@@ -106,7 +110,56 @@ public class WebCaller {
         
         
     }
-    
+    static func getFeedsOfCollection(_ collectionId :String , completionHandler: @escaping (CollectionPost?, Error?) -> Void) {
+        let endpoint = "https://www.weyoumaster.com/api/contributions_of_a_collection"
+        guard let url = URL(string: endpoint)
+            else {
+                print("Error: cannot create URL")
+                let error = BackendError.urlError(reason: "Could not construct URL")
+                completionHandler(nil, error)
+                return
+        }
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        let postString = "collectionId=" + collectionId
+        urlRequest.httpBody = postString.data(using: String.Encoding.utf8)
+        
+        
+        let session = URLSession.shared
+        let task = session.dataTask(with: urlRequest, completionHandler: {
+            (data, response, error) in
+            // handle response to request
+            // check for error
+            guard error == nil else {
+                completionHandler(nil, error!)
+                return
+            }
+            // make sure we got data in the response
+            guard let responseData = data else {
+                print("Error: did not receive data")
+                let error = BackendError.objectSerialization(reason: "No data in response")
+                completionHandler(nil, error)
+                return
+            }
+            
+            // parse the result as JSON
+            // then create a Todo from the JSON
+            do {
+                print(responseData)
+                let  collectionPost  = try JSONDecoder().decode(CollectionPost.self,from: responseData)
+            
+                completionHandler(collectionPost,nil)
+                
+            } catch {
+                // error trying to convert the data to JSON using JSONSerialization.jsonObject
+                completionHandler(nil, error)
+                return
+            }
+        })
+        task.resume()
+        
+        
+    }
     static func getLikes(_ per_page: Int ,_ current_page: Int,_ owner:String , completionHandler: @escaping (LikeList?, Error?) -> Void) {
         let endpoint = "https://www.weyoumaster.com/api/my_notifications"
         guard let url = URL(string: endpoint)

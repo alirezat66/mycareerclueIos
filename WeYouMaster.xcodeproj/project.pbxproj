@@ -64,6 +64,11 @@
 		BBEDB0CD21356392004BE37E /* QACell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEDB0CC21356392004BE37E /* QACell.swift */; };
 		BBEDB0CF213563D3004BE37E /* QA.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEDB0CE213563D3004BE37E /* QA.swift */; };
 		BBEDB0D1213564C4004BE37E /* QAVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEDB0D0213564C4004BE37E /* QAVC.swift */; };
+		BBF13173213D5D4300B49D11 /* OtherFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF13172213D5D4300B49D11 /* OtherFeed.swift */; };
+		BBF13177213D697F00B49D11 /* CollectionPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF13176213D697F00B49D11 /* CollectionPost.swift */; };
+		BBF13179213D69C800B49D11 /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF13178213D69C800B49D11 /* Posts.swift */; };
+		BBF1317B213D6A2000B49D11 /* CollectionCollect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF1317A213D6A2000B49D11 /* CollectionCollect.swift */; };
+		BBF1317D213E17C600B49D11 /* ProfileOtherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF1317C213E17C600B49D11 /* ProfileOtherVC.swift */; };
 		BBF5F79E2118554500397B7D /* DLRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF5F79D2118554500397B7D /* DLRadioButton.m */; };
 /* End PBXBuildFile section */
 
@@ -129,6 +134,11 @@
 		BBEDB0CC21356392004BE37E /* QACell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QACell.swift; sourceTree = "<group>"; };
 		BBEDB0CE213563D3004BE37E /* QA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QA.swift; sourceTree = "<group>"; };
 		BBEDB0D0213564C4004BE37E /* QAVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAVC.swift; sourceTree = "<group>"; };
+		BBF13172213D5D4300B49D11 /* OtherFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherFeed.swift; sourceTree = "<group>"; };
+		BBF13176213D697F00B49D11 /* CollectionPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPost.swift; sourceTree = "<group>"; };
+		BBF13178213D69C800B49D11 /* Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
+		BBF1317A213D6A2000B49D11 /* CollectionCollect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCollect.swift; sourceTree = "<group>"; };
+		BBF1317C213E17C600B49D11 /* ProfileOtherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOtherVC.swift; sourceTree = "<group>"; };
 		BBF5F795211850DC00397B7D /* WeYouMaster-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WeYouMaster-Bridging-Header.h"; sourceTree = "<group>"; };
 		BBF5F79C2118554500397B7D /* DLRadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DLRadioButton.h; path = "../../../Downloads/DLRadioButton-master/DLRadioButton/DLRadioButton.h"; sourceTree = "<group>"; };
 		BBF5F79D2118554500397B7D /* DLRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DLRadioButton.m; path = "../../../Downloads/DLRadioButton-master/DLRadioButton/DLRadioButton.m"; sourceTree = "<group>"; };
@@ -206,6 +216,7 @@
 				BBEDB0CA21355DD9004BE37E /* AboutUsVC.swift */,
 				BBEDB0D0213564C4004BE37E /* QAVC.swift */,
 				BBAEA0322135EDB000B8773C /* CommentLikeVC.swift */,
+				BBF1317C213E17C600B49D11 /* ProfileOtherVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -226,6 +237,9 @@
 				BBEDB0CE213563D3004BE37E /* QA.swift */,
 				BBAEA02E2135EB1900B8773C /* LikeFollow.swift */,
 				BBAEA0342135EE2900B8773C /* LikeList.swift */,
+				BBF13176213D697F00B49D11 /* CollectionPost.swift */,
+				BBF13178213D69C800B49D11 /* Posts.swift */,
+				BBF1317A213D6A2000B49D11 /* CollectionCollect.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -292,6 +306,7 @@
 				BBEDB0CC21356392004BE37E /* QACell.swift */,
 				BBAEA02C2135EA7500B8773C /* LikeCommentCell.swift */,
 				BBAEA0302135ECB300B8773C /* FollowCommentCell.swift */,
+				BBF13172213D5D4300B49D11 /* OtherFeed.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -436,16 +451,21 @@
 				BBB75C892122FDB700C1CAA9 /* DashboardVC.swift in Sources */,
 				BBAE0E3921075F3F00CF4FF2 /* PaddedLabel.swift in Sources */,
 				BB3A83A721312BD9001FFE2F /* ContentList.swift in Sources */,
+				BBF13179213D69C800B49D11 /* Posts.swift in Sources */,
+				BBF1317D213E17C600B49D11 /* ProfileOtherVC.swift in Sources */,
 				BBAE0E332107433800CF4FF2 /* Message.swift in Sources */,
 				BBAE0E2B2105FBDF00CF4FF2 /* ConversationCell.swift in Sources */,
 				BBF5F79E2118554500397B7D /* DLRadioButton.m in Sources */,
 				BBAE0E2321045B4A00CF4FF2 /* ConversationVC.swift in Sources */,
+				BBF13177213D697F00B49D11 /* CollectionPost.swift in Sources */,
 				BBAEA02D2135EA7500B8773C /* LikeCommentCell.swift in Sources */,
 				BBA8963320FC89240098980B /* SignInVC.swift in Sources */,
 				BB3C1E31211B16D100075EEB /* StepThreeController.swift in Sources */,
 				BBAE0E352107451B00CF4FF2 /* User.swift in Sources */,
 				BB3C1E38211B984200075EEB /* StepOneVC.swift in Sources */,
+				BBF1317B213D6A2000B49D11 /* CollectionCollect.swift in Sources */,
 				BBEDB0CD21356392004BE37E /* QACell.swift in Sources */,
+				BBF13173213D5D4300B49D11 /* OtherFeed.swift in Sources */,
 				BBAEA0352135EE2900B8773C /* LikeList.swift in Sources */,
 				BBAE0E3721074B5C00CF4FF2 /* ChatVC.swift in Sources */,
 				BB3C1E3C211EDE7F00075EEB /* BackendError.swift in Sources */,
