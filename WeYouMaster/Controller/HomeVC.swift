@@ -29,10 +29,20 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     @IBOutlet weak var imgProfile: UIButton!
 
+    var refreshControll : UIRefreshControl?
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myContent.count
     }
-    
+    func addRefreshControl() {
+        refreshControll = UIRefreshControl()
+        refreshControll?.tintColor = UIColor.purple
+        refreshControll?.addTarget(self, action: #selector(refreshList), for: .valueChanged)
+        homeTable.addSubview(refreshControll!)
+    }
+    @objc func refreshList(){
+        getFeeds()
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let content = myContent[indexPath.row]
         if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell") as? HomeCell {
@@ -87,6 +97,7 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         imgNot3.backgroundColor = UIColor.blue
         homeTable.dataSource = self
         homeTable.delegate = self
+        homeTable.tableFooterView = UIView.init(frame : .zero)
         imgProfile.layer.cornerRadius = imgProfile.frame.size.width/2
         imgProfile.clipsToBounds = true
         
@@ -121,17 +132,22 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         SVProgressHUD.show(withStatus: "لطفا منتظر بمانید ... \n\n")
         
         getFeeds()
+        addRefreshControl()
     }
     func getFeeds(){
         let userDefaults = UserDefaults.standard
         let owner = userDefaults.value(forKey: "owner") as! String
         WebCaller.getFeeds(50, 1,owner
-        ) { (contents, error) in
+        ) {
+            
+            (contents, error) in
             if let error = error{
+                self.updateError()
                 print(error)
                 return
             }
             guard let contentList = contents else{
+                self.updateError()
                 print("error getting collections")
                 return
             }
@@ -142,9 +158,16 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         }
     }
     
+    func updateError(){
+         DispatchQueue.main.async{
+        SVProgressHUD.dismiss()
+            self.refreshControll?.endRefreshing()
+        }
+    }
     func updateUI(){
         DispatchQueue.main.async{
             self.homeTable.reloadData()
+            self.refreshControll?.endRefreshing()
             SVProgressHUD.dismiss()
             //self.alertController.dismiss(animated: true, completion: nil);
             

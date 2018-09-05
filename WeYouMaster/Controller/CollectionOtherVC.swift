@@ -14,6 +14,17 @@ class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataS
     @IBAction func btnBack(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    var refreshControll : UIRefreshControl?
+    
+    func addRefreshControl() {
+        refreshControll = UIRefreshControl()
+        refreshControll?.tintColor = UIColor.purple
+        refreshControll?.addTarget(self, action: #selector(refreshList), for: .valueChanged)
+        collectionTV.addSubview(refreshControll!)
+    }
+    @objc func refreshList(){
+        getCloolections()
+    }
     var myCollections : [CollectionOther] = []
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myCollections.count
@@ -45,18 +56,13 @@ class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataS
     @IBOutlet weak var collectionTV :UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        addRefreshControl()
         
     }
     override func viewDidAppear(_ animated: Bool) {
-        
-        
         myCollections = []
-        
-        updateUI()
-        
         collectionTV.dataSource = self
         collectionTV.delegate = self
-        
         SVProgressHUD.show(withStatus: "لطفا منتظر بمانید ... \n\n")
         getCloolections()
     }
@@ -66,10 +72,12 @@ class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataS
         let owner = userDefaults.value(forKey: "otherUser") as! String
         WebCaller.getCollectionOther(20,1,owner: "24",userId: owner) { (collections , error) in
             if let error = error{
+                self.updateError()
                 print(error)
                 return
             }
             guard let collections = collections else{
+                self.updateError()
                 print("error getting collections")
                 return
             }
@@ -89,6 +97,15 @@ class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataS
         DispatchQueue.main.async{
             self.collectionTV.reloadData()
             SVProgressHUD.dismiss()
+            self.refreshControll?.endRefreshing()
+        }
+    }
+    func updateError(){
+        DispatchQueue.main.async{
+            SVProgressHUD.dismiss()
+            self.refreshControll?.endRefreshing()
+
+            
         }
     }
     public func openDetail(city : String , name : String ,title : String , image : String ,collectionId : String){

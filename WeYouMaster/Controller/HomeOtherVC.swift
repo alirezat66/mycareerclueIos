@@ -16,8 +16,17 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     var myContent : [OtherContent] = []
     var isOpenMenu = false
     
-    
-   
+    var refreshControll : UIRefreshControl?
+
+    func addRefreshControl() {
+        refreshControll = UIRefreshControl()
+        refreshControll?.tintColor = UIColor.purple
+        refreshControll?.addTarget(self, action: #selector(refreshList), for: .valueChanged)
+        homeTable.addSubview(refreshControll!)
+    }
+    @objc func refreshList(){
+        getFeeds()
+    }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,17 +65,12 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var homeTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        
-        
+        addRefreshControl()
     }
     override func viewDidAppear(_ animated: Bool) {
         
         myContent = []
-        updateUI()
-         homeTable.dataSource = self
+        homeTable.dataSource = self
         homeTable.delegate = self
       
         
@@ -104,6 +108,17 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         DispatchQueue.main.async{
             self.homeTable.reloadData()
             SVProgressHUD.dismiss()
+            self.refreshControll?.endRefreshing()
+
+            //self.alertController.dismiss(animated: true, completion: nil);
+            
+        }
+    }
+    func updateError(){
+        DispatchQueue.main.async{
+            self.homeTable.reloadData()
+            SVProgressHUD.dismiss()
+            self.refreshControll?.endRefreshing()
             //self.alertController.dismiss(animated: true, completion: nil);
             
         }

@@ -12,12 +12,20 @@ class CommentLikeVC: UIViewController, UITableViewDelegate , UITableViewDataSour
 
    @IBOutlet weak var tableView : UITableView!
     var myLikes : [LikeFollow] = []
+    var refreshControll : UIRefreshControl?
+    func addRefreshControl() {
+        refreshControll = UIRefreshControl()
+        refreshControll?.tintColor = UIColor.purple
+        refreshControll?.addTarget(self, action: #selector(refreshList), for: .valueChanged)
+        tableView.addSubview(refreshControll!)
+    }
+    @objc func refreshList(){
+        getLikes()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
-        SVProgressHUD.show(withStatus: "لطفا منتظر بمانید ... \n\n")
-        getLikes()
+       
+        addRefreshControl()
 
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -71,10 +79,12 @@ class CommentLikeVC: UIViewController, UITableViewDelegate , UITableViewDataSour
         WebCaller.getLikes(20, 1,owner) { (likeList, error) in
             if let error = error{
                 print(error)
+                self.updateError()
                 return
             }
             guard let likes = likeList else{
                 print("error getting collections")
+                self.updateError()
                 return
             }
             for like in (likes.records) {
@@ -83,10 +93,20 @@ class CommentLikeVC: UIViewController, UITableViewDelegate , UITableViewDataSour
             self.updateUI()
         }
     }
+    func updateError(){
+        DispatchQueue.main.async{
+            SVProgressHUD.dismiss()
+            self.refreshControll?.endRefreshing()
+            //self.alertController.dismiss(animated: true, completion: nil);
+            
+        }
+    }
     func updateUI(){
         DispatchQueue.main.async{
             self.tableView.reloadData()
             SVProgressHUD.dismiss()
+            self.refreshControll?.endRefreshing()
+
             //self.alertController.dismiss(animated: true, completion: nil);
             
         }
