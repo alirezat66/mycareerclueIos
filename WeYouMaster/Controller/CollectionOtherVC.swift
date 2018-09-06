@@ -23,6 +23,7 @@ class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataS
         collectionTV.addSubview(refreshControll!)
     }
     @objc func refreshList(){
+        myCollections = []
         getCloolections()
     }
     var myCollections : [CollectionOther] = []

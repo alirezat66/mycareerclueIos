@@ -21,6 +21,8 @@ class CollectionVC: UIViewController,UITableViewDelegate , UITableViewDataSource
         collectionTV.addSubview(refreshControll!)
     }
     @objc func refreshList(){
+        
+        myCollections = []
         getCloolections()
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -69,7 +71,7 @@ class CollectionVC: UIViewController,UITableViewDelegate , UITableViewDataSource
     }
    
     func getCloolections(){
-        WebCaller.getCollection(20,1,owner: "24",userId: "-1") { (collections , error) in
+        WebCaller.getCollection(20,1,owner: "24",userId: "-1",state: "on") { (collections , error) in
             if let error = error{
                 self.updateError()
                 print(error)

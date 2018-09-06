@@ -25,6 +25,7 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         homeTable.addSubview(refreshControll!)
     }
     @objc func refreshList(){
+        myContent = []
         getFeeds()
     }
     
@@ -34,12 +35,16 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if(myContent.count >= indexPath.row){
         let content = myContent[indexPath.row]
         if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell") as? HomeOtherCell {
-            cell.updateView(content: myContent[indexPath.row])
+            cell.updateView(content: content)
             
            
             return cell
+        }else{
+            return HomeCell()
+        }
         }else{
             return HomeCell()
         }

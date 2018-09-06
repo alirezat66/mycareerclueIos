@@ -41,9 +41,11 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         homeTable.addSubview(refreshControll!)
     }
     @objc func refreshList(){
+        myContent = []
         getFeeds()
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if(myContent.count >= indexPath.row){
         let content = myContent[indexPath.row]
         if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell") as? HomeCell {
             cell.updateView(content: myContent[indexPath.row])
@@ -52,6 +54,9 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                 self.openProfile(content : content)
             }
             return cell
+        }else{
+            return HomeCell()
+        }
         }else{
             return HomeCell()
         }

@@ -20,6 +20,7 @@ class CommentLikeVC: UIViewController, UITableViewDelegate , UITableViewDataSour
         tableView.addSubview(refreshControll!)
     }
     @objc func refreshList(){
+        myLikes = []
         getLikes()
     }
     override func viewDidLoad() {
@@ -45,7 +46,7 @@ class CommentLikeVC: UIViewController, UITableViewDelegate , UITableViewDataSour
         
         
         
-        
+        if(myLikes.count >= indexPath.row){
         let  comment : LikeFollow = myLikes[indexPath.row]
         
         
@@ -63,6 +64,10 @@ class CommentLikeVC: UIViewController, UITableViewDelegate , UITableViewDataSour
             let cell  = UITableViewCell()
             return cell
         }
+        }else {
+            return UITableViewCell()
+        }
+        
     }
   
     func getLikes(){

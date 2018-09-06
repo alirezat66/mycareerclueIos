@@ -10,7 +10,7 @@ import Foundation
 public class WebCaller {
     
     static func getCollection(_ items_per_page : Int ,_ startPage :Int ,
-                              owner : String  , userId : String ,
+                              owner : String  , userId : String ,state : String ,
                               completionHandler: @escaping (CollectionList?, Error?) -> Void){
         let endpoint = "https://www.weyoumaster.com/api/collections/"
         
@@ -25,6 +25,7 @@ public class WebCaller {
         urlRequest.httpMethod = "POST"
         let postString = "items_per_page=" + String(items_per_page) + "&startPage=" + String(startPage) +
             "&owner=" + owner  + "&userId=" + userId
+        + "&randomStatus=" + state
         urlRequest.httpBody = postString.data(using: String.Encoding.utf8)
         
         // Make request
