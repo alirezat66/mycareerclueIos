@@ -11,38 +11,34 @@ import UIKit
 class SignInVC: UIViewController {
 
    
-    @IBOutlet weak var edtMob: UITextField!
-    @IBAction func getVerifCode(_ sender: Any) {
-        let num : String = edtMob.text!
-        
-       
-        if(Utility.isValidNumber(number: num)){
-        
-        let StoryBoard   = UIStoryboard(name: "Main", bundle: nil)
-        let lockVC = StoryBoard.instantiateViewController(withIdentifier: "lockpage" ) as? LockVC
-        lockVC?.stringPassed = num
-        print("salam")
-        self.present(lockVC!, animated: true, completion: nil)
-        //    self.navigationController?.pushViewController(lockVC!, animated: true)
-      //  performSegueWithIdentifier("mySegue", sender: nil)
+    @IBOutlet weak var edtName : UITextField!
+    @IBOutlet weak var edtLName : UITextField!
 
-        
-        }else{
-            Utility.showToast(message: "شماره وارد شده صحیح نمی باشد.", myView: self.view)
-        }
-        edtMob.text = ""
-    }
+    @IBOutlet weak var edtEmail : UITextField!
+
+    @IBOutlet weak var edtPassword : UITextField!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        setborder(myTextField: edtName)
+        setborder(myTextField: edtLName)
+        setborder(myTextField: edtEmail)
+        setborder(myTextField: edtPassword)
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    func setborder(myTextField : UITextField ) {
+        let bottomLine = CALayer()
+        bottomLine.frame = CGRect(x: 0, y: myTextField.frame.height, width: myTextField.frame.width-2, height: 2)
+      
+        bottomLine.backgroundColor = UIColor.white.cgColor
+        myTextField.borderStyle = UITextBorderStyle.none
+        myTextField.layer.addSublayer(bottomLine)
+    
     }
 
     
 
-    @IBAction func onBackFromLogin(unwindSegue:UIStoryboardSegue){
-       
-
-    }
+    
    
 }
 

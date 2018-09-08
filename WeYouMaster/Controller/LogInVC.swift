@@ -14,13 +14,26 @@ class LogInVC: UIViewController {
      let alertController = UIAlertController(title: nil, message: "لطفا منتظر بمانید ...\n\n", preferredStyle: .alert)
     @IBOutlet weak var edtEmail: UITextField!
     @IBOutlet weak var edtPass: UITextField!
-    @IBOutlet weak var lblError: UILabel!
+    @IBOutlet weak var myView: UIView!
     @IBAction func backBtn(_ sender: UIButton) {
         self.dismiss(animated: true)
     }
+    @IBAction func btnForgetPass(_ sender: Any) {
+        guard let url = URL(string: "https://weyoumaster.com/reset") else {
+            return //be safe
+        }
+        
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
+    }
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-
+        setborder(myTextField: edtEmail)
+        setborder(myTextField: edtPass)
         // Do any additional setup after loading the view.
     }
 
@@ -39,7 +52,6 @@ class LogInVC: UIViewController {
       
         if((edtEmail.text?.count)!>0){
             if((edtPass.text?.count)!>0){
-                lblError.text = ""
                   let email = edtEmail.text
                   let pass = edtPass.text
                 
@@ -65,7 +77,7 @@ func getLogin(_ email: String,_ pass : String,_ myVc : LogInVC) {
                 // got an error in getting the data, need to handle it
                 DispatchQueue.main.async{
                      self.dissmissLoading()
-                    self.lblError.text = "نام کاربری و یا کلمه عبور نادرست است."
+                    Utility.showToast(message: "نام کاربری و یا کلمه عبور نادرست است.", myView: self.myView)
                 }
                 return
             }
@@ -73,7 +85,7 @@ func getLogin(_ email: String,_ pass : String,_ myVc : LogInVC) {
                 
                 DispatchQueue.main.async{
                     self.dissmissLoading()
-                    self.lblError.text = "نام کاربری و یا کلمه عبور نادرست است."
+                    Utility.showToast(message: "نام کاربری و یا کلمه عبور نادرست است.", myView: self.myView)
                 }
                 return
             }
@@ -116,4 +128,15 @@ func getLogin(_ email: String,_ pass : String,_ myVc : LogInVC) {
     
 
     }
+    
+    func setborder(myTextField : UITextField ) {
+        let bottomLine = CALayer()
+        bottomLine.frame = CGRect(x: 0, y: myTextField.frame.height, width: myTextField.frame.width-2, height: 2)
+        
+        bottomLine.backgroundColor = UIColor.white.cgColor
+        myTextField.borderStyle = UITextBorderStyle.none
+        myTextField.layer.addSublayer(bottomLine)
+        
+    }
+
 }

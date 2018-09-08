@@ -33,7 +33,7 @@ class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataS
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionCell") as? CollectionCellOtherTVC{
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionOtherCell") as? CollectionCellOtherTVC{
             let collection = myCollections[indexPath.row]
             cell.updateView(collection:collection)
            
