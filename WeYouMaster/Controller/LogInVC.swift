@@ -16,7 +16,9 @@ class LogInVC: UIViewController {
     @IBOutlet weak var edtPass: UITextField!
     @IBOutlet weak var myView: UIView!
     @IBAction func backBtn(_ sender: UIButton) {
-        self.dismiss(animated: true)
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let signInVc = storyBoard.instantiateViewController(withIdentifier: "SignInPage") as! SignInVC
+        self.present(signInVc, animated: true, completion: nil)
     }
     @IBAction func btnForgetPass(_ sender: Any) {
         guard let url = URL(string: "https://weyoumaster.com/reset") else {

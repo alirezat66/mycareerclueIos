@@ -44,7 +44,7 @@ class SplashCV: UIViewController {
             else {
                 
                 let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-                let signInVc = storyBoard.instantiateViewController(withIdentifier: "SignInPage") as! SignInVC
+                let signInVc = storyBoard.instantiateViewController(withIdentifier: "LogIn") as! LogInVC
                 self.present(signInVc, animated: true, completion: nil)
 
             }

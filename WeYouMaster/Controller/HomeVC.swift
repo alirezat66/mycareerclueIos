@@ -117,8 +117,11 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         
         
         let Profile_photo_link = userDefaults.value(forKey: "profilePhoto") as! String
+        if(Profile_photo_link != ""){
+        
         let url = URL(string: Profile_photo_link)
         
+       
         
         DispatchQueue.global().async { [weak self] in
             if let data = try? Data(contentsOf: url!) {
@@ -130,6 +133,11 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                         
                     }
                 }
+            }
+        }
+        }else{
+             DispatchQueue.main.async {
+                self.imgProfile.setImage(UIImage(named: "avatar_icon.png"), for: UIControlState.normal) 
             }
         }
         // Do any additional setup after loading the view.
