@@ -468,6 +468,62 @@ public class WebCaller {
         
         
     }
+    
+    
+    static func getNotif(_ owner:String, completionHandler : @escaping (NotifResponse?,Error?)->Void ){
+        let endPoint = "https://www.weyoumaster.com/api/notif_status/"
+        guard let url = URL(string: endPoint)
+            else
+        {
+            print("Error: cannot create URL")
+            let error = BackendError.urlError(reason: "Could not construct URL")
+            completionHandler(nil, error)
+            return
+        }
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        let postString = "owner=" + owner
+        
+        urlRequest.httpBody = postString.data(using: String.Encoding.utf8)
+        
+        
+        let session = URLSession.shared
+        let task = session.dataTask(with: urlRequest, completionHandler: {
+            (data, response, error) in
+            // handle response to request
+            // check for error
+            guard error == nil else {
+                completionHandler(nil, error!)
+                return
+            }
+            // make sure we got data in the response
+            guard let responseData = data else {
+                print("Error: did not receive data")
+                let error = BackendError.objectSerialization(reason: "No data in response")
+                completionHandler(nil, error)
+                return
+            }
+            
+            // parse the result as JSON
+            // then create a Todo from the JSON
+            do {
+                print(responseData)
+                let  contentL  = try JSONDecoder().decode(NotifResponse.self,from: responseData)
+                completionHandler(contentL,nil)
+                
+            } catch {
+                // error trying to convert the data to JSON using JSONSerialization.jsonObject
+                completionHandler(nil, error)
+                return
+            }
+        })
+        task.resume()
+        
+        
+    }
+    
+    
     static func getLogin(_ email: String ,_ pass: String, completionHandler: @escaping (LoginResponse?, Error?) -> Void) {
         // set up URLRequest with URL
         let endpoint = "https://www.weyoumaster.com/api/login/"
@@ -522,6 +578,11 @@ public class WebCaller {
         })
         task.resume()
     }
+    
+    
+    
+  
+    
     
     static func saveFeed(owner: String , location : String , publicState : Int, align : Int , contentType : Int , collectionId : Int, title : String , description : String , link : String , apparatLink : String,
                          youtubeLink : String,insertTimeStamp : Int64 , completionHandler: @escaping (NormalResponse?, Error?) -> Void){

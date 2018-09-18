@@ -16,7 +16,6 @@ class CollectionCell: UITableViewCell {
     @IBOutlet weak var collectionOwner : UILabel!
     @IBOutlet weak var collectionOwnerLocation : UILabel!
     @IBOutlet weak var collectionOwnerImage : UIButton!
-    @IBOutlet weak var collectionPrice : UILabel!
     override func layoutSubviews() {
         super.layoutSubviews()
         contentView.frame = UIEdgeInsetsInsetRect(contentView.frame, UIEdgeInsetsMake(8, 8, 8, 8))
@@ -55,18 +54,12 @@ class CollectionCell: UITableViewCell {
         collectionTitle.text = collection.Collection_Title
         let name  = collection.owner_name + " " + collection.owner_lName
         collectionOwner.text = name
-        let mosharekat = "(" + String(collection.collection_posts_number) + "مشارکت " + ")"
+        let mosharekat = "از تاریخ " + collection.Published_Date + " شامل " + String(collection.collection_posts_number) + " پست "
         collectionNumberFields.text = mosharekat
         
         collectionOwnerLocation.text = collection.collection_place
-        var price : String
-        if(collection.collection_price==""){
-            price = "رایگان"
-        }else{
-            price = collection.collection_price + " تومان"
-        }
+        
         collectionOwnerLocation.text = collection.ownerDegree
-        collectionPrice.text = price
         
         
       

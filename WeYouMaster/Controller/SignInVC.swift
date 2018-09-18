@@ -11,7 +11,7 @@ import SVProgressHUD
 class SignInVC: UIViewController {
 
     @IBAction func btnReg(_ sender: Any) {
-        SVProgressHUD.show(withStatus: "لطفا منتظر بمانید ... \n\n")
+       
         signUp()
     }
     func signUp() {
@@ -19,6 +19,7 @@ class SignInVC: UIViewController {
         if(edtName.text == "" || edtLName.text ==  "" || edtEmail.text == "" || edtPassword.text == "" ){
             Utility.showToast(message: "فیلدهای اجباری را پر کنید.", myView: myView)
         }else{
+             SVProgressHUD.show(withStatus: "لطفا منتظر بمانید ... \n\n")
             WebCaller.signIn(edtName.text!, edtLName.text!, edtPhone.text!, edtEmail.text!, edtJob.text!, edtPassword.text!, edtCountry.text!
             ){
                 

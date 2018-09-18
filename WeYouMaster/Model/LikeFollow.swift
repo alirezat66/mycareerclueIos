@@ -13,6 +13,11 @@ struct LikeFollow : Decodable{
     var fromId : String
     var feedTitle : String
     var feedId : Int
+    var followByMe : Int
+    var senderPic : String
+    var reg_time : String
+    var is_viewed : String
+    
     
     
 }

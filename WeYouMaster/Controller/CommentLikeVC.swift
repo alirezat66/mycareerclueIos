@@ -49,26 +49,23 @@ class CommentLikeVC: UIViewController, UITableViewDelegate , UITableViewDataSour
         if(myLikes.count >= indexPath.row){
         let  comment : LikeFollow = myLikes[indexPath.row]
         
+            if(comment.type == 1 || comment.type == 2){
         
-        if(comment.type==1){
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! LikeCommentCell
             cell.updateView(like: comment)
             return cell
-            
-        }else if (comment.type==2){
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell2") as! FollowCommentCell
-            cell.updateView(like: comment)
+            }else{
+            let cell  = UITableViewCell()
             return cell
-            
+        }
         }else{
             let cell  = UITableViewCell()
             return cell
         }
-        }else {
-            return UITableViewCell()
-        }
         
     }
+        
+    
   
     func getLikes(){
         let userDefaults = UserDefaults.standard

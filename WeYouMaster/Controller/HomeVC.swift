@@ -98,8 +98,7 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         makeButtonCirc(obj: imgNot9)
         myContent = []
         updateUI()
-        imgNot1.backgroundColor = UIColor.red
-        imgNot3.backgroundColor = UIColor.blue
+        
         homeTable.dataSource = self
         homeTable.delegate = self
         homeTable.tableFooterView = UIView.init(frame : .zero)
@@ -145,7 +144,43 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         SVProgressHUD.show(withStatus: "لطفا منتظر بمانید ... \n\n")
         
         getFeeds()
+        getNotifs()
         addRefreshControl()
+    }
+    func getNotifs() {
+        let userDefaults = UserDefaults.standard
+        let owner = userDefaults.value(forKey: "owner") as! String
+        WebCaller.getNotif(owner
+        ) {
+            
+            (contents, error) in
+            if let error = error{
+                self.updateError()
+                print(error)
+                return
+            }
+            guard let contentList = contents else{
+                self.updateError()
+                print("error getting collections")
+                return
+            }
+           
+            self.updateNotif(notif: contentList)
+        }
+    }
+    func updateNotif(notif : NotifResponse)  {
+         DispatchQueue.main.async{
+            if(notif.c1_1==1){
+                self.imgNot1.backgroundColor = UIColor.red
+            }
+            if(notif.c1_2==1){
+                self.imgNot4.backgroundColor = UIColor.blue
+            }
+            if(notif.c1_3==1){
+                self.imgNot7.backgroundColor = UIColor.yellow
+            }
+            
+        }
     }
     func getFeeds(){
         let userDefaults = UserDefaults.standard
