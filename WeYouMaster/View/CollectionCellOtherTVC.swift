@@ -15,8 +15,7 @@ class CollectionCellOtherTVC: UITableViewCell {
     @IBOutlet weak var collectionNumberFields : UILabel!
     @IBOutlet weak var collectionOwner : UILabel!
     @IBOutlet weak var collectionOwnerLocation : UILabel!
-    @IBOutlet weak var collectionOwnerImage : UIImageView!
-    @IBOutlet weak var collectionPrice : UILabel!
+    @IBOutlet weak var collectionOwnerImage : UIButton!
     override func layoutSubviews() {
         super.layoutSubviews()
         contentView.frame = UIEdgeInsetsInsetRect(contentView.frame, UIEdgeInsetsMake(8, 8, 8, 8))
@@ -39,7 +38,7 @@ class CollectionCellOtherTVC: UITableViewCell {
                 if let data = try? Data(contentsOf: url!) {
                     if let image = UIImage(data: data) {
                         DispatchQueue.main.async {
-                            self?.collectionOwnerImage.image = image
+                            self?.collectionOwnerImage.setBackgroundImage(image, for: .normal)
                         }
                     }
                 }
@@ -48,20 +47,14 @@ class CollectionCellOtherTVC: UITableViewCell {
         
         
         collectionTitle.text = collection.Title
-        let name  = collection.ownerName;        collectionOwner.text = name
-       
-        collectionNumberFields.isHidden = true
-        layoutIfNeeded()
+        let name  = collection.ownerName
+        collectionOwner.text = name
+        let mosharekat = "از تاریخ " + "تاریخ انتشار نداریم" + " شامل " + "نامشخص" + " پست "
+        collectionNumberFields.text = mosharekat
         
-        collectionOwnerLocation.text = String( collection.Price)
-        var price : String
-        if(collection.Price==0){
-            price = "رایگان"
-        }else{
-            price = String (collection.Price) + " تومان"
-        }
+        collectionOwnerLocation.text = collection.Ownerlocation
+        
         collectionOwnerLocation.text = collection.ownerDegree
-        collectionPrice.text = price
         
         
         

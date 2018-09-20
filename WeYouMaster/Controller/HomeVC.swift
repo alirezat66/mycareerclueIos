@@ -44,6 +44,9 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         myContent = []
         getFeeds()
     }
+    @IBAction func btnGoToDashbord(_ sender: Any) {
+        openMyProfile()
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if(myContent.count >= indexPath.row){
         let content = myContent[indexPath.row]
@@ -61,16 +64,43 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             return HomeCell()
         }
     }
+    
+    
+    func openMyProfile()  {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let profile = storyBoard.instantiateViewController(withIdentifier: "tablayout") as! ProfileTabVC
+        
+        let userDefaults = UserDefaults.standard
+        let owner = userDefaults.value(forKey: "owner") as! String
+        let name = userDefaults.value(forKey: "fName") as! String
+        let lName = userDefaults.value(forKey: "lName") as! String
+        profile.getName = name + " " + lName
+        profile.getCity = userDefaults.value(forKey: "City") as! String
+        profile.getRole = userDefaults.value(forKey: "job")as! String
+
+        profile.getImage = userDefaults.value(forKey: "profilePhoto")as! String
+        profile.followedByMe = 1
+        profile.profileId = owner
+        profile.getOwner = owner
+        profile.bio = userDefaults.value(forKey: "bio")as! String
+        self.present(profile, animated: true, completion: nil)
+
+    }
     func openProfile(content:Content) {
         
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let profile = storyBoard.instantiateViewController(withIdentifier: "profileOther") as! ProfileOtherVC
-        profile.getName = content.fName! + content.lName!
+        let profile = storyBoard.instantiateViewController(withIdentifier: "tablayout") as! ProfileTabVC
+        
+        let userDefaults = UserDefaults.standard
+        let owner = userDefaults.value(forKey: "owner") as! String
+        profile.getName = content.fName! + " " + content.lName!
         profile.getCity = content.location!
         profile.getRole = content.education!
         profile.getImage = content.ownerPic!
         profile.followedByMe = content.followByMe!
         profile.profileId = content.owner_id!
+        profile.getOwner = owner
+        profile.bio = ""
         self.present(profile, animated: true, completion: nil)
     }
     func makeButtonCirc(obj : UIButton) {

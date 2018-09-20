@@ -31,6 +31,8 @@
 		BB4194A321035C8E00823353 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4194A221035C8E00823353 /* DetailCell.swift */; };
 		BB4194A521035E5400823353 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4194A421035E5400823353 /* Content.swift */; };
 		BB570C5D2150D3F100D72D8B /* NotifResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB570C5C2150D3F100D72D8B /* NotifResponse.swift */; };
+		BB570C5F2151B59E00D72D8B /* TabLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB570C5E2151B59E00D72D8B /* TabLayout.swift */; };
+		BB570C612152443900D72D8B /* ProfileTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB570C602152443900D72D8B /* ProfileTabVC.swift */; };
 		BB7BE65C21340AC8008EC1F3 /* MenuPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7BE65B21340AC8008EC1F3 /* MenuPage.swift */; };
 		BB968CDB213EA5EC009DE929 /* HomeOtherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB968CDA213EA5EC009DE929 /* HomeOtherVC.swift */; };
 		BB968CDD213EA60D009DE929 /* CommentLikeOtherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB968CDC213EA60D009DE929 /* CommentLikeOtherVC.swift */; };
@@ -72,6 +74,8 @@
 		BBB75C872122E50F00C1CAA9 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB75C862122E50F00C1CAA9 /* CardView.swift */; };
 		BBB75C892122FDB700C1CAA9 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB75C882122FDB700C1CAA9 /* DashboardVC.swift */; };
 		BBB75C8F212457F000C1CAA9 /* CollectionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB75C8E212457F000C1CAA9 /* CollectionList.swift */; };
+		BBECFA922154228700009C4F /* Child1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBECFA912154228700009C4F /* Child1VC.swift */; };
+		BBECFA942154229900009C4F /* Child2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBECFA932154229900009C4F /* Child2VC.swift */; };
 		BBEDB0CB21355DD9004BE37E /* AboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEDB0CA21355DD9004BE37E /* AboutUsVC.swift */; };
 		BBEDB0CD21356392004BE37E /* QACell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEDB0CC21356392004BE37E /* QACell.swift */; };
 		BBEDB0CF213563D3004BE37E /* QA.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEDB0CE213563D3004BE37E /* QA.swift */; };
@@ -111,6 +115,8 @@
 		BB4194A221035C8E00823353 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		BB4194A421035E5400823353 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		BB570C5C2150D3F100D72D8B /* NotifResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifResponse.swift; sourceTree = "<group>"; };
+		BB570C5E2151B59E00D72D8B /* TabLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabLayout.swift; sourceTree = "<group>"; };
+		BB570C602152443900D72D8B /* ProfileTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabVC.swift; sourceTree = "<group>"; };
 		BB7BE65B21340AC8008EC1F3 /* MenuPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPage.swift; sourceTree = "<group>"; };
 		BB968CDA213EA5EC009DE929 /* HomeOtherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeOtherVC.swift; sourceTree = "<group>"; };
 		BB968CDC213EA60D009DE929 /* CommentLikeOtherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentLikeOtherVC.swift; sourceTree = "<group>"; };
@@ -154,6 +160,8 @@
 		BBB75C862122E50F00C1CAA9 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		BBB75C882122FDB700C1CAA9 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 		BBB75C8E212457F000C1CAA9 /* CollectionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionList.swift; sourceTree = "<group>"; };
+		BBECFA912154228700009C4F /* Child1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child1VC.swift; sourceTree = "<group>"; };
+		BBECFA932154229900009C4F /* Child2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child2VC.swift; sourceTree = "<group>"; };
 		BBEDB0CA21355DD9004BE37E /* AboutUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsVC.swift; sourceTree = "<group>"; };
 		BBEDB0CC21356392004BE37E /* QACell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QACell.swift; sourceTree = "<group>"; };
 		BBEDB0CE213563D3004BE37E /* QA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QA.swift; sourceTree = "<group>"; };
@@ -208,6 +216,7 @@
 		BB3958B720FCAABA0038DB53 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				BB570C5E2151B59E00D72D8B /* TabLayout.swift */,
 				BB118CAD2115A62400238A85 /* CircleButton.swift */,
 				BB3958BA20FCB43D0038DB53 /* RoundedButton.swift */,
 				BB3958C220FF5F9E0038DB53 /* PadingLable.swift */,
@@ -245,6 +254,9 @@
 				BB968CDC213EA60D009DE929 /* CommentLikeOtherVC.swift */,
 				BB968CDE213EA628009DE929 /* CollectionOtherVC.swift */,
 				BB968CEC213EBDD6009DE929 /* ListOfCollectionOther.swift */,
+				BB570C602152443900D72D8B /* ProfileTabVC.swift */,
+				BBECFA912154228700009C4F /* Child1VC.swift */,
+				BBECFA932154229900009C4F /* Child2VC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -453,10 +465,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WeYouMaster/Pods-WeYouMaster-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -475,6 +489,7 @@
 				BB968CE5213EB034009DE929 /* OtherContentList.swift in Sources */,
 				BBAEA0332135EDB000B8773C /* CommentLikeVC.swift in Sources */,
 				BBAE0E2121045B2C00CF4FF2 /* HomeVC.swift in Sources */,
+				BBECFA942154229900009C4F /* Child2VC.swift in Sources */,
 				BB968CDB213EA5EC009DE929 /* HomeOtherVC.swift in Sources */,
 				BB968CDF213EA628009DE929 /* CollectionOtherVC.swift in Sources */,
 				BBAE0E2721048C7D00CF4FF2 /* HomeCell.swift in Sources */,
@@ -493,6 +508,7 @@
 				BBAE0E3921075F3F00CF4FF2 /* PaddedLabel.swift in Sources */,
 				BB3A83A721312BD9001FFE2F /* ContentList.swift in Sources */,
 				BBF13179213D69C800B49D11 /* Posts.swift in Sources */,
+				BBECFA922154228700009C4F /* Child1VC.swift in Sources */,
 				BBF1317D213E17C600B49D11 /* ProfileOtherVC.swift in Sources */,
 				BBAE0E332107433800CF4FF2 /* Message.swift in Sources */,
 				BBAE0E2B2105FBDF00CF4FF2 /* ConversationCell.swift in Sources */,
@@ -521,6 +537,7 @@
 				BBAEA0312135ECB300B8773C /* FollowCommentCell.swift in Sources */,
 				BBEDB0CF213563D3004BE37E /* QA.swift in Sources */,
 				BBB0D45120FF68AF000CAC15 /* CollectionCell.swift in Sources */,
+				BB570C5F2151B59E00D72D8B /* TabLayout.swift in Sources */,
 				BBAE0E2F2107427100CF4FF2 /* InputTextCell.swift in Sources */,
 				BB570C5D2150D3F100D72D8B /* NotifResponse.swift in Sources */,
 				BBAE0E2D2105FCD300CF4FF2 /* Conversation.swift in Sources */,
@@ -533,6 +550,7 @@
 				BBB0D44E20FF66A9000CAC15 /* CollectionVC.swift in Sources */,
 				BB3958BE20FDFF2F0038DB53 /* LogInVC.swift in Sources */,
 				BB3C1E36211B289000075EEB /* Utility.swift in Sources */,
+				BB570C612152443900D72D8B /* ProfileTabVC.swift in Sources */,
 				BBA8963120FC89240098980B /* AppDelegate.swift in Sources */,
 				BB968CE7213EB207009DE929 /* HomeOtherCell.swift in Sources */,
 				BB4194A521035E5400823353 /* Content.swift in Sources */,

@@ -41,14 +41,23 @@ class CollectionVC: UIViewController,UITableViewDelegate , UITableViewDataSource
     
     func openProfile(collection:Collection) {
         
+        func openProfile(content:Content) {
+            
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            let profile = storyBoard.instantiateViewController(withIdentifier: "profileOther") as! ProfileOtherVC
-            profile.getName = collection.owner_name + collection.owner_lName
-            profile.getCity = collection.collection_place
-            profile.getRole = collection.ownerDegree
-            profile.getImage = collection.collection_owner_image
-            profile.followedByMe = collection.followByMe
+            let profile = storyBoard.instantiateViewController(withIdentifier: "tablayout") as! ProfileTabVC
+            
+            let userDefaults = UserDefaults.standard
+            let owner = userDefaults.value(forKey: "owner") as! String
+            profile.getName = content.fName! + " " + content.lName!
+            profile.getCity = content.location!
+            profile.getRole = content.education!
+            profile.getImage = content.ownerPic!
+            profile.followedByMe = content.followByMe!
+            profile.profileId = content.owner_id!
+            profile.getOwner = owner
+            profile.bio = ""
             self.present(profile, animated: true, completion: nil)
+        }
     }
     @IBOutlet weak var collectionTV :UITableView!
     override func viewDidLoad() {

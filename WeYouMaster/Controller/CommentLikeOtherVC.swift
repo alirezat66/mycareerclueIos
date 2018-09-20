@@ -8,9 +8,12 @@
 
 import UIKit
 import SVProgressHUD
+import XLPagerTabStrip
 
-class CommentLikeOtherVC: UIViewController, UITableViewDelegate , UITableViewDataSource {
-    
+class CommentLikeOtherVC: UIViewController, UITableViewDelegate , UITableViewDataSource, IndicatorInfoProvider {
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return IndicatorInfo.init(title: "علاقه ها")
+    }
     var refreshControll : UIRefreshControl?
     
     func addRefreshControl() {
@@ -24,9 +27,7 @@ class CommentLikeOtherVC: UIViewController, UITableViewDelegate , UITableViewDat
         getLikes()
     }
     
-    @IBAction func btnBack(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
+   
     @IBOutlet weak var tableView : UITableView!
     var myLikes : [LikeFollow] = []
     override func viewDidLoad() {
@@ -47,40 +48,26 @@ class CommentLikeOtherVC: UIViewController, UITableViewDelegate , UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        
-        
-        if(myLikes.count >= indexPath.row) {
-        let  comment : LikeFollow = myLikes[indexPath.row]
-        
-        
-        if(comment.type==1){
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! LikeCommentCell
-            cell.updateView(like: comment)
-            return cell
+        if(myLikes.count >= indexPath.row){
+            let  comment : LikeFollow = myLikes[indexPath.row]
             
-        }else if (comment.type==2){
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell2") as! FollowCommentCell
-            cell.updateView(like: comment)
-            return cell
-            
+            if(comment.type == 1 || comment.type == 2){
+                
+                let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! LikeCommentCell
+                cell.updateView(like: comment)
+                return cell
+            }else{
+                let cell  = UITableViewCell()
+                return cell
+            }
         }else{
             let cell  = UITableViewCell()
             return cell
-        }
-        }else{
-            return UITableViewCell()
         }
     }
     
     func getLikes(){
         let userDefaults = UserDefaults.standard
-        
-        
-        
-        
-        
-        
         let owner = userDefaults.value(forKey: "otherUser") as! String
         
         

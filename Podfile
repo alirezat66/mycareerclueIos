@@ -6,6 +6,8 @@ target 'WeYouMaster' do
   use_frameworks!
 
 pod 'SVProgressHUD'
+pod 'XLPagerTabStrip', '~> 8.0'
   # Pods for WeYouMaster
+
 
 end

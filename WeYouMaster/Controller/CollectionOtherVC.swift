@@ -8,11 +8,12 @@
 
 import UIKit
 import SVProgressHUD
+import XLPagerTabStrip
 
-class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataSource {
+class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataSource ,IndicatorInfoProvider {
     
-    @IBAction func btnBack(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return IndicatorInfo.init(title: "مجموعه ها")
     }
     var refreshControll : UIRefreshControl?
     
@@ -33,7 +34,7 @@ class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataS
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionOtherCell") as? CollectionCellOtherTVC{
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionCell") as? CollectionCellOtherTVC{
             let collection = myCollections[indexPath.row]
             cell.updateView(collection:collection)
            
@@ -47,11 +48,11 @@ class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataS
         
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let profile = storyBoard.instantiateViewController(withIdentifier: "profileOther") as! ProfileOtherVC
-        profile.getName = collection.owner_name + collection.owner_lName
+       /* profile.getName = collection.owner_name + collection.owner_lName
         profile.getCity = collection.collection_place
         profile.getRole = collection.ownerDegree
         profile.getImage = collection.collection_owner_image
-        profile.followedByMe = collection.followByMe
+        profile.followedByMe = collection.followByMe*/
         self.present(profile, animated: true, completion: nil)
     }
     @IBOutlet weak var collectionTV :UITableView!

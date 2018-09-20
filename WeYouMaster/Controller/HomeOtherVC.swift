@@ -8,10 +8,13 @@
 
 import UIKit
 import SVProgressHUD
+import XLPagerTabStrip
 
-class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , IndicatorInfoProvider {
     
-    
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return IndicatorInfo.init(title: "تایم لاین")
+    }
     
     var myContent : [OtherContent] = []
     var isOpenMenu = false
@@ -53,11 +56,11 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let profile = storyBoard.instantiateViewController(withIdentifier: "profileOther") as! ProfileOtherVC
-        profile.getName = content.fName! + content.lName!
+      /*  profile.getName = content.fName! + content.lName!
         profile.getCity = content.location!
         profile.getRole = content.education!
         profile.getImage = content.ownerPic!
-        profile.followedByMe = content.followByMe!
+        profile.followedByMe = content.followByMe!*/
         self.present(profile, animated: true, completion: nil)
     }
     func makeButtonCirc(obj : UIButton) {

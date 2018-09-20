@@ -1,16 +1,20 @@
 PODS:
   - SVProgressHUD (2.2.5)
+  - XLPagerTabStrip (8.0.1)
 
 DEPENDENCIES:
   - SVProgressHUD
+  - XLPagerTabStrip (~> 8.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - SVProgressHUD
+    - XLPagerTabStrip
 
 SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  XLPagerTabStrip: c908b17cbf42fcd2598ee1adfc49bae25444d88a
 
-PODFILE CHECKSUM: f75dfc5b45638e62025ffca8ca12eba818f81cd9
+PODFILE CHECKSUM: 94ff6115369574c5390d02433a97a3589945f85e
 
 COCOAPODS: 1.5.3
