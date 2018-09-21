@@ -57,8 +57,7 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
             btnFirst.setTitle("درخواست مشاوره", for: .normal)
             btnSecond.setTitle("رصد کن", for: .normal)
         }
-        imgProfile.layer.cornerRadius = imgProfile.layer.frame.size.width/2
-        imgProfile.clipsToBounds = true
+       
         indicator.isHidden = true
         if(getImage != ""){
         let url = URL(string: getImage)
@@ -69,6 +68,8 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
                 if let image = UIImage(data: data) {
                     DispatchQueue.main.async {
                         self?.imgProfile.image = image
+                        self?.imgProfile.layer.cornerRadius = (self?.imgProfile.layer.frame.size.width)!/2
+                        self?.imgProfile.clipsToBounds = true
                     }
                 }
             }
@@ -78,7 +79,7 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
         if(bio==""){
             lblBio.text = getName + " از ویومستر جهت به اشتراک گذاشتن تجارب ارزشمند خود استفاده خواهد کرد. در صورتیکه تمایل دارید جدیدترین و بروزترین ها را دریافت کنید ، لطفا بر روی گزینه رصد کن کلیک نمایید."
         }else{
-            lblBio.text = getName + bio
+            lblBio.text =  bio
         }
         
         

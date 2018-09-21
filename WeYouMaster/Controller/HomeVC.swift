@@ -204,10 +204,10 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                 self.imgNot1.backgroundColor = UIColor.red
             }
             if(notif.c1_2==1){
-                self.imgNot4.backgroundColor = UIColor.blue
+                self.imgNot4.backgroundColor =  UIColor(red:99/256, green:213/256, blue:223/256, alpha:1.0)
             }
             if(notif.c1_3==1){
-                self.imgNot7.backgroundColor = UIColor.yellow
+                self.imgNot7.backgroundColor = UIColor(red:239/256, green:66/256, blue:69/256, alpha:1.0)
             }
             
         }

@@ -38,13 +38,22 @@ class ProfileTabVC: ButtonBarPagerTabStripViewController {
             oldCell?.label.textColor = .black
             newCell?.label.textColor = self?.purpleInspireColor
         }
-        super.viewDidLoad()
         navigationController?.navigationBar.isTranslucent = false
-        moveToViewController(at: 2)
-        // Do any additional setup after loading the view.
+       
+        
+        super.viewDidLoad()
+
+            // Do any additiona
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+         DispatchQueue.main.async {
+        self.moveToViewController(at: 3, animated: true)
+        self.buttonBarView.moveTo(index: 3, animated: true, swipeDirection: .right, pagerScroll: .yes)
+        }
+    }
    
+    
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         
      
@@ -69,9 +78,14 @@ class ProfileTabVC: ButtonBarPagerTabStripViewController {
         let child_2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "likeOthers")
         let child_3 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CollectionOtherVC")
       let child_4 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeOtherVC")
+       
         return [child_2,child_3,child_4,child_1]
+        
+
     
     }
+    
+    
     @IBAction func closeAction(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }

@@ -18,14 +18,14 @@ class LikeCommentCell : UITableViewCell {
     public func updateView(like : LikeFollow)  {
        
         if(like.type == 2){
-            btnLike.backgroundColor = UIColor.blue
+            btnLike.backgroundColor = UIColor(red:99/256, green:213/256, blue:223/256, alpha:1.0)
             let s = like.from;
             let s2 = " اکانت شما را دنبال کرد.";
             lblTitle.text = s + s2
             txtType.text = "رصد جدید"
             
         }else {
-            btnLike.backgroundColor = UIColor.red
+            btnLike.backgroundColor = UIColor(red:239/256, green:66/256, blue:69/256, alpha:1.0)
             let s = like.from;
             let s2 = " به ";
             let s3 = "مطلب شما ";
