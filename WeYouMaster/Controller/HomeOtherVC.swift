@@ -94,6 +94,7 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , 
     }
     func getFeeds(){
         let userDefaults = UserDefaults.standard
+        
         let owner = userDefaults.value(forKey: "otherUser") as! String
         WebCaller.getUserFeed(50, 1,owner
         ) { (contents, error) in

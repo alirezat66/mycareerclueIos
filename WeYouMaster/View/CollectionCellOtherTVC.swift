@@ -11,6 +11,19 @@ import SVProgressHUD
 
 class CollectionCellOtherTVC: UITableViewCell {
     var onButtonTapped : (() -> Void)? = nil
+    var onButtonTappedOnShow : (() -> Void)? = nil
+    @IBAction func showClick(_ sender: Any) {
+        if let onButtonTappedOnShow = self.onButtonTappedOnShow {
+            onButtonTappedOnShow()
+        }
+    }
+    
+    @IBAction func imageClicked(_ sender: Any) {
+        
+        if let onButtonTapped = self.onButtonTapped {
+            onButtonTapped()
+        }
+    }
     @IBOutlet weak var collectionTitle : UILabel!
     @IBOutlet weak var collectionNumberFields : UILabel!
     @IBOutlet weak var collectionOwner : UILabel!

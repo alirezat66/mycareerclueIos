@@ -189,7 +189,8 @@ class HomeCell: UITableViewCell {
         {
             self.loader.startAnimating()
             let url = URL(string : content.ownerPic!)
-            
+            self.imgPerson.setBackgroundImage(UIImage(named: "avatar_icon.png") , for: .normal)
+
             DispatchQueue.global().async { [weak self] in
                 if let data = try? Data(contentsOf: url!) {
                     if let image = UIImage(data: data) {
@@ -201,7 +202,7 @@ class HomeCell: UITableViewCell {
                 }
             }
         }else{
-            self.imgPerson.setBackgroundImage(UIImage(named: "hacker.png") , for: .normal)
+            self.imgPerson.setBackgroundImage(UIImage(named: "avatar_icon.png") , for: .normal)
             self.loader.stopAnimating();
 
         }
@@ -244,6 +245,8 @@ class HomeCell: UITableViewCell {
         
         if content.contentType == 2 {
             imageFromServerURL(urlString: content.imgSource!)
+            imgContent.isHidden = false
+            imgConstrant.constant = 200
             
         }else {
             imgConstrant.constant = 0

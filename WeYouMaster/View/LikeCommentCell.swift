@@ -8,12 +8,19 @@
 
 import UIKit
 class LikeCommentCell : UITableViewCell {
+    var onButtonTapped : (() -> Void)? = nil
+
     @IBOutlet weak var btnLike : UIButton!
     @IBOutlet weak var lblTime : UILabel!
     @IBOutlet weak var imgLogo : UIButton!
     @IBOutlet weak var txtType : UILabel!
     @IBOutlet weak var lblTitle : UILabel!
-    
+    @IBAction func imageClicked(_ sender: Any) {
+        
+        if let onButtonTapped = self.onButtonTapped {
+            onButtonTapped()
+        }
+    }
 
     public func updateView(like : LikeFollow)  {
        
@@ -39,6 +46,7 @@ class LikeCommentCell : UITableViewCell {
         
         if(like.senderPic != "")
         {
+            self.imgLogo.setBackgroundImage(UIImage(named: "avatar_icon.png") , for: .normal)
             let url = URL(string : like.senderPic)
             
             DispatchQueue.global().async { [weak self] in

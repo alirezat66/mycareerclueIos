@@ -99,28 +99,86 @@ class HomeOtherCell: UITableViewCell {
         }
     }
     @IBAction func btnLike(_ sender: Any) {
-        
+        isLiked = !isLiked
+        if isLiked {
+            
+            callLike()
+            likeCounter  = likeCounter + 1
+            btnLikeOutlet.titleLabel!.font  =  UIFont(name: btnLikeOutlet.titleLabel!.font.fontName, size: 21)!
+            
+        }else{
+            callDisLike()
+            likeCounter = likeCounter - 1
+            
+            btnLikeOutlet.titleLabel!.font  =  UIFont(name: btnLikeOutlet.titleLabel!.font.fontName, size: 19)!
+        }
+        lblLikeCounter.text = "(" + String( likeCounter) + ")"
     }
     
     func callLike() {
+        let userDefaults = UserDefaults.standard
         
         
         
         
         
         
+        let owner = userDefaults.value(forKey: "owner") as! String
+        let otherowner = userDefaults.value(forKey: "otherUser") as! String
         
-      
+        WebCaller.likeAndDisLike(0, owner, myContent.postId , liked_id : otherowner) { (state, error) in
+            if let error = error{
+                print(error)
+                return
+            }
+            guard let state = state else{
+                print("error getting collections")
+                return
+            }
+            if(state == 1 ){
+                print("like done")
+            }
+        }
     }
     func callDisLike() {
- 
+        let userDefaults = UserDefaults.standard
+        
+        
+        
+        
+        
+        
+        let owner = userDefaults.value(forKey: "owner") as! String
+
+        let otherOwner = userDefaults.value(forKey: "otherUser") as! String
+        
+        WebCaller.likeAndDisLike(1, owner, myContent.postId,liked_id: otherOwner) { (state, error) in
+            if let error = error{
+                print(error)
+                return
+            }
+            guard let state = state else{
+                print("error getting collections")
+                return
+            }
+            if(state == 1 ){
+                print("like done")
+            }
+        }
+        
     }
     @IBOutlet weak var lblCollectionTitle: UILabel!
     public func updateView(content : OtherContent){
         self.myContent = content
         heightOutlet.constant = 70
         contentText = content.contentText
-       
+       /* if(content.allignment != "rtl"){
+            lblTitle.textAlignment = .left
+            lblContent.textAlignment = .left
+        }else {
+            lblTitle.textAlignment = .right
+            lblContent.textAlignment = .right
+        }*/
         if(content.collectionName == ""){
             btnCollection.isHidden = true
             lblCollectionTitle.isHidden = true
@@ -130,10 +188,14 @@ class HomeOtherCell: UITableViewCell {
             btnCollection.isHidden = false
             lblCollectionTitle.isHidden = false
         }
-        if(content.imgSource != "")
+        let userDefaults = UserDefaults.standard
+       
+        let otherImage = userDefaults.value(forKey: "otherImage") as! String
+        if(otherImage != "")
         {
             self.loader.startAnimating()
-            let url = URL(string : content.imgSource)
+            let url = URL(string : otherImage)
+            self.imgPerson.setBackgroundImage(UIImage(named: "avatar_icon.png") , for: .normal)
             
             DispatchQueue.global().async { [weak self] in
                 if let data = try? Data(contentsOf: url!) {
@@ -146,7 +208,7 @@ class HomeOtherCell: UITableViewCell {
                 }
             }
         }else{
-            self.imgPerson.setBackgroundImage(UIImage(named: "hacker.png") , for: .normal)
+            self.imgPerson.setBackgroundImage(UIImage(named: "avatar_icon.png") , for: .normal)
             self.loader.stopAnimating();
             
         }
@@ -189,14 +251,13 @@ class HomeOtherCell: UITableViewCell {
         
         if content.contentType == 2 {
             imageFromServerURL(urlString: content.imgSource)
+            imgContent.isHidden = false
+            imgConstrant.constant = 200
             
         }else {
             imgConstrant.constant = 0
             imgContent.isHidden = true
         }
-        btnLikeOutlet.isHidden  = true
-        lblLikeCounter.isHidden = true
-        layoutIfNeeded()
         
         
         

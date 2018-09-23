@@ -11,6 +11,7 @@ import UIKit
 class CollectionCell: UITableViewCell {
 
     var onButtonTapped : (() -> Void)? = nil
+    var onButtonTappedOnShow : (() -> Void)? = nil
     @IBOutlet weak var collectionTitle : UILabel!
     @IBOutlet weak var collectionNumberFields : UILabel!
     @IBOutlet weak var collectionOwner : UILabel!
@@ -26,6 +27,11 @@ class CollectionCell: UITableViewCell {
             onButtonTapped()
         }
     }
+    @IBAction func showClick(_ sender: Any) {
+        if let onButtonTappedOnShow = self.onButtonTappedOnShow {
+            onButtonTappedOnShow()
+        }
+    }
     
     func updateView(collection : Collection)  {
        // collectionOwnerImage.image = UIImage(named: collection.img)
@@ -37,6 +43,8 @@ class CollectionCell: UITableViewCell {
         
         if(collection.collection_owner_image != "")
         {
+            self.collectionOwnerImage.setBackgroundImage(UIImage(named: "avatar_icon.png") , for: .normal)
+
             let url = URL(string : collection.collection_owner_image)
         
         DispatchQueue.global().async { [weak self] in
@@ -48,6 +56,9 @@ class CollectionCell: UITableViewCell {
                 }
             }
         }
+        }else{
+            self.collectionOwnerImage.setBackgroundImage(UIImage(named: "avatar_icon.png") , for: .normal)
+
         }
         
         

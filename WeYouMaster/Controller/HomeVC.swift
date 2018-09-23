@@ -16,7 +16,8 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     var myContent : [Content] = []
     var isOpenMenu = false
     
-    
+    let cellSpacingHeight: CGFloat = 10
+
     @IBOutlet weak var imgNot1: UIButton!
     @IBOutlet weak var imgNot2: UIButton!
     @IBOutlet weak var imgNot3: UIButton!
@@ -115,6 +116,9 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         
         
         
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return cellSpacingHeight
     }
     override func viewDidAppear(_ animated: Bool) {
         makeButtonCirc(obj: imgNot1)

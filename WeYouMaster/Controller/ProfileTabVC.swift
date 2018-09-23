@@ -73,7 +73,7 @@ class ProfileTabVC: ButtonBarPagerTabStripViewController {
         
         let userDefaults = UserDefaults.standard
         userDefaults.set(profileId, forKey: "otherUser")
-        
+        userDefaults.set(getImage, forKey: "otherImage")
         let child_1 = profile
         let child_2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "likeOthers")
         let child_3 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CollectionOtherVC")

@@ -53,10 +53,14 @@ class CommentLikeVC: UIViewController, UITableViewDelegate , UITableViewDataSour
         
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! LikeCommentCell
             cell.updateView(like: comment)
+                cell.onButtonTapped = {
+                    self.openProfile(like : comment)
+                }
             return cell
             }else{
             let cell  = UITableViewCell()
             return cell
+                
         }
         }else{
             let cell  = UITableViewCell()
@@ -65,7 +69,25 @@ class CommentLikeVC: UIViewController, UITableViewDelegate , UITableViewDataSour
         
     }
         
-    
+    func openProfile(like:LikeFollow) {
+        
+        
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let profile = storyBoard.instantiateViewController(withIdentifier: "tablayout") as! ProfileTabVC
+        
+        let userDefaults = UserDefaults.standard
+        let owner = userDefaults.value(forKey: "owner") as! String
+        profile.getName = like.from
+        profile.getCity = ""
+        profile.getRole = ""
+        profile.getImage = like.senderPic
+        profile.followedByMe = like.followByMe
+        profile.profileId = like.fromId
+        profile.getOwner = owner
+        profile.bio = ""
+        self.present(profile, animated: true, completion: nil)
+        
+    }
   
     func getLikes(){
         let userDefaults = UserDefaults.standard

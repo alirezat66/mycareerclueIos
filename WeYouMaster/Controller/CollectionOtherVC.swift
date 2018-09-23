@@ -37,7 +37,10 @@ class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataS
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionCell") as? CollectionCellOtherTVC{
             let collection = myCollections[indexPath.row]
             cell.updateView(collection:collection)
-           
+            cell.onButtonTappedOnShow = {
+                let name = collection.ownerName
+                self.openDetail(city: collection.Ownerlocation, name: name, title: collection.Title, image: collection.ownerImage,collectionId: collection.collectionId)
+            }
             return cell
         }else{
             return  CollectionCell()
