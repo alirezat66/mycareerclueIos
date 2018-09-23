@@ -53,6 +53,7 @@ class HomeCell: UITableViewCell {
         }
     }
     func imageFromServerURL(urlString: String) {
+        self.imgContent.image = UIImage.init(named:"data_collection_img.png" )
         self.loader.startAnimating()
         URLSession.shared.dataTask(with: NSURL(string: urlString)! as URL, completionHandler: { (data, response, error) -> Void in
             

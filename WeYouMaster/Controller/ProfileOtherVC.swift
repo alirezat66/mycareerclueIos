@@ -8,6 +8,7 @@
 
 import UIKit
 import XLPagerTabStrip
+import SVProgressHUD
 class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
 
     
@@ -34,7 +35,58 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
     var bio = String()
     var isOwner : Bool!
     
-   
+    @IBAction func btnLikeOrNew(_ sender: Any) {
+        if(getOwner==profileId){
+            // is new post
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let detail = storyBoard.instantiateViewController(withIdentifier: "addFeed") as! AddFeedVC
+            
+            self.present(detail, animated: true, completion: nil)
+        }else{
+            SVProgressHUD.show(withStatus: "لطفا منتظر بمانید ... \n\n")
+
+            if(followedByMe==1){
+                callDisLike(follow: 1)
+            }else{
+                callDisLike(follow: 0)
+            }
+        }
+    }
+    
+    func callDisLike(follow : Int) {
+
+        
+        WebCaller.followDisFollow(follow, getOwner,profileId) { (state, error) in
+            if let error = error{
+                print(error)
+                return
+            }
+            guard let state = state else{
+                print("error getting collections")
+                return
+            }
+            if(state == 1 ){
+                print("like done")
+                if(follow == 1){
+                    self.followedByMe = 0
+                    DispatchQueue.main.async{
+                        SVProgressHUD.dismiss()
+
+                    self.btnSecond.setTitle("رصد کن", for: .normal)
+                    }
+                }else{
+                    DispatchQueue.main.async{
+                        SVProgressHUD.dismiss()
+
+                        self.followedByMe = 1
+                    self.btnSecond.setTitle("درحال رصد", for: .normal)
+                    }
+                }
+            }
+        }
+        
+    }
+    
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo(title : "پروفایل")
     }
@@ -55,7 +107,13 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
             btnSecond.setTitle("مشارکت جدید", for: .normal)
         }else{
             btnFirst.setTitle("درخواست مشاوره", for: .normal)
-            btnSecond.setTitle("رصد کن", for: .normal)
+            
+            if(followedByMe==1){
+                btnSecond.setTitle("در حال رصد", for: .normal)
+            }else{
+                btnSecond.setTitle("رصد کن", for: .normal)
+            }
+            btnSecond.backgroundColor = UIColor.init(red: 66/256, green: 129/256, blue: 191/256, alpha: 1.0)
         }
        
         indicator.isHidden = true

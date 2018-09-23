@@ -13,91 +13,81 @@ class AddFeedVC: UIViewController, UITableViewDataSource,UITableViewDelegate{
     @IBAction func imgBackAct(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    @IBOutlet weak var lblFree : UILabel!
+    @IBOutlet weak var lblPublic : UILabel!
+    @IBOutlet weak var lblRtl : UILabel!
+    
+     @IBOutlet weak var picOne : UIView!
+     @IBOutlet weak var picTwo : UIView!
+     @IBOutlet weak var picThree : UIView!
+
     @IBOutlet weak var imgProfile: UIImageView!
-    @IBOutlet weak var lblName: UILabel!
-    @IBOutlet weak var lblrole: UILabel!
-    @IBOutlet weak var lblPlace: UILabel!
-    @IBOutlet weak var lblDate : UILabel!
     @IBOutlet weak var publicSwitch: UISwitch!
+    @IBOutlet weak var freeSwitch: UISwitch!
     @IBOutlet weak var rtlSwitch: UISwitch!
     var publicType  = 1
     var rtl = 1
     var type  = 0
+    var free = 1
     @IBOutlet weak var edtTitle : UITextField!
-    @IBOutlet weak var edtLink : UITextField!
-    @IBOutlet weak var edtAparat : UITextField!
-    @IBOutlet weak var edtYoutube : UITextField!
 
     @IBAction func publicToggleChange(_ sender: Any) {
         if publicSwitch.isOn {
             publicType = 1
+            lblPublic.text = "عمومی"
         }
         else
         {
             publicType = 0
+            lblPublic.text = "خصوصی"
+
         }
     }
     @IBAction func rtlToggleChange(_ sender: Any) {
         if rtlSwitch.isOn {
             rtl = 1
+            lblRtl.text = "فارسی"
         }
         else
         {
+            lblRtl.text = "انگلیسی"
             rtl = 0
         }
     }
-    @IBOutlet weak var edtDesc : UITextView!
-    @IBAction func btnSave(_ sender: Any) {
-        SVProgressHUD.show(withStatus: "لطفا منتظر بمانید ... \n\n")
-        
-        
-        WebCaller.saveFeed(owner: Owner, location: City, publicState: publicType, align: rtl, contentType: type, collectionId: 0, title: edtTitle.text!, description: edtDesc.text, link: edtLink.text!, apparatLink: edtAparat.text!, youtubeLink: edtYoutube.text!, insertTimeStamp: milliseconds){
-            (myResp,error) in
-            if let error = error {
-                print(error)
-                return
-            }
-            guard let resp = myResp else {
-                print("error getting ")
-                return
-            }
-            if(resp.error == 0){
-                SVProgressHUD.dismiss()
-                self.dismiss(animated: true, completion: nil)
-                self.dismiss(animated: true, completion: nil)
-            }else{
-                SVProgressHUD.dismiss()
-                self.dismiss(animated: true, completion: nil)
-                Utility.showToast(message: resp.errorMessage, myView: self.view)
-                 self.dismiss(animated: true, completion: nil)
-            }
+    @IBAction func freeSwitch(_ sender: Any) {
+        if rtlSwitch.isOn {
+            free = 1
+            lblFree.text = "رایگان"
         }
+        else
+        {
+            lblFree.text = "فروشی"
+            free = 0
+        }
+    }
+    @IBOutlet weak var edtDesc : UITextField!
+    @IBOutlet weak var stack : UIStackView!
+    @IBAction func btnSave(_ sender: Any) {
+    
+        
+       
         
     }
     
+    @IBOutlet weak var constraint: NSLayoutConstraint!
     @IBAction func btnDropType(_ sender: Any) {
         if(!isOpen){
             UIView.animate(withDuration: 0.5){
                 self.isOpen = true
                 self.tableType.isHidden = false
-                self.tableCat.isHidden = true
                 self.isOpenCat = false
+                self.constraint.constant = 250
+                self.stack.layoutIfNeeded()
             }
         }
     }
-    @IBAction func btnCatAct(_ sender: Any) {
-        if(!isOpenCat){
-            UIView.animate(withDuration: 0.5){
-                self.isOpenCat = true
-                self.tableCat.isHidden = false
-                self.tableType.isHidden = true
-                self.isOpen = false
-            }
-        }
-    }
-    @IBOutlet weak var btnCat: UIButton!
-    @IBOutlet weak var tableCat: UITableView!
-    
+   
+
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -111,15 +101,10 @@ class AddFeedVC: UIViewController, UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell:UITableViewCell?
 
-        if(tableView == self.tableType){
          cell = tableView.dequeueReusableCell(withIdentifier: "cell",for : indexPath)
             cell?.textLabel?.text = typeList[indexPath.row]
        
-        }else if(tableView == self.tableCat){
-             cell = tableView.dequeueReusableCell(withIdentifier: "celltwo",for : indexPath)
-            cell?.textLabel?.text = catList[indexPath.row]
-            
-        }
+        
         return cell!
     }
     
@@ -148,11 +133,17 @@ class AddFeedVC: UIViewController, UITableViewDataSource,UITableViewDelegate{
         tableType.dataSource = self
         tableType.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
 
+        picOne.layer.cornerRadius = picOne.layer.frame.width/2
+        picOne.clipsToBounds = true
+        
+        picTwo.layer.cornerRadius = picOne.layer.frame.width/2
+        picTwo.clipsToBounds = true
+        
+        picThree.layer.cornerRadius = picOne.layer.frame.width/2
+        picThree.clipsToBounds = true
+        
         tableType.isHidden = true
-        tableCat.delegate = self
-        tableCat.dataSource = self
-        tableCat.register(UITableViewCell.self, forCellReuseIdentifier: "celltwo")
-        tableCat.isHidden = true
+        
 
         imgProfile.layer.cornerRadius = imgProfile.layer.frame.size.width/2
         imgProfile.clipsToBounds = true
@@ -161,16 +152,10 @@ class AddFeedVC: UIViewController, UITableViewDataSource,UITableViewDelegate{
         
         let userDefaults = UserDefaults.standard
         Owner = userDefaults.value(forKey: "owner") as! String
-        First_Name = userDefaults.value(forKey: "fName") as! String
-        Last_Name = userDefaults.value(forKey: "lName") as! String
-        Job_Position = userDefaults.value(forKey: "job") as! String
-        City = userDefaults.value(forKey: "City") as! String
         Profile_photo_link = userDefaults.value(forKey: "profilePhoto") as! String
         
         
-        lblName.text = First_Name + " " + Last_Name
-        lblrole.text = Job_Position
-        lblPlace.text = City
+       
         let url = URL(string: Profile_photo_link)
         
         
@@ -186,7 +171,7 @@ class AddFeedVC: UIViewController, UITableViewDataSource,UITableViewDelegate{
         
         
         
-        let formatter = DateFormatter()
+      /*  let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
         formatter.calendar = Calendar(identifier: .gregorian)
         let date = Date()
@@ -197,7 +182,7 @@ class AddFeedVC: UIViewController, UITableViewDataSource,UITableViewDelegate{
         formatter.calendar = Calendar(identifier: .persian)
         formatter.dateFormat = "yyyy/MM/dd"
         lblDate.text = formatter.string(from: date)
-       milliseconds = Int64(date.timeIntervalSince1970)
+       milliseconds = Int64(date.timeIntervalSince1970) */
 
         // Do any additional setup after loading the view.
     }
@@ -207,23 +192,17 @@ class AddFeedVC: UIViewController, UITableViewDataSource,UITableViewDelegate{
         // Dispose of any resources that can be recreated.
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if(tableView == tableType){
+        
         UIView.animate(withDuration: 0.2){
         self.btnDropDown.setTitle(self.typeList[indexPath.row], for: .normal)
             self.isOpen = false
+            self.constraint.constant = 50
             self.tableType.isHidden = true
-            self.view.layoutIfNeeded()
+            self.stack.layoutIfNeeded()
             self.type = indexPath.row
             
-        }
-        }else{
-            UIView.animate(withDuration: 0.2){
-                self.btnCat.setTitle(self.catList[indexPath.row], for: .normal)
-                self.isOpenCat = false
-                self.tableCat.isHidden = true
-                self.view.layoutIfNeeded()
-                
-            }
+        
+        
         }
     }
     
