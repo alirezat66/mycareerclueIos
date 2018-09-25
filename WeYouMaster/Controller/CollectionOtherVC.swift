@@ -39,7 +39,7 @@ class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataS
             cell.updateView(collection:collection)
             cell.onButtonTappedOnShow = {
                 let name = collection.ownerName
-                self.openDetail(city: collection.Ownerlocation, name: name, title: collection.Title, image: collection.ownerImage,collectionId: collection.collectionId)
+               self.openDetail(degree: collection.ownerDegree, name: name, title: collection.Title, image: collection.ownerImage,collectionId: collection.collectionId,numOfPost: 2,startDate: "نامشخص")
             }
             return cell
         }else{
@@ -113,15 +113,16 @@ class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataS
             
         }
     }
-    public func openDetail(city : String , name : String ,title : String , image : String ,collectionId : String){
+    public func openDetail(degree : String , name : String ,title : String , image : String ,collectionId : String , numOfPost : Int,startDate : String){
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let detail = storyBoard.instantiateViewController(withIdentifier: "CollectionDetailVC") as! CollectionDetailVC
-        detail.getCity = city
+        let detail = storyBoard.instantiateViewController(withIdentifier: "collectionDetail") as! CollectionDetailTwoVC
+        detail.getDegree = degree
         detail.getName = name
         detail.getTitle = title
         detail.getImage = image
         detail.collectionId = collectionId
-        
+        detail.numberOdPost = numOfPost
+        detail.getStartDate = startDate
         self.present(detail, animated: true, completion: nil)
         
     }

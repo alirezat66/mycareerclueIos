@@ -8,9 +8,23 @@
 
 import UIKit
 import SVProgressHUD
+import XLPagerTabStrip
+
 class CollectionDetailVC:
-UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+UIViewController,UITableViewDelegate,UITableViewDataSource , IndicatorInfoProvider {
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return IndicatorInfo.init(title: "محتوا")
+    }
+    
+    var refreshControll : UIRefreshControl?
+    
+    func addRefreshControl() {
+        refreshControll = UIRefreshControl()
+        refreshControll?.tintColor = UIColor.purple
+        refreshControll?.addTarget(self, action: #selector(refreshList), for: .valueChanged)
+        contentTable.addSubview(refreshControll!)
+    }
     var myContent : [Content] = []
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -18,24 +32,49 @@ UIViewController,UITableViewDelegate,UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "DetailCell") as? OtherFeed {
-            cell.updateView(content: myContent[indexPath.row])
-            return cell
-        }else{
-            return OtherFeed()
-        }
+        
+            if(myContent.count >= indexPath.row){
+                let content = myContent[indexPath.row]
+                if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell") as? HomeCell {
+                    cell.updateView(content: myContent[indexPath.row])
+                    
+                    cell.onButtonTapped = {
+                        self.openProfile(content : content)
+                    }
+                    return cell
+                }else{
+                    return HomeCell()
+                }
+            }else{
+                return HomeCell()
+            }
        
+    }
+    func openProfile(content:Content) {
+        
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let profile = storyBoard.instantiateViewController(withIdentifier: "tablayout") as! ProfileTabVC
+        
+        let userDefaults = UserDefaults.standard
+        let owner = userDefaults.value(forKey: "owner") as! String
+        profile.getName = content.fName! + " " + content.lName!
+        profile.getCity = content.location!
+        profile.getRole = content.education!
+        profile.getImage = content.ownerPic!
+        profile.followedByMe = content.followByMe!
+        profile.profileId = content.owner_id!
+        profile.getOwner = owner
+        profile.bio = ""
+        self.present(profile, animated: true, completion: nil)
+    }
+    @objc func refreshList(){
+        myContent = []
+        getFeeds()
     }
     
 
-    @IBOutlet weak var lblName: UILabel!
-    @IBOutlet weak var lblCity: UILabel!
-    @IBOutlet weak var lblTitle: UILabel!
-    @IBOutlet weak var imgPerson: UIImageView!
-    var getName = String()
-    var getCity = String()
-    var getTitle = String()
-    var getImage = String()
+    
+   
     var collectionId = String()
     @IBAction func btnBack(_ sender: Any) {
         self.dismiss(animated: true
@@ -46,33 +85,16 @@ UIViewController,UITableViewDelegate,UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        lblName.text = getName
-        lblCity.text = getCity
-        lblTitle.text = getTitle
+       
         
         
-        
-        
-        imgPerson.layer.cornerRadius = imgPerson.frame.size.width/2
-        imgPerson.clipsToBounds = true
+      
         contentTable.dataSource = self
         contentTable.delegate = self
+        contentTable.tableFooterView = UIView.init(frame : .zero)
+
         
         
-        if(getImage != "")
-        {
-            let url = URL(string : getImage)
-            
-            DispatchQueue.global().async { [weak self] in
-                if let data = try? Data(contentsOf: url!) {
-                    if let image = UIImage(data: data) {
-                        DispatchQueue.main.async {
-                            self?.imgPerson.image = image
-                        }
-                    }
-                }
-            }
-        }
         
         SVProgressHUD.show(withStatus: "لطفا منتظر بمانید ... \n\n")
         getFeeds()

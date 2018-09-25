@@ -38,6 +38,11 @@ class SplashCV: UIViewController {
                     let home = storyBoard.instantiateViewController(withIdentifier: "BaseBar") as! BaseTabBarController
                     //let home = storyBoard.instantiateViewController(withIdentifier: "tablayout") as! ProfileTabVC
                     self.present(home, animated: true, completion: nil)
+                   
+                    /*let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                    let home = storyBoard.instantiateViewController(withIdentifier: "collectionDetail") as! CollectionDetailTwoVC
+                    
+                    self.present(home, animated: true, completion: nil)*/
                     // do something here when a highscore exists
                 }
             }

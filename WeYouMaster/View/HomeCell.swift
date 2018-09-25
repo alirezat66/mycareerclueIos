@@ -45,7 +45,12 @@ class HomeCell: UITableViewCell {
             UIApplication.shared.openURL(url)
         }
     }
-    
+    @IBAction func imageClickedTwo(_ sender: Any) {
+        
+        if let onButtonTapped = self.onButtonTapped {
+            onButtonTapped()
+        }
+    }
     @IBAction func imageClicked(_ sender: Any) {
         
         if let onButtonTapped = self.onButtonTapped {

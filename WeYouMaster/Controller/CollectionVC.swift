@@ -35,7 +35,7 @@ class CollectionVC: UIViewController,UITableViewDelegate , UITableViewDataSource
             }
             cell.onButtonTappedOnShow = {
                 let name = collection.owner_name + " " + collection.owner_lName
-                  self.openDetail(city: collection.collection_place, name: name, title: collection.Collection_Title, image: collection.collection_owner_image,collectionId: collection.collectionId)
+                self.openDetail(degree: collection.ownerDegree, name: name, title: collection.Collection_Title, image: collection.collection_owner_image,collectionId: collection.collectionId,numOfPost: collection.collection_posts_number,startDate: collection.Published_Date)
             }
             return cell
         }else{
@@ -108,7 +108,7 @@ class CollectionVC: UIViewController,UITableViewDelegate , UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedRow = myCollections[indexPath.row]
         let name = selectedRow.owner_name + " " + selectedRow.owner_lName
-        openDetail(city: selectedRow.collection_place, name: name, title: selectedRow.Collection_Title, image: selectedRow.collection_owner_image,collectionId: selectedRow.collectionId)
+        openDetail(degree: selectedRow.ownerDegree, name: name, title: selectedRow.Collection_Title, image: selectedRow.collection_owner_image,collectionId: selectedRow.collectionId,numOfPost: selectedRow.collection_posts_number,startDate: selectedRow.Published_Date)
     }
     func updateError(){
         DispatchQueue.main.async{
@@ -123,15 +123,16 @@ class CollectionVC: UIViewController,UITableViewDelegate , UITableViewDataSource
         self.refreshControll?.endRefreshing()
         }
     }
-    public func openDetail(city : String , name : String ,title : String , image : String ,collectionId : String){
+    public func openDetail(degree : String , name : String ,title : String , image : String ,collectionId : String , numOfPost : Int,startDate : String){
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let detail = storyBoard.instantiateViewController(withIdentifier: "CollectionDetailVC") as! CollectionDetailVC
-        detail.getCity = city
+        let detail = storyBoard.instantiateViewController(withIdentifier: "collectionDetail") as! CollectionDetailTwoVC
+        detail.getDegree = degree
         detail.getName = name
         detail.getTitle = title
         detail.getImage = image
         detail.collectionId = collectionId
-        
+        detail.numberOdPost = numOfPost
+        detail.getStartDate = startDate
         self.present(detail, animated: true, completion: nil)
 
     }
