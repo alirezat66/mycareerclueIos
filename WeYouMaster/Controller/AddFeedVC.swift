@@ -65,7 +65,7 @@ class AddFeedVC: UIViewController, UITableViewDataSource,UITableViewDelegate{
             free = 0
         }
     }
-    @IBOutlet weak var edtDesc : UITextField!
+    @IBOutlet weak var edtDesc : UITextView!
     @IBOutlet weak var stack : UIStackView!
     @IBAction func btnSave(_ sender: Any) {
     
@@ -113,7 +113,7 @@ class AddFeedVC: UIViewController, UITableViewDataSource,UITableViewDelegate{
     var isOpenCat = false
     @IBOutlet weak var tableType: UITableView!
     @IBOutlet weak var btnDropDown: UIButton!
-    var typeList = ["آموزش","تجزیه و تحلیل","کتاب","الگو","معرفی شرکت","معرفی ابزار","سایر"]
+    var typeList=[""]
     var catList = ["cat1","cat2","cat3"]
     
     var Owner: String = "" 
@@ -168,29 +168,54 @@ class AddFeedVC: UIViewController, UITableViewDataSource,UITableViewDelegate{
                 }
             }
         }
+       
+        
+        SVProgressHUD.show(withStatus: "لطفا منتظر بمانید ... \n\n")
+        getCloolections()
         
         
         
-      /*  let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
-        formatter.calendar = Calendar(identifier: .gregorian)
-        let date = Date()
-        let dateInGrogrian = formatter.string(from: date)
-        
-        print(dateInGrogrian)
-        
-        formatter.calendar = Calendar(identifier: .persian)
-        formatter.dateFormat = "yyyy/MM/dd"
-        lblDate.text = formatter.string(from: date)
-       milliseconds = Int64(date.timeIntervalSince1970) */
-
-        // Do any additional setup after loading the view.
+      
+    }
+    func updateUI(){
+        DispatchQueue.main.async{
+            self.tableType.reloadData()
+            SVProgressHUD.dismiss()
+        }
+    }
+    func updateError(){
+        DispatchQueue.main.async{
+            SVProgressHUD.dismiss()            
+            
+        }
+    }
+    func getCloolections(){
+        let userDefaults = UserDefaults.standard
+        let owner = userDefaults.value(forKey: "owner") as! String
+        WebCaller.getCollectionOther(20,1,owner: owner,userId: owner) { (collections , error) in
+            if let error = error{
+                self.updateError()
+                print(error)
+                return
+            }
+            guard let collections = collections else{
+                self.updateError()
+                print("error getting collections")
+                return
+            }
+            self.typeList.remove(at: 0)
+            
+            for collect in collections.collections{
+                self.typeList.append(collect.Title)
+            }
+            self.updateUI()
+            
+            
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         UIView.animate(withDuration: 0.2){

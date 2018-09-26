@@ -9,6 +9,19 @@
 import UIKit
 import SVProgressHUD
 class CollectionVC: UIViewController,UITableViewDelegate , UITableViewDataSource {
+    
+    @IBOutlet weak var imgNot1: UIButton!
+    @IBOutlet weak var imgNot2: UIButton!
+    @IBOutlet weak var imgNot3: UIButton!
+    @IBOutlet weak var imgNot4: UIButton!
+    @IBOutlet weak var imgNot5: UIButton!
+    @IBOutlet weak var imgNot6: UIButton!
+    @IBOutlet weak var imgNot7: UIButton!
+    @IBOutlet weak var imgNot8: UIButton!
+    @IBOutlet weak var imgNot9: UIButton!
+    
+    @IBOutlet weak var imgProfile: UIButton!
+    
     var refreshControll : UIRefreshControl?
     var myCollections : [Collection] = []
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -66,6 +79,48 @@ class CollectionVC: UIViewController,UITableViewDelegate , UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        imgProfile.layer.cornerRadius = imgProfile.layer.frame.width/2
+        imgProfile.clipsToBounds = true
+        makeButtonCirc(obj: imgNot1)
+        makeButtonCirc(obj: imgNot2)
+        makeButtonCirc(obj: imgNot3)
+        makeButtonCirc(obj: imgNot4)
+        makeButtonCirc(obj: imgNot5)
+        makeButtonCirc(obj: imgNot6)
+        makeButtonCirc(obj: imgNot7)
+        makeButtonCirc(obj: imgNot8)
+        makeButtonCirc(obj: imgNot9)
+        let userDefaults = UserDefaults.standard
+
+        let Profile_photo_link = userDefaults.value(forKey: "profilePhoto") as! String
+        if(Profile_photo_link != ""){
+            
+            let url = URL(string: Profile_photo_link)
+            
+            
+            
+            DispatchQueue.global().async { [weak self] in
+                if let data = try? Data(contentsOf: url!) {
+                    if let image = UIImage(data: data) {
+                        DispatchQueue.main.async {
+                            
+                            
+                            self?.imgProfile.setImage(image, for: UIControlState.normal)
+                            
+                        }
+                    }
+                }
+            }
+        }else{
+            DispatchQueue.main.async {
+                self.imgProfile.setImage(UIImage(named: "avatar_icon.png"), for: UIControlState.normal)
+            }
+        }
+    }
+    func makeButtonCirc(obj : UIButton) {
+        obj.layer.cornerRadius = obj.layer.frame.width/2
+        obj.clipsToBounds = true
     }
     override func viewDidAppear(_ animated: Bool) {
         

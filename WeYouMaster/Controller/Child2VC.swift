@@ -11,7 +11,7 @@ import XLPagerTabStrip
 
 class Child2VC: UIViewController, IndicatorInfoProvider {
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo.init(title: "page2")
+        return IndicatorInfo.init(title: "انواع")
     }
     override func viewDidLoad() {
         super.viewDidLoad()
