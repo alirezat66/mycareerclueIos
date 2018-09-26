@@ -36,6 +36,8 @@
 		BB570C5F2151B59E00D72D8B /* TabLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB570C5E2151B59E00D72D8B /* TabLayout.swift */; };
 		BB570C612152443900D72D8B /* ProfileTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB570C602152443900D72D8B /* ProfileTabVC.swift */; };
 		BB7BE65C21340AC8008EC1F3 /* MenuPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7BE65B21340AC8008EC1F3 /* MenuPage.swift */; };
+		BB8891A0215B864E00D09051 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB88919F215B864E00D09051 /* NotificationService.swift */; };
+		BB8891A4215B864E00D09051 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BB88919D215B864E00D09051 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		BB968CDB213EA5EC009DE929 /* HomeOtherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB968CDA213EA5EC009DE929 /* HomeOtherVC.swift */; };
 		BB968CDD213EA60D009DE929 /* CommentLikeOtherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB968CDC213EA60D009DE929 /* CommentLikeOtherVC.swift */; };
 		BB968CDF213EA628009DE929 /* CollectionOtherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB968CDE213EA628009DE929 /* CollectionOtherVC.swift */; };
@@ -88,10 +90,36 @@
 		BBF1317B213D6A2000B49D11 /* CollectionCollect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF1317A213D6A2000B49D11 /* CollectionCollect.swift */; };
 		BBF1317D213E17C600B49D11 /* ProfileOtherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF1317C213E17C600B49D11 /* ProfileOtherVC.swift */; };
 		BBF5F79E2118554500397B7D /* DLRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF5F79D2118554500397B7D /* DLRadioButton.m */; };
+		F733E9CB1E18B8E55CC3EDF5 /* Pods_WeYouMaster_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB02280EA97F487BED3B8CBD /* Pods_WeYouMaster_OneSignalNotificationServiceExtension.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BB8891A2215B864E00D09051 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BBA8962520FC89240098980B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB88919C215B864E00D09051;
+			remoteInfo = OneSignalNotificationServiceExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BB8891A8215B864E00D09051 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				BB8891A4215B864E00D09051 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5280BC1127C140460917C54C /* Pods-WeYouMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeYouMaster.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeYouMaster/Pods-WeYouMaster.release.xcconfig"; sourceTree = "<group>"; };
+		6EE332524012908CC213E6A4 /* Pods-WeYouMaster-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeYouMaster-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeYouMaster-OneSignalNotificationServiceExtension/Pods-WeYouMaster-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		72FFC982F931C4D90FC135FC /* Pods-WeYouMaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeYouMaster.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeYouMaster/Pods-WeYouMaster.debug.xcconfig"; sourceTree = "<group>"; };
 		AC902F30B60C5EE58A7ED1D1 /* Pods_WeYouMaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeYouMaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB118CAD2115A62400238A85 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
@@ -122,6 +150,10 @@
 		BB570C5E2151B59E00D72D8B /* TabLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabLayout.swift; sourceTree = "<group>"; };
 		BB570C602152443900D72D8B /* ProfileTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabVC.swift; sourceTree = "<group>"; };
 		BB7BE65B21340AC8008EC1F3 /* MenuPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPage.swift; sourceTree = "<group>"; };
+		BB88919D215B864E00D09051 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB88919F215B864E00D09051 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		BB8891A1215B864E00D09051 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB8891A9215B95DF00D09051 /* WeYouMaster.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WeYouMaster.entitlements; sourceTree = "<group>"; };
 		BB968CDA213EA5EC009DE929 /* HomeOtherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeOtherVC.swift; sourceTree = "<group>"; };
 		BB968CDC213EA60D009DE929 /* CommentLikeOtherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentLikeOtherVC.swift; sourceTree = "<group>"; };
 		BB968CDE213EA628009DE929 /* CollectionOtherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionOtherVC.swift; sourceTree = "<group>"; };
@@ -178,6 +210,8 @@
 		BBF5F795211850DC00397B7D /* WeYouMaster-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WeYouMaster-Bridging-Header.h"; sourceTree = "<group>"; };
 		BBF5F79C2118554500397B7D /* DLRadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DLRadioButton.h; path = "../../../Downloads/DLRadioButton-master/DLRadioButton/DLRadioButton.h"; sourceTree = "<group>"; };
 		BBF5F79D2118554500397B7D /* DLRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DLRadioButton.m; path = "../../../Downloads/DLRadioButton-master/DLRadioButton/DLRadioButton.m"; sourceTree = "<group>"; };
+		CA028A4AF8931336CE7D01FE /* Pods-WeYouMaster-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeYouMaster-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeYouMaster-OneSignalNotificationServiceExtension/Pods-WeYouMaster-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
+		DB02280EA97F487BED3B8CBD /* Pods_WeYouMaster_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeYouMaster_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +223,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BB88919A215B864E00D09051 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F733E9CB1E18B8E55CC3EDF5 /* Pods_WeYouMaster_OneSignalNotificationServiceExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -197,6 +239,8 @@
 			children = (
 				72FFC982F931C4D90FC135FC /* Pods-WeYouMaster.debug.xcconfig */,
 				5280BC1127C140460917C54C /* Pods-WeYouMaster.release.xcconfig */,
+				6EE332524012908CC213E6A4 /* Pods-WeYouMaster-OneSignalNotificationServiceExtension.debug.xcconfig */,
+				CA028A4AF8931336CE7D01FE /* Pods-WeYouMaster-OneSignalNotificationServiceExtension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -205,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				AC902F30B60C5EE58A7ED1D1 /* Pods_WeYouMaster.framework */,
+				DB02280EA97F487BED3B8CBD /* Pods_WeYouMaster_OneSignalNotificationServiceExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -304,11 +349,21 @@
 			path = utils;
 			sourceTree = "<group>";
 		};
+		BB88919E215B864E00D09051 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				BB88919F215B864E00D09051 /* NotificationService.swift */,
+				BB8891A1215B864E00D09051 /* Info.plist */,
+			);
+			path = OneSignalNotificationServiceExtension;
+			sourceTree = "<group>";
+		};
 		BBA8962420FC89240098980B = {
 			isa = PBXGroup;
 			children = (
 				BBF5F795211850DC00397B7D /* WeYouMaster-Bridging-Header.h */,
 				BBA8962F20FC89240098980B /* WeYouMaster */,
+				BB88919E215B864E00D09051 /* OneSignalNotificationServiceExtension */,
 				BBA8962E20FC89240098980B /* Products */,
 				2CE1074BF2A674A7B02A36BD /* Pods */,
 				AF196389C6365E97331C4641 /* Frameworks */,
@@ -319,6 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				BBA8962D20FC89240098980B /* WeYouMaster.app */,
+				BB88919D215B864E00D09051 /* OneSignalNotificationServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -326,6 +382,7 @@
 		BBA8962F20FC89240098980B /* WeYouMaster */ = {
 			isa = PBXGroup;
 			children = (
+				BB8891A9215B95DF00D09051 /* WeYouMaster.entitlements */,
 				BB3C1E34211B286200075EEB /* utils */,
 				BBB0D45420FF7034000CAC15 /* Services */,
 				BBB0D44F20FF66E7000CAC15 /* View */,
@@ -376,6 +433,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		BB88919C215B864E00D09051 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB8891A7215B864E00D09051 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
+			buildPhases = (
+				EB38FEB9D472872E15CFE390 /* [CP] Check Pods Manifest.lock */,
+				BB889199215B864E00D09051 /* Sources */,
+				BB88919A215B864E00D09051 /* Frameworks */,
+				BB88919B215B864E00D09051 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneSignalNotificationServiceExtension;
+			productName = OneSignalNotificationServiceExtension;
+			productReference = BB88919D215B864E00D09051 /* OneSignalNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		BBA8962C20FC89240098980B /* WeYouMaster */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BBA8963F20FC89260098980B /* Build configuration list for PBXNativeTarget "WeYouMaster" */;
@@ -385,10 +460,12 @@
 				BBA8962B20FC89240098980B /* Resources */,
 				9900F6EDA7976841AAEA002F /* Frameworks */,
 				761F4ADEB7A763D1A15CFF8F /* [CP] Embed Pods Frameworks */,
+				BB8891A8215B864E00D09051 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				BB8891A3215B864E00D09051 /* PBXTargetDependency */,
 			);
 			name = WeYouMaster;
 			productName = WeYouMaster;
@@ -405,9 +482,20 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = alireza;
 				TargetAttributes = {
+					BB88919C215B864E00D09051 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
 					BBA8962C20FC89240098980B = {
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 0940;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -425,11 +513,19 @@
 			projectRoot = "";
 			targets = (
 				BBA8962C20FC89240098980B /* WeYouMaster */,
+				BB88919C215B864E00D09051 /* OneSignalNotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BB88919B215B864E00D09051 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BBA8962B20FC89240098980B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -483,9 +579,35 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeYouMaster/Pods-WeYouMaster-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EB38FEB9D472872E15CFE390 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WeYouMaster-OneSignalNotificationServiceExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BB889199215B864E00D09051 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB8891A0215B864E00D09051 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BBA8962920FC89240098980B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -570,6 +692,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		BB8891A3215B864E00D09051 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BB88919C215B864E00D09051 /* OneSignalNotificationServiceExtension */;
+			targetProxy = BB8891A2215B864E00D09051 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		BBA8963420FC89240098980B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -590,6 +720,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		BB8891A5215B864E00D09051 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6EE332524012908CC213E6A4 /* Pods-WeYouMaster-OneSignalNotificationServiceExtension.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 45PY72HQ8W;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ir.greencode.ios.WeYouMaster.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BB8891A6215B864E00D09051 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA028A4AF8931336CE7D01FE /* Pods-WeYouMaster-OneSignalNotificationServiceExtension.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 45PY72HQ8W;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ir.greencode.ios.WeYouMaster.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		BBA8963D20FC89260098980B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -708,19 +880,23 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 72FFC982F931C4D90FC135FC /* Pods-WeYouMaster.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = WeYouMaster/WeYouMaster.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3W3Z6L4R4U;
+				DEVELOPMENT_TEAM = 45PY72HQ8W;
 				INFOPLIST_FILE = WeYouMaster/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				NEW_SETTING = "";
-				PRODUCT_BUNDLE_IDENTIFIER = ir.greencode.WeYouMaster;
+				PRODUCT_BUNDLE_IDENTIFIER = ir.greencode.ios.WeYouMaster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "WeYouMaster-Bridging-Header.h";
@@ -734,19 +910,23 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5280BC1127C140460917C54C /* Pods-WeYouMaster.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = WeYouMaster/WeYouMaster.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3W3Z6L4R4U;
+				DEVELOPMENT_TEAM = 45PY72HQ8W;
 				INFOPLIST_FILE = WeYouMaster/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				NEW_SETTING = "";
-				PRODUCT_BUNDLE_IDENTIFIER = ir.greencode.WeYouMaster;
+				PRODUCT_BUNDLE_IDENTIFIER = ir.greencode.ios.WeYouMaster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "WeYouMaster-Bridging-Header.h";
@@ -758,6 +938,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BB8891A7215B864E00D09051 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB8891A5215B864E00D09051 /* Debug */,
+				BB8891A6215B864E00D09051 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BBA8962820FC89240098980B /* Build configuration list for PBXProject "WeYouMaster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

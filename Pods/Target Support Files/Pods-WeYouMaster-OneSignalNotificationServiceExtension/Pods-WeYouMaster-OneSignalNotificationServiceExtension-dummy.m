@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_WeYouMaster_OneSignalNotificationServiceExtension : NSObject
+@end
+@implementation PodsDummy_Pods_WeYouMaster_OneSignalNotificationServiceExtension
+@end

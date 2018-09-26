@@ -3849,6 +3849,7 @@
                             <constraint firstItem="T16-W7-Zro" firstAttribute="top" relation="greaterThanOrEqual" secondItem="uUm-pS-Dkc" secondAttribute="top" constant="30" id="kkm-vX-Mv0"/>
                             <constraint firstItem="uUm-pS-Dkc" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="T16-W7-Zro" secondAttribute="bottom" constant="16" id="lBH-xA-vgs"/>
                             <constraint firstItem="uUm-pS-Dkc" firstAttribute="trailing" secondItem="T16-W7-Zro" secondAttribute="trailing" constant="16" id="sEa-52-P0B"/>
+                            <constraint firstItem="L6M-S2-fMh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="uUm-pS-Dkc" secondAttribute="top" constant="67" id="yYE-X6-CAW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uUm-pS-Dkc"/>
                     </view>

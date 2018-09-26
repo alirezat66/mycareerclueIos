@@ -8,6 +8,9 @@ target 'WeYouMaster' do
 pod 'SVProgressHUD'
 pod 'XLPagerTabStrip', '~> 8.0'
   # Pods for WeYouMaster
-
-
+pod 'OneSignal', '>= 2.6.2', '< 3.0'
+target 'OneSignalNotificationServiceExtension' do
+    pod 'OneSignal', '>= 2.6.2', '< 3.0'
 end
+end
+
