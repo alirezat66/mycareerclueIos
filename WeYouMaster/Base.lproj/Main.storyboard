@@ -3516,7 +3516,7 @@
                                                                                 </label>
                                                                             </subviews>
                                                                         </stackView>
-                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="itg-MV-tFE">
+                                                                        <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="itg-MV-tFE">
                                                                             <rect key="frame" x="263" y="0.0" width="60" height="60"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="60" id="ie4-Fy-lDm"/>
@@ -5629,7 +5629,7 @@
         <image name="sendButtonDisable" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Bd3-DO-OGi"/>
+        <segue reference="Ehb-Mu-Hs2"/>
         <segue reference="dCa-sC-F3t"/>
         <segue reference="Jsm-m6-w3d"/>
     </inferredMetricsTieBreakers>

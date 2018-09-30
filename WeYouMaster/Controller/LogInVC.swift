@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import OneSignal
 class LogInVC: UIViewController {
     let spinnerIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
 
@@ -113,11 +113,16 @@ func getLogin(_ email: String,_ pass : String,_ myVc : LogInVC) {
                 userDefaults.set(todo.Sold_sofar, forKey: "sales")
                 userDefaults.set(todo.LinkedIn, forKey: "linkedIn")
                 userDefaults.set(3, forKey: "loginState")
-
+                
+                OneSignal.setEmail(todo.Email)
+                
+                let tags: [AnyHashable : Any] = [
+                    "owner" : todo.Owner
+                ]
+                OneSignal.sendTags(tags)
                 let home = StoryBoard.instantiateViewController(withIdentifier: "BaseBar" ) as? BaseTabBarController
                 print("3")
                 self.alertController.dismiss(animated: true, completion: nil);
-
                 self.present(home!, animated: true, completion: nil)
             }
             
