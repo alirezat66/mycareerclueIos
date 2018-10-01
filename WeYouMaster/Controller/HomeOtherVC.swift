@@ -73,11 +73,15 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , 
     @IBOutlet weak var homeTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        SVProgressHUD.show(withStatus: "لطفا منتظر بمانید ... \n\n")
+        
+        
         addRefreshControl()
+        getFeeds()
     }
     override func viewDidAppear(_ animated: Bool) {
         
-        myContent = []
+     
         homeTable.dataSource = self
         homeTable.delegate = self
       
@@ -88,9 +92,7 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , 
        
         // Do any additional setup after loading the view.
         
-        SVProgressHUD.show(withStatus: "لطفا منتظر بمانید ... \n\n")
         
-        getFeeds()
     }
     func getFeeds(){
         let userDefaults = UserDefaults.standard
@@ -99,10 +101,12 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , 
         WebCaller.getUserFeed(50, 1,owner
         ) { (contents, error) in
             if let error = error{
+                self.updateError()
                 print(error)
                 return
             }
             guard let contentList = contents else{
+                self.updateError()
                 print("error getting collections")
                 return
             }

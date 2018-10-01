@@ -110,6 +110,49 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     }
     @IBOutlet weak var homeTable: UITableView!
     override func viewDidLoad() {
+        
+        homeTable.dataSource = self
+        homeTable.delegate = self
+        homeTable.tableFooterView = UIView.init(frame : .zero)
+        imgProfile.layer.cornerRadius = imgProfile.frame.size.width/2
+        imgProfile.clipsToBounds = true
+        let userDefaults = UserDefaults.standard
+        
+        
+        
+        
+        
+        
+        let Profile_photo_link = userDefaults.value(forKey: "profilePhoto") as! String
+        if(Profile_photo_link != ""){
+            
+            let url = URL(string: Profile_photo_link)
+            
+            
+            
+            DispatchQueue.global().async { [weak self] in
+                if let data = try? Data(contentsOf: url!) {
+                    if let image = UIImage(data: data) {
+                        DispatchQueue.main.async {
+                            
+                            
+                            self?.imgProfile.setImage(image, for: UIControlState.normal)
+                            
+                        }
+                    }
+                }
+            }
+        }else{
+            DispatchQueue.main.async {
+                self.imgProfile.setImage(UIImage(named: "avatar_icon.png"), for: UIControlState.normal)
+            }
+        }
+        // Do any additional setup after loading the view.
+        
+        SVProgressHUD.show(withStatus: "لطفا منتظر بمانید ... \n\n")
+        
+        getFeeds()
+        
         super.viewDidLoad()
         
         
@@ -131,53 +174,6 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         makeButtonCirc(obj: imgNot8)
         makeButtonCirc(obj: imgNot9)
         myContent = []
-        updateUI()
-        
-        homeTable.dataSource = self
-        homeTable.delegate = self
-        homeTable.tableFooterView = UIView.init(frame : .zero)
-        imgProfile.layer.cornerRadius = imgProfile.frame.size.width/2
-        imgProfile.clipsToBounds = true
-        
-        
-        
-        
-        let userDefaults = UserDefaults.standard
-        
-        
-        
-        
-        
-        
-        let Profile_photo_link = userDefaults.value(forKey: "profilePhoto") as! String
-        if(Profile_photo_link != ""){
-        
-        let url = URL(string: Profile_photo_link)
-        
-       
-        
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: url!) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        
-                        
-                        self?.imgProfile.setImage(image, for: UIControlState.normal)
-                        
-                    }
-                }
-            }
-        }
-        }else{
-             DispatchQueue.main.async {
-                self.imgProfile.setImage(UIImage(named: "avatar_icon.png"), for: UIControlState.normal) 
-            }
-        }
-        // Do any additional setup after loading the view.
-        
-        SVProgressHUD.show(withStatus: "لطفا منتظر بمانید ... \n\n")
-        
-        getFeeds()
         getNotifs()
         addRefreshControl()
     }

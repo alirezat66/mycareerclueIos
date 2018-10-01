@@ -206,6 +206,7 @@ public class WebCaller {
             // parse the result as JSON
             // then create a Todo from the JSON
             do {
+                
                 print(responseData)
                 let  contentL  = try JSONDecoder().decode(OtherContentList.self,from: responseData)
                 completionHandler(contentL,nil)

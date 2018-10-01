@@ -19,6 +19,9 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
     @IBOutlet weak var lblrole: UILabel!
     @IBOutlet weak var lblPlace: UILabel!
     
+    @IBOutlet weak var btnSetting : UIButton!
+
+     @IBOutlet weak var btnEdit : UIButton!
     @IBOutlet weak var btnFirst : UIButton!
     @IBOutlet weak var btnSecond : UIButton!
     
@@ -105,7 +108,12 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
         if(isOwner){
             btnFirst.setTitle("مجموعه جدید", for: .normal)
             btnSecond.setTitle("مشارکت جدید", for: .normal)
+            
+            
         }else{
+            btnSetting.isHidden=true
+            btnEdit.isHidden=true
+            loadViewIfNeeded()
             btnFirst.setTitle("درخواست مشاوره", for: .normal)
             
             if(followedByMe==1){
