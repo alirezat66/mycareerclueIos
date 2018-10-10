@@ -27,7 +27,19 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
     
     @IBOutlet weak var indicator : UIActivityIndicatorView!
     
-
+    @IBAction func firstButtonClicked(_ sender: Any) {
+        if(!isOwner){
+            let userDefaults = UserDefaults.standard
+            userDefaults.set(getName, forKey: "lastname")
+            
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let sendPm = storyBoard.instantiateViewController(withIdentifier: "sendPm") as! SendPmVC
+            
+            self.present(sendPm, animated: true, completion: nil)
+            
+        }
+    }
+    
     var getName = String()
     var getCity = String()
     var getRole = String()

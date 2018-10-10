@@ -49,7 +49,8 @@ class CollectionDetailVCTwo: UIViewController , IndicatorInfoProvider{
                         DispatchQueue.main.async {
                           
                             self?.imgPerson.setBackgroundImage(image, for: UIControlState.normal)
-                            
+                            self?.imgPerson.layoutIfNeeded()
+                            self?.imgPerson.subviews.first?.contentMode = .scaleAspectFill
                         }
                     }
                 }

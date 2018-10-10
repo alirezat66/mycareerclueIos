@@ -52,6 +52,8 @@ class CollectionCell: UITableViewCell {
                 if let image = UIImage(data: data) {
                     DispatchQueue.main.async {
                         self?.collectionOwnerImage.setBackgroundImage(image, for: .normal)
+                        self?.collectionOwnerImage.layoutIfNeeded()
+                        self?.collectionOwnerImage.subviews.first?.contentMode = .scaleAspectFill
                     }
                 }
             }

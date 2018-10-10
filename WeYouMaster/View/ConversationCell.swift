@@ -30,6 +30,7 @@ class ConversationCell: UITableViewCell {
         
         imgPerson.layer.cornerRadius = imgPerson.frame.size.width/2
         imgPerson.clipsToBounds = true
+        
     }
     
 }

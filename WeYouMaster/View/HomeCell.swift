@@ -203,6 +203,9 @@ class HomeCell: UITableViewCell {
                         DispatchQueue.main.async {
                             self?.imgPerson.setBackgroundImage(image, for: .normal)
                             self?.loader.stopAnimating()
+                            self?.imgPerson.layoutIfNeeded()
+                            self?.imgPerson.subviews.first?.contentMode = .scaleAspectFill
+
                         }
                     }
                 }
@@ -221,6 +224,7 @@ class HomeCell: UITableViewCell {
         }
         imgPerson.layer.cornerRadius = imgPerson.frame.size.width/2
         imgPerson.clipsToBounds = true
+        
         let name = content.fName! + " " + content.lName!
         lblOwner.text = name
         lblTitle.text = content.title
@@ -252,7 +256,8 @@ class HomeCell: UITableViewCell {
         if content.contentType == 2 {
             imageFromServerURL(urlString: content.imgSource!)
             imgContent.isHidden = false
-            imgConstrant.constant = 200
+            imgConstrant.constant = 330
+           
             
         }else {
             imgConstrant.constant = 0
@@ -264,7 +269,7 @@ class HomeCell: UITableViewCell {
         
     }
     
-     
+    
     
     
 }

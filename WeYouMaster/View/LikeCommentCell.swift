@@ -54,6 +54,8 @@ class LikeCommentCell : UITableViewCell {
                     if let image = UIImage(data: data) {
                         DispatchQueue.main.async {
                             self?.imgLogo.setBackgroundImage(image, for: .normal)
+                            self?.imgLogo.layoutIfNeeded()
+                            self?.imgLogo.subviews.first?.contentMode = .scaleAspectFill
                         }
                     }
                 }

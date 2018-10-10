@@ -204,6 +204,8 @@ class HomeOtherCell: UITableViewCell {
                         DispatchQueue.main.async {
                             self?.imgPerson.setBackgroundImage(image, for: .normal)
                             self?.loader.stopAnimating()
+                            self?.imgPerson.layoutIfNeeded()
+                            self?.imgPerson.subviews.first?.contentMode = .scaleAspectFill
                         }
                     }
                 }
