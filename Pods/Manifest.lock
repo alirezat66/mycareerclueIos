@@ -1,24 +1,28 @@
 PODS:
-  - OneSignal (2.8.9)
+  - DLRadioButton (1.4.12)
+  - OneSignal (2.9.0)
   - SVProgressHUD (2.2.5)
   - XLPagerTabStrip (8.0.1)
 
 DEPENDENCIES:
+  - DLRadioButton (~> 1.4)
   - OneSignal (< 3.0, >= 2.6.2)
   - SVProgressHUD
   - XLPagerTabStrip (~> 8.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - DLRadioButton
     - OneSignal
     - SVProgressHUD
     - XLPagerTabStrip
 
 SPEC CHECKSUMS:
-  OneSignal: 0fb3522620d392195ed8e90e4e96717c6085df45
+  DLRadioButton: d7c4e225ed0e8013cef7be61455230c7557ad7c1
+  OneSignal: fc816c9dc308ea4f60348a02500db8198b43cf69
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   XLPagerTabStrip: c908b17cbf42fcd2598ee1adfc49bae25444d88a
 
-PODFILE CHECKSUM: 7e4fbd64e6db6f60f8eec7b5b608a45569cef0bc
+PODFILE CHECKSUM: e5e5f37632765e9b953590c2fbb1610888800cc9
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.0.beta.1
