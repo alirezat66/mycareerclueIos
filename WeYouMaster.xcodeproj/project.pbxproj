@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18A8DD99EFD03CD39C56E177 /* Pods_WeYouMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85F38496EC21058DA6678632 /* Pods_WeYouMaster.framework */; };
+		BB0772B8219ADB5500A372F2 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0772B7219ADB5500A372F2 /* NotificationService.swift */; };
+		BB0772BC219ADB5500A372F2 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BB0772B5219ADB5500A372F2 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		BB118CAE2115A62400238A85 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB118CAD2115A62400238A85 /* CircleButton.swift */; };
 		BB118CB02115BF5B00238A85 /* LockVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB118CAF2115BF5B00238A85 /* LockVC.swift */; };
 		BB176C54213333A700F3F79B /* NormalResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB176C53213333A700F3F79B /* NormalResponse.swift */; };
@@ -29,14 +32,27 @@
 		BB4194A121033FE400823353 /* CollectionDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4194A021033FE400823353 /* CollectionDetailVC.swift */; };
 		BB4194A321035C8E00823353 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4194A221035C8E00823353 /* DetailCell.swift */; };
 		BB4194A521035E5400823353 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4194A421035E5400823353 /* Content.swift */; };
+		BB4F253421B5584E00690652 /* LabelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F253321B5584E00690652 /* LabelResponse.swift */; };
+		BB4F253621B558BF00690652 /* LabelPrototype.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F253521B558BF00690652 /* LabelPrototype.swift */; };
+		BB4F253821B58B8C00690652 /* LabelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F253721B58B8C00690652 /* LabelViewCell.swift */; };
+		BB4F253A21B5B0DB00690652 /* AddCollectionResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F253921B5B0DB00690652 /* AddCollectionResp.swift */; };
+		BB4F253C21B85BA600690652 /* AddChapterRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F253B21B85BA600690652 /* AddChapterRes.swift */; };
+		BB4F254221B888E700690652 /* SelectCollectionAndChapterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F254121B888E700690652 /* SelectCollectionAndChapterVC.swift */; };
+		BB4F254421B8A2CC00690652 /* CollectionExpendedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F254321B8A2CC00690652 /* CollectionExpendedCell.swift */; };
+		BB4F254621B8A3A800690652 /* MainCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F254521B8A3A800690652 /* MainCollection.swift */; };
+		BB4F254821B8A3BD00690652 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F254721B8A3BD00690652 /* Chapter.swift */; };
+		BB4F254A21B8A4EE00690652 /* CollChap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F254921B8A4EE00690652 /* CollChap.swift */; };
+		BB4F254C21B8FF3700690652 /* ExpendedCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F254B21B8FF3700690652 /* ExpendedCollection.swift */; };
+		BB4F254E21B90FE700690652 /* FeedTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F254D21B90FE700690652 /* FeedTypeCell.swift */; };
+		BB4F255021B92FD800690652 /* AddContributionRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F254F21B92FD800690652 /* AddContributionRes.swift */; };
 		BB569EA72158FF3C00DB8D1B /* CollectionDetailTwoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB569EA62158FF3C00DB8D1B /* CollectionDetailTwoVC.swift */; };
 		BB569EA921598A9300DB8D1B /* CollectionDetailVCTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB569EA821598A9300DB8D1B /* CollectionDetailVCTwo.swift */; };
 		BB570C5D2150D3F100D72D8B /* NotifResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB570C5C2150D3F100D72D8B /* NotifResponse.swift */; };
 		BB570C5F2151B59E00D72D8B /* TabLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB570C5E2151B59E00D72D8B /* TabLayout.swift */; };
 		BB570C612152443900D72D8B /* ProfileTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB570C602152443900D72D8B /* ProfileTabVC.swift */; };
 		BB7BE65C21340AC8008EC1F3 /* MenuPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7BE65B21340AC8008EC1F3 /* MenuPage.swift */; };
-		BB8891A0215B864E00D09051 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB88919F215B864E00D09051 /* NotificationService.swift */; };
-		BB8891A4215B864E00D09051 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BB88919D215B864E00D09051 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BB7F83F421B47DCF00FC81CB /* TestCVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7F83F321B47DCF00FC81CB /* TestCVViewController.swift */; };
+		BB8852D8219BAD230017AFF4 /* RoundedBorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8852D7219BAD230017AFF4 /* RoundedBorderButton.swift */; };
 		BB968CDB213EA5EC009DE929 /* HomeOtherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB968CDA213EA5EC009DE929 /* HomeOtherVC.swift */; };
 		BB968CDD213EA60D009DE929 /* CommentLikeOtherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB968CDC213EA60D009DE929 /* CommentLikeOtherVC.swift */; };
 		BB968CDF213EA628009DE929 /* CollectionOtherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB968CDE213EA628009DE929 /* CollectionOtherVC.swift */; };
@@ -78,6 +94,10 @@
 		BBB75C872122E50F00C1CAA9 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB75C862122E50F00C1CAA9 /* CardView.swift */; };
 		BBB75C892122FDB700C1CAA9 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB75C882122FDB700C1CAA9 /* DashboardVC.swift */; };
 		BBB75C8F212457F000C1CAA9 /* CollectionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB75C8E212457F000C1CAA9 /* CollectionList.swift */; };
+		BBCFA95D219B11D6005261BF /* AddCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCFA95C219B11D6005261BF /* AddCollectionVC.swift */; };
+		BBCFA95F219B814C005261BF /* AddChapterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCFA95E219B814C005261BF /* AddChapterVC.swift */; };
+		BBCFA961219B8165005261BF /* AddContribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCFA960219B8165005261BF /* AddContribution.swift */; };
+		BBCFA963219B817B005261BF /* SelectContriButeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCFA962219B817B005261BF /* SelectContriButeType.swift */; };
 		BBECFA922154228700009C4F /* Child1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBECFA912154228700009C4F /* Child1VC.swift */; };
 		BBECFA942154229900009C4F /* Child2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBECFA932154229900009C4F /* Child2VC.swift */; };
 		BBEDB0CB21355DD9004BE37E /* AboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEDB0CA21355DD9004BE37E /* AboutUsVC.swift */; };
@@ -90,16 +110,15 @@
 		BBF1317B213D6A2000B49D11 /* CollectionCollect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF1317A213D6A2000B49D11 /* CollectionCollect.swift */; };
 		BBF1317D213E17C600B49D11 /* ProfileOtherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF1317C213E17C600B49D11 /* ProfileOtherVC.swift */; };
 		BBF5F79E2118554500397B7D /* DLRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF5F79D2118554500397B7D /* DLRadioButton.m */; };
-		D6638384EF136EB493CBC3B8 /* Pods_WeYouMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB63AB140303E2E2C59446BC /* Pods_WeYouMaster.framework */; };
-		EB8AF3BE976DE37168B74653 /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F3E45D370FDF3631C80BCC5 /* Pods_OneSignalNotificationServiceExtension.framework */; };
+		EC310FB00BD41BA4E265F486 /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66645577ADDD03E27D862E4D /* Pods_OneSignalNotificationServiceExtension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		BB8891A2215B864E00D09051 /* PBXContainerItemProxy */ = {
+		BB0772BA219ADB5500A372F2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BBA8962520FC89240098980B /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = BB88919C215B864E00D09051;
+			remoteGlobalIDString = BB0772B4219ADB5500A372F2;
 			remoteInfo = OneSignalNotificationServiceExtension;
 		};
 /* End PBXContainerItemProxy section */
@@ -111,7 +130,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				BB8891A4215B864E00D09051 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */,
+				BB0772BC219ADB5500A372F2 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -119,11 +138,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		47EFB2BE7E89F9AAD6CF1465 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
-		5280BC1127C140460917C54C /* Pods-WeYouMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeYouMaster.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeYouMaster/Pods-WeYouMaster.release.xcconfig"; sourceTree = "<group>"; };
-		70157B90377BEFF6204D7D8D /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
-		72FFC982F931C4D90FC135FC /* Pods-WeYouMaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeYouMaster.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeYouMaster/Pods-WeYouMaster.debug.xcconfig"; sourceTree = "<group>"; };
-		8F3E45D370FDF3631C80BCC5 /* Pods_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B851B00DD014B85F6D48EB1 /* Pods-WeYouMaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeYouMaster.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeYouMaster/Pods-WeYouMaster.debug.xcconfig"; sourceTree = "<group>"; };
+		5B1E52ADBC54AA7A50CC280A /* Pods-WeYouMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeYouMaster.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeYouMaster/Pods-WeYouMaster.release.xcconfig"; sourceTree = "<group>"; };
+		66645577ADDD03E27D862E4D /* Pods_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		85F38496EC21058DA6678632 /* Pods_WeYouMaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeYouMaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F2FF288B4B2B31A7C5BA083 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		BB0772B5219ADB5500A372F2 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB0772B7219ADB5500A372F2 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		BB0772B9219ADB5500A372F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB118CAD2115A62400238A85 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		BB118CAF2115BF5B00238A85 /* LockVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockVC.swift; sourceTree = "<group>"; };
 		BB176C53213333A700F3F79B /* NormalResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalResponse.swift; sourceTree = "<group>"; };
@@ -146,15 +168,31 @@
 		BB4194A021033FE400823353 /* CollectionDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailVC.swift; sourceTree = "<group>"; };
 		BB4194A221035C8E00823353 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		BB4194A421035E5400823353 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
+		BB4F253121B508B100690652 /* Dropper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Dropper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB4F253321B5584E00690652 /* LabelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelResponse.swift; sourceTree = "<group>"; };
+		BB4F253521B558BF00690652 /* LabelPrototype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelPrototype.swift; sourceTree = "<group>"; };
+		BB4F253721B58B8C00690652 /* LabelViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelViewCell.swift; sourceTree = "<group>"; };
+		BB4F253921B5B0DB00690652 /* AddCollectionResp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCollectionResp.swift; sourceTree = "<group>"; };
+		BB4F253B21B85BA600690652 /* AddChapterRes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChapterRes.swift; sourceTree = "<group>"; };
+		BB4F254121B888E700690652 /* SelectCollectionAndChapterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCollectionAndChapterVC.swift; sourceTree = "<group>"; };
+		BB4F254321B8A2CC00690652 /* CollectionExpendedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExpendedCell.swift; sourceTree = "<group>"; };
+		BB4F254521B8A3A800690652 /* MainCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollection.swift; sourceTree = "<group>"; };
+		BB4F254721B8A3BD00690652 /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
+		BB4F254921B8A4EE00690652 /* CollChap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollChap.swift; sourceTree = "<group>"; };
+		BB4F254B21B8FF3700690652 /* ExpendedCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpendedCollection.swift; sourceTree = "<group>"; };
+		BB4F254D21B90FE700690652 /* FeedTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTypeCell.swift; sourceTree = "<group>"; };
+		BB4F254F21B92FD800690652 /* AddContributionRes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContributionRes.swift; sourceTree = "<group>"; };
 		BB569EA62158FF3C00DB8D1B /* CollectionDetailTwoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailTwoVC.swift; sourceTree = "<group>"; };
 		BB569EA821598A9300DB8D1B /* CollectionDetailVCTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailVCTwo.swift; sourceTree = "<group>"; };
 		BB570C5C2150D3F100D72D8B /* NotifResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifResponse.swift; sourceTree = "<group>"; };
 		BB570C5E2151B59E00D72D8B /* TabLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabLayout.swift; sourceTree = "<group>"; };
 		BB570C602152443900D72D8B /* ProfileTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabVC.swift; sourceTree = "<group>"; };
 		BB7BE65B21340AC8008EC1F3 /* MenuPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPage.swift; sourceTree = "<group>"; };
-		BB88919D215B864E00D09051 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		BB88919F215B864E00D09051 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
-		BB8891A1215B864E00D09051 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB7F83F121B3FB0800FC81CB /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB7F83F321B47DCF00FC81CB /* TestCVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCVViewController.swift; sourceTree = "<group>"; };
+		BB7F83F521B485BA00FC81CB /* RSSelectionMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RSSelectionMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB7F83F721B4879600FC81CB /* RSSelectionMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RSSelectionMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB8852D7219BAD230017AFF4 /* RoundedBorderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBorderButton.swift; sourceTree = "<group>"; };
 		BB8891A9215B95DF00D09051 /* WeYouMaster.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WeYouMaster.entitlements; sourceTree = "<group>"; };
 		BB968CDA213EA5EC009DE929 /* HomeOtherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeOtherVC.swift; sourceTree = "<group>"; };
 		BB968CDC213EA60D009DE929 /* CommentLikeOtherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentLikeOtherVC.swift; sourceTree = "<group>"; };
@@ -199,6 +237,10 @@
 		BBB75C862122E50F00C1CAA9 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		BBB75C882122FDB700C1CAA9 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 		BBB75C8E212457F000C1CAA9 /* CollectionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionList.swift; sourceTree = "<group>"; };
+		BBCFA95C219B11D6005261BF /* AddCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCollectionVC.swift; sourceTree = "<group>"; };
+		BBCFA95E219B814C005261BF /* AddChapterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChapterVC.swift; sourceTree = "<group>"; };
+		BBCFA960219B8165005261BF /* AddContribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContribution.swift; sourceTree = "<group>"; };
+		BBCFA962219B817B005261BF /* SelectContriButeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectContriButeType.swift; sourceTree = "<group>"; };
 		BBECFA912154228700009C4F /* Child1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child1VC.swift; sourceTree = "<group>"; };
 		BBECFA932154229900009C4F /* Child2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child2VC.swift; sourceTree = "<group>"; };
 		BBEDB0CA21355DD9004BE37E /* AboutUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsVC.swift; sourceTree = "<group>"; };
@@ -213,7 +255,7 @@
 		BBF5F795211850DC00397B7D /* WeYouMaster-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WeYouMaster-Bridging-Header.h"; sourceTree = "<group>"; };
 		BBF5F79C2118554500397B7D /* DLRadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DLRadioButton.h; path = "../../../Downloads/DLRadioButton-master/DLRadioButton/DLRadioButton.h"; sourceTree = "<group>"; };
 		BBF5F79D2118554500397B7D /* DLRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DLRadioButton.m; path = "../../../Downloads/DLRadioButton-master/DLRadioButton/DLRadioButton.m"; sourceTree = "<group>"; };
-		FB63AB140303E2E2C59446BC /* Pods_WeYouMaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeYouMaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1C6DCC201F737630AC2E77B /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,39 +263,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6638384EF136EB493CBC3B8 /* Pods_WeYouMaster.framework in Frameworks */,
+				18A8DD99EFD03CD39C56E177 /* Pods_WeYouMaster.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BB88919A215B864E00D09051 /* Frameworks */ = {
+		BB0772B2219ADB5500A372F2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB8AF3BE976DE37168B74653 /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */,
+				EC310FB00BD41BA4E265F486 /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2CE1074BF2A674A7B02A36BD /* Pods */ = {
+		BB0772B6219ADB5500A372F2 /* OneSignalNotificationServiceExtension */ = {
 			isa = PBXGroup;
 			children = (
-				72FFC982F931C4D90FC135FC /* Pods-WeYouMaster.debug.xcconfig */,
-				5280BC1127C140460917C54C /* Pods-WeYouMaster.release.xcconfig */,
-				47EFB2BE7E89F9AAD6CF1465 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */,
-				70157B90377BEFF6204D7D8D /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */,
+				BB0772B7219ADB5500A372F2 /* NotificationService.swift */,
+				BB0772B9219ADB5500A372F2 /* Info.plist */,
 			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		AF196389C6365E97331C4641 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				8F3E45D370FDF3631C80BCC5 /* Pods_OneSignalNotificationServiceExtension.framework */,
-				FB63AB140303E2E2C59446BC /* Pods_WeYouMaster.framework */,
-			);
-			name = Frameworks;
+			path = OneSignalNotificationServiceExtension;
 			sourceTree = "<group>";
 		};
 		BB3958B420FCA40D0038DB53 /* font */ = {
@@ -311,6 +342,12 @@
 				BB569EA62158FF3C00DB8D1B /* CollectionDetailTwoVC.swift */,
 				BB569EA821598A9300DB8D1B /* CollectionDetailVCTwo.swift */,
 				BBB57803216D804800E4ED3A /* SendPmVC.swift */,
+				BBCFA95C219B11D6005261BF /* AddCollectionVC.swift */,
+				BBCFA95E219B814C005261BF /* AddChapterVC.swift */,
+				BBCFA960219B8165005261BF /* AddContribution.swift */,
+				BBCFA962219B817B005261BF /* SelectContriButeType.swift */,
+				BB7F83F321B47DCF00FC81CB /* TestCVViewController.swift */,
+				BB4F254121B888E700690652 /* SelectCollectionAndChapterVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -340,6 +377,15 @@
 				BB968CEE213EC007009DE929 /* CollectionOtherList.swift */,
 				BB19CAA3214BFEBE00E61510 /* RegisterResponse.swift */,
 				BB570C5C2150D3F100D72D8B /* NotifResponse.swift */,
+				BB4F253321B5584E00690652 /* LabelResponse.swift */,
+				BB4F253521B558BF00690652 /* LabelPrototype.swift */,
+				BB4F253921B5B0DB00690652 /* AddCollectionResp.swift */,
+				BB4F253B21B85BA600690652 /* AddChapterRes.swift */,
+				BB4F254521B8A3A800690652 /* MainCollection.swift */,
+				BB4F254721B8A3BD00690652 /* Chapter.swift */,
+				BB4F254921B8A4EE00690652 /* CollChap.swift */,
+				BB4F254B21B8FF3700690652 /* ExpendedCollection.swift */,
+				BB4F254F21B92FD800690652 /* AddContributionRes.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -352,24 +398,15 @@
 			path = utils;
 			sourceTree = "<group>";
 		};
-		BB88919E215B864E00D09051 /* OneSignalNotificationServiceExtension */ = {
-			isa = PBXGroup;
-			children = (
-				BB88919F215B864E00D09051 /* NotificationService.swift */,
-				BB8891A1215B864E00D09051 /* Info.plist */,
-			);
-			path = OneSignalNotificationServiceExtension;
-			sourceTree = "<group>";
-		};
 		BBA8962420FC89240098980B = {
 			isa = PBXGroup;
 			children = (
 				BBF5F795211850DC00397B7D /* WeYouMaster-Bridging-Header.h */,
 				BBA8962F20FC89240098980B /* WeYouMaster */,
-				BB88919E215B864E00D09051 /* OneSignalNotificationServiceExtension */,
+				BB0772B6219ADB5500A372F2 /* OneSignalNotificationServiceExtension */,
 				BBA8962E20FC89240098980B /* Products */,
-				2CE1074BF2A674A7B02A36BD /* Pods */,
-				AF196389C6365E97331C4641 /* Frameworks */,
+				C1E6378A5DED44C28CF4676F /* Pods */,
+				DDF486552BB3763F6C662A08 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -377,7 +414,7 @@
 			isa = PBXGroup;
 			children = (
 				BBA8962D20FC89240098980B /* WeYouMaster.app */,
-				BB88919D215B864E00D09051 /* OneSignalNotificationServiceExtension.appex */,
+				BB0772B5219ADB5500A372F2 /* OneSignalNotificationServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -421,6 +458,10 @@
 				BBF13172213D5D4300B49D11 /* OtherFeed.swift */,
 				BB968CE6213EB207009DE929 /* HomeOtherCell.swift */,
 				BB968CEA213EBB76009DE929 /* CollectionCellOtherTVC.swift */,
+				BB8852D7219BAD230017AFF4 /* RoundedBorderButton.swift */,
+				BB4F253721B58B8C00690652 /* LabelViewCell.swift */,
+				BB4F254321B8A2CC00690652 /* CollectionExpendedCell.swift */,
+				BB4F254D21B90FE700690652 /* FeedTypeCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -433,17 +474,41 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		C1E6378A5DED44C28CF4676F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8F2FF288B4B2B31A7C5BA083 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */,
+				D1C6DCC201F737630AC2E77B /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */,
+				4B851B00DD014B85F6D48EB1 /* Pods-WeYouMaster.debug.xcconfig */,
+				5B1E52ADBC54AA7A50CC280A /* Pods-WeYouMaster.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DDF486552BB3763F6C662A08 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BB4F253121B508B100690652 /* Dropper.framework */,
+				BB7F83F721B4879600FC81CB /* RSSelectionMenu.framework */,
+				BB7F83F521B485BA00FC81CB /* RSSelectionMenu.framework */,
+				BB7F83F121B3FB0800FC81CB /* iOSDropDown.framework */,
+				66645577ADDD03E27D862E4D /* Pods_OneSignalNotificationServiceExtension.framework */,
+				85F38496EC21058DA6678632 /* Pods_WeYouMaster.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BB88919C215B864E00D09051 /* OneSignalNotificationServiceExtension */ = {
+		BB0772B4219ADB5500A372F2 /* OneSignalNotificationServiceExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BB8891A7215B864E00D09051 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
+			buildConfigurationList = BB0772BD219ADB5500A372F2 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
 			buildPhases = (
-				EB38FEB9D472872E15CFE390 /* [CP] Check Pods Manifest.lock */,
-				BB889199215B864E00D09051 /* Sources */,
-				BB88919A215B864E00D09051 /* Frameworks */,
-				BB88919B215B864E00D09051 /* Resources */,
+				6D8B9D1F6C9C2DED0C6FFCB6 /* [CP] Check Pods Manifest.lock */,
+				BB0772B1219ADB5500A372F2 /* Sources */,
+				BB0772B2219ADB5500A372F2 /* Frameworks */,
+				BB0772B3219ADB5500A372F2 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -451,24 +516,24 @@
 			);
 			name = OneSignalNotificationServiceExtension;
 			productName = OneSignalNotificationServiceExtension;
-			productReference = BB88919D215B864E00D09051 /* OneSignalNotificationServiceExtension.appex */;
+			productReference = BB0772B5219ADB5500A372F2 /* OneSignalNotificationServiceExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		BBA8962C20FC89240098980B /* WeYouMaster */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BBA8963F20FC89260098980B /* Build configuration list for PBXNativeTarget "WeYouMaster" */;
 			buildPhases = (
-				5D6EC31F11B60BF8C0990D13 /* [CP] Check Pods Manifest.lock */,
+				70FC9E5B09DBEF2874A277E0 /* [CP] Check Pods Manifest.lock */,
 				BBA8962920FC89240098980B /* Sources */,
 				BBA8962B20FC89240098980B /* Resources */,
 				9900F6EDA7976841AAEA002F /* Frameworks */,
-				761F4ADEB7A763D1A15CFF8F /* [CP] Embed Pods Frameworks */,
 				BB8891A8215B864E00D09051 /* Embed App Extensions */,
+				650BBE1090A39DFF1D8EAA7B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				BB8891A3215B864E00D09051 /* PBXTargetDependency */,
+				BB0772BB219ADB5500A372F2 /* PBXTargetDependency */,
 			);
 			name = WeYouMaster;
 			productName = WeYouMaster;
@@ -481,12 +546,12 @@
 		BBA8962520FC89240098980B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = alireza;
 				TargetAttributes = {
-					BB88919C215B864E00D09051 = {
-						CreatedOnToolsVersion = 9.4.1;
+					BB0772B4219ADB5500A372F2 = {
+						CreatedOnToolsVersion = 10.1;
 					};
 					BBA8962C20FC89240098980B = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -516,13 +581,13 @@
 			projectRoot = "";
 			targets = (
 				BBA8962C20FC89240098980B /* WeYouMaster */,
-				BB88919C215B864E00D09051 /* OneSignalNotificationServiceExtension */,
+				BB0772B4219ADB5500A372F2 /* OneSignalNotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		BB88919B215B864E00D09051 /* Resources */ = {
+		BB0772B3219ADB5500A372F2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -544,58 +609,86 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5D6EC31F11B60BF8C0990D13 /* [CP] Check Pods Manifest.lock */ = {
+		650BBE1090A39DFF1D8EAA7B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WeYouMaster/Pods-WeYouMaster-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Braintree/Braintree.framework",
+				"${BUILT_PRODUCTS_DIR}/BraintreeDropIn/BraintreeDropIn.framework",
+				"${BUILT_PRODUCTS_DIR}/DLRadioButton/DLRadioButton.framework",
+				"${BUILT_PRODUCTS_DIR}/Dropper/Dropper.framework",
+				"${BUILT_PRODUCTS_DIR}/JJFloatingActionButton/JJFloatingActionButton.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SearchTextField/SearchTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Braintree.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BraintreeDropIn.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DLRadioButton.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Dropper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JJFloatingActionButton.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SearchTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeYouMaster/Pods-WeYouMaster-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D8B9D1F6C9C2DED0C6FFCB6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-WeYouMaster-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-OneSignalNotificationServiceExtension-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		761F4ADEB7A763D1A15CFF8F /* [CP] Embed Pods Frameworks */ = {
+		70FC9E5B09DBEF2874A277E0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WeYouMaster/Pods-WeYouMaster-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/DLRadioButton/DLRadioButton.framework",
-				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DLRadioButton.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WeYouMaster/Pods-WeYouMaster-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EB38FEB9D472872E15CFE390 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-OneSignalNotificationServiceExtension-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-WeYouMaster-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -605,11 +698,11 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		BB889199215B864E00D09051 /* Sources */ = {
+		BB0772B1219ADB5500A372F2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB8891A0215B864E00D09051 /* NotificationService.swift in Sources */,
+				BB0772B8219ADB5500A372F2 /* NotificationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,20 +713,29 @@
 				BBB0D45620FF704E000CAC15 /* DataService.swift in Sources */,
 				BBAE0E312107428B00CF4FF2 /* OutPutTextCell.swift in Sources */,
 				BB968CE5213EB034009DE929 /* OtherContentList.swift in Sources */,
+				BBCFA963219B817B005261BF /* SelectContriButeType.swift in Sources */,
 				BBAEA0332135EDB000B8773C /* CommentLikeVC.swift in Sources */,
+				BBCFA95D219B11D6005261BF /* AddCollectionVC.swift in Sources */,
 				BBAE0E2121045B2C00CF4FF2 /* HomeVC.swift in Sources */,
 				BBECFA942154229900009C4F /* Child2VC.swift in Sources */,
 				BB968CDB213EA5EC009DE929 /* HomeOtherVC.swift in Sources */,
+				BB4F254C21B8FF3700690652 /* ExpendedCollection.swift in Sources */,
+				BB8852D8219BAD230017AFF4 /* RoundedBorderButton.swift in Sources */,
 				BB968CDF213EA628009DE929 /* CollectionOtherVC.swift in Sources */,
+				BB7F83F421B47DCF00FC81CB /* TestCVViewController.swift in Sources */,
 				BBAE0E2721048C7D00CF4FF2 /* HomeCell.swift in Sources */,
 				BBB57804216D804800E4ED3A /* SendPmVC.swift in Sources */,
 				BB3C1E33211B194B00075EEB /* SplashCV.swift in Sources */,
 				BB176C54213333A700F3F79B /* NormalResponse.swift in Sources */,
 				BBEDB0D1213564C4004BE37E /* QAVC.swift in Sources */,
+				BB4F253C21B85BA600690652 /* AddChapterRes.swift in Sources */,
 				BB968CEF213EC007009DE929 /* CollectionOtherList.swift in Sources */,
 				BBB75C872122E50F00C1CAA9 /* CardView.swift in Sources */,
+				BB4F254821B8A3BD00690652 /* Chapter.swift in Sources */,
+				BB4F254221B888E700690652 /* SelectCollectionAndChapterVC.swift in Sources */,
 				BB7BE65C21340AC8008EC1F3 /* MenuPage.swift in Sources */,
 				BBAE0E25210465CB00CF4FF2 /* BaseTabBarController.swift in Sources */,
+				BBCFA961219B8165005261BF /* AddContribution.swift in Sources */,
 				BB4194A321035C8E00823353 /* DetailCell.swift in Sources */,
 				BB19CAA4214BFEBE00E61510 /* RegisterResponse.swift in Sources */,
 				BBEDB0CB21355DD9004BE37E /* AboutUsVC.swift in Sources */,
@@ -645,20 +747,26 @@
 				BBECFA922154228700009C4F /* Child1VC.swift in Sources */,
 				BBF1317D213E17C600B49D11 /* ProfileOtherVC.swift in Sources */,
 				BBAE0E332107433800CF4FF2 /* Message.swift in Sources */,
+				BB4F253A21B5B0DB00690652 /* AddCollectionResp.swift in Sources */,
+				BB4F254421B8A2CC00690652 /* CollectionExpendedCell.swift in Sources */,
 				BBAE0E2B2105FBDF00CF4FF2 /* ConversationCell.swift in Sources */,
 				BBF5F79E2118554500397B7D /* DLRadioButton.m in Sources */,
 				BBAE0E2321045B4A00CF4FF2 /* ConversationVC.swift in Sources */,
 				BB569EA921598A9300DB8D1B /* CollectionDetailVCTwo.swift in Sources */,
+				BB4F253821B58B8C00690652 /* LabelViewCell.swift in Sources */,
 				BBF13177213D697F00B49D11 /* CollectionPost.swift in Sources */,
 				BBAEA02D2135EA7500B8773C /* LikeCommentCell.swift in Sources */,
+				BB4F254621B8A3A800690652 /* MainCollection.swift in Sources */,
 				BBA8963320FC89240098980B /* SignInVC.swift in Sources */,
 				BB3C1E31211B16D100075EEB /* StepThreeController.swift in Sources */,
 				BBAE0E352107451B00CF4FF2 /* User.swift in Sources */,
 				BB968CED213EBDD6009DE929 /* ListOfCollectionOther.swift in Sources */,
 				BB3C1E38211B984200075EEB /* StepOneVC.swift in Sources */,
 				BBF1317B213D6A2000B49D11 /* CollectionCollect.swift in Sources */,
+				BB4F253621B558BF00690652 /* LabelPrototype.swift in Sources */,
 				BBEDB0CD21356392004BE37E /* QACell.swift in Sources */,
 				BBF13173213D5D4300B49D11 /* OtherFeed.swift in Sources */,
+				BB4F254A21B8A4EE00690652 /* CollChap.swift in Sources */,
 				BBAEA0352135EE2900B8773C /* LikeList.swift in Sources */,
 				BBAE0E3721074B5C00CF4FF2 /* ChatVC.swift in Sources */,
 				BB3C1E3C211EDE7F00075EEB /* BackendError.swift in Sources */,
@@ -670,6 +778,8 @@
 				BB3958BB20FCB43D0038DB53 /* RoundedButton.swift in Sources */,
 				BBAEA02F2135EB1900B8773C /* LikeFollow.swift in Sources */,
 				BBAEA0312135ECB300B8773C /* FollowCommentCell.swift in Sources */,
+				BB4F253421B5584E00690652 /* LabelResponse.swift in Sources */,
+				BB4F254E21B90FE700690652 /* FeedTypeCell.swift in Sources */,
 				BBEDB0CF213563D3004BE37E /* QA.swift in Sources */,
 				BBB0D45120FF68AF000CAC15 /* CollectionCell.swift in Sources */,
 				BB570C5F2151B59E00D72D8B /* TabLayout.swift in Sources */,
@@ -680,6 +790,7 @@
 				BB968CEB213EBB76009DE929 /* CollectionCellOtherTVC.swift in Sources */,
 				BBB75C8F212457F000C1CAA9 /* CollectionList.swift in Sources */,
 				BB569EA72158FF3C00DB8D1B /* CollectionDetailTwoVC.swift in Sources */,
+				BBCFA95F219B814C005261BF /* AddChapterVC.swift in Sources */,
 				BB968CDD213EA60D009DE929 /* CommentLikeOtherVC.swift in Sources */,
 				BB3958C320FF5F9E0038DB53 /* PadingLable.swift in Sources */,
 				BBAB362A211713570031273A /* ProfileVC.swift in Sources */,
@@ -690,6 +801,7 @@
 				BBA8963120FC89240098980B /* AppDelegate.swift in Sources */,
 				BB968CE7213EB207009DE929 /* HomeOtherCell.swift in Sources */,
 				BB4194A521035E5400823353 /* Content.swift in Sources */,
+				BB4F255021B92FD800690652 /* AddContributionRes.swift in Sources */,
 				BB3C1E3A211EDBD900075EEB /* LoginResponse.swift in Sources */,
 				BB968CE9213EBA84009DE929 /* CollectionOther.swift in Sources */,
 				BB118CB02115BF5B00238A85 /* LockVC.swift in Sources */,
@@ -699,10 +811,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		BB8891A3215B864E00D09051 /* PBXTargetDependency */ = {
+		BB0772BB219ADB5500A372F2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BB88919C215B864E00D09051 /* OneSignalNotificationServiceExtension */;
-			targetProxy = BB8891A2215B864E00D09051 /* PBXContainerItemProxy */;
+			target = BB0772B4219ADB5500A372F2 /* OneSignalNotificationServiceExtension */;
+			targetProxy = BB0772BA219ADB5500A372F2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -726,44 +838,49 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		BB8891A5215B864E00D09051 /* Debug */ = {
+		BB0772BE219ADB5500A372F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 47EFB2BE7E89F9AAD6CF1465 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */;
+			baseConfigurationReference = 8F2FF288B4B2B31A7C5BA083 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 27MYJ3U8LP;
+				DEVELOPMENT_TEAM = 3W3Z6L4R4U;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = ir.greencode.ios.WeYouMaster.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		BB8891A6215B864E00D09051 /* Release */ = {
+		BB0772BF219ADB5500A372F2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 70157B90377BEFF6204D7D8D /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */;
+			baseConfigurationReference = D1C6DCC201F737630AC2E77B /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 27MYJ3U8LP;
+				DEVELOPMENT_TEAM = 3W3Z6L4R4U;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = ir.greencode.ios.WeYouMaster.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -819,7 +936,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -873,7 +990,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -884,8 +1001,9 @@
 		};
 		BBA8964020FC89260098980B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 72FFC982F931C4D90FC135FC /* Pods-WeYouMaster.debug.xcconfig */;
+			baseConfigurationReference = 4B851B00DD014B85F6D48EB1 /* Pods-WeYouMaster.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -893,7 +1011,7 @@
 				CODE_SIGN_ENTITLEMENTS = WeYouMaster/WeYouMaster.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 27MYJ3U8LP;
+				DEVELOPMENT_TEAM = 3W3Z6L4R4U;
 				INFOPLIST_FILE = WeYouMaster/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -901,7 +1019,7 @@
 					"@executable_path/Frameworks",
 				);
 				NEW_SETTING = "";
-				PRODUCT_BUNDLE_IDENTIFIER = ir.greencode.ios.WeYouMaster1;
+				PRODUCT_BUNDLE_IDENTIFIER = ir.greencode.ios.WeYouMaster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "WeYouMaster-Bridging-Header.h";
@@ -913,8 +1031,9 @@
 		};
 		BBA8964120FC89260098980B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5280BC1127C140460917C54C /* Pods-WeYouMaster.release.xcconfig */;
+			baseConfigurationReference = 5B1E52ADBC54AA7A50CC280A /* Pods-WeYouMaster.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -922,7 +1041,7 @@
 				CODE_SIGN_ENTITLEMENTS = WeYouMaster/WeYouMaster.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 27MYJ3U8LP;
+				DEVELOPMENT_TEAM = 3W3Z6L4R4U;
 				INFOPLIST_FILE = WeYouMaster/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -930,7 +1049,7 @@
 					"@executable_path/Frameworks",
 				);
 				NEW_SETTING = "";
-				PRODUCT_BUNDLE_IDENTIFIER = ir.greencode.ios.WeYouMaster1;
+				PRODUCT_BUNDLE_IDENTIFIER = ir.greencode.ios.WeYouMaster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "WeYouMaster-Bridging-Header.h";
@@ -942,11 +1061,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BB8891A7215B864E00D09051 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+		BB0772BD219ADB5500A372F2 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BB8891A5215B864E00D09051 /* Debug */,
-				BB8891A6215B864E00D09051 /* Release */,
+				BB0772BE219ADB5500A372F2 /* Debug */,
+				BB0772BF219ADB5500A372F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

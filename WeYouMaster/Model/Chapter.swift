@@ -7,3 +7,7 @@
 //
 
 import Foundation
+struct chapter : Decodable{
+    let chapter : String
+    let chapterName : String
+}

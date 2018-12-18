@@ -7,3 +7,7 @@
 //
 
 import Foundation
+struct CollChap : Decodable {
+    let records : [MainCollection]
+
+}

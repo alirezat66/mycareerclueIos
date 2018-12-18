@@ -8,7 +8,6 @@
 
 import Foundation
 struct  Collection : Decodable {
-  
     public var followByMe : Int
     public var Owner :String
     public var owner_name :String

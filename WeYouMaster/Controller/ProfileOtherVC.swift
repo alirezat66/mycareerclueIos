@@ -37,6 +37,11 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
             
             self.present(sendPm, animated: true, completion: nil)
             
+        }else{
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let detail = storyBoard.instantiateViewController(withIdentifier: "addCollection") as! AddCollectionVC
+            
+            self.present(detail, animated: true, completion: nil)
         }
     }
     
@@ -54,9 +59,10 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
         if(getOwner==profileId){
             // is new post
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            let detail = storyBoard.instantiateViewController(withIdentifier: "addFeed") as! AddFeedVC
-            
-            self.present(detail, animated: true, completion: nil)
+            let add = storyBoard.instantiateViewController(withIdentifier: "selectContributeType") as! SelectContriButeType
+            let userDefaults = UserDefaults.standard
+            userDefaults.set("0", forKey: "selectedCollection")
+            self.present(add, animated: true, completion: nil)
         }else{
             SVProgressHUD.show(withStatus: "لطفا منتظر بمانید ... \n\n")
 

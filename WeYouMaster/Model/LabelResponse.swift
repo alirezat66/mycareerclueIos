@@ -7,3 +7,7 @@
 //
 
 import Foundation
+struct LabelResponse : Decodable {
+   
+    let labels : [LabelPrototype]
+}

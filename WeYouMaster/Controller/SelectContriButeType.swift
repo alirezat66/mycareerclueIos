@@ -8,12 +8,39 @@
 
 import UIKit
 
-class AddCollectionStepFour: UIViewController {
-
+class SelectContriButeType: UIViewController , UITableViewDelegate,UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       return tableViewData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell" ) as? FeedTypeCell else {return UITableViewCell()}
+        cell.updateView(message: tableViewData[indexPath.item])
+        return cell
+    }
+    
+    @IBOutlet weak var tableView : UITableView!
+    var tableViewData : [String] = ["تجربه کاری","آپدیت","رویدادهای آموزشی","نقل قول بزرگان","درس آموزشی","موقعیت شغلی"]
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.delegate = self
+        tableView.dataSource = self
         // Do any additional setup after loading the view.
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        weak var pvc = self.presentingViewController
+        
+        self.dismiss(animated: true, completion: {
+            let userDefaults = UserDefaults.standard
+            userDefaults.set(self.tableViewData[indexPath.item], forKey: "selectedType")
+            let stroyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let add = stroyBoard.instantiateViewController(withIdentifier: "addcontribution" ) as? AddContribution
+            pvc?.present(add!, animated: true, completion: nil)
+        })
+       
+        
+        
     }
     
 

@@ -8,6 +8,7 @@
 
 import UIKit
 import XLPagerTabStrip
+import JJFloatingActionButton
 class ProfileTabVC: ButtonBarPagerTabStripViewController {
     
     
@@ -34,7 +35,42 @@ let purpleInspireColor = UIColor.init(red: 61/256, green: 13/256, blue: 71/256, 
             newCell?.label.textColor = UIColor.white
         }
         navigationController?.navigationBar.isTranslucent = false
-       
+        
+        if(profileId==getOwner){
+        let actionButton = JJFloatingActionButton()
+        
+        actionButton.addItem(title: "مجموعه جدید", image: UIImage(named: "edit.png")?.withRenderingMode(.alwaysTemplate)) { item in
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let detail = storyBoard.instantiateViewController(withIdentifier: "addCollection") as! AddCollectionVC
+            
+            self.present(detail, animated: true, completion: nil)
+            // do something
+        }
+        
+        actionButton.addItem(title: "فصل جدید", image: UIImage(named: "edit.png")?.withRenderingMode(.alwaysTemplate)) { item in
+            // do something
+            let StoryBoard   = UIStoryboard(name: "Main", bundle: nil)
+            let newChapter = StoryBoard.instantiateViewController(withIdentifier: "addChapter")
+            self.present(newChapter, animated: true, completion: nil)
+            
+        }
+            
+        
+        actionButton.addItem(title: "مشارکت جدید", image: UIImage(named: "edit.png")?.withRenderingMode(.alwaysTemplate)) { item in
+            // do something
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let add = storyBoard.instantiateViewController(withIdentifier: "selectContributeType") as! SelectContriButeType
+            let userDefaults = UserDefaults.standard
+            userDefaults.set("0", forKey: "selectedCollection")
+            self.present(add, animated: true, completion: nil)
+            
+        }
+        
+        view.addSubview(actionButton)
+        actionButton.translatesAutoresizingMaskIntoConstraints = false
+        actionButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
+        actionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16).isActive = true
+        }
         
         super.viewDidLoad()
 

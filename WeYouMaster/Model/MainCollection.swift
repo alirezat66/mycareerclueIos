@@ -7,3 +7,8 @@
 //
 
 import Foundation
+struct MainCollection : Decodable {
+    let collection : String
+    let  collectionName : String
+    let chapters : [chapter]
+}

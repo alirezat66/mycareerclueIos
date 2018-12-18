@@ -113,7 +113,7 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         
         homeTable.dataSource = self
         homeTable.delegate = self
-        homeTable.tableFooterView = UIView.init(frame : .zero)
+    //    homeTable.tableFooterView = UIView.init(frame : .zero)
         imgProfile.layer.cornerRadius = imgProfile.frame.size.width/2
         imgProfile.clipsToBounds = true
         let userDefaults = UserDefaults.standard
@@ -215,7 +215,7 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     func getFeeds(){
         let userDefaults = UserDefaults.standard
         let owner = userDefaults.value(forKey: "owner") as! String
-        WebCaller.getFeeds(50, 1,owner
+        WebCaller.getFeeds(20, 1,owner
         ) {
             
             (contents, error) in

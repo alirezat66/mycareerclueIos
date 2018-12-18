@@ -7,3 +7,12 @@
 //
 
 import Foundation
+struct LabelPrototype : Codable {
+    
+    var type : String
+    var title : String
+    init(type : String , title : String){
+        self.type = type
+        self.title = title
+    }
+}

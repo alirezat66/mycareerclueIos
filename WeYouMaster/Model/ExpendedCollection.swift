@@ -7,3 +7,7 @@
 //
 
 import Foundation
+struct ExpendedCollection : Decodable{
+    let collection : MainCollection
+    var open = Bool()
+}

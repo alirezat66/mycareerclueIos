@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import JJFloatingActionButton
 class ProfileVC: UIViewController {
 
     public var phoneNumber = ""
@@ -51,6 +51,10 @@ class ProfileVC: UIViewController {
         imgProfile.image  = UIImage.init(named: "add_user_pn.png")
         imgProfile.layer.cornerRadius = imgProfile.frame.size.width/2
         imgProfile.clipsToBounds = true
+        
+        
+     
+
         // Do any additional setup after loading the view.
     }
 

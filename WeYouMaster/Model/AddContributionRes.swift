@@ -7,3 +7,8 @@
 //
 
 import Foundation
+struct AddContributionRes :Decodable{
+    let error : Int
+    let errorMessage : String
+    let contributionId : String
+}

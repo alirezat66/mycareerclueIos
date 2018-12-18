@@ -7,3 +7,8 @@
 //
 
 import Foundation
+struct AddCollectionResp : Decodable {
+    let error : Int
+    let errorMessage : String
+    let collectionId : String
+}

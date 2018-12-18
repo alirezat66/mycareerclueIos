@@ -94,6 +94,7 @@ class HomeCell: UITableViewCell {
         if isLabelAtMaxHeight {
             btnMoreOutLet.setTitle("بیشتر", for: .normal)
             isLabelAtMaxHeight = false
+            lblContent.text = myContent.contentText
             heightOutlet.constant = 70
         }
         else {

@@ -116,14 +116,14 @@ class AddFeedVC: UIViewController, UITableViewDataSource,UITableViewDelegate{
     var typeList=[""]
     var catList = ["cat1","cat2","cat3"]
     
-    var Owner: String = "" 
+    
     var First_Name: String = ""
     var Last_Name: String = ""
    
     var Job_Position : String = ""
     var City : String = ""
     var Profile_photo_link : String = ""
-   
+   var Owner: String = ""
     
     var milliseconds: Int64 = 0
     

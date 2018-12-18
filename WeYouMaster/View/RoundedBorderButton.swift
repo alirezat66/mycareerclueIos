@@ -9,7 +9,18 @@
 import UIKit
 
 class RoundedBorderButton: UIButton {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        layer.borderWidth = 1 / UIScreen.main.nativeScale
+       
+        contentEdgeInsets = UIEdgeInsets(top: 10, left: 16, bottom: 10, right: 16)
+    }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+         layer.cornerRadius = frame.height/2
+        layer.borderColor = tintColor.cgColor
 
+    }
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

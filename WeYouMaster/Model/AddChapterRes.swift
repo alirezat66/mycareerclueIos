@@ -7,3 +7,8 @@
 //
 
 import Foundation
+struct AddChapterRes : Decodable {
+    let error : Int
+    let errorMessage : String
+    let chapterId : String
+}
