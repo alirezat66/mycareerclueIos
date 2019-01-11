@@ -53,10 +53,17 @@ class ProfileVC: UIViewController {
         imgProfile.clipsToBounds = true
         
         
+        
+        
+        
+        
      
 
         // Do any additional setup after loading the view.
     }
 
+    
+    
+   
    
 }

@@ -14,6 +14,7 @@ class HomeCell: UITableViewCell {
     }
     @IBOutlet weak var btnCollection: UIButton!
     
+    
     @IBOutlet weak var imgPerson: UIButton!
     @IBOutlet weak var lblOwner: UILabel!
     @IBOutlet weak var heightOutlet: NSLayoutConstraint!
@@ -30,7 +31,7 @@ class HomeCell: UITableViewCell {
     @IBOutlet weak var lblEducation: UILabel!
     
     
-    
+   
     var likeCounter : Int = 0
     var myContent  : Content = Content()
     var contentText : String = ""
@@ -45,18 +46,15 @@ class HomeCell: UITableViewCell {
             UIApplication.shared.openURL(url)
         }
     }
-    @IBAction func imageClickedTwo(_ sender: Any) {
-        
-        if let onButtonTapped = self.onButtonTapped {
-            onButtonTapped()
-        }
-    }
+    
     @IBAction func imageClicked(_ sender: Any) {
         
         if let onButtonTapped = self.onButtonTapped {
             onButtonTapped()
         }
     }
+    
+    
     func imageFromServerURL(urlString: String) {
         self.imgContent.image = UIImage.init(named:"data_collection_img.png" )
         self.loader.startAnimating()
@@ -100,6 +98,7 @@ class HomeCell: UITableViewCell {
         else {
             btnMoreOutLet.setTitle("کمتر", for: .normal)
             isLabelAtMaxHeight = true
+        
             heightOutlet.constant = getLabelHeight(text: contentText, width: self.bounds.width, font: lblContent.font)
         }
     }
@@ -172,10 +171,20 @@ class HomeCell: UITableViewCell {
         
     }
     @IBOutlet weak var lblCollectionTitle: UILabel!
+   /* @objc func tabbToImageView(sender : UITapGestureRecognizer){
+        DispatchQueue.main.async(execute: { () -> Void in
+            
+        })
+    }*/
     public func updateView(content : Content){
         self.myContent = content
         heightOutlet.constant = 70
+       /* let tabGuester = UITapGestureRecognizer(target: self, action: #selector(tabbToImageView(sender :)))
+        tabGuester.numberOfTapsRequired = 1
+        imgContent.isUserInteractionEnabled = true
+        imgContent.addGestureRecognizer(tabGuester)*/
         contentText = content.contentText!
+        
         if(content.allignment != "rtl"){
             lblTitle.textAlignment = .left
             lblContent.textAlignment = .left
@@ -258,7 +267,7 @@ class HomeCell: UITableViewCell {
             imageFromServerURL(urlString: content.imgSource!)
             imgContent.isHidden = false
             imgConstrant.constant = 330
-           
+            
             
         }else {
             imgConstrant.constant = 0

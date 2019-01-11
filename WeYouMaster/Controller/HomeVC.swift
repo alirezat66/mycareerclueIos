@@ -18,6 +18,7 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     let cellSpacingHeight: CGFloat = 10
 
+  
     @IBOutlet weak var imgNot1: UIButton!
     @IBOutlet weak var imgNot2: UIButton!
     @IBOutlet weak var imgNot3: UIButton!
@@ -57,6 +58,12 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             cell.onButtonTapped = {
                 self.openProfile(content : content)
             }
+            cell.imgContent?.tag = indexPath.row
+            
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+            tapGestureRecognizer.numberOfTapsRequired = 1
+            cell.imgContent?.isUserInteractionEnabled = true
+            cell.imgContent?.addGestureRecognizer(tapGestureRecognizer)
             return cell
         }else{
             return HomeCell()
@@ -65,8 +72,18 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             return HomeCell()
         }
     }
-    
-    
+   
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        let imgView = tapGestureRecognizer.view as! UIImageView
+        print("your taped image view tag is : \(imgView.tag)")
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let fullscreen = storyBoard.instantiateViewController(withIdentifier: "fullscreen") as! fullScreenImageVC
+        print(myContent.count)
+        fullscreen.imgAddress = myContent[imgView.tag].imgSource!
+        self.present(fullscreen,animated: true,completion: nil)
+    }
+  
     func openMyProfile()  {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let profile = storyBoard.instantiateViewController(withIdentifier: "tablayout") as! ProfileTabVC
@@ -110,7 +127,7 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     }
     @IBOutlet weak var homeTable: UITableView!
     override func viewDidLoad() {
-        
+        myContent = []
         homeTable.dataSource = self
         homeTable.delegate = self
     //    homeTable.tableFooterView = UIView.init(frame : .zero)
@@ -173,7 +190,6 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         makeButtonCirc(obj: imgNot7)
         makeButtonCirc(obj: imgNot8)
         makeButtonCirc(obj: imgNot9)
-        myContent = []
         getNotifs()
         addRefreshControl()
     }

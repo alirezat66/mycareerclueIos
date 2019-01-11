@@ -104,6 +104,7 @@
 		BBEDB0CD21356392004BE37E /* QACell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEDB0CC21356392004BE37E /* QACell.swift */; };
 		BBEDB0CF213563D3004BE37E /* QA.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEDB0CE213563D3004BE37E /* QA.swift */; };
 		BBEDB0D1213564C4004BE37E /* QAVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEDB0D0213564C4004BE37E /* QAVC.swift */; };
+		BBEEE8B821E8871600AAD1A6 /* fullScreenImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEEE8B721E8871600AAD1A6 /* fullScreenImageVC.swift */; };
 		BBF13173213D5D4300B49D11 /* OtherFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF13172213D5D4300B49D11 /* OtherFeed.swift */; };
 		BBF13177213D697F00B49D11 /* CollectionPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF13176213D697F00B49D11 /* CollectionPost.swift */; };
 		BBF13179213D69C800B49D11 /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF13178213D69C800B49D11 /* Posts.swift */; };
@@ -247,6 +248,7 @@
 		BBEDB0CC21356392004BE37E /* QACell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QACell.swift; sourceTree = "<group>"; };
 		BBEDB0CE213563D3004BE37E /* QA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QA.swift; sourceTree = "<group>"; };
 		BBEDB0D0213564C4004BE37E /* QAVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAVC.swift; sourceTree = "<group>"; };
+		BBEEE8B721E8871600AAD1A6 /* fullScreenImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fullScreenImageVC.swift; sourceTree = "<group>"; };
 		BBF13172213D5D4300B49D11 /* OtherFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherFeed.swift; sourceTree = "<group>"; };
 		BBF13176213D697F00B49D11 /* CollectionPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPost.swift; sourceTree = "<group>"; };
 		BBF13178213D69C800B49D11 /* Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 				BBCFA962219B817B005261BF /* SelectContriButeType.swift */,
 				BB7F83F321B47DCF00FC81CB /* TestCVViewController.swift */,
 				BB4F254121B888E700690652 /* SelectCollectionAndChapterVC.swift */,
+				BBEEE8B721E8871600AAD1A6 /* fullScreenImageVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -775,6 +778,7 @@
 				BB3C1E2F211AE72A00075EEB /* StepTwoController.swift in Sources */,
 				BB4194A121033FE400823353 /* CollectionDetailVC.swift in Sources */,
 				BB118CAE2115A62400238A85 /* CircleButton.swift in Sources */,
+				BBEEE8B821E8871600AAD1A6 /* fullScreenImageVC.swift in Sources */,
 				BB3958BB20FCB43D0038DB53 /* RoundedButton.swift in Sources */,
 				BBAEA02F2135EB1900B8773C /* LikeFollow.swift in Sources */,
 				BBAEA0312135ECB300B8773C /* FollowCommentCell.swift in Sources */,

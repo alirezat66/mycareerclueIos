@@ -159,6 +159,10 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
             }
         }
         }
+        
+        
+        
+        
 
         if(bio==""){
             lblBio.text = getName + " از ویومستر جهت به اشتراک گذاشتن تجارب ارزشمند خود استفاده خواهد کرد. در صورتیکه تمایل دارید جدیدترین و بروزترین ها را دریافت کنید ، لطفا بر روی گزینه رصد کن کلیک نمایید."
@@ -166,10 +170,25 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
             lblBio.text =  bio
         }
         
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        tapGestureRecognizer.numberOfTapsRequired = 1
+        imgProfile.isUserInteractionEnabled = true
+        imgProfile.addGestureRecognizer(tapGestureRecognizer)
+        
         
 }
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+      
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let fullscreen = storyBoard.instantiateViewController(withIdentifier: "fullscreen") as! fullScreenImageVC
+        fullscreen.imgAddress = getImage
+        self.present(fullscreen,animated: true,completion: nil)
+    }
    
 }
+
+
 
 
 

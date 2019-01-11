@@ -1961,6 +1961,63 @@
             </objects>
             <point key="canvasLocation" x="1810" y="762"/>
         </scene>
+        <!--Full Screen ImageVC-->
+        <scene sceneID="6TK-2D-kX5">
+            <objects>
+                <viewController storyboardIdentifier="fullscreen" id="bD3-LZ-Y5B" customClass="fullScreenImageVC" customModule="WeYouMaster" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TqP-4U-KO3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cik-kL-TQS">
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s2a-s2-nHR">
+                                        <rect key="frame" x="8" y="8" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="QNg-yq-rcp"/>
+                                            <constraint firstAttribute="width" constant="32" id="ZfC-wG-Fyd"/>
+                                            <constraint firstAttribute="height" constant="32" id="kN0-Yz-Ted"/>
+                                            <constraint firstAttribute="width" constant="32" id="rKd-lp-uve"/>
+                                        </constraints>
+                                        <state key="normal" image="left-arrow"/>
+                                        <connections>
+                                            <action selector="btnBack:" destination="2xh-IR-UBK" eventType="touchUpInside" id="Tcf-9S-o4R"/>
+                                            <action selector="btnBack:" destination="bD3-LZ-Y5B" eventType="touchUpInside" id="bc5-uH-uXS"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wi4-pj-onq">
+                                        <rect key="frame" x="0.0" y="48" width="414" height="668"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Wi4-pj-onq" firstAttribute="leading" secondItem="cik-kL-TQS" secondAttribute="leading" id="Qmg-md-QFU"/>
+                                    <constraint firstAttribute="bottom" secondItem="Wi4-pj-onq" secondAttribute="bottom" id="W2i-rX-e8I"/>
+                                    <constraint firstItem="s2a-s2-nHR" firstAttribute="leading" secondItem="cik-kL-TQS" secondAttribute="leading" constant="8" id="aTh-8m-w3e"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wi4-pj-onq" secondAttribute="trailing" id="ldB-iB-KYP"/>
+                                    <constraint firstItem="s2a-s2-nHR" firstAttribute="top" secondItem="cik-kL-TQS" secondAttribute="top" constant="8" id="ms8-lb-wxH"/>
+                                    <constraint firstItem="Wi4-pj-onq" firstAttribute="top" secondItem="s2a-s2-nHR" secondAttribute="bottom" constant="8" id="uiI-WP-stG"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cik-kL-TQS" firstAttribute="trailing" secondItem="sH5-aA-C1M" secondAttribute="trailing" id="2Nc-tx-Nu8"/>
+                            <constraint firstItem="cik-kL-TQS" firstAttribute="bottom" secondItem="sH5-aA-C1M" secondAttribute="bottom" id="2hc-5D-4J3"/>
+                            <constraint firstItem="cik-kL-TQS" firstAttribute="leading" secondItem="sH5-aA-C1M" secondAttribute="leading" id="3eK-kN-CTi"/>
+                            <constraint firstItem="cik-kL-TQS" firstAttribute="top" secondItem="sH5-aA-C1M" secondAttribute="top" id="5XZ-wu-9JB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sH5-aA-C1M"/>
+                    </view>
+                    <connections>
+                        <outlet property="uiImage" destination="Wi4-pj-onq" id="ZbJ-xh-Wg2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="elR-HK-giO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-630.43478260869574" y="-699.45652173913049"/>
+        </scene>
         <!--LockVC-->
         <scene sceneID="d4i-Qa-LgZ">
             <objects>
@@ -3976,8 +4033,9 @@
                                                                                         <constraint firstAttribute="bottom" secondItem="gfW-3j-F7G" secondAttribute="bottom" constant="38" id="uE8-CQ-4GN"/>
                                                                                     </constraints>
                                                                                 </stackView>
-                                                                                <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Azc-I1-fl8">
+                                                                                <imageView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Azc-I1-fl8">
                                                                                     <rect key="frame" x="0.0" y="199" width="398" height="240"/>
+                                                                                    <gestureRecognizers/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="height" constant="240" id="ibF-c9-gie"/>
                                                                                     </constraints>
@@ -8033,7 +8091,7 @@
         <image name="tags" width="25.600000381469727" height="25.600000381469727"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ehb-Mu-Hs2"/>
+        <segue reference="Bd3-DO-OGi"/>
         <segue reference="dCa-sC-F3t"/>
         <segue reference="Jsm-m6-w3d"/>
     </inferredMetricsTieBreakers>
