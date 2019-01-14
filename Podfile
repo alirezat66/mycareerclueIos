@@ -26,4 +26,5 @@ pod 'Alamofire', '~>4.4'
 pod 'SwiftyJSON', '~> 4.0'
 pod 'SwiftMessages'
 pod 'BraintreeDropIn'
+pod "ReverseExtension"
 end

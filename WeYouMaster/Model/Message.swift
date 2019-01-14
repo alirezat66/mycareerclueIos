@@ -8,21 +8,21 @@
 
 import Foundation
 
-struct Message {
-    public var mid : String
-    public var user: User
-    public var content : String
-    public var date : String
-    public var type : UInt
+struct Message : Decodable {
+    public var senderName : String
+    public var receverName: String
+    public var message : String
+    public var senderId : String
+    public var sendedTime : String
     
     
-    init(mid : String , user : User , content : String , date : String
-        ,type : UInt) {
-        self.user = user
-        self.mid = mid
-        self.content = content
-        self.date = date
-        self.type = type
+    init(senderName : String , receverName : String , message : String , senderId : String
+        ,sendedTime : String) {
+        self.senderName = senderName
+        self.receverName = receverName
+        self.message = message
+        self.senderId = senderId
+        self.sendedTime = sendedTime
     }
     
 }

@@ -14,7 +14,7 @@ class InputTextCell: UITableViewCell {
     
     @IBOutlet weak var backView: UIView!
     public func updateView(message : Message){
-        lblText.text = message.content
+        lblText.text = message.message
         backView.layer.cornerRadius = 5
         backView.layer.masksToBounds = true
     }

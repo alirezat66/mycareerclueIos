@@ -19,12 +19,9 @@ class DataService {
     */
     
     
-    private let ConversationList = [Conversation(fName: "علیرضا", lName: "تقی زاده", shortText: "سلام چطوری از مقالت ممنونم", lblTime: "۲۸ دقیقه پیش", count: "12", imgSource: "myImage.jpg")
-    ,Conversation(fName: "حسن", lName: "محمدی", shortText: "تولدت مبارک باشه برادر", lblTime: "۴ روز پیش", count: "1", imgSource: "myImage.jpg")
-    ,Conversation(fName: "آرزو", lName: "بابایی", shortText: "خوبی علیرضا جان مقالتو خوندم", lblTime: "۱ ماه پیش", count: "22", imgSource: "myImage.jpg")]
+
     
-    
-    private let MessageList = [Message(mid: "asds", user: User(id: "1", name: "علیرضا", avatar: "myImage.jpg", online: false), content: "سلام چطوری خوبی چه خبری خوش می گذره", date: "", type: 1) ,
+   /* private let MessageList = [Message(mid: "asds", user: User(id: "1", name: "علیرضا", avatar: "myImage.jpg", online: false), content: "سلام چطوری خوبی چه خبری خوش می گذره", date: "", type: 1) ,
               Message(mid: "asds", user: User(id: "2", name: "علیرضا", avatar: "myImage.jpg", online: false), content:"سلام خوبی چه خبر خوش می گذره خوبی سلام تو سیس سی یس سی یس سی شسمشک شس شس کشسم شس کشس شسم ک", date: "", type: 1),
               Message(mid: "asds", user: User(id: "2", name: "علیرضا", avatar: "myImage.jpg", online: false), content: "ghorboonet che khabar", date: "", type: 1),
               Message(mid: "asds", user: User(id: "1", name: "علیرضا", avatar: "myImage.jpg", online: false), content: "khoobi khosh migzare oza chetoori", date: "", type: 1)
@@ -32,10 +29,8 @@ class DataService {
     
     func getMessages() -> [Message] {
         return MessageList
-    }
-    func getConversation() ->[Conversation] {
-        return ConversationList
-    }
+    }*/
+   
     
  /*   func getCollections() -> [Collection] {
         return nil

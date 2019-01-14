@@ -45,6 +45,10 @@
 		BB4F254C21B8FF3700690652 /* ExpendedCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F254B21B8FF3700690652 /* ExpendedCollection.swift */; };
 		BB4F254E21B90FE700690652 /* FeedTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F254D21B90FE700690652 /* FeedTypeCell.swift */; };
 		BB4F255021B92FD800690652 /* AddContributionRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F254F21B92FD800690652 /* AddContributionRes.swift */; };
+		BB55DCB621E9B01B00706988 /* MessageObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB55DCB521E9B01B00706988 /* MessageObj.swift */; };
+		BB55DCB821EA870A00706988 /* ConversationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB55DCB721EA870A00706988 /* ConversationResponse.swift */; };
+		BB55DCBA21EA8D8100706988 /* errorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB55DCB921EA8D8100706988 /* errorMessage.swift */; };
+		BB55DCBC21EBBB7900706988 /* ChatList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB55DCBB21EBBB7900706988 /* ChatList.swift */; };
 		BB569EA72158FF3C00DB8D1B /* CollectionDetailTwoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB569EA62158FF3C00DB8D1B /* CollectionDetailTwoVC.swift */; };
 		BB569EA921598A9300DB8D1B /* CollectionDetailVCTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB569EA821598A9300DB8D1B /* CollectionDetailVCTwo.swift */; };
 		BB570C5D2150D3F100D72D8B /* NotifResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB570C5C2150D3F100D72D8B /* NotifResponse.swift */; };
@@ -183,6 +187,10 @@
 		BB4F254B21B8FF3700690652 /* ExpendedCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpendedCollection.swift; sourceTree = "<group>"; };
 		BB4F254D21B90FE700690652 /* FeedTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTypeCell.swift; sourceTree = "<group>"; };
 		BB4F254F21B92FD800690652 /* AddContributionRes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContributionRes.swift; sourceTree = "<group>"; };
+		BB55DCB521E9B01B00706988 /* MessageObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageObj.swift; sourceTree = "<group>"; };
+		BB55DCB721EA870A00706988 /* ConversationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationResponse.swift; sourceTree = "<group>"; };
+		BB55DCB921EA8D8100706988 /* errorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = errorMessage.swift; sourceTree = "<group>"; };
+		BB55DCBB21EBBB7900706988 /* ChatList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatList.swift; sourceTree = "<group>"; };
 		BB569EA62158FF3C00DB8D1B /* CollectionDetailTwoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailTwoVC.swift; sourceTree = "<group>"; };
 		BB569EA821598A9300DB8D1B /* CollectionDetailVCTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailVCTwo.swift; sourceTree = "<group>"; };
 		BB570C5C2150D3F100D72D8B /* NotifResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifResponse.swift; sourceTree = "<group>"; };
@@ -358,6 +366,7 @@
 		BB3958BF20FF2F520038DB53 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BB55DCB521E9B01B00706988 /* MessageObj.swift */,
 				BB3C1E3D211EDEE800075EEB /* WebCaller.swift */,
 				BB3958C020FF30080038DB53 /* Collection.swift */,
 				BB4194A421035E5400823353 /* Content.swift */,
@@ -389,6 +398,9 @@
 				BB4F254921B8A4EE00690652 /* CollChap.swift */,
 				BB4F254B21B8FF3700690652 /* ExpendedCollection.swift */,
 				BB4F254F21B92FD800690652 /* AddContributionRes.swift */,
+				BB55DCB721EA870A00706988 /* ConversationResponse.swift */,
+				BB55DCB921EA8D8100706988 /* errorMessage.swift */,
+				BB55DCBB21EBBB7900706988 /* ChatList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -627,6 +639,7 @@
 				"${BUILT_PRODUCTS_DIR}/DLRadioButton/DLRadioButton.framework",
 				"${BUILT_PRODUCTS_DIR}/Dropper/Dropper.framework",
 				"${BUILT_PRODUCTS_DIR}/JJFloatingActionButton/JJFloatingActionButton.framework",
+				"${BUILT_PRODUCTS_DIR}/ReverseExtension/ReverseExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SearchTextField/SearchTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
@@ -643,6 +656,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DLRadioButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Dropper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JJFloatingActionButton.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReverseExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SearchTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
@@ -738,6 +752,7 @@
 				BB4F254221B888E700690652 /* SelectCollectionAndChapterVC.swift in Sources */,
 				BB7BE65C21340AC8008EC1F3 /* MenuPage.swift in Sources */,
 				BBAE0E25210465CB00CF4FF2 /* BaseTabBarController.swift in Sources */,
+				BB55DCBC21EBBB7900706988 /* ChatList.swift in Sources */,
 				BBCFA961219B8165005261BF /* AddContribution.swift in Sources */,
 				BB4194A321035C8E00823353 /* DetailCell.swift in Sources */,
 				BB19CAA4214BFEBE00E61510 /* RegisterResponse.swift in Sources */,
@@ -798,7 +813,9 @@
 				BB968CDD213EA60D009DE929 /* CommentLikeOtherVC.swift in Sources */,
 				BB3958C320FF5F9E0038DB53 /* PadingLable.swift in Sources */,
 				BBAB362A211713570031273A /* ProfileVC.swift in Sources */,
+				BB55DCB621E9B01B00706988 /* MessageObj.swift in Sources */,
 				BBB0D44E20FF66A9000CAC15 /* CollectionVC.swift in Sources */,
+				BB55DCB821EA870A00706988 /* ConversationResponse.swift in Sources */,
 				BB3958BE20FDFF2F0038DB53 /* LogInVC.swift in Sources */,
 				BB3C1E36211B289000075EEB /* Utility.swift in Sources */,
 				BB570C612152443900D72D8B /* ProfileTabVC.swift in Sources */,
@@ -808,6 +825,7 @@
 				BB4F255021B92FD800690652 /* AddContributionRes.swift in Sources */,
 				BB3C1E3A211EDBD900075EEB /* LoginResponse.swift in Sources */,
 				BB968CE9213EBA84009DE929 /* CollectionOther.swift in Sources */,
+				BB55DCBA21EA8D8100706988 /* errorMessage.swift in Sources */,
 				BB118CB02115BF5B00238A85 /* LockVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

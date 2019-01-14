@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3556A6D5641301F3AC1EE73875AA07B4"
-               BlueprintName = "SearchTextField"
+               BlueprintIdentifier = "6780E82A8568BDB62C8A65B7EFD6B884"
+               BlueprintName = "ReverseExtension"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "SearchTextField.framework">
+               BuildableName = "ReverseExtension.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
