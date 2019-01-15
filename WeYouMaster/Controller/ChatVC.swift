@@ -10,6 +10,10 @@ import UIKit
 import SVProgressHUD
 import ReverseExtension
 class ChatVC: UIViewController,UITableViewDelegate , UITableViewDataSource {
+    
+    
+    @IBOutlet weak var txtName: UILabel!
+    @IBOutlet weak var impPerson: UIButton!
     @IBAction func btnBack(_ sender: Any) {
         dismiss(animated: true, completion:nil)
     }
@@ -17,6 +21,8 @@ class ChatVC: UIViewController,UITableViewDelegate , UITableViewDataSource {
         return messageList.count
     }
     var reciverId = String()
+    var recieverName = String()
+    var recieverImage = String()
     var isActive = false
     @IBOutlet weak var sendButton: UIButton!
     @IBAction func edtChatChanged(_ sender: UITextField) {
@@ -112,6 +118,8 @@ class ChatVC: UIViewController,UITableViewDelegate , UITableViewDataSource {
      
     }*/
     
+    
+    
     @IBOutlet weak var chatTable: UITableView!
     var messageList  : [Message] = []
     override func viewDidLoad() {
@@ -125,8 +133,53 @@ class ChatVC: UIViewController,UITableViewDelegate , UITableViewDataSource {
             print("scrollViewDidReachBottom")
         }
         SVProgressHUD.show(withStatus: "لطفا منتظر بمانید ... \n\n")
-        getChatList()
+       
+        
+        
+        makeHeader();
+        
+      
+        
+        
+        
+        let helloWorldTimer = Timer.scheduledTimer(timeInterval: 20.0, target: self, selector: #selector(sayHello), userInfo: nil, repeats: true)
+        
+        helloWorldTimer.fire()
+        
+        
 
+    }
+    @objc func sayHello()
+    {
+        getChatList()
+    }
+    func makeHeader(){
+        txtName.text = recieverName
+        
+        if(recieverImage != ""){
+            
+            let url = URL(string: recieverImage)
+            
+            
+            
+            DispatchQueue.global().async { [weak self] in
+                if let data = try? Data(contentsOf: url!) {
+                    if let image = UIImage(data: data) {
+                        DispatchQueue.main.async {
+                            
+                            
+                            self?.impPerson.setImage(image, for: UIControlState.normal)
+                            
+                        }
+                    }
+                }
+            }
+        }else{
+            DispatchQueue.main.async {
+                self.impPerson.setImage(UIImage(named: "avatar_icon.png"), for: UIControlState.normal)
+            }
+        }
+        
     }
     func getChatList() {
         let userDefaults = UserDefaults.standard
@@ -143,8 +196,26 @@ class ChatVC: UIViewController,UITableViewDelegate , UITableViewDataSource {
                 self.updateError()
                 return
             }
+            
+            if(self.messageList.count==0){
+                for mess in (chatList.messages) {
+                   
+                        self.messageList.append(mess)
+                    
+                    
+                    
+                    
+                }
+            }else{
             for mess in (chatList.messages) {
-                self.messageList.append(mess)
+                let contains = self.messageList.contains(where: { $0.message == mess.message && $0.senderId == mess.senderId })
+                if(!contains){
+                    self.messageList.insert(mess, at: 0)
+                }
+
+                
+               
+            }
             }
             self.updateUI()
         }
