@@ -16,6 +16,8 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     var myContent : [Content] = []
     var isOpenMenu = false
     
+    @IBAction func btnSearch(_ sender: Any) {
+    }
     let cellSpacingHeight: CGFloat = 10
 
   

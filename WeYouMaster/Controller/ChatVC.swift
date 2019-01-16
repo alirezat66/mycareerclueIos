@@ -11,6 +11,7 @@ import SVProgressHUD
 import ReverseExtension
 class ChatVC: UIViewController,UITableViewDelegate , UITableViewDataSource {
     
+    @IBOutlet weak var ButtomConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var txtName: UILabel!
     @IBOutlet weak var impPerson: UIButton!
@@ -147,7 +148,22 @@ class ChatVC: UIViewController,UITableViewDelegate , UITableViewDataSource {
         helloWorldTimer.fire()
         
         
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        
 
+    }
+    @IBOutlet weak var bottomText: NSLayoutConstraint!
+    @objc func keyboardWillShow(notification:NSNotification)
+    {
+        if let info = notification.userInfo{
+            let rect:CGRect = info["UIKeyboardFrameEndUserInfoKey"] as! CGRect
+            self.view.layoutIfNeeded()
+            
+            UIView.animate(withDuration: 0.25, animations: {
+                self.view.layoutIfNeeded()
+                self.bottomText.constant = rect.height + 20
+            })
+        }
     }
     @objc func sayHello()
     {

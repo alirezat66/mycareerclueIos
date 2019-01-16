@@ -3124,7 +3124,7 @@
                                                     <constraint firstItem="f8n-5r-WU1" firstAttribute="leading" secondItem="kRA-y8-TyI" secondAttribute="trailing" constant="6" id="yNv-CH-BwY"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yv1-zY-0pi">
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yv1-zY-0pi">
                                                 <rect key="frame" x="0.0" y="56" width="414" height="70"/>
                                                 <color key="backgroundColor" red="1" green="0.42745098040000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -3134,7 +3134,7 @@
                                                 <state key="normal" title="۸ نفر به شما پیام جدید داده اند جهت مشاهده آنها کلیک کنید."/>
                                             </button>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wTk-3t-GXC">
-                                                <rect key="frame" x="0.0" y="126" width="414" height="541"/>
+                                                <rect key="frame" x="0.0" y="56" width="414" height="611"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ConversationCell" rowHeight="96" id="ef9-G9-lxr" customClass="ConversationCell" customModule="WeYouMaster" customModuleProvider="target">
@@ -3145,7 +3145,7 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="062-4O-Eh3">
-                                                                    <rect key="frame" x="8" y="8" width="398" height="79.666666666666671"/>
+                                                                    <rect key="frame" x="8" y="8" width="398" height="80"/>
                                                                     <subviews>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="003-G2-l5j">
                                                                             <rect key="frame" x="0.0" y="5" width="70" height="70"/>
@@ -3172,16 +3172,16 @@
                                                                             </subviews>
                                                                         </stackView>
                                                                         <stackView opaque="NO" contentMode="center" axis="vertical" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4ln-4m-XZv">
-                                                                            <rect key="frame" x="278" y="16.666666666666668" width="120" height="46.333333333333329"/>
+                                                                            <rect key="frame" x="278" y="22.000000000000004" width="120" height="36.333333333333343"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16 min ago" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Xh-zC-sWF">
-                                                                                    <rect key="frame" x="42.333333333333314" y="0.0" width="35.666666666666657" height="11.333333333333334"/>
+                                                                                    <rect key="frame" x="42.666666666666686" y="0.0" width="35" height="8.3333333333333339"/>
                                                                                     <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="7"/>
                                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYf-6R-Gfw">
-                                                                                    <rect key="frame" x="50.333333333333314" y="19.333333333333329" width="19.666666666666671" height="27"/>
+                                                                                    <rect key="frame" x="50.666666666666686" y="16.333333333333336" width="19" height="20"/>
                                                                                     <color key="backgroundColor" red="1" green="0.42745098040000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="17"/>
                                                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3427,6 +3427,7 @@
                                     <constraint firstItem="1cW-fJ-OxX" firstAttribute="centerY" secondItem="Joc-PA-Eqh" secondAttribute="centerY" id="3lT-Y7-bBP"/>
                                     <constraint firstItem="MB9-I3-Eph" firstAttribute="leading" secondItem="Joc-PA-Eqh" secondAttribute="leading" constant="8" id="6X9-6u-qTb"/>
                                     <constraint firstAttribute="trailing" secondItem="e9y-La-0nR" secondAttribute="trailing" constant="8" id="L8T-IA-1h9"/>
+                                    <constraint firstItem="1cW-fJ-OxX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MB9-I3-Eph" secondAttribute="trailing" constant="8" symbolic="YES" id="RM7-7d-LnA"/>
                                     <constraint firstAttribute="height" constant="56" id="RhK-rM-y7K"/>
                                     <constraint firstItem="MB9-I3-Eph" firstAttribute="centerY" secondItem="Joc-PA-Eqh" secondAttribute="centerY" id="Ypj-Xf-Wd6"/>
                                     <constraint firstItem="e9y-La-0nR" firstAttribute="leading" secondItem="1cW-fJ-OxX" secondAttribute="trailing" constant="8" id="feo-8G-BbF"/>
@@ -3440,6 +3441,7 @@
                             <constraint firstItem="Af5-ZZ-FQp" firstAttribute="top" secondItem="bBu-ZU-dZX" secondAttribute="bottom" id="8YR-k8-kNr"/>
                             <constraint firstItem="bBu-ZU-dZX" firstAttribute="leading" secondItem="22c-P4-Q0f" secondAttribute="leading" id="92B-bI-GMM"/>
                             <constraint firstItem="Af5-ZZ-FQp" firstAttribute="top" secondItem="bBu-ZU-dZX" secondAttribute="bottom" id="CmU-Ob-UJf"/>
+                            <constraint firstItem="Af5-ZZ-FQp" firstAttribute="bottom" secondItem="22c-P4-Q0f" secondAttribute="bottom" id="I8X-9d-GFN"/>
                             <constraint firstItem="Af5-ZZ-FQp" firstAttribute="leading" secondItem="22c-P4-Q0f" secondAttribute="leading" id="Kfy-Tn-bl1"/>
                             <constraint firstItem="Joc-PA-Eqh" firstAttribute="leading" secondItem="22c-P4-Q0f" secondAttribute="leading" id="PKI-Ob-aQC"/>
                             <constraint firstItem="bBu-ZU-dZX" firstAttribute="trailing" secondItem="22c-P4-Q0f" secondAttribute="trailing" id="aPh-jZ-fQ7"/>
@@ -3452,6 +3454,7 @@
                         <viewLayoutGuide key="safeArea" id="22c-P4-Q0f"/>
                     </view>
                     <connections>
+                        <outlet property="bottomText" destination="DPn-vZ-YAy" id="cDR-xw-BvY"/>
                         <outlet property="chatTable" destination="bBu-ZU-dZX" id="9QD-MZ-J6v"/>
                         <outlet property="edtChat" destination="6oZ-nZ-dJ9" id="Ss7-3w-vzp"/>
                         <outlet property="impPerson" destination="e9y-La-0nR" id="sWY-Tg-kaG"/>
@@ -3478,7 +3481,7 @@
                                         <rect key="frame" x="0.0" y="18" width="320" height="56"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="درباره ویومستر" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTM-Sc-PjW">
-                                                <rect key="frame" x="202" y="12.999999999999998" width="110" height="30.333333333333329"/>
+                                                <rect key="frame" x="212.33333333333334" y="17" width="99.666666666666657" height="22.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="19"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -3518,28 +3521,28 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="چگونه بفروشم؟" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7JZ-h4-Om2">
-                                <rect key="frame" x="84.666666666666686" y="90" width="151" height="40"/>
+                                <rect key="frame" x="96" y="90" width="128" height="29.333333333333329"/>
                                 <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="25"/>
                                 <color key="textColor" red="0.25376215577125549" green="0.0020293910056352615" blue="0.56782013177871704" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wzg-Ks-QrZ">
-                                <rect key="frame" x="0.0" y="138" width="320" height="862"/>
+                                <rect key="frame" x="0.0" y="127.33333333333331" width="320" height="872.66666666666674"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FQV-7u-cWa">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="700"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SdK-ed-ujc">
-                                                <rect key="frame" x="16" y="8" width="288" height="220"/>
+                                                <rect key="frame" x="16" y="8.0000000000000142" width="288" height="220"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نحوه فروش در ویومستر" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZK-8y-fPg">
-                                                        <rect key="frame" x="60" y="10.000000000000002" width="168" height="28.666666666666671"/>
+                                                        <rect key="frame" x="71.333333333333329" y="10" width="145.66666666666669" height="21"/>
                                                         <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="18"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="8ec-y3-59K">
-                                                        <rect key="frame" x="8" y="50.666666666666643" width="272" height="157.33333333333337"/>
+                                                        <rect key="frame" x="8" y="43" width="272" height="138.66666666666666"/>
                                                         <string key="text">مجموعه های خود را تولید کنید، به صورت آهسته و پیوسته مشارکت ایجاد کرده و آنها را در مجموعه ها قرار دهید، سپس سیستم بازاریابی فوق مدرن ویومستر مجموعه های شما را به فروش می رساند و پول نقد در حساب PayPal یا حساب بانکی ایران به شما تحویل می هد</string>
                                                         <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -3561,13 +3564,13 @@
                                                 <rect key="frame" x="16" y="244" width="288" height="320"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تاریخ تولید مجموعه یا مشارکت چه تاثیری در فروش دارد؟" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="3Xa-er-zK6">
-                                                        <rect key="frame" x="12" y="10.000000000000004" width="264" height="57.333333333333343"/>
+                                                        <rect key="frame" x="12" y="10" width="264" height="42"/>
                                                         <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="18"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="yul-wz-laV">
-                                                        <rect key="frame" x="8" y="79.3333333333333" width="272" height="228.66666666666663"/>
+                                                        <rect key="frame" x="8" y="63.999999999999986" width="272" height="158.66666666666663"/>
                                                         <string key="text">هنگام تولید مجموعه یا ایجاد یک مشارکت جدید، تاریخ تولید آن برای همیشه ثبت شده و هیچگاه تغییر نخواهد کرد. اگر مجموعه یا مشارکتی ویرایش شود، تاریخ آخرین ویرایش علاوه بر تاریخ تولید نمایش داده خواهد شد. خلاصه کلام، مجموعه ها و مشارکت ها هر چه زودتر تولید شوند، در بلندمدت قابلیت فروش بیشتری خواهند داشت</string>
                                                         <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -3644,7 +3647,7 @@
                                         <rect key="frame" x="0.0" y="18" width="414" height="56"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سوالات متداول" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXN-Dx-BfX">
-                                                <rect key="frame" x="294" y="12.999999999999998" width="112" height="30.333333333333329"/>
+                                                <rect key="frame" x="309" y="17" width="97" height="22.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="19"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -3854,7 +3857,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KFL-4G-amy">
                                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="64"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ac-oC-UNP">
+                                                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ac-oC-UNP">
                                                                         <rect key="frame" x="0.0" y="0.0" width="130" height="39"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="svr-Cr-60Q"/>
@@ -4202,7 +4205,7 @@
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                         <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfW-3j-F7G">
-                                                                                            <rect key="frame" x="363" y="92.333333333333314" width="35" height="58.666666666666657"/>
+                                                                                            <rect key="frame" x="363" y="92.333333333333314" width="35" height="32"/>
                                                                                             <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="17"/>
                                                                                             <state key="normal" title="بیشتر"/>
                                                                                             <connections>
@@ -4210,7 +4213,7 @@
                                                                                             </connections>
                                                                                         </button>
                                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6N-BT-DUl">
-                                                                                            <rect key="frame" x="320" y="155" width="78" height="34"/>
+                                                                                            <rect key="frame" x="320" y="128.33333333333331" width="78" height="60.666666666666657"/>
                                                                                             <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="17"/>
                                                                                             <state key="normal" title="مشاهده لینک"/>
                                                                                             <connections>
@@ -4444,16 +4447,30 @@
                                                     <segue destination="vUK-ja-Zuf" kind="modal" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="Bd3-DO-OGi"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lBF-tP-SHv">
+                                                <rect key="frame" x="100" y="13" width="274" height="30"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="جستجو">
+                                                    <color key="titleColor" red="0.70196078429999997" green="0.6588235294" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="btnSearch:" destination="sKp-JH-1WN" eventType="touchUpInside" id="uJH-kN-tVR"/>
+                                                    <segue destination="o3e-QF-eZw" kind="show" id="I0F-C6-aaG"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.28627450980000002" green="0.0078431372550000003" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="eNL-nj-XSN" firstAttribute="centerY" secondItem="wty-8e-TuJ" secondAttribute="centerY" id="Aj5-TT-tCX"/>
                                             <constraint firstItem="nRD-aV-H8d" firstAttribute="leading" secondItem="eNL-nj-XSN" secondAttribute="trailing" constant="8" id="Bgr-DQ-Hlk"/>
+                                            <constraint firstItem="lBF-tP-SHv" firstAttribute="centerY" secondItem="wty-8e-TuJ" secondAttribute="centerY" id="CYp-NF-66N"/>
                                             <constraint firstItem="eNL-nj-XSN" firstAttribute="leading" secondItem="wty-8e-TuJ" secondAttribute="leading" constant="8" id="NwA-df-HlB"/>
                                             <constraint firstItem="mVq-dh-LCK" firstAttribute="centerY" secondItem="wty-8e-TuJ" secondAttribute="centerY" id="T0C-ry-sTV"/>
                                             <constraint firstItem="nRD-aV-H8d" firstAttribute="centerY" secondItem="wty-8e-TuJ" secondAttribute="centerY" id="aNF-V5-6cN"/>
+                                            <constraint firstItem="lBF-tP-SHv" firstAttribute="leading" secondItem="nRD-aV-H8d" secondAttribute="trailing" constant="8" id="iaD-w7-Yxl"/>
                                             <constraint firstAttribute="trailing" secondItem="mVq-dh-LCK" secondAttribute="trailing" constant="8" id="nVD-ps-hlZ"/>
                                             <constraint firstAttribute="height" constant="56" id="sQx-Uy-9tY"/>
+                                            <constraint firstItem="mVq-dh-LCK" firstAttribute="leading" secondItem="lBF-tP-SHv" secondAttribute="trailing" constant="8" id="t0i-ex-vfW"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -4502,7 +4519,90 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IHo-Pd-dZ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3387" y="1915"/>
+            <point key="canvasLocation" x="3386.9565217391305" y="1914.9456521739132"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1Gd-ph-n5G">
+            <objects>
+                <viewController id="o3e-QF-eZw" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2BY-bC-3Ly">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YAr-4R-suj">
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HJf-8o-fyh" customClass="CardView" customModule="WeYouMaster" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IWk-PV-3mI">
+                                                <rect key="frame" x="8" y="23" width="24" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="24" id="42A-R9-hw0"/>
+                                                    <constraint firstAttribute="width" constant="24" id="PAV-Pb-JEL"/>
+                                                </constraints>
+                                                <state key="normal" image="left-arrow"/>
+                                            </button>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="جستجو" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aUi-Rd-Xmd">
+                                                <rect key="frame" x="56" y="20" width="350" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="350" id="0H4-pf-aVj"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.28627450980000002" green="0.0078431372550000003" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="aUi-Rd-Xmd" firstAttribute="leading" secondItem="IWk-PV-3mI" secondAttribute="trailing" constant="24" id="94k-pF-Xgv"/>
+                                            <constraint firstItem="IWk-PV-3mI" firstAttribute="leading" secondItem="HJf-8o-fyh" secondAttribute="leading" constant="8" id="HWw-A1-fPa"/>
+                                            <constraint firstAttribute="height" constant="70" id="NeK-cq-8QW"/>
+                                            <constraint firstItem="aUi-Rd-Xmd" firstAttribute="centerY" secondItem="HJf-8o-fyh" secondAttribute="centerY" id="cr1-FB-9Zs"/>
+                                            <constraint firstAttribute="trailing" secondItem="aUi-Rd-Xmd" secondAttribute="trailing" constant="8" id="dLb-xK-HFo"/>
+                                            <constraint firstItem="aUi-Rd-Xmd" firstAttribute="leading" secondItem="IWk-PV-3mI" secondAttribute="trailing" constant="24" id="h2W-QN-0gc"/>
+                                            <constraint firstItem="IWk-PV-3mI" firstAttribute="centerY" secondItem="HJf-8o-fyh" secondAttribute="centerY" id="mbs-kn-TjU"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiud">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shaddowOffsetWidth">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shaddowOffsetHeight">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="7"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" red="0.70196078429999997" green="0.6588235294" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="HJf-8o-fyh" firstAttribute="leading" secondItem="YAr-4R-suj" secondAttribute="leading" id="7IQ-rc-NN6"/>
+                                    <constraint firstAttribute="trailing" secondItem="HJf-8o-fyh" secondAttribute="trailing" id="gTu-2v-v6W"/>
+                                    <constraint firstItem="HJf-8o-fyh" firstAttribute="top" secondItem="YAr-4R-suj" secondAttribute="top" id="umw-8j-W4e"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="YAr-4R-suj" firstAttribute="top" secondItem="hu9-xW-jUs" secondAttribute="top" id="16D-Rb-II7"/>
+                            <constraint firstItem="YAr-4R-suj" firstAttribute="leading" secondItem="hu9-xW-jUs" secondAttribute="leading" id="2FK-h2-zBO"/>
+                            <constraint firstItem="YAr-4R-suj" firstAttribute="trailing" secondItem="hu9-xW-jUs" secondAttribute="trailing" id="XEw-7j-KSF"/>
+                            <constraint firstItem="YAr-4R-suj" firstAttribute="bottom" secondItem="hu9-xW-jUs" secondAttribute="bottom" id="qHi-JT-CXb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hu9-xW-jUs"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P9b-xS-eEy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4276.811594202899" y="1918.2065217391305"/>
         </scene>
         <!--CollectionVC-->
         <scene sceneID="Cu2-32-kcF">
@@ -8268,7 +8368,7 @@
         <image name="tags" width="25.600000381469727" height="25.600000381469727"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ngw-bQ-elb"/>
+        <segue reference="Bd3-DO-OGi"/>
         <segue reference="dCa-sC-F3t"/>
         <segue reference="Jsm-m6-w3d"/>
     </inferredMetricsTieBreakers>
