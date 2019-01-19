@@ -6,14 +6,24 @@
 //  Copyright © 2018 alireza. All rights reserved.
 //
 
+
+
 import UIKit
 import Dropper
 import SearchTextField
 import Photos
 import Alamofire
 import SwiftyJSON
-class AddCollectionVC: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate ,DropperDelegate , UICollectionViewDataSource,UICollectionViewDelegate
+
+class AddCollectionVC: UIViewController , UIImagePickerControllerDelegate,UITextFieldDelegate, UINavigationControllerDelegate ,DropperDelegate , UICollectionViewDataSource,UICollectionViewDelegate
 {
+    @IBOutlet weak var stackOfUiOne: UIStackView!
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return addedLabeles.count
     }
@@ -234,6 +244,19 @@ class AddCollectionVC: UIViewController , UIImagePickerControllerDelegate, UINav
     
     @IBOutlet weak var edtDesc : UITextView!
   
+    @objc func keyboardWillShow(notification:NSNotification)
+    {
+        if let info = notification.userInfo{
+            let rect:CGRect = info["UIKeyboardFrameEndUserInfoKey"] as! CGRect
+            self.view.layoutIfNeeded()
+            
+            UIView.animate(withDuration: 0.25, animations: {
+                self.view.layoutIfNeeded()
+                self.bottomConstraint.constant = rect.height + 20
+            })
+        }
+    }
+    
     func addCollection() {
         
         if(self.edtTitle.text != ""){
@@ -427,9 +450,15 @@ class AddCollectionVC: UIViewController , UIImagePickerControllerDelegate, UINav
         }
         
     
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tab : UITapGestureRecognizer = UITapGestureRecognizer(target : self , action : #selector(DismissKeyboard))
+        view.addGestureRecognizer(tab)
+       
+       
         getLabeles()
         labelCollectionView.dataSource = self
         labelCollectionView.delegate = self
@@ -477,24 +506,9 @@ class AddCollectionVC: UIViewController , UIImagePickerControllerDelegate, UINav
             }
         }
         
-        
-        // Set the array of strings you want to suggest
-        
-        
-        // Customize the way it highlights the search string. By default it bolds the string
-        
-        // Handle what happens when the user picks an item. By default the title is set to the text field
+      
         
         
-        // You can force the results list to support RTL languages - Default: false
-        
-        // Show the list of results as soon as the user makes focus - Default: false
-        
-        // ...or show the list of results even without user's interaction as soon as created - Default: false
-        
-        // Start filtering after an specific number of characters - Default: 0
-        //Its Id Values and its optional
-        // The the Closure returns Selected Index and String
         
       
     
@@ -613,6 +627,9 @@ class AddCollectionVC: UIViewController , UIImagePickerControllerDelegate, UINav
         
         // You can also limit the max height of the results list
         skillSearchTextField.maxResultsListHeight = 600
+    }
+    @objc public  func DismissKeyboard(){
+        view.endEditing(true)
     }
 }
 

@@ -10,7 +10,11 @@ import UIKit
 import JJFloatingActionButton
 import SVProgressHUD
 
-class ProfileVC: UIViewController {
+extension UIViewController {
+  
+    
+}
+class ProfileVC: UIViewController,UITextFieldDelegate {
     
     
     
@@ -39,11 +43,15 @@ class ProfileVC: UIViewController {
     var getOwner = String()
     var bio = String()
     
-    @IBAction func btnSave(_ sender: Any) {
-       
+   
+    
+    @objc public func DismissKeyboard(){
+        view.endEditing(true)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tab : UITapGestureRecognizer = UITapGestureRecognizer(target : self , action : #selector(DismissKeyboard))
+        view.addGestureRecognizer(tab)
         edtName.layer.borderColor  = UIColor.orange.cgColor
         edtLName.layer.borderColor = UIColor.orange.cgColor
         edtRole.layer.borderColor = UIColor.orange.cgColor
@@ -64,7 +72,7 @@ class ProfileVC: UIViewController {
         imgProfile.image  = UIImage.init(named: "add_user_pn.png")
         imgProfile.layer.cornerRadius = imgProfile.frame.size.width/2
         imgProfile.clipsToBounds = true*/
-         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+       
         
         
         
@@ -150,16 +158,5 @@ class ProfileVC: UIViewController {
     }
     @IBOutlet weak var bottomText: NSLayoutConstraint!
 
-    @objc func keyboardWillShow(notification:NSNotification)
-    {
-        if let info = notification.userInfo{
-            let rect:CGRect = info["UIKeyboardFrameEndUserInfoKey"] as! CGRect
-            self.view.layoutIfNeeded()
-            
-            UIView.animate(withDuration: 0.25, animations: {
-                self.view.layoutIfNeeded()
-                self.bottomText.constant = rect.height + 20
-            })
-        }
-    }
+   
 }
