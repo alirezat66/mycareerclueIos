@@ -57,7 +57,8 @@ UIViewController,UITableViewDelegate,UITableViewDataSource , IndicatorInfoProvid
         
         let userDefaults = UserDefaults.standard
         let owner = userDefaults.value(forKey: "owner") as! String
-        profile.getName = content.fName! + " " + content.lName!
+        profile.getFName = content.fName!
+        profile.getLName = content.lName!
         profile.getCity = content.location!
         profile.getRole = content.education!
         profile.getImage = content.ownerPic!

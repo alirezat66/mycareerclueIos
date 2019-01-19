@@ -30,7 +30,7 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
     @IBAction func firstButtonClicked(_ sender: Any) {
         if(!isOwner){
             let userDefaults = UserDefaults.standard
-            userDefaults.set(getName, forKey: "lastname")
+            userDefaults.set(getFName  + " " + getLName, forKey: "lastname")
             
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
             let sendPm = storyBoard.instantiateViewController(withIdentifier: "sendPm") as! SendPmVC
@@ -45,7 +45,8 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
         }
     }
     
-    var getName = String()
+    var getFName = String()
+    var getLName = String()
     var getCity = String()
     var getRole = String()
     var getImage = String()
@@ -55,6 +56,44 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
     var bio = String()
     var isOwner : Bool!
     
+    @IBAction func btnProfileEdit(_ sender: Any) {
+        if(isOwner){
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let profEdit = storyBoard.instantiateViewController(withIdentifier: "profilePage") as! ProfileVC
+           profEdit.bio = bio
+            profEdit.getImage = getImage
+            profEdit.getCity = getCity
+            profEdit.getRole = getRole
+            profEdit.getOwner = getOwner
+            profEdit.getName = getFName
+            profEdit.getLName = getLName
+         
+            self.present(profEdit,animated: true,completion: nil)
+        }
+    }
+    
+    override func dismiss(animated flag: Bool,
+                                                completion completion: (() -> Void)?)
+    {
+        super.dismiss(animated: flag, completion:completion)
+        reload()
+        
+        // Your custom code here...
+    }
+    func reload() {
+        let userDefaults = UserDefaults.standard
+        let name = userDefaults.value(forKey: "fName") as! String
+        let lName = userDefaults.value(forKey: "lName") as! String
+        let city = userDefaults.value(forKey: "City") as! String
+        let job = userDefaults.value(forKey: "job") as! String
+        let bio = userDefaults.value(forKey: "bio") as! String
+        
+        lblBio.text = bio
+        lblrole.text = job
+        lblName.text = name + " " + lName
+        lblPlace.text = city
+
+    }
     @IBAction func btnLikeOrNew(_ sender: Any) {
         if(getOwner==profileId){
             // is new post
@@ -115,7 +154,7 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        lblName.text = getName
+        lblName.text = getFName + " " + getLName
         lblPlace.text = getCity
         lblrole.text = getRole
         if(getOwner==profileId){
@@ -165,7 +204,7 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
         
 
         if(bio==""){
-            lblBio.text = getName + " از ویومستر جهت به اشتراک گذاشتن تجارب ارزشمند خود استفاده خواهد کرد. در صورتیکه تمایل دارید جدیدترین و بروزترین ها را دریافت کنید ، لطفا بر روی گزینه رصد کن کلیک نمایید."
+            lblBio.text = getFName + " " + getLName + " از ویومستر جهت به اشتراک گذاشتن تجارب ارزشمند خود استفاده خواهد کرد. در صورتیکه تمایل دارید جدیدترین و بروزترین ها را دریافت کنید ، لطفا بر روی گزینه رصد کن کلیک نمایید."
         }else{
             lblBio.text =  bio
         }
@@ -177,6 +216,23 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
         
         
 }
+    override func viewWillAppear(_ animated: Bool) {
+        if(getOwner == profileId){
+            let userDefaults = UserDefaults.standard
+            let name = userDefaults.value(forKey: "fName") as! String
+            let lName = userDefaults.value(forKey: "lName") as! String
+            let city = userDefaults.value(forKey: "City") as! String
+            let job = userDefaults.value(forKey: "job") as! String
+            let bio = userDefaults.value(forKey: "bio") as! String
+            
+            lblBio.text = bio
+            lblrole.text = job
+            lblName.text = name + " " + lName
+            lblPlace.text = city
+            
+        }
+    }
+   
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
       

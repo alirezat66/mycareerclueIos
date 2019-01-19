@@ -473,6 +473,101 @@ public class WebCaller {
         
     }
     
+    
+    static func editProfile(_ profileId: String ,_ first_name:String ,_ last_name : String ,_ job_position :String , _ city :String ,_ bio : String , completionHandler: @escaping (errorMessage?, Error?) -> Void) {
+        let endpoint = "https://weyoumaster.com/api/edit_profile"
+        guard let url = URL(string: endpoint)
+            else {
+                print("Error: cannot create URL")
+                let error = BackendError.urlError(reason: "Could not construct URL")
+                completionHandler(nil, error)
+                return
+        }
+        
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        let postString = "profileId=" + profileId + "&first_name=" + first_name + "&last_name=" + last_name + "&job_position=" + job_position + "&city=" + city + "&bio=" + bio
+        
+        urlRequest.httpBody = postString.data(using: String.Encoding.utf8)
+        let session = URLSession.shared
+        let task = session.dataTask(with: urlRequest, completionHandler: {
+            (data, response, error) in
+            guard error == nil else {
+                completionHandler(nil, error!)
+                return
+            }
+            guard let responseData = data else {
+                print("Error: did not receive data")
+                let error = BackendError.objectSerialization(reason: "No data in response")
+                completionHandler(nil, error)
+                return
+            }
+            
+            // parse the result as JSON
+            // then create a Todo from the JSON
+            do {
+                
+                
+                let  contentL  = try JSONDecoder().decode(errorMessage.self,from: responseData)
+                completionHandler(contentL,nil)
+                
+            } catch {
+                // error trying to convert the data to JSON using JSONSerialization.jsonObject
+                completionHandler(nil, error)
+                return
+            }
+        })
+        task.resume()
+        
+        
+    }
+    static func search(_ search: String ,completionHandler: @escaping (SearchList?, Error?) -> Void) {
+        let endpoint = "https://weyoumaster.com/api/search"
+        guard let url = URL(string: endpoint)
+            else {
+                print("Error: cannot create URL")
+                let error = BackendError.urlError(reason: "Could not construct URL")
+                completionHandler(nil, error)
+                return
+        }
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        let postString = "txtforsearch=" + search
+        
+        urlRequest.httpBody = postString.data(using: String.Encoding.utf8)
+        let session = URLSession.shared
+        let task = session.dataTask(with: urlRequest, completionHandler: {
+            (data, response, error) in
+            guard error == nil else {
+                completionHandler(nil, error!)
+                return
+            }
+            guard let responseData = data else {
+                print("Error: did not receive data")
+                let error = BackendError.objectSerialization(reason: "No data in response")
+                completionHandler(nil, error)
+                return
+            }
+            
+            // parse the result as JSON
+            // then create a Todo from the JSON
+            do {
+                
+                
+                let  contentL  = try JSONDecoder().decode(SearchList.self,from: responseData)
+                completionHandler(contentL,nil)
+                
+            } catch {
+                // error trying to convert the data to JSON using JSONSerialization.jsonObject
+                completionHandler(nil, error)
+                return
+            }
+        })
+        task.resume()
+        
+        
+    }
     static func addLabel(_ owner : String , _ collectionId : String , _ labeles : String,completionHandler: @escaping (NormalResponse?, Error?) -> Void){
         
         let endpoint = "https://weyoumaster.com/api/add_label"

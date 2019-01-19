@@ -239,7 +239,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Ocd-Xa-bZJ">
-                                <rect key="frame" x="157" y="293.66666666666669" width="100" height="148.66666666666669"/>
+                                <rect key="frame" x="157" y="285.33333333333331" width="100" height="165.33333333333331"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_launcher_foreground-29" translatesAutoresizingMaskIntoConstraints="NO" id="Gd4-X9-oSZ">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -249,16 +249,16 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wb8-sW-jf3">
-                                        <rect key="frame" x="7" y="104" width="86.333333333333329" height="44.666666666666657"/>
+                                        <rect key="frame" x="2.6666666666666572" y="103.99999999999999" width="94.666666666666671" height="61.333333333333329"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ویو مستر" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMr-wW-O2f">
-                                                <rect key="frame" x="0.0" y="0.0" width="86.333333333333329" height="29.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="94.666666666666671" height="40"/>
                                                 <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="25"/>
                                                 <color key="textColor" red="0.94117647059999998" green="0.83921568629999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WeYouMaster" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0OF-Xf-B5l">
-                                                <rect key="frame" x="0.0" y="28.333333333333314" width="86.333333333333329" height="16.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="39" width="94.666666666666671" height="22.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="14"/>
                                                 <color key="textColor" red="0.94117647059999998" green="0.83921568629999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -488,7 +488,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ورود به حساب کاربری" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXL-hb-r0J">
-                                        <rect key="frame" x="133.66666666666669" y="92" width="146.66666666666669" height="30"/>
+                                        <rect key="frame" x="125.66666666666667" y="92" width="162.66666666666663" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="cII-1y-oYh"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="rH5-qr-QrV"/>
@@ -1750,7 +1750,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="پروفایل کاربری" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWh-UT-AeE">
-                                                <rect key="frame" x="299.33333333333331" y="17" width="98.666666666666686" height="22.333333333333329"/>
+                                                <rect key="frame" x="289" y="12.999999999999998" width="109" height="30.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="19"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1811,30 +1811,30 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="urC-uu-1hD">
-                                                                <rect key="frame" x="138.33333333333334" y="174" width="73.666666666666657" height="32"/>
+                                                                <rect key="frame" x="136.33333333333334" y="174" width="77.666666666666657" height="23.333333333333343"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تهران" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpb-es-WxS">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="33.666666666666664" height="32"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="37.666666666666664" height="23.333333333333332"/>
                                                                         <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="18"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_location" translatesAutoresizingMaskIntoConstraints="NO" id="ckU-vY-nRf">
-                                                                        <rect key="frame" x="41.666666666666657" y="0.0" width="32" height="32"/>
+                                                                        <rect key="frame" x="45.666666666666657" y="0.0" width="32" height="23.333333333333332"/>
                                                                     </imageView>
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="HEd-bn-FRx">
-                                                                <rect key="frame" x="55.000000000000014" y="222" width="240.33333333333337" height="21"/>
+                                                                <rect key="frame" x="41" y="213.33333333333331" width="268" height="28.666666666666657"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="۵۰۰۰ تومان" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tas-XO-zWc">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="73.666666666666671" height="21"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="78" height="28.666666666666668"/>
                                                                         <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="18"/>
                                                                         <color key="textColor" red="1" green="0.1653573844" blue="0.1793851923" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="میزان فروش این اکانت :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3D-ST-7YI">
-                                                                        <rect key="frame" x="89.666666666666671" y="0.0" width="150.66666666666663" height="21"/>
+                                                                        <rect key="frame" x="94" y="0.0" width="174" height="28.666666666666668"/>
                                                                         <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="18"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -1842,7 +1842,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9r-ft-Yf1">
-                                                                <rect key="frame" x="16" y="259" width="318" height="40"/>
+                                                                <rect key="frame" x="16" y="258" width="318" height="40"/>
                                                                 <color key="backgroundColor" red="0.81170685279187815" green="0.67207323036088096" blue="0.17423558859224858" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="woq-SM-R7j"/>
@@ -1856,22 +1856,22 @@
                                                                 </connections>
                                                             </button>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Sdu-59-6FD">
-                                                                <rect key="frame" x="80" y="315" width="190" height="51"/>
+                                                                <rect key="frame" x="69" y="314" width="212" height="44"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FW5-2t-s3s">
-                                                                        <rect key="frame" x="0.0" y="1" width="74" height="50"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="88" height="44"/>
                                                                         <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="20"/>
                                                                         <state key="normal" title="مجموعه ها"/>
                                                                     </button>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ySs-zT-xGy">
-                                                                        <rect key="frame" x="90" y="1" width="2" height="50"/>
+                                                                        <rect key="frame" x="104" y="0.0" width="2" height="44"/>
                                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="2" id="Qyt-gN-cF4"/>
                                                                         </constraints>
                                                                     </view>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="71i-hv-a4H">
-                                                                        <rect key="frame" x="108" y="15" width="82" height="36"/>
+                                                                        <rect key="frame" x="122" y="0.0" width="90" height="44"/>
                                                                         <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="20"/>
                                                                         <state key="normal" title="مشارکت ها"/>
                                                                     </button>
@@ -1881,20 +1881,20 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GLS-VA-UFv">
-                                                                <rect key="frame" x="16" y="382" width="318" height="36"/>
+                                                                <rect key="frame" x="16" y="374" width="318" height="44"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYJ-ZH-F46">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="58" height="36"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="68" height="44"/>
                                                                         <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="20"/>
                                                                         <state key="normal" title="تنظیمات"/>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0F-u5-I4Y">
-                                                                        <rect key="frame" x="66" y="0.0" width="50" height="36"/>
+                                                                        <rect key="frame" x="76" y="0.0" width="62" height="44"/>
                                                                         <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="20"/>
                                                                         <state key="normal" title="ویرایش"/>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ZZ-zt-1o7">
-                                                                        <rect key="frame" x="124" y="0.0" width="194" height="36"/>
+                                                                        <rect key="frame" x="146" y="0.0" width="172" height="44"/>
                                                                         <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="20"/>
                                                                         <state key="normal" title="لینکدین"/>
                                                                         <connections>
@@ -2418,125 +2418,159 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3iV-dt-Kpg">
-                                <rect key="frame" x="159" y="20" width="96" height="96"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="96" id="gnE-EE-xUT"/>
-                                    <constraint firstAttribute="height" constant="96" id="hx7-m6-5GJ"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+9809378492127" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nA4-MR-1n2">
-                                <rect key="frame" x="117.00000000000001" y="124" width="180.33333333333337" height="27"/>
-                                <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="23"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="bC9-Wl-TXg">
-                                <rect key="frame" x="16" y="159" width="382" height="35.333333333333343"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dhb-LN-ZH0">
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9AY-dg-MP9">
-                                        <rect key="frame" x="94" y="0.0" width="288" height="1"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="YMg-KY-vRC"/>
-                                        </constraints>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اطلاعات فردی" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tvi-CD-W1p">
-                                        <rect key="frame" x="255" y="4.9999999999999982" width="127" height="30.333333333333329"/>
-                                        <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="26"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="N0R-na-Occ">
-                                <rect key="frame" x="16" y="202.33333333333334" width="382" height="72.000000000000028"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MG9-nV-2dS">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="30"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Le0-m0-gcZ" customClass="CardView" customModule="WeYouMaster" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="40" width="382" height="506"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="نام خانوادگی" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eOz-Iy-LZo">
-                                                <rect key="frame" x="0.0" y="0.0" width="187" height="30"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7o7-Vw-b3J">
+                                                <rect key="frame" x="8" y="40" width="366" height="30"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="نام خانوادگی" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nHt-Yb-Kwn">
+                                                        <rect key="frame" x="0.0" y="0.0" width="179" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="نام" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xs1-Vc-xyf">
+                                                        <rect key="frame" x="187" y="0.0" width="179" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="XbZ-9x-ntQ"/>
+                                                </constraints>
+                                            </stackView>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="سمت" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UNw-IM-ErS">
+                                                <rect key="frame" x="8" y="78" width="366" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="6TU-aU-RwR"/>
+                                                </constraints>
                                                 <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="نام" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CEE-3R-JtZ">
-                                                <rect key="frame" x="195" y="0.0" width="187" height="30"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="مکان زندگی" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1MZ-Bt-1X6">
+                                                <rect key="frame" x="8" y="116" width="366" height="30"/>
                                                 <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="19"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="5gw-Ob-dXz">
+                                                <rect key="frame" x="8" y="154" width="366" height="161"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut </string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="B7c-XA-w1h">
+                                                <rect key="frame" x="35" y="435" width="312" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iVh-N1-k61">
+                                                        <rect key="frame" x="0.0" y="0.0" width="152" height="30"/>
+                                                        <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="ویرایش">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="btnEdit:" destination="Rkp-6J-yfq" eventType="touchUpInside" id="sQb-Ex-rOw"/>
+                                                            <action selector="btnSave:" destination="Rkp-6J-yfq" eventType="touchUpInside" id="SlC-4y-y9S"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B0N-ep-C03">
+                                                        <rect key="frame" x="160" y="0.0" width="152" height="30"/>
+                                                        <state key="normal" title="انصراف">
+                                                            <color key="titleColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="btnCancel:" destination="Rkp-6J-yfq" eventType="touchUpInside" id="LxO-n9-vId"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="y6c-bc-cof"/>
+                                                </constraints>
+                                            </stackView>
                                         </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="eOz-Iy-LZo" firstAttribute="width" secondItem="CEE-3R-JtZ" secondAttribute="width" id="vts-7u-c7a"/>
+                                            <constraint firstAttribute="trailing" secondItem="7o7-Vw-b3J" secondAttribute="trailing" constant="8" id="00G-W9-WcG"/>
+                                            <constraint firstItem="7o7-Vw-b3J" firstAttribute="leading" secondItem="Le0-m0-gcZ" secondAttribute="leading" constant="8" id="2Gc-Hl-Sjd"/>
+                                            <constraint firstItem="B7c-XA-w1h" firstAttribute="leading" secondItem="Le0-m0-gcZ" secondAttribute="leading" constant="35" id="B8d-wc-nul"/>
+                                            <constraint firstAttribute="trailing" secondItem="1MZ-Bt-1X6" secondAttribute="trailing" constant="8" id="Bm9-x6-eid"/>
+                                            <constraint firstItem="B7c-XA-w1h" firstAttribute="top" secondItem="5gw-Ob-dXz" secondAttribute="bottom" constant="120" id="Fsk-t4-VNc"/>
+                                            <constraint firstAttribute="trailing" secondItem="UNw-IM-ErS" secondAttribute="trailing" constant="8" id="KhK-Fg-b1g"/>
+                                            <constraint firstAttribute="trailing" secondItem="B7c-XA-w1h" secondAttribute="trailing" constant="35" id="QWf-eF-Vlg"/>
+                                            <constraint firstItem="5gw-Ob-dXz" firstAttribute="leading" secondItem="1MZ-Bt-1X6" secondAttribute="leading" id="RAm-M9-lnd"/>
+                                            <constraint firstItem="1MZ-Bt-1X6" firstAttribute="top" secondItem="UNw-IM-ErS" secondAttribute="bottom" constant="8" id="Szk-Ki-MkE"/>
+                                            <constraint firstItem="7o7-Vw-b3J" firstAttribute="top" secondItem="Le0-m0-gcZ" secondAttribute="top" constant="40" id="Ufv-rU-rGg"/>
+                                            <constraint firstItem="1MZ-Bt-1X6" firstAttribute="leading" secondItem="Le0-m0-gcZ" secondAttribute="leading" constant="8" id="XKY-79-Z7v"/>
+                                            <constraint firstItem="5gw-Ob-dXz" firstAttribute="top" secondItem="1MZ-Bt-1X6" secondAttribute="bottom" constant="8" symbolic="YES" id="dL3-EE-vb1"/>
+                                            <constraint firstItem="UNw-IM-ErS" firstAttribute="top" secondItem="7o7-Vw-b3J" secondAttribute="bottom" constant="8" id="go6-8g-81m"/>
+                                            <constraint firstItem="5gw-Ob-dXz" firstAttribute="trailing" secondItem="1MZ-Bt-1X6" secondAttribute="trailing" id="khT-FI-Mrq"/>
+                                            <constraint firstItem="B7c-XA-w1h" firstAttribute="centerX" secondItem="Le0-m0-gcZ" secondAttribute="centerX" id="lx2-de-T91"/>
+                                            <constraint firstItem="UNw-IM-ErS" firstAttribute="leading" secondItem="Le0-m0-gcZ" secondAttribute="leading" constant="8" id="uRd-AY-YAo"/>
+                                            <constraint firstAttribute="bottom" secondItem="B7c-XA-w1h" secondAttribute="bottom" constant="41" id="zZc-WY-gVM"/>
                                         </constraints>
-                                    </stackView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ایمیل" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5bF-Lg-M9m">
-                                        <rect key="frame" x="0.0" y="42" width="382" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="19"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
-                                    </textField>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiud">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shaddowOffsetHeight">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shaddowOffsetWidth">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myImage" translatesAutoresizingMaskIntoConstraints="NO" id="92C-21-QDD">
+                                        <rect key="frame" x="172" y="10" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="KTP-Rh-wpG"/>
+                                            <constraint firstAttribute="width" constant="70" id="bZI-Xq-N3b"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="om6-1V-WMo">
-                                <rect key="frame" x="16" y="642" width="382" height="78"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="roQ-fd-ndA">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="35"/>
-                                        <color key="backgroundColor" red="0.13511818647384644" green="0.14591419696807861" blue="0.35385099053382874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="19"/>
-                                        <state key="normal" title="ذخیره مشخصات">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="btnSave:" destination="Rkp-6J-yfq" eventType="touchUpInside" id="S3R-OA-krq"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="itK-vE-PbI">
-                                        <rect key="frame" x="0.0" y="43" width="382" height="35"/>
-                                        <color key="backgroundColor" red="1" green="0.1653573844" blue="0.1793851923" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="19"/>
-                                        <state key="normal" title="لغو">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="btnCancel:" destination="Rkp-6J-yfq" eventType="touchUpInside" id="y45-Q8-0hq"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="92C-21-QDD" firstAttribute="top" secondItem="Dhb-LN-ZH0" secondAttribute="top" constant="10" id="Uao-yg-N0A"/>
+                                    <constraint firstItem="Le0-m0-gcZ" firstAttribute="leading" secondItem="Dhb-LN-ZH0" secondAttribute="leading" constant="16" id="dGH-BW-GY6"/>
+                                    <constraint firstItem="Le0-m0-gcZ" firstAttribute="top" secondItem="Dhb-LN-ZH0" secondAttribute="top" constant="40" id="hR4-pu-4ey"/>
+                                    <constraint firstAttribute="trailing" secondItem="Le0-m0-gcZ" secondAttribute="trailing" constant="16" id="n7S-I6-ohU"/>
+                                    <constraint firstAttribute="bottom" secondItem="Le0-m0-gcZ" secondAttribute="bottom" constant="170" id="t7X-dY-aKr"/>
+                                    <constraint firstItem="92C-21-QDD" firstAttribute="centerX" secondItem="Dhb-LN-ZH0" secondAttribute="centerX" id="xFC-t0-eks"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="bC9-Wl-TXg" firstAttribute="top" secondItem="nA4-MR-1n2" secondAttribute="bottom" constant="8" id="DPD-fk-FDU"/>
-                            <constraint firstItem="bC9-Wl-TXg" firstAttribute="leading" secondItem="yeN-fx-tVk" secondAttribute="leading" constant="16" id="FSE-ZY-7sP"/>
-                            <constraint firstItem="N0R-na-Occ" firstAttribute="top" secondItem="bC9-Wl-TXg" secondAttribute="bottom" constant="8" id="UD9-vP-oY1"/>
-                            <constraint firstItem="om6-1V-WMo" firstAttribute="leading" secondItem="yeN-fx-tVk" secondAttribute="leading" constant="16" id="WzR-td-n6o"/>
-                            <constraint firstItem="3iV-dt-Kpg" firstAttribute="centerX" secondItem="o6q-UA-m7J" secondAttribute="centerX" id="ZqL-mb-MNM"/>
-                            <constraint firstItem="yeN-fx-tVk" firstAttribute="trailing" secondItem="om6-1V-WMo" secondAttribute="trailing" constant="16" id="aQB-vu-APm"/>
-                            <constraint firstItem="nA4-MR-1n2" firstAttribute="centerX" secondItem="o6q-UA-m7J" secondAttribute="centerX" id="dn9-rl-j2d"/>
-                            <constraint firstItem="yeN-fx-tVk" firstAttribute="trailing" secondItem="N0R-na-Occ" secondAttribute="trailing" constant="16" id="fhu-d0-FzL"/>
-                            <constraint firstItem="yeN-fx-tVk" firstAttribute="bottom" secondItem="om6-1V-WMo" secondAttribute="bottom" constant="16" id="gzj-qZ-s10"/>
-                            <constraint firstItem="3iV-dt-Kpg" firstAttribute="top" secondItem="yeN-fx-tVk" secondAttribute="top" id="izX-IB-cUf"/>
-                            <constraint firstItem="N0R-na-Occ" firstAttribute="leading" secondItem="yeN-fx-tVk" secondAttribute="leading" constant="16" id="j9V-T3-xu5"/>
-                            <constraint firstItem="nA4-MR-1n2" firstAttribute="top" secondItem="3iV-dt-Kpg" secondAttribute="bottom" constant="8" id="o0Z-PT-9HN"/>
-                            <constraint firstItem="yeN-fx-tVk" firstAttribute="trailing" secondItem="bC9-Wl-TXg" secondAttribute="trailing" constant="16" id="wcQ-PH-hBf"/>
+                            <constraint firstItem="Dhb-LN-ZH0" firstAttribute="leading" secondItem="yeN-fx-tVk" secondAttribute="leading" id="6zg-al-ODu"/>
+                            <constraint firstItem="Dhb-LN-ZH0" firstAttribute="trailing" secondItem="yeN-fx-tVk" secondAttribute="trailing" id="9cB-J8-hzf"/>
+                            <constraint firstItem="Dhb-LN-ZH0" firstAttribute="bottom" secondItem="yeN-fx-tVk" secondAttribute="bottom" id="F0B-0r-x2h"/>
+                            <constraint firstItem="Dhb-LN-ZH0" firstAttribute="top" secondItem="yeN-fx-tVk" secondAttribute="top" id="eYj-uK-siO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yeN-fx-tVk"/>
                     </view>
                     <connections>
-                        <outlet property="edtEmail" destination="5bF-Lg-M9m" id="Gdq-mO-fSF"/>
-                        <outlet property="edtLName" destination="eOz-Iy-LZo" id="YEs-Mt-6MK"/>
-                        <outlet property="edtName" destination="CEE-3R-JtZ" id="jkz-g3-R0T"/>
-                        <outlet property="imgProfile" destination="3iV-dt-Kpg" id="ZjQ-xz-AJf"/>
-                        <outlet property="lblNumber" destination="nA4-MR-1n2" id="lR5-6T-xCL"/>
+                        <outlet property="bottomText" destination="t7X-dY-aKr" id="pc1-oe-hvV"/>
+                        <outlet property="edtLName" destination="nHt-Yb-Kwn" id="O9I-ty-wnu"/>
+                        <outlet property="edtLocation" destination="1MZ-Bt-1X6" id="XZw-jd-gvK"/>
+                        <outlet property="edtName" destination="Xs1-Vc-xyf" id="Ihr-Ld-b3q"/>
+                        <outlet property="edtRole" destination="UNw-IM-ErS" id="PIf-qK-ANg"/>
+                        <outlet property="imgPerson" destination="92C-21-QDD" id="zZ5-tg-Gc0"/>
+                        <outlet property="txtAboat" destination="5gw-Ob-dXz" id="iom-1o-cAu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ilt-yh-e2D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1090" y="-840"/>
+            <point key="canvasLocation" x="1089.8550724637682" y="-840.48913043478262"/>
         </scene>
         <!--Step OneVC-->
         <scene sceneID="zDj-9M-iAO">
@@ -3172,16 +3206,16 @@
                                                                             </subviews>
                                                                         </stackView>
                                                                         <stackView opaque="NO" contentMode="center" axis="vertical" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4ln-4m-XZv">
-                                                                            <rect key="frame" x="278" y="22.000000000000004" width="120" height="36.333333333333343"/>
+                                                                            <rect key="frame" x="278" y="17.000000000000004" width="120" height="46.333333333333343"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16 min ago" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Xh-zC-sWF">
-                                                                                    <rect key="frame" x="42.666666666666686" y="0.0" width="35" height="8.3333333333333339"/>
+                                                                                    <rect key="frame" x="42.333333333333314" y="0.0" width="35.666666666666657" height="11.333333333333334"/>
                                                                                     <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="7"/>
                                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYf-6R-Gfw">
-                                                                                    <rect key="frame" x="50.666666666666686" y="16.333333333333336" width="19" height="20"/>
+                                                                                    <rect key="frame" x="50.333333333333314" y="19.333333333333336" width="19.666666666666671" height="27"/>
                                                                                     <color key="backgroundColor" red="1" green="0.42745098040000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="17"/>
                                                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3481,7 +3515,7 @@
                                         <rect key="frame" x="0.0" y="18" width="320" height="56"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="درباره ویومستر" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTM-Sc-PjW">
-                                                <rect key="frame" x="212.33333333333334" y="17" width="99.666666666666657" height="22.333333333333329"/>
+                                                <rect key="frame" x="202" y="12.999999999999998" width="110" height="30.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="19"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -3521,28 +3555,28 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="چگونه بفروشم؟" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7JZ-h4-Om2">
-                                <rect key="frame" x="96" y="90" width="128" height="29.333333333333329"/>
+                                <rect key="frame" x="84.666666666666686" y="90" width="151" height="40"/>
                                 <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="25"/>
                                 <color key="textColor" red="0.25376215577125549" green="0.0020293910056352615" blue="0.56782013177871704" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wzg-Ks-QrZ">
-                                <rect key="frame" x="0.0" y="127.33333333333331" width="320" height="872.66666666666674"/>
+                                <rect key="frame" x="0.0" y="138" width="320" height="862"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FQV-7u-cWa">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="700"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SdK-ed-ujc">
-                                                <rect key="frame" x="16" y="8.0000000000000142" width="288" height="220"/>
+                                                <rect key="frame" x="16" y="8" width="288" height="220"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نحوه فروش در ویومستر" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZK-8y-fPg">
-                                                        <rect key="frame" x="71.333333333333329" y="10" width="145.66666666666669" height="21"/>
+                                                        <rect key="frame" x="60" y="10.000000000000002" width="168" height="28.666666666666671"/>
                                                         <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="18"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="8ec-y3-59K">
-                                                        <rect key="frame" x="8" y="43" width="272" height="138.66666666666666"/>
+                                                        <rect key="frame" x="8" y="50.666666666666643" width="272" height="157.33333333333337"/>
                                                         <string key="text">مجموعه های خود را تولید کنید، به صورت آهسته و پیوسته مشارکت ایجاد کرده و آنها را در مجموعه ها قرار دهید، سپس سیستم بازاریابی فوق مدرن ویومستر مجموعه های شما را به فروش می رساند و پول نقد در حساب PayPal یا حساب بانکی ایران به شما تحویل می هد</string>
                                                         <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -3564,13 +3598,13 @@
                                                 <rect key="frame" x="16" y="244" width="288" height="320"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تاریخ تولید مجموعه یا مشارکت چه تاثیری در فروش دارد؟" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="3Xa-er-zK6">
-                                                        <rect key="frame" x="12" y="10" width="264" height="42"/>
+                                                        <rect key="frame" x="12" y="10.000000000000004" width="264" height="57.333333333333343"/>
                                                         <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="18"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="yul-wz-laV">
-                                                        <rect key="frame" x="8" y="63.999999999999986" width="272" height="158.66666666666663"/>
+                                                        <rect key="frame" x="8" y="79.3333333333333" width="272" height="228.66666666666663"/>
                                                         <string key="text">هنگام تولید مجموعه یا ایجاد یک مشارکت جدید، تاریخ تولید آن برای همیشه ثبت شده و هیچگاه تغییر نخواهد کرد. اگر مجموعه یا مشارکتی ویرایش شود، تاریخ آخرین ویرایش علاوه بر تاریخ تولید نمایش داده خواهد شد. خلاصه کلام، مجموعه ها و مشارکت ها هر چه زودتر تولید شوند، در بلندمدت قابلیت فروش بیشتری خواهند داشت</string>
                                                         <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -3647,7 +3681,7 @@
                                         <rect key="frame" x="0.0" y="18" width="414" height="56"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سوالات متداول" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXN-Dx-BfX">
-                                                <rect key="frame" x="309" y="17" width="97" height="22.333333333333329"/>
+                                                <rect key="frame" x="294" y="12.999999999999998" width="112" height="30.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="19"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -3702,13 +3736,13 @@
                                                     <rect key="frame" x="16" y="0.0" width="382" height="222.66666666666666"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نحوه فروش در ویومستر" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="jI3-VR-kAp">
-                                                            <rect key="frame" x="8" y="8" width="366" height="21"/>
+                                                            <rect key="frame" x="8" y="8.0000000000000018" width="366" height="28.666666666666671"/>
                                                             <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="lKt-g2-Xcz">
-                                                            <rect key="frame" x="8" y="39" width="366" height="17.666666666666671"/>
+                                                            <rect key="frame" x="8" y="46.666666666666664" width="366" height="23.999999999999993"/>
                                                             <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -4066,16 +4100,16 @@
                                                                                     <rect key="frame" x="0.0" y="0.0" width="398" height="85"/>
                                                                                     <subviews>
                                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-2" translatesAutoresizingMaskIntoConstraints="NO" id="tB1-rm-NEW">
-                                                                                            <rect key="frame" x="0.0" y="12" width="326" height="61"/>
+                                                                                            <rect key="frame" x="0.0" y="8.6666666666666643" width="326" height="67.666666666666686"/>
                                                                                             <subviews>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الناز تقوی" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cjf-LR-KLx">
-                                                                                                    <rect key="frame" x="0.0" y="0.0" width="326" height="18.666666666666668"/>
+                                                                                                    <rect key="frame" x="0.0" y="0.0" width="326" height="25.666666666666668"/>
                                                                                                     <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="16"/>
                                                                                                     <nil key="textColor"/>
                                                                                                     <nil key="highlightedColor"/>
                                                                                                 </label>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="کارشناس ارشد کارگردانی" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eBm-QZ-vRn">
-                                                                                                    <rect key="frame" x="0.0" y="16.666666666666664" width="326" height="23"/>
+                                                                                                    <rect key="frame" x="0.0" y="23.666666666666671" width="326" height="23"/>
                                                                                                     <constraints>
                                                                                                         <constraint firstAttribute="height" constant="23" id="aLD-IL-2QQ"/>
                                                                                                     </constraints>
@@ -4084,7 +4118,7 @@
                                                                                                     <nil key="highlightedColor"/>
                                                                                                 </label>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سیدنی" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rge-MY-pBy">
-                                                                                                    <rect key="frame" x="0.0" y="37.666666666666664" width="326" height="23.333333333333336"/>
+                                                                                                    <rect key="frame" x="0.0" y="44.666666666666664" width="326" height="22.999999999999993"/>
                                                                                                     <constraints>
                                                                                                         <constraint firstAttribute="height" constant="23" id="5mp-jG-fNv"/>
                                                                                                     </constraints>
@@ -4169,10 +4203,10 @@
                                                                                     <rect key="frame" x="0.0" y="0.0" width="398" height="189"/>
                                                                                     <subviews>
                                                                                         <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="enK-Wh-xay">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="398" height="30"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="398" height="36"/>
                                                                                             <subviews>
                                                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJw-ya-gWo">
-                                                                                                    <rect key="frame" x="0.0" y="0.0" width="329.66666666666669" height="30"/>
+                                                                                                    <rect key="frame" x="0.0" y="0.0" width="323.33333333333331" height="36"/>
                                                                                                     <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="15"/>
                                                                                                     <state key="normal">
                                                                                                         <color key="titleColor" red="0.70196078431372544" green="0.6588235294117647" blue="0.72156862745098038" alpha="1" colorSpace="calibratedRGB"/>
@@ -4182,7 +4216,7 @@
                                                                                                     </connections>
                                                                                                 </button>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="از مجموعه  :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJl-8P-dSw">
-                                                                                                    <rect key="frame" x="331.66666666666669" y="0.0" width="66.333333333333314" height="30"/>
+                                                                                                    <rect key="frame" x="325.33333333333331" y="0.0" width="72.666666666666686" height="36"/>
                                                                                                     <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="15"/>
                                                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                     <nil key="highlightedColor"/>
@@ -4190,13 +4224,13 @@
                                                                                             </subviews>
                                                                                         </stackView>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="تیتر" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAs-1U-sUh">
-                                                                                            <rect key="frame" x="0.0" y="33.999999999999993" width="398" height="23.333333333333336"/>
+                                                                                            <rect key="frame" x="0.0" y="39.999999999999993" width="398" height="32.000000000000007"/>
                                                                                             <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="20"/>
                                                                                             <color key="textColor" red="0.1647058824" green="0.34901960780000002" blue="0.42745098040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="متن" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ql-wa-pp5">
-                                                                                            <rect key="frame" x="0.0" y="61.333333333333343" width="398" height="27"/>
+                                                                                            <rect key="frame" x="0.0" y="76" width="398" height="27"/>
                                                                                             <constraints>
                                                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="27" id="1Se-0x-w8J"/>
                                                                                             </constraints>
@@ -4205,7 +4239,7 @@
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                         <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfW-3j-F7G">
-                                                                                            <rect key="frame" x="363" y="92.333333333333314" width="35" height="32"/>
+                                                                                            <rect key="frame" x="359" y="107" width="39" height="39"/>
                                                                                             <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="17"/>
                                                                                             <state key="normal" title="بیشتر"/>
                                                                                             <connections>
@@ -4213,7 +4247,7 @@
                                                                                             </connections>
                                                                                         </button>
                                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6N-BT-DUl">
-                                                                                            <rect key="frame" x="320" y="128.33333333333331" width="78" height="60.666666666666657"/>
+                                                                                            <rect key="frame" x="305" y="150" width="93" height="39"/>
                                                                                             <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="17"/>
                                                                                             <state key="normal" title="مشاهده لینک"/>
                                                                                             <connections>
@@ -4250,13 +4284,13 @@
                                                                                     <rect key="frame" x="333" y="461.00000000000006" width="65" height="30"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(۰)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTT-dR-vJb">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="17" height="30"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="20.666666666666668" height="30"/>
                                                                                             <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="17"/>
                                                                                             <nil key="textColor"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                         <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mmI-4h-IqQ">
-                                                                                            <rect key="frame" x="17" y="0.0" width="48" height="30"/>
+                                                                                            <rect key="frame" x="20.666666666666689" y="0.0" width="44.333333333333343" height="30"/>
                                                                                             <constraints>
                                                                                                 <constraint firstAttribute="height" constant="30" id="3xB-8X-P2j"/>
                                                                                             </constraints>
@@ -4454,8 +4488,7 @@
                                                     <color key="titleColor" red="0.70196078429999997" green="0.6588235294" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="btnSearch:" destination="sKp-JH-1WN" eventType="touchUpInside" id="uJH-kN-tVR"/>
-                                                    <segue destination="o3e-QF-eZw" kind="show" id="I0F-C6-aaG"/>
+                                                    <action selector="btnSearch:" destination="sKp-JH-1WN" eventType="touchUpInside" id="ryD-b0-LbA"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -4521,10 +4554,10 @@
             </objects>
             <point key="canvasLocation" x="3386.9565217391305" y="1914.9456521739132"/>
         </scene>
-        <!--View Controller-->
+        <!--SearchVC-->
         <scene sceneID="1Gd-ph-n5G">
             <objects>
-                <viewController id="o3e-QF-eZw" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="searchVC" id="o3e-QF-eZw" customClass="SearchVC" customModule="WeYouMaster" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2BY-bC-3Ly">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4542,6 +4575,10 @@
                                                     <constraint firstAttribute="width" constant="24" id="PAV-Pb-JEL"/>
                                                 </constraints>
                                                 <state key="normal" image="left-arrow"/>
+                                                <connections>
+                                                    <action selector="btnBack:" destination="QE2-Hl-7li" eventType="touchUpInside" id="3bi-4j-apY"/>
+                                                    <action selector="btnBack:" destination="o3e-QF-eZw" eventType="touchUpInside" id="zAq-lk-oQS"/>
+                                                </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="جستجو" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aUi-Rd-Xmd">
                                                 <rect key="frame" x="56" y="20" width="350" height="30"/>
@@ -4551,6 +4588,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="edtChange:" destination="o3e-QF-eZw" eventType="editingChanged" id="lBI-le-iUA"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" red="0.28627450980000002" green="0.0078431372550000003" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -4581,10 +4621,63 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RTc-vs-aXv">
+                                        <rect key="frame" x="0.0" y="78" width="414" height="638"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="mySearchCell" rowHeight="149" id="djs-YO-TeP" customClass="SearchCell" customModule="WeYouMaster" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="414" height="149"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="djs-YO-TeP" id="2JR-wb-TjY">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="149"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g08-Xb-aGV">
+                                                            <rect key="frame" x="324" y="26" width="70" height="70"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="70" id="VSd-Ug-uYN"/>
+                                                                <constraint firstAttribute="height" constant="70" id="pjy-6A-fDX"/>
+                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="qCq-Yh-27p"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJT-wO-sx5">
+                                                            <rect key="frame" x="20" y="26" width="296" height="70"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="70" id="J5v-vF-i9b"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="g08-Xb-aGV" secondAttribute="bottom" constant="15" id="43R-4H-bmY"/>
+                                                        <constraint firstItem="g08-Xb-aGV" firstAttribute="top" secondItem="2JR-wb-TjY" secondAttribute="topMargin" constant="15" id="FYw-Lr-thz"/>
+                                                        <constraint firstItem="SJT-wO-sx5" firstAttribute="leading" secondItem="2JR-wb-TjY" secondAttribute="leadingMargin" id="KTt-eO-gfg"/>
+                                                        <constraint firstItem="SJT-wO-sx5" firstAttribute="top" secondItem="2JR-wb-TjY" secondAttribute="topMargin" constant="15" id="QyS-Fb-kIz"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="g08-Xb-aGV" secondAttribute="trailing" id="Rf1-VW-YCS"/>
+                                                        <constraint firstItem="g08-Xb-aGV" firstAttribute="leading" secondItem="SJT-wO-sx5" secondAttribute="trailing" constant="8" id="Uu8-NG-Rcw"/>
+                                                        <constraint firstItem="g08-Xb-aGV" firstAttribute="leading" secondItem="SJT-wO-sx5" secondAttribute="trailing" constant="8" id="okT-yd-uTD"/>
+                                                        <constraint firstItem="g08-Xb-aGV" firstAttribute="leading" secondItem="SJT-wO-sx5" secondAttribute="trailing" constant="8" id="sT9-mt-dFD"/>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="SJT-wO-sx5" secondAttribute="bottom" constant="15" id="z9Z-tN-pmY"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <inset key="separatorInset" minX="14" minY="0.0" maxX="14" maxY="0.0"/>
+                                                <connections>
+                                                    <outlet property="img" destination="g08-Xb-aGV" id="RT8-oH-k03"/>
+                                                    <outlet property="lbl" destination="SJT-wO-sx5" id="xL7-dZ-edN"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="RTc-vs-aXv" firstAttribute="leading" secondItem="YAr-4R-suj" secondAttribute="leading" id="11L-z0-huc"/>
                                     <constraint firstItem="HJf-8o-fyh" firstAttribute="leading" secondItem="YAr-4R-suj" secondAttribute="leading" id="7IQ-rc-NN6"/>
+                                    <constraint firstAttribute="bottom" secondItem="RTc-vs-aXv" secondAttribute="bottom" id="Cmx-Zb-4FG"/>
+                                    <constraint firstItem="RTc-vs-aXv" firstAttribute="top" secondItem="HJf-8o-fyh" secondAttribute="bottom" constant="8" id="NhF-4c-Qli"/>
+                                    <constraint firstAttribute="trailing" secondItem="RTc-vs-aXv" secondAttribute="trailing" id="ToN-4U-cqU"/>
                                     <constraint firstAttribute="trailing" secondItem="HJf-8o-fyh" secondAttribute="trailing" id="gTu-2v-v6W"/>
                                     <constraint firstItem="HJf-8o-fyh" firstAttribute="top" secondItem="YAr-4R-suj" secondAttribute="top" id="umw-8j-W4e"/>
                                 </constraints>
@@ -4599,8 +4692,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hu9-xW-jUs"/>
                     </view>
+                    <connections>
+                        <outlet property="UITable" destination="RTc-vs-aXv" id="IEE-Gs-JeV"/>
+                        <outlet property="edtSearch" destination="aUi-Rd-Xmd" id="fvY-RA-uAm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P9b-xS-eEy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="QE2-Hl-7li" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4276.811594202899" y="1918.2065217391305"/>
         </scene>
@@ -4639,7 +4737,7 @@
                                                                             </constraints>
                                                                         </imageView>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="Wmi-XG-JOq">
-                                                                            <rect key="frame" x="8" y="31" width="362" height="114"/>
+                                                                            <rect key="frame" x="8" y="22.333333333333329" width="362" height="131.33333333333337"/>
                                                                             <subviews>
                                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="colicon" translatesAutoresizingMaskIntoConstraints="NO" id="5d0-tG-8Tx">
                                                                                     <rect key="frame" x="157" y="0.0" width="48" height="48"/>
@@ -4649,13 +4747,13 @@
                                                                                     </constraints>
                                                                                 </imageView>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="برنامه نویسی آی او اس" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OBd-Vw-sWe">
-                                                                                    <rect key="frame" x="81.666666666666686" y="57" width="199" height="28"/>
+                                                                                    <rect key="frame" x="70.333333333333329" y="57" width="221.33333333333337" height="38.333333333333343"/>
                                                                                     <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="24"/>
                                                                                     <color key="textColor" red="0.28235294117647058" green="0.0078431372549019607" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="( ۱۳۶ مشارکت )" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z5N-71-a3x">
-                                                                                    <rect key="frame" x="131.33333333333334" y="94" width="99.333333333333343" height="20"/>
+                                                                                    <rect key="frame" x="127" y="104.33333333333334" width="108" height="27"/>
                                                                                     <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="17"/>
                                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <nil key="highlightedColor"/>
@@ -4681,13 +4779,13 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="294" height="60"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="الناز محمدی" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYa-QM-XYW">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="294" height="39.666666666666664"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="294" height="33.666666666666664"/>
                                                                                     <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="17"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="شیراز" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29Y-sz-1FU">
-                                                                                    <rect key="frame" x="0.0" y="43.666666666666686" width="294" height="16.333333333333329"/>
+                                                                                    <rect key="frame" x="0.0" y="37.666666666666686" width="294" height="22.333333333333329"/>
                                                                                     <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="14"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
@@ -5069,6 +5167,9 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="122" height="36"/>
                                                         <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="15"/>
                                                         <state key="normal" title="ویرایش"/>
+                                                        <connections>
+                                                            <action selector="btnProfileEdit:" destination="5kE-RL-F2f" eventType="touchUpInside" id="yh1-EH-bGa"/>
+                                                        </connections>
                                                     </button>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="yEy-th-WRG">
                                                         <rect key="frame" x="122" y="0.0" width="122" height="36"/>
@@ -5311,7 +5412,7 @@
                                                                             </constraints>
                                                                         </imageView>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="nHf-6q-jcp">
-                                                                            <rect key="frame" x="8" y="31" width="362" height="114"/>
+                                                                            <rect key="frame" x="8" y="22.333333333333329" width="362" height="131.33333333333337"/>
                                                                             <subviews>
                                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="colicon" translatesAutoresizingMaskIntoConstraints="NO" id="QeT-ws-MJm">
                                                                                     <rect key="frame" x="157" y="0.0" width="48" height="48"/>
@@ -5321,13 +5422,13 @@
                                                                                     </constraints>
                                                                                 </imageView>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="برنامه نویسی آی او اس" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hd-l3-CyS">
-                                                                                    <rect key="frame" x="81.666666666666686" y="57" width="199" height="28"/>
+                                                                                    <rect key="frame" x="70.333333333333329" y="57" width="221.33333333333337" height="38.333333333333343"/>
                                                                                     <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="24"/>
                                                                                     <color key="textColor" red="0.28235294119999998" green="0.0078431372550000003" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="( ۱۳۶ مشارکت )" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyv-hQ-lWC">
-                                                                                    <rect key="frame" x="131.33333333333334" y="94" width="99.333333333333343" height="20"/>
+                                                                                    <rect key="frame" x="127" y="104.33333333333334" width="108" height="27"/>
                                                                                     <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="17"/>
                                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <nil key="highlightedColor"/>
@@ -5353,13 +5454,13 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="294" height="60"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="الناز محمدی" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucN-lK-URT">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="294" height="39.666666666666664"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="294" height="33.666666666666664"/>
                                                                                     <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="17"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="شیراز" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vLw-Wu-Bba">
-                                                                                    <rect key="frame" x="0.0" y="43.666666666666657" width="294" height="16.333333333333329"/>
+                                                                                    <rect key="frame" x="0.0" y="37.666666666666657" width="294" height="22.333333333333329"/>
                                                                                     <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="14"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
@@ -5498,16 +5599,16 @@
                                                                                     <rect key="frame" x="0.0" y="0.0" width="398" height="85"/>
                                                                                     <subviews>
                                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="av5-KJ-1dH">
-                                                                                            <rect key="frame" x="0.0" y="10.333333333333336" width="340" height="64.666666666666657"/>
+                                                                                            <rect key="frame" x="0.0" y="6.6666666666666643" width="340" height="71.666666666666686"/>
                                                                                             <subviews>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الناز تقوی" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwF-x1-Nms">
-                                                                                                    <rect key="frame" x="0.0" y="0.0" width="340" height="18.666666666666668"/>
+                                                                                                    <rect key="frame" x="0.0" y="0.0" width="340" height="25.666666666666668"/>
                                                                                                     <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="16"/>
                                                                                                     <nil key="textColor"/>
                                                                                                     <nil key="highlightedColor"/>
                                                                                                 </label>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="کارشناس ارشد کارگردانی" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcH-7H-TQR">
-                                                                                                    <rect key="frame" x="0.0" y="18.666666666666664" width="340" height="23"/>
+                                                                                                    <rect key="frame" x="0.0" y="25.666666666666671" width="340" height="23"/>
                                                                                                     <constraints>
                                                                                                         <constraint firstAttribute="height" constant="23" id="hZY-hz-Dka"/>
                                                                                                     </constraints>
@@ -5516,7 +5617,7 @@
                                                                                                     <nil key="highlightedColor"/>
                                                                                                 </label>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سیدنی" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89a-ST-xDM">
-                                                                                                    <rect key="frame" x="0.0" y="41.666666666666664" width="340" height="22.999999999999993"/>
+                                                                                                    <rect key="frame" x="0.0" y="48.666666666666671" width="340" height="23"/>
                                                                                                     <constraints>
                                                                                                         <constraint firstAttribute="height" constant="23" id="HaR-Zh-YUA"/>
                                                                                                     </constraints>
@@ -5604,7 +5705,7 @@
                                                                                             <rect key="frame" x="0.0" y="0.0" width="398" height="0.0"/>
                                                                                             <subviews>
                                                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8c-es-Nex">
-                                                                                                    <rect key="frame" x="0.0" y="0.0" width="329.66666666666669" height="0.0"/>
+                                                                                                    <rect key="frame" x="0.0" y="0.0" width="323.33333333333331" height="0.0"/>
                                                                                                     <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="15"/>
                                                                                                     <state key="normal">
                                                                                                         <color key="titleColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -5614,7 +5715,7 @@
                                                                                                     </connections>
                                                                                                 </button>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="از مجموعه  :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEL-Dr-tvP">
-                                                                                                    <rect key="frame" x="331.66666666666669" y="0.0" width="66.333333333333314" height="0.0"/>
+                                                                                                    <rect key="frame" x="325.33333333333331" y="0.0" width="72.666666666666686" height="0.0"/>
                                                                                                     <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="15"/>
                                                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                     <nil key="highlightedColor"/>
@@ -5622,13 +5723,13 @@
                                                                                             </subviews>
                                                                                         </stackView>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="تیتر" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gB1-kN-kg0">
-                                                                                            <rect key="frame" x="0.0" y="4" width="398" height="23.333333333333332"/>
+                                                                                            <rect key="frame" x="0.0" y="4" width="398" height="32"/>
                                                                                             <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="20"/>
                                                                                             <color key="textColor" red="0.1647058824" green="0.34901960780000002" blue="0.42745098040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="متن" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m37-fa-GNv">
-                                                                                            <rect key="frame" x="0.0" y="31.333333333333343" width="398" height="27"/>
+                                                                                            <rect key="frame" x="0.0" y="40" width="398" height="27"/>
                                                                                             <constraints>
                                                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="27" id="1kj-Q3-up8"/>
                                                                                             </constraints>
@@ -5637,7 +5738,7 @@
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                         <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a88-W1-1hN">
-                                                                                            <rect key="frame" x="363" y="62.33333333333335" width="35" height="14.333333333333336"/>
+                                                                                            <rect key="frame" x="359" y="71" width="39" height="5.6666666666666714"/>
                                                                                             <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="17"/>
                                                                                             <state key="normal" title="بیشتر"/>
                                                                                             <connections>
@@ -5645,7 +5746,7 @@
                                                                                             </connections>
                                                                                         </button>
                                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qqG-ec-4VG">
-                                                                                            <rect key="frame" x="320" y="80.666666666666657" width="78" height="34"/>
+                                                                                            <rect key="frame" x="305" y="80.666666666666657" width="93" height="34"/>
                                                                                             <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="17"/>
                                                                                             <state key="normal" title="مشاهده لینک"/>
                                                                                             <connections>
@@ -5681,13 +5782,13 @@
                                                                                     <rect key="frame" x="333" y="326.66666666666669" width="65" height="30"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(۰)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqn-lO-Hgi">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="17" height="30"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="20.666666666666668" height="30"/>
                                                                                             <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="17"/>
                                                                                             <nil key="textColor"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                         <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qaI-5Y-1xl">
-                                                                                            <rect key="frame" x="17" y="0.0" width="48" height="30"/>
+                                                                                            <rect key="frame" x="20.666666666666689" y="0.0" width="44.333333333333343" height="30"/>
                                                                                             <constraints>
                                                                                                 <constraint firstAttribute="height" constant="30" id="LNf-Vm-Dmx"/>
                                                                                             </constraints>
@@ -6002,16 +6103,16 @@
                                                                                     <rect key="frame" x="0.0" y="0.0" width="398" height="85"/>
                                                                                     <subviews>
                                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="W0p-hY-K7I">
-                                                                                            <rect key="frame" x="0.0" y="10.333333333333336" width="340" height="64.666666666666657"/>
+                                                                                            <rect key="frame" x="0.0" y="6.6666666666666643" width="340" height="71.666666666666686"/>
                                                                                             <subviews>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الناز تقوی" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PvV-VC-DsQ">
-                                                                                                    <rect key="frame" x="0.0" y="0.0" width="340" height="18.666666666666668"/>
+                                                                                                    <rect key="frame" x="0.0" y="0.0" width="340" height="25.666666666666668"/>
                                                                                                     <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="16"/>
                                                                                                     <nil key="textColor"/>
                                                                                                     <nil key="highlightedColor"/>
                                                                                                 </label>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="کارشناس ارشد کارگردانی" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPL-rV-lBI">
-                                                                                                    <rect key="frame" x="0.0" y="18.666666666666664" width="340" height="23"/>
+                                                                                                    <rect key="frame" x="0.0" y="25.666666666666671" width="340" height="23"/>
                                                                                                     <constraints>
                                                                                                         <constraint firstAttribute="height" constant="23" id="vet-Bf-gbP"/>
                                                                                                     </constraints>
@@ -6020,7 +6121,7 @@
                                                                                                     <nil key="highlightedColor"/>
                                                                                                 </label>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سیدنی" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vh2-DC-WeM">
-                                                                                                    <rect key="frame" x="0.0" y="41.666666666666664" width="340" height="22.999999999999993"/>
+                                                                                                    <rect key="frame" x="0.0" y="48.666666666666671" width="340" height="23"/>
                                                                                                     <constraints>
                                                                                                         <constraint firstAttribute="height" constant="23" id="eRh-Lm-USD"/>
                                                                                                     </constraints>
@@ -6108,7 +6209,7 @@
                                                                                             <rect key="frame" x="0.0" y="0.0" width="398" height="0.0"/>
                                                                                             <subviews>
                                                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vd3-oY-2FJ">
-                                                                                                    <rect key="frame" x="0.0" y="0.0" width="329.66666666666669" height="0.0"/>
+                                                                                                    <rect key="frame" x="0.0" y="0.0" width="323.33333333333331" height="0.0"/>
                                                                                                     <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="15"/>
                                                                                                     <state key="normal">
                                                                                                         <color key="titleColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -6118,7 +6219,7 @@
                                                                                                     </connections>
                                                                                                 </button>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="از مجموعه  :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7F-60-ka2">
-                                                                                                    <rect key="frame" x="331.66666666666669" y="0.0" width="66.333333333333314" height="0.0"/>
+                                                                                                    <rect key="frame" x="325.33333333333331" y="0.0" width="72.666666666666686" height="0.0"/>
                                                                                                     <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="15"/>
                                                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                     <nil key="highlightedColor"/>
@@ -6126,13 +6227,13 @@
                                                                                             </subviews>
                                                                                         </stackView>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="تیتر" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Edc-Fd-R15">
-                                                                                            <rect key="frame" x="0.0" y="4" width="398" height="23.333333333333332"/>
+                                                                                            <rect key="frame" x="0.0" y="4" width="398" height="32"/>
                                                                                             <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="20"/>
                                                                                             <color key="textColor" red="0.1647058824" green="0.34901960780000002" blue="0.42745098040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="متن" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mzb-Rx-ZtN">
-                                                                                            <rect key="frame" x="0.0" y="31.333333333333343" width="398" height="27"/>
+                                                                                            <rect key="frame" x="0.0" y="40" width="398" height="27"/>
                                                                                             <constraints>
                                                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="27" id="rnb-9H-EnH"/>
                                                                                             </constraints>
@@ -6141,7 +6242,7 @@
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                         <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i33-mK-JaK">
-                                                                                            <rect key="frame" x="363" y="62.33333333333335" width="35" height="14.333333333333336"/>
+                                                                                            <rect key="frame" x="359" y="71" width="39" height="5.6666666666666714"/>
                                                                                             <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="17"/>
                                                                                             <state key="normal" title="بیشتر"/>
                                                                                             <connections>
@@ -6149,7 +6250,7 @@
                                                                                             </connections>
                                                                                         </button>
                                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3HG-ZT-trN">
-                                                                                            <rect key="frame" x="320" y="80.666666666666657" width="78" height="34"/>
+                                                                                            <rect key="frame" x="305" y="80.666666666666657" width="93" height="34"/>
                                                                                             <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="17"/>
                                                                                             <state key="normal" title="مشاهده لینک"/>
                                                                                             <connections>
@@ -6185,13 +6286,13 @@
                                                                                     <rect key="frame" x="333" y="326.66666666666669" width="65" height="30"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(۰)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GXx-5v-wdb">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="17" height="30"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="20.666666666666668" height="30"/>
                                                                                             <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="17"/>
                                                                                             <nil key="textColor"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                         <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EgV-ib-9qQ">
-                                                                                            <rect key="frame" x="17" y="0.0" width="48" height="30"/>
+                                                                                            <rect key="frame" x="20.666666666666689" y="0.0" width="44.333333333333343" height="30"/>
                                                                                             <constraints>
                                                                                                 <constraint firstAttribute="height" constant="30" id="KWu-oN-u7u"/>
                                                                                             </constraints>
@@ -6637,7 +6738,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Safe DevOps" textAlignment="right" lineBreakMode="clip" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="EKs-P3-HGf">
-                                        <rect key="frame" x="20" y="220" width="374" height="50"/>
+                                        <rect key="frame" x="20" y="220" width="374" height="43"/>
                                         <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="22"/>
                                         <color key="textColor" red="0.28627450980000002" green="0.0078431372550000003" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -6650,19 +6751,19 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qZm-xh-iTc">
-                                        <rect key="frame" x="12" y="322" width="390" height="190.33333333333337"/>
+                                        <rect key="frame" x="12" y="322" width="390" height="156.66666666666663"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zjZ-Aw-3mS">
-                                                <rect key="frame" x="0.0" y="74.333333333333314" width="332" height="41.666666666666657"/>
+                                                <rect key="frame" x="0.0" y="54" width="332" height="48.666666666666657"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الناز تقوی" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNz-fr-3d2">
-                                                        <rect key="frame" x="0.0" y="0.0" width="332" height="18.666666666666668"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="332" height="25.666666666666668"/>
                                                         <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="کارشناس ارشد کارگردانی" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICI-Ny-8in">
-                                                        <rect key="frame" x="0.0" y="18.666666666666686" width="332" height="23"/>
+                                                        <rect key="frame" x="0.0" y="25.666666666666686" width="332" height="23"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="23" id="L4Y-xh-FNf"/>
                                                         </constraints>
@@ -6673,7 +6774,7 @@
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i8m-46-r0m">
-                                                <rect key="frame" x="340" y="70" width="50" height="50"/>
+                                                <rect key="frame" x="340" y="53.333333333333314" width="50" height="50"/>
                                                 <subviews>
                                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="oLW-w0-sIS">
                                                         <rect key="frame" x="6" y="6" width="40" height="40"/>
@@ -6705,7 +6806,7 @@
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTU-gB-Neo">
-                                        <rect key="frame" x="14" y="520.33333333333337" width="386" height="93.333333333333371"/>
+                                        <rect key="frame" x="14" y="486.66666666666674" width="386" height="127"/>
                                         <string key="text">خط ۱
 خط ۲
 خط ۳
@@ -6716,34 +6817,34 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="PD4-xS-uDL">
-                                        <rect key="frame" x="75" y="280" width="319" height="20"/>
+                                        <rect key="frame" x="75" y="273" width="319" height="27"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="مشارکت" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IvL-pb-3og">
-                                                <rect key="frame" x="0.0" y="0.0" width="133" height="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="126.33333333333333" height="27"/>
                                                 <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="17"/>
                                                 <color key="textColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۱" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EYY-nD-ysF">
-                                                <rect key="frame" x="137" y="0.0" width="8" height="20"/>
+                                                <rect key="frame" x="130.33333333333334" y="0.0" width="5.6666666666666572" height="27"/>
                                                 <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="17"/>
                                                 <color key="textColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="شامل" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rkz-Ai-IHv">
-                                                <rect key="frame" x="149" y="0.0" width="33.333333333333343" height="20"/>
+                                                <rect key="frame" x="140" y="0.0" width="37" height="27"/>
                                                 <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="17"/>
                                                 <color key="textColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۱۳۹۶/۰۸/۲۳" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqw-PG-6DX">
-                                                <rect key="frame" x="186.33333333333331" y="0.0" width="81" height="20"/>
+                                                <rect key="frame" x="181" y="0.0" width="84.333333333333314" height="27"/>
                                                 <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="17"/>
                                                 <color key="textColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="از تاریخ" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gm0-Nv-XBc">
-                                                <rect key="frame" x="271.33333333333331" y="0.0" width="47.666666666666686" height="20"/>
+                                                <rect key="frame" x="269.33333333333331" y="0.0" width="49.666666666666686" height="27"/>
                                                 <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="17"/>
                                                 <color key="textColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -8090,7 +8191,7 @@
                                         <rect key="frame" x="0.0" y="18" width="414" height="56"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="انتخاب نوع مشارکت" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Obs-Rk-SJW">
-                                                <rect key="frame" x="270" y="17" width="136" height="22.333333333333329"/>
+                                                <rect key="frame" x="252.66666666666663" y="12.999999999999998" width="153.33333333333337" height="30.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="19"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -8138,7 +8239,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j9C-yq-tb2">
-                                                    <rect key="frame" x="20" y="23" width="374" height="20"/>
+                                                    <rect key="frame" x="20" y="19.333333333333329" width="374" height="27"/>
                                                     <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -8195,7 +8296,7 @@
                                         <rect key="frame" x="0.0" y="18" width="414" height="56"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="انتخاب مجموعه / فصل" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujB-oF-WN6">
-                                                <rect key="frame" x="254.66666666666663" y="17" width="151.33333333333337" height="22.333333333333329"/>
+                                                <rect key="frame" x="231.66666666666663" y="12.999999999999998" width="174.33333333333337" height="30.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="19"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -8361,6 +8462,7 @@
         <image name="ic_timeline_white" width="48" height="48"/>
         <image name="left-arrow" width="20" height="20"/>
         <image name="linkedin" width="24" height="24"/>
+        <image name="myImage" width="400" height="400"/>
         <image name="picture" width="25.600000381469727" height="25.600000381469727"/>
         <image name="robot" width="400.69564819335938" height="400.69564819335938"/>
         <image name="sendButtonDisable" width="25.600000381469727" height="25.600000381469727"/>
@@ -8368,7 +8470,7 @@
         <image name="tags" width="25.600000381469727" height="25.600000381469727"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Bd3-DO-OGi"/>
+        <segue reference="U0k-8o-bQH"/>
         <segue reference="dCa-sC-F3t"/>
         <segue reference="Jsm-m6-w3d"/>
     </inferredMetricsTieBreakers>

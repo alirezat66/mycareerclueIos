@@ -141,7 +141,7 @@ class CommentLikeVC: UIViewController, UITableViewDelegate , UITableViewDataSour
         
         let userDefaults = UserDefaults.standard
         let owner = userDefaults.value(forKey: "owner") as! String
-        profile.getName = like.from
+        profile.getFName = like.from
         profile.getCity = ""
         profile.getRole = ""
         

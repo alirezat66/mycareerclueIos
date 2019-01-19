@@ -17,6 +17,10 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     var isOpenMenu = false
     
     @IBAction func btnSearch(_ sender: Any) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let search = storyBoard.instantiateViewController(withIdentifier: "searchVC") as! SearchVC
+        
+        self.present(search,animated: true,completion: nil)
     }
     let cellSpacingHeight: CGFloat = 10
 
@@ -94,7 +98,8 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         let owner = userDefaults.value(forKey: "owner") as! String
         let name = userDefaults.value(forKey: "fName") as! String
         let lName = userDefaults.value(forKey: "lName") as! String
-        profile.getName = name + " " + lName
+        profile.getFName = name
+        profile.getLName = lName
         profile.getCity = userDefaults.value(forKey: "City") as! String
         profile.getRole = userDefaults.value(forKey: "job")as! String
 
@@ -113,7 +118,9 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         
         let userDefaults = UserDefaults.standard
         let owner = userDefaults.value(forKey: "owner") as! String
-        profile.getName = content.fName! + " " + content.lName!
+        
+        profile.getFName = content.fName!
+        profile.getLName = content.lName!
         profile.getCity = content.location!
         profile.getRole = content.education!
         profile.getImage = content.ownerPic!

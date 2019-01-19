@@ -12,7 +12,9 @@ import JJFloatingActionButton
 class ProfileTabVC: ButtonBarPagerTabStripViewController {
     
     
-    var getName = String()
+    var getFName = String()
+    var getLName = String()
+
     var getCity = String()
     var getRole = String()
     var getImage = String()
@@ -92,7 +94,8 @@ let purpleInspireColor = UIColor.init(red: 61/256, green: 13/256, blue: 71/256, 
         let profile = storyBoard.instantiateViewController(withIdentifier: "profileOther") as! ProfileOtherVC
         
         
-        profile.getName = getName
+        profile.getFName = getFName
+        profile.getLName = getLName
         profile.getCity = getCity
         profile.getRole = getRole
         

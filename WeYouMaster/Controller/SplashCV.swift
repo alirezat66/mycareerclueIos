@@ -25,7 +25,7 @@ class SplashCV: UIViewController {
                     let StoryBoard   = UIStoryboard(name: "Main", bundle: nil)
 
                     let profile = StoryBoard.instantiateViewController(withIdentifier: "profilePage" ) as? ProfileVC
-                    profile?.phoneNumber = userDefaults.string(forKey: "phone")!
+                    
                     self.present(profile!, animated: true, completion: nil)
                 }else if(state==2){
                         let storyBoard = UIStoryboard(name: "Main", bundle: nil)

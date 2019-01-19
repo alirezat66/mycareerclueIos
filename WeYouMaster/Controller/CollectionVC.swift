@@ -64,7 +64,9 @@ class CollectionVC: UIViewController,UITableViewDelegate , UITableViewDataSource
         
         let userDefaults = UserDefaults.standard
         let owner = userDefaults.value(forKey: "owner") as! String
-        profile.getName = collection.owner_name + " " + collection.owner_lName
+        profile.getFName = collection.owner_name
+        profile.getLName = collection.owner_lName
+        
         profile.getCity = collection.collection_place
         profile.getRole = collection.ownerDegree
         profile.getImage = collection.collection_owner_image

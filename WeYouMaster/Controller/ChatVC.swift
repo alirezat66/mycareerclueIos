@@ -61,7 +61,9 @@ class ChatVC: UIViewController,UITableViewDelegate , UITableViewDataSource {
             edtChat.text = ""
             isActive = false;
             
-            
+            impPerson.layer.cornerRadius =
+                impPerson.frame.size.width/2
+            impPerson.clipsToBounds = true
             WebCaller.sendMessage(message.message,owner,reciverId) {
                 (errorMessage , error) in
                 if let error  = error {
