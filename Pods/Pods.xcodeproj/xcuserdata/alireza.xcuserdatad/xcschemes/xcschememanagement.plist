@@ -34,12 +34,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>JJFloatingActionButton.xcscheme</key>
+		<key>ExpandableLabel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>MultilineTextField.xcscheme</key>
+		<key>JJFloatingActionButton.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

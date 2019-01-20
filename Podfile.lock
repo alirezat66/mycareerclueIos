@@ -33,8 +33,8 @@ PODS:
   - BraintreeDropIn/UIKit (7.0.0)
   - DLRadioButton (1.4.12)
   - Dropper (2.7.6)
+  - ExpandableLabel (0.5.1)
   - JJFloatingActionButton (0.10.0)
-  - MultilineTextField (0.2.3)
   - OneSignal (2.9.3)
   - ReverseExtension (0.5.0)
   - SearchTextField (1.2.2)
@@ -50,8 +50,8 @@ DEPENDENCIES:
   - BraintreeDropIn
   - DLRadioButton (~> 1.4)
   - Dropper
+  - ExpandableLabel
   - JJFloatingActionButton
-  - MultilineTextField
   - OneSignal (< 3.0, >= 2.6.2)
   - ReverseExtension
   - SearchTextField
@@ -67,8 +67,8 @@ SPEC REPOS:
     - BraintreeDropIn
     - DLRadioButton
     - Dropper
+    - ExpandableLabel
     - JJFloatingActionButton
-    - MultilineTextField
     - OneSignal
     - ReverseExtension
     - SearchTextField
@@ -83,8 +83,8 @@ SPEC CHECKSUMS:
   BraintreeDropIn: 7eb460717213ae39a3b457c90671f9975747dcab
   DLRadioButton: d7c4e225ed0e8013cef7be61455230c7557ad7c1
   Dropper: 52a020beb6fef2e4b1d55447f17099e5776954ef
+  ExpandableLabel: 80783721b4d849bc62c19b44bbb88aa8bb518423
   JJFloatingActionButton: 7e9e924d0819ebeb6a566dade9d5dbed63ff8add
-  MultilineTextField: 10965d9c3e05a182181bd7971eb009c7607001ae
   OneSignal: a506e3bc61d2030f0757faf9bd783a9b211c6e3c
   ReverseExtension: 21c8dd4e767f93b56fb97d873686d24160f83945
   SearchTextField: a0992739d4b05dcbb40fb3a5cc6526bd991bdd23
@@ -93,6 +93,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   XLPagerTabStrip: 22d4c58200d7c105e0e407ab6bfd01a5d85014be
 
-PODFILE CHECKSUM: 87c316318f29602a6a564c316d1f9b85d8e745be
+PODFILE CHECKSUM: d108aa997a94398550e25121b394336a77ac5478
 
 COCOAPODS: 1.5.3

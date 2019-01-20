@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double MultilineTextFieldVersionNumber;
-FOUNDATION_EXPORT const unsigned char MultilineTextFieldVersionString[];
+FOUNDATION_EXPORT double ExpandableLabelVersionNumber;
+FOUNDATION_EXPORT const unsigned char ExpandableLabelVersionString[];
 

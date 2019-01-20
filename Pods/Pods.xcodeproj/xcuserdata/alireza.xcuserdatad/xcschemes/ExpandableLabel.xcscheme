@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "38608DDE67F92B4FD0EE1E2E69BE7B0E"
-               BlueprintName = "MultilineTextField"
+               BlueprintIdentifier = "1173CE5BF5518A89611232A5AA117115"
+               BlueprintName = "ExpandableLabel"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "MultilineTextField.framework">
+               BuildableName = "ExpandableLabel.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

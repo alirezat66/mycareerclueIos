@@ -8,8 +8,55 @@
 
 import UIKit
 import SVProgressHUD
+import ExpandableLabel
+class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource, ExpandableLabelDelegate {
+    var states : Array<Bool>!
+    func willExpandLabel(_ label: ExpandableLabel) {
+        label.textAlignment = NSTextAlignment.right
+        homeTable.beginUpdates()
+        label.textAlignment = NSTextAlignment.right
 
-class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
+    }
+    
+    func didExpandLabel(_ label: ExpandableLabel) {
+        let point = label.convert(CGPoint.zero, to: homeTable)
+        if let indexPath = homeTable.indexPathForRow(at: point) as IndexPath? {
+            states[indexPath.row] = false
+            
+            DispatchQueue.main.async { [weak self] in
+                self?.homeTable.scrollToRow(at: indexPath, at: .top, animated: true)
+            }
+        }
+        label.textAlignment = NSTextAlignment.right
+        homeTable.endUpdates()
+        label.textAlignment = NSTextAlignment.right
+
+    }
+    
+    func willCollapseLabel(_ label: ExpandableLabel) {
+        label.textAlignment = NSTextAlignment.right
+
+        homeTable.beginUpdates()
+        label.textAlignment = NSTextAlignment.right
+
+    }
+    
+    func didCollapseLabel(_ label: ExpandableLabel) {
+        
+        let point = label.convert(CGPoint.zero, to: homeTable)
+        if let indexPath = homeTable.indexPathForRow(at: point) as IndexPath? {
+            states[indexPath.row] = true
+            DispatchQueue.main.async { [weak self] in
+                self?.homeTable.scrollToRow(at: indexPath, at: .top, animated: true)
+
+            }
+        }
+        label.textAlignment = NSTextAlignment.right
+        homeTable.endUpdates()
+        label.textAlignment = NSTextAlignment.right
+
+    }
+    
 
     
     
@@ -60,7 +107,36 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         let content = myContent[indexPath.row]
         if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell") as? HomeCell {
             cell.updateView(content: myContent[indexPath.row])
+            cell.lblText.delegate = self
             
+            cell.lblText.collapsedAttributedLink = NSAttributedString(string: "بیشتر")
+            cell.lblText.setLessLinkWith(lessLink: "کمتر", attributes: [.foregroundColor:UIColor.red], position: NSTextAlignment.left)
+             cell.layoutIfNeeded()
+            cell.lblText.shouldCollapse = true
+            cell.lblText.textReplacementType = .word
+            cell.lblText.numberOfLines =  4
+            cell.lblText.collapsed = true
+            cell.lblText.text = content.contentText
+            cell.lblText.textAlignment = NSTextAlignment.right
+
+         /*   lblText.numberOfLines = 6
+            lblText.collapsed = true
+            lblText.collapsedAttributedLink = NSAttributedString(string: "بیشتر")
+            
+            lblText.expandedAttributedLink = NSAttributedString(string: "کمتر")
+            lblText.ellipsis = NSAttributedString(string: "...")
+            
+            //  contentText = content.contentText!
+            
+            if(content.allignment != "rtl"){
+                lblTitle.textAlignment = .left
+                lblText.textAlignment = .left
+            }else {
+                lblTitle.textAlignment = .right
+                lblText.textAlignment = .right
+            }
+            lblText.text = content.contentText*/
+
             cell.onButtonTapped = {
                 self.openProfile(content : content)
             }
@@ -137,8 +213,10 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var homeTable: UITableView!
     override func viewDidLoad() {
         myContent = []
+
         homeTable.dataSource = self
         homeTable.delegate = self
+        homeTable.rowHeight = UITableViewAutomaticDimension
     //    homeTable.tableFooterView = UIView.init(frame : .zero)
         imgProfile.layer.cornerRadius = imgProfile.frame.size.width/2
         imgProfile.clipsToBounds = true
@@ -257,6 +335,8 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             for content in (contentList.records) {
                 self.myContent.append(content)
             }
+            self.states = [Bool](repeating: true, count: contentList.records.count)
+
             self.updateUI()
         }
     }

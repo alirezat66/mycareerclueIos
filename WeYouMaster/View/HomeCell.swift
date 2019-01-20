@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import ExpandableLabel
 class HomeCell: UITableViewCell {
     var onButtonTapped : (() -> Void)? = nil
     @IBAction func btnCollection(_ sender: Any) {
@@ -17,7 +17,7 @@ class HomeCell: UITableViewCell {
     
     @IBOutlet weak var imgPerson: UIButton!
     @IBOutlet weak var lblOwner: UILabel!
-    @IBOutlet weak var heightOutlet: NSLayoutConstraint!
+ //   @IBOutlet weak var heightOutlet: NSLayoutConstraint!
     
     @IBOutlet weak var btnLikeOutlet: UIButton!
     @IBOutlet weak var lblLikeCounter : UILabel!
@@ -25,7 +25,6 @@ class HomeCell: UITableViewCell {
     @IBOutlet weak var imgConstrant: NSLayoutConstraint!
     @IBOutlet weak var imgContent: UIImageView!
     @IBOutlet weak var btnShowLink: UIButton!
-    @IBOutlet weak var btnMoreOutLet: UIButton!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblPlaceAndTime: UILabel!
     @IBOutlet weak var lblEducation: UILabel!
@@ -34,9 +33,8 @@ class HomeCell: UITableViewCell {
    
     var likeCounter : Int = 0
     var myContent  : Content = Content()
-    var contentText : String = ""
     @IBAction func btnAttach(_ sender: Any) {
-        guard let url = URL(string: "https://www.dataplusscience.com/VizConfusion.html") else {
+        guard let url = URL(string: myContent.linkAddress!) else {
             return //be safe
         }
         
@@ -74,11 +72,11 @@ class HomeCell: UITableViewCell {
             
         }).resume()
     }
-    @IBOutlet weak var lblContent: UILabel!
+    @IBOutlet weak var lblText: ExpandableLabel!
     var isLiked = false
     var isLabelAtMaxHeight = false
     
-    func getLabelHeight(text: String, width: CGFloat, font: UIFont) -> CGFloat {
+    /*func getLabelHeight(text: String, width: CGFloat, font: UIFont) -> CGFloat {
         let lbl = UILabel(frame: .zero)
         lbl.frame.size.width = width
         lbl.font = font
@@ -87,21 +85,8 @@ class HomeCell: UITableViewCell {
         lbl.sizeToFit()
         
         return lbl.frame.size.height
-    }
-    @IBAction func btnMore(_ sender: Any) {
-        if isLabelAtMaxHeight {
-            btnMoreOutLet.setTitle("بیشتر", for: .normal)
-            isLabelAtMaxHeight = false
-            lblContent.text = myContent.contentText
-            heightOutlet.constant = 70
-        }
-        else {
-            btnMoreOutLet.setTitle("کمتر", for: .normal)
-            isLabelAtMaxHeight = true
-        
-            heightOutlet.constant = getLabelHeight(text: contentText, width: self.bounds.width, font: lblContent.font)
-        }
-    }
+    }*/
+   
     @IBAction func btnLike(_ sender: Any) {
         isLiked = !isLiked
         if isLiked {
@@ -178,20 +163,14 @@ class HomeCell: UITableViewCell {
     }*/
     public func updateView(content : Content){
         self.myContent = content
-        heightOutlet.constant = 70
+    //   heightOutlet.constant = 70
+        
        /* let tabGuester = UITapGestureRecognizer(target: self, action: #selector(tabbToImageView(sender :)))
         tabGuester.numberOfTapsRequired = 1
         imgContent.isUserInteractionEnabled = true
         imgContent.addGestureRecognizer(tabGuester)*/
-        contentText = content.contentText!
         
-        if(content.allignment != "rtl"){
-            lblTitle.textAlignment = .left
-            lblContent.textAlignment = .left
-        }else {
-            lblTitle.textAlignment = .right
-            lblContent.textAlignment = .right
-        }
+        
         if(content.collectionName == ""){
             btnCollection.isHidden = true
             lblCollectionTitle.isHidden = true
@@ -242,7 +221,7 @@ class HomeCell: UITableViewCell {
 
         lblEducation.text = content.education
         lblPlaceAndTime.text = content.date! + " | " +  content.location!
-        lblContent.text = content.contentText
+     
         likeCounter = content.likeCount!
         lblLikeCounter.text = "(" + String( content.likeCount!) + ")"
         if(content.likeByMe==1){
@@ -256,13 +235,13 @@ class HomeCell: UITableViewCell {
             btnLikeOutlet.titleLabel!.font  =  UIFont(name: btnLikeOutlet.titleLabel!.font.fontName, size: 19)!
             
         }
-        if(content.contentText!.count>200){
+       /* if(content.contentText!.count>200){
             btnMoreOutLet.isHidden = false
         }else{
             btnMoreOutLet.isHidden = true
             layoutIfNeeded()
         }
-        
+        */
         if content.contentType == 2 {
             imageFromServerURL(urlString: content.imgSource!)
             imgContent.isHidden = false

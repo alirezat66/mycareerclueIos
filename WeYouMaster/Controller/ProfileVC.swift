@@ -44,12 +44,12 @@ class ProfileVC: UIViewController,UITextFieldDelegate {
     var bio = String()
     
    
-    
     @objc public func DismissKeyboard(){
         view.endEditing(true)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+      
         let tab : UITapGestureRecognizer = UITapGestureRecognizer(target : self , action : #selector(DismissKeyboard))
         view.addGestureRecognizer(tab)
         edtName.layer.borderColor  = UIColor.orange.cgColor
