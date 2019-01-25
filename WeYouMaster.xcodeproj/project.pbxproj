@@ -32,6 +32,7 @@
 		BB4194A121033FE400823353 /* CollectionDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4194A021033FE400823353 /* CollectionDetailVC.swift */; };
 		BB4194A321035C8E00823353 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4194A221035C8E00823353 /* DetailCell.swift */; };
 		BB4194A521035E5400823353 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4194A421035E5400823353 /* Content.swift */; };
+		BB4B8C5721FB494800DD989B /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4B8C5621FB494800DD989B /* UserInfo.swift */; };
 		BB4F253421B5584E00690652 /* LabelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F253321B5584E00690652 /* LabelResponse.swift */; };
 		BB4F253621B558BF00690652 /* LabelPrototype.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F253521B558BF00690652 /* LabelPrototype.swift */; };
 		BB4F253821B58B8C00690652 /* LabelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F253721B58B8C00690652 /* LabelViewCell.swift */; };
@@ -178,6 +179,7 @@
 		BB4194A021033FE400823353 /* CollectionDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailVC.swift; sourceTree = "<group>"; };
 		BB4194A221035C8E00823353 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		BB4194A421035E5400823353 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
+		BB4B8C5621FB494800DD989B /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		BB4F253121B508B100690652 /* Dropper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Dropper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4F253321B5584E00690652 /* LabelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelResponse.swift; sourceTree = "<group>"; };
 		BB4F253521B558BF00690652 /* LabelPrototype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelPrototype.swift; sourceTree = "<group>"; };
@@ -414,6 +416,7 @@
 				BB55DCBB21EBBB7900706988 /* ChatList.swift */,
 				BB8E8B3721F2DF7800988C9F /* SearchObj.swift */,
 				BB8E8B3921F2DFEA00988C9F /* SearchList.swift */,
+				BB4B8C5621FB494800DD989B /* UserInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -788,6 +791,7 @@
 				BB8E8B3A21F2DFEA00988C9F /* SearchList.swift in Sources */,
 				BBAE0E2B2105FBDF00CF4FF2 /* ConversationCell.swift in Sources */,
 				BBF5F79E2118554500397B7D /* DLRadioButton.m in Sources */,
+				BB4B8C5721FB494800DD989B /* UserInfo.swift in Sources */,
 				BBAE0E2321045B4A00CF4FF2 /* ConversationVC.swift in Sources */,
 				BB569EA921598A9300DB8D1B /* CollectionDetailVCTwo.swift in Sources */,
 				BB4F253821B58B8C00690652 /* LabelViewCell.swift in Sources */,

@@ -8,8 +8,7 @@
 
 import Foundation
 struct OtherContent : Decodable {
-    public var error : Int
-    public var errorMessage : String
+    public var ownerId: String
     public var  postId : String
     public var fName : String
     public var lName : String
@@ -17,6 +16,7 @@ struct OtherContent : Decodable {
     public var date : String
     public var location : String
     public var collectionName : String
+    public var collectionId : String
     public var title : String
     public var contentText : String
     public var contentType : Int
@@ -25,11 +25,10 @@ struct OtherContent : Decodable {
     public var  likeByMe : Int
     public var imgSource : String
     public var additionalSource : String
-    
-    
-    init (){
-        error = 0
-        errorMessage = ""
+    public var ownerPic : String
+    public var allignment : String
+        init (){
+        ownerId = ""
         postId = ""
         fName = ""
         lName = ""
@@ -37,6 +36,7 @@ struct OtherContent : Decodable {
         date = ""
         location = ""
         collectionName = ""
+        collectionId = ""
         title = ""
         contentText = ""
         contentType = 1
@@ -45,5 +45,7 @@ struct OtherContent : Decodable {
         likeByMe = 0
         imgSource = ""
         additionalSource = ""
+        ownerPic = ""
+        allignment = ""
     }
 }

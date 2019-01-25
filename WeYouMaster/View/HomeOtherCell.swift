@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import ExpandableLabel
 class HomeOtherCell: UITableViewCell {
 
     
@@ -18,7 +18,6 @@ class HomeOtherCell: UITableViewCell {
     
     @IBOutlet weak var imgPerson: UIButton!
     @IBOutlet weak var lblOwner: UILabel!
-    @IBOutlet weak var heightOutlet: NSLayoutConstraint!
     
     @IBOutlet weak var btnLikeOutlet: UIButton!
     @IBOutlet weak var lblLikeCounter : UILabel!
@@ -37,7 +36,7 @@ class HomeOtherCell: UITableViewCell {
     var myContent  : OtherContent = OtherContent()
     var contentText : String = ""
     @IBAction func btnAttach(_ sender: Any) {
-        guard let url = URL(string: "https://www.dataplusscience.com/VizConfusion.html") else {
+        guard let url = URL(string: myContent.linkAddress) else {
             return //be safe
         }
         
@@ -73,11 +72,11 @@ class HomeOtherCell: UITableViewCell {
             
         }).resume()
     }
-    @IBOutlet weak var lblContent: UILabel!
+    @IBOutlet weak var lblContent: ExpandableLabel!
     var isLiked = false
     var isLabelAtMaxHeight = false
     
-    func getLabelHeight(text: String, width: CGFloat, font: UIFont) -> CGFloat {
+   /* func getLabelHeight(text: String, width: CGFloat, font: UIFont) -> CGFloat {
         let lbl = UILabel(frame: .zero)
         lbl.frame.size.width = width
         lbl.font = font
@@ -86,8 +85,8 @@ class HomeOtherCell: UITableViewCell {
         lbl.sizeToFit()
         
         return lbl.frame.size.height
-    }
-    @IBAction func btnMore(_ sender: Any) {
+    }*/
+ /*   @IBAction func btnMore(_ sender: Any) {
         if isLabelAtMaxHeight {
             btnMoreOutLet.setTitle("بیشتر", for: .normal)
             isLabelAtMaxHeight = false
@@ -98,7 +97,7 @@ class HomeOtherCell: UITableViewCell {
             isLabelAtMaxHeight = true
             heightOutlet.constant = getLabelHeight(text: contentText, width: self.bounds.width, font: lblContent.font)
         }
-    }
+    }*/
     @IBAction func btnLike(_ sender: Any) {
         isLiked = !isLiked
         if isLiked {
@@ -171,7 +170,6 @@ class HomeOtherCell: UITableViewCell {
     @IBOutlet weak var lblCollectionTitle: UILabel!
     public func updateView(content : OtherContent){
         self.myContent = content
-        heightOutlet.constant = 70
         contentText = content.contentText
        /* if(content.allignment != "rtl"){
             lblTitle.textAlignment = .left
@@ -231,7 +229,6 @@ class HomeOtherCell: UITableViewCell {
         
         lblEducation.text = content.education
         lblPlaceAndTime.text = content.date + " | " +  content.location
-        lblContent.text = content.contentText
         likeCounter = content.likeCount
         lblLikeCounter.text = "(" + String( content.likeCount) + ")"
         if(content.likeByMe==1){
@@ -244,12 +241,6 @@ class HomeOtherCell: UITableViewCell {
         }else{
             btnLikeOutlet.titleLabel!.font  =  UIFont(name: btnLikeOutlet.titleLabel!.font.fontName, size: 19)!
             
-        }
-        if(content.contentText.count>200){
-            btnMoreOutLet.isHidden = false
-        }else{
-            btnMoreOutLet.isHidden = true
-            layoutIfNeeded()
         }
         
         if content.contentType == 2 {

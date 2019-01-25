@@ -174,8 +174,9 @@ public class WebCaller {
     }
     
     
-    static func getUserFeed(_ per_page: Int ,_ current_page: Int,_ owner :String , completionHandler: @escaping (OtherContentList?, Error?) -> Void) {
-        let endpoint = "https://weyoumaster.com/api/my_contributions"
+    static func getUserFeed(_ per_page: Int ,_ current_page: Int,_ owner :String ,_ userId :String, completionHandler: @escaping (OtherContentList?, Error?) -> Void) {
+        
+        let endpoint = "https://weyoumaster.com/api/dashboard_contributions"
         guard let url = URL(string: endpoint)
             else {
                 print("Error: cannot create URL")
@@ -185,7 +186,9 @@ public class WebCaller {
         }
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
-        let postString = "owner=" + owner
+        let postString = "owner=" + owner +  "&userId=" + userId
+       
+        
         urlRequest.httpBody = postString.data(using: String.Encoding.utf8)
         
         
@@ -473,7 +476,52 @@ public class WebCaller {
         
     }
     
-    
+    static func userInfo(_ owner: String ,_ userInfo:String , completionHandler: @escaping (UserInfo?, Error?) -> Void) {
+        let endpoint = "https://weyoumaster.com/api/userInfo"
+        guard let url = URL(string: endpoint)
+            else {
+                print("Error: cannot create URL")
+                let error = BackendError.urlError(reason: "Could not construct URL")
+                completionHandler(nil, error)
+                return
+        }
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        let postString = "owner=" + userInfo + "&userInfo=" + owner
+        
+        urlRequest.httpBody = postString.data(using: String.Encoding.utf8)
+        let session = URLSession.shared
+        let task = session.dataTask(with: urlRequest, completionHandler: {
+            (data, response, error) in
+            guard error == nil else {
+                completionHandler(nil, error!)
+                return
+            }
+            guard let responseData = data else {
+                print("Error: did not receive data")
+                let error = BackendError.objectSerialization(reason: "No data in response")
+                completionHandler(nil, error)
+                return
+            }
+            
+            // parse the result as JSON
+            // then create a Todo from the JSON
+            do {
+                
+                
+                let  contentL  = try JSONDecoder().decode(UserInfo.self,from: responseData)
+                completionHandler(contentL,nil)
+                
+            } catch {
+                // error trying to convert the data to JSON using JSONSerialization.jsonObject
+                completionHandler(nil, error)
+                return
+            }
+        })
+        task.resume()
+        
+        
+    }
     static func editProfile(_ profileId: String ,_ first_name:String ,_ last_name : String ,_ job_position :String , _ city :String ,_ bio : String , completionHandler: @escaping (errorMessage?, Error?) -> Void) {
         let endpoint = "https://weyoumaster.com/api/edit_profile"
         guard let url = URL(string: endpoint)

@@ -9,8 +9,56 @@
 import UIKit
 import SVProgressHUD
 import XLPagerTabStrip
+import ExpandableLabel
 
-class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , IndicatorInfoProvider {
+class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , IndicatorInfoProvider , ExpandableLabelDelegate{
+    var states : Array<Bool>!
+    func willExpandLabel(_ label: ExpandableLabel) {
+        label.textAlignment = NSTextAlignment.right
+        homeTable.beginUpdates()
+        label.textAlignment = NSTextAlignment.right
+        
+    }
+    
+    func didExpandLabel(_ label: ExpandableLabel) {
+        let point = label.convert(CGPoint.zero, to: homeTable)
+        if let indexPath = homeTable.indexPathForRow(at: point) as IndexPath? {
+            states[indexPath.row] = false
+            
+            DispatchQueue.main.async { [weak self] in
+                self?.homeTable.scrollToRow(at: indexPath, at: .top, animated: true)
+            }
+        }
+        label.textAlignment = NSTextAlignment.right
+        homeTable.endUpdates()
+        label.textAlignment = NSTextAlignment.right
+        
+    }
+    
+    func willCollapseLabel(_ label: ExpandableLabel) {
+        label.textAlignment = NSTextAlignment.right
+        
+        homeTable.beginUpdates()
+        label.textAlignment = NSTextAlignment.right
+        
+    }
+    
+    func didCollapseLabel(_ label: ExpandableLabel) {
+        
+        let point = label.convert(CGPoint.zero, to: homeTable)
+        if let indexPath = homeTable.indexPathForRow(at: point) as IndexPath? {
+            states[indexPath.row] = true
+            DispatchQueue.main.async { [weak self] in
+                self?.homeTable.scrollToRow(at: indexPath, at: .top, animated: true)
+                
+            }
+        }
+        label.textAlignment = NSTextAlignment.right
+        homeTable.endUpdates()
+        label.textAlignment = NSTextAlignment.right
+        
+    }
+    
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo.init(title: "تایم لاین")
@@ -43,7 +91,17 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , 
         if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell") as? HomeOtherCell {
             cell.updateView(content: content)
             
-           
+            cell.lblContent.delegate = self
+            
+            cell.lblContent.collapsedAttributedLink = NSAttributedString(string: "بیشتر")
+            cell.lblContent.setLessLinkWith(lessLink: "کمتر", attributes: [.foregroundColor:UIColor.red], position: NSTextAlignment.left)
+            cell.layoutIfNeeded()
+            cell.lblContent.shouldCollapse = true
+            cell.lblContent.textReplacementType = .word
+            cell.lblContent.numberOfLines =  4
+            cell.lblContent.collapsed = true
+            cell.lblContent.text = content.contentText
+            cell.lblContent.textAlignment = NSTextAlignment.right
             return cell
         }else{
             return HomeCell()
@@ -73,9 +131,8 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , 
     @IBOutlet weak var homeTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        homeTable.rowHeight = UITableViewAutomaticDimension
         SVProgressHUD.show(withStatus: "لطفا منتظر بمانید ... \n\n")
-        
-        
         addRefreshControl()
         getFeeds()
     }
@@ -85,11 +142,6 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , 
         homeTable.dataSource = self
         homeTable.delegate = self
       
-        
-        
-        
-        
-       
         // Do any additional setup after loading the view.
         
         
@@ -97,8 +149,9 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , 
     func getFeeds(){
         let userDefaults = UserDefaults.standard
         
-        let owner = userDefaults.value(forKey: "otherUser") as! String
-        WebCaller.getUserFeed(50, 1,owner
+        let userId = userDefaults.value(forKey: "otherUser") as! String
+        let owner = userDefaults.value(forKey: "owner") as! String
+        WebCaller.getUserFeed(50, 1,userId,owner
         ) { (contents, error) in
             if let error = error{
                 self.updateError()
@@ -110,9 +163,10 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , 
                 print("error getting collections")
                 return
             }
-            for content in (contentList.records) {
+            for content in (contentList.contributions) {
                 self.myContent.append(content)
             }
+             self.states = [Bool](repeating: true, count: contentList.contributions.count)
             self.updateUI()
         }
     }

@@ -8,5 +8,6 @@
 
 import Foundation
 struct OtherContentList : Decodable {
-    public var records : [OtherContent]
+    public var contributions : [OtherContent]
+   
 }

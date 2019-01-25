@@ -31,7 +31,7 @@ let purpleInspireColor = UIColor.init(red: 61/256, green: 13/256, blue: 71/256, 
         settings.style.selectedBarBackgroundColor = UIColor.white
         settings.style.buttonBarItemLeftRightMargin = 2
         settings.style.buttonBarItemTitleColor = UIColor.red
-        changeCurrentIndexProgressive = { [weak self] (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
+        changeCurrentIndexProgressive = {  (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
             guard changeCurrentIndex == true else { return }
             oldCell?.label.textColor = UIColor.init(red: 235/256, green: 204/256, blue: 241/256, alpha: 1.0)
             newCell?.label.textColor = UIColor.white
@@ -111,7 +111,7 @@ let purpleInspireColor = UIColor.init(red: 61/256, green: 13/256, blue: 71/256, 
         let child_1 = profile
         let child_2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "likeOthers")
         let child_3 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CollectionOtherVC")
-      let child_4 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeOtherVC")
+        let child_4 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeOtherVC")
        
         return [child_2,child_3,child_4,child_1]
         

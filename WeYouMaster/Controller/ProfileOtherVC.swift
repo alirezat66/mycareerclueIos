@@ -31,7 +31,7 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
         if(!isOwner){
             let userDefaults = UserDefaults.standard
             userDefaults.set(getFName  + " " + getLName, forKey: "lastname")
-            
+            userDefaults.set(getOwner, forKey: "lastId")
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
             let sendPm = storyBoard.instantiateViewController(withIdentifier: "sendPm") as! SendPmVC
             
@@ -72,8 +72,7 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
         }
     }
     
-    override func dismiss(animated flag: Bool,
-                                                completion completion: (() -> Void)?)
+    override func dismiss(animated flag: Bool, completion: (() -> Void)?)
     {
         super.dismiss(animated: flag, completion:completion)
         reload()
@@ -154,6 +153,9 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getProfileInfo();
+        }
+    func showInfo() {
         lblName.text = getFName + " " + getLName
         lblPlace.text = getCity
         lblrole.text = getRole
@@ -180,29 +182,29 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
             }
             btnSecond.backgroundColor = UIColor.init(red: 66/256, green: 129/256, blue: 191/256, alpha: 1.0)
         }
-       
+        
         indicator.isHidden = true
         if(getImage != ""){
-        let url = URL(string: getImage)
-        
-        
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: url!) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self?.imgProfile.image = image
-                        self?.imgProfile.layer.cornerRadius = (self?.imgProfile.layer.frame.size.width)!/2
-                        self?.imgProfile.clipsToBounds = true
+            let url = URL(string: getImage)
+            
+            
+            DispatchQueue.global().async { [weak self] in
+                if let data = try? Data(contentsOf: url!) {
+                    if let image = UIImage(data: data) {
+                        DispatchQueue.main.async {
+                            self?.imgProfile.image = image
+                            self?.imgProfile.layer.cornerRadius = (self?.imgProfile.layer.frame.size.width)!/2
+                            self?.imgProfile.clipsToBounds = true
+                        }
                     }
                 }
             }
         }
-        }
         
         
         
         
-
+        
         if(bio==""){
             lblBio.text = getFName + " " + getLName + " از ویومستر جهت به اشتراک گذاشتن تجارب ارزشمند خود استفاده خواهد کرد. در صورتیکه تمایل دارید جدیدترین و بروزترین ها را دریافت کنید ، لطفا بر روی گزینه رصد کن کلیک نمایید."
         }else{
@@ -213,9 +215,46 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
         tapGestureRecognizer.numberOfTapsRequired = 1
         imgProfile.isUserInteractionEnabled = true
         imgProfile.addGestureRecognizer(tapGestureRecognizer)
+    }
+    func getProfileInfo()  {
         
+        if(getFName != ""){
+            showInfo();
+        }else{
+            WebCaller.userInfo(getOwner, profileId)
+            {
+                (contents, error) in
+                if let error = error{
+                    self.updateError()
+                    print(error)
+                    return
+                }
+                guard let content = contents else{
+                    self.updateError()
+                    print("error getting collections")
+                    return
+                }
+                self.updateUI(content: content)
+            }
+        }
         
-}
+    }
+    func updateUI(content : UserInfo){
+        DispatchQueue.main.async{
+            SVProgressHUD.dismiss()
+            self.getFName = content.userName
+            self.getLName = ""
+            self.getCity = content.location
+            self.getRole = content.education
+            self.getImage = content.photo
+            self.showInfo()
+        }
+    }
+    func updateError(){
+        DispatchQueue.main.async{
+            SVProgressHUD.dismiss()
+        }
+    }
     override func viewWillAppear(_ animated: Bool) {
         if(getOwner == profileId){
             let userDefaults = UserDefaults.standard
@@ -224,23 +263,22 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
             let city = userDefaults.value(forKey: "City") as! String
             let job = userDefaults.value(forKey: "job") as! String
             let bio = userDefaults.value(forKey: "bio") as! String
-            
             lblBio.text = bio
             lblrole.text = job
             lblName.text = name + " " + lName
             lblPlace.text = city
-            
         }
+        
     }
    
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
-      
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let fullscreen = storyBoard.instantiateViewController(withIdentifier: "fullscreen") as! fullScreenImageVC
         fullscreen.imgAddress = getImage
         self.present(fullscreen,animated: true,completion: nil)
     }
+    
    
 }
 

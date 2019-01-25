@@ -48,7 +48,29 @@ class SearchVC: UIViewController ,UITableViewDelegate , UITableViewDataSource {
         }
     }
     
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let obj = myResult[indexPath.row]
+        
+        if(obj.type == "User"){
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let profile = storyBoard.instantiateViewController(withIdentifier: "tablayout") as! ProfileTabVC
+            
+            let userDefaults = UserDefaults.standard
+            let owner = userDefaults.value(forKey: "owner") as! String
+            
+            profile.getFName = ""
+            profile.getLName = ""
+            profile.getCity = ""
+            profile.getRole = ""
+            
+            profile.getImage = obj.photo
+            profile.followedByMe = 0
+            profile.bio = ""
+            profile.profileId = obj.id
+            profile.getOwner = owner
+            self.present(profile, animated: true, completion: nil)
+    }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         UITable.dataSource = self

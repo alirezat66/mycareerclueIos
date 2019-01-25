@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Model/WebCaller.swift"
-            timestampString = "569710454.686249"
+            timestampString = "570135944.387706"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1327"
-            endingLineNumber = "1327"
+            startingLineNumber = "1375"
+            endingLineNumber = "1375"
             landmarkName = "saveChapter(owner:collectionId:title:description:isPublic:isRtl:link:completionHandler:)"
             landmarkType = "7">
             <Locations>
@@ -298,7 +298,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Model/WebCaller.swift"
-            timestampString = "569710454.686455"
+            timestampString = "570135944.388088"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
@@ -314,7 +314,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Model/WebCaller.swift"
-            timestampString = "569710454.6865081"
+            timestampString = "570135944.388175"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "61"
@@ -330,7 +330,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Model/WebCaller.swift"
-            timestampString = "569710454.68655"
+            timestampString = "570135944.388243"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
@@ -442,11 +442,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Model/WebCaller.swift"
-            timestampString = "569710454.686651"
+            timestampString = "570135944.3884259"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "368"
-            endingLineNumber = "368"
+            startingLineNumber = "371"
+            endingLineNumber = "371"
             landmarkName = "getConversation(_:_:_:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -458,11 +458,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Model/WebCaller.swift"
-            timestampString = "569710454.686694"
+            timestampString = "570135944.388494"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "367"
-            endingLineNumber = "367"
+            startingLineNumber = "370"
+            endingLineNumber = "370"
             landmarkName = "getConversation(_:_:_:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -490,7 +490,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Controller/ChatVC.swift"
-            timestampString = "569590791.8166"
+            timestampString = "570135740.023757"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "172"
@@ -506,7 +506,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Controller/ChatVC.swift"
-            timestampString = "569590791.816658"
+            timestampString = "570135740.0237989"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "148"
@@ -522,7 +522,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Controller/ChatVC.swift"
-            timestampString = "569590791.816707"
+            timestampString = "570135740.023836"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "171"
@@ -538,7 +538,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Controller/ChatVC.swift"
-            timestampString = "569590791.816759"
+            timestampString = "570135740.023875"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "231"
@@ -554,7 +554,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Controller/ChatVC.swift"
-            timestampString = "569590791.816808"
+            timestampString = "570135740.023913"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "251"
@@ -570,7 +570,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Controller/ChatVC.swift"
-            timestampString = "569590791.816856"
+            timestampString = "570135740.0239511"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "8"
@@ -586,11 +586,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Model/WebCaller.swift"
-            timestampString = "569710454.686807"
+            timestampString = "570135944.3886909"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "558"
-            endingLineNumber = "558"
+            startingLineNumber = "606"
+            endingLineNumber = "606"
             landmarkName = "search(_:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -602,11 +602,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Controller/SearchVC.swift"
-            timestampString = "569590791.816962"
+            timestampString = "570135944.388761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104">
+            startingLineNumber = "126"
+            endingLineNumber = "126">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -616,11 +616,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Controller/SearchVC.swift"
-            timestampString = "569590791.817039"
+            timestampString = "570135944.388833"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104">
+            startingLineNumber = "126"
+            endingLineNumber = "126">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -630,11 +630,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Controller/SearchVC.swift"
-            timestampString = "569590791.8171099"
+            timestampString = "570135944.388894"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104">
+            startingLineNumber = "126"
+            endingLineNumber = "126">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -644,11 +644,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Controller/SearchVC.swift"
-            timestampString = "569590791.817181"
+            timestampString = "570135944.388952"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104">
+            startingLineNumber = "126"
+            endingLineNumber = "126">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -658,11 +658,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Controller/SearchVC.swift"
-            timestampString = "569590791.817251"
+            timestampString = "570135944.389032"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104">
+            startingLineNumber = "126"
+            endingLineNumber = "126">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -672,11 +672,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Controller/SearchVC.swift"
-            timestampString = "569590791.8173209"
+            timestampString = "570135944.389096"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104">
+            startingLineNumber = "126"
+            endingLineNumber = "126">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -686,11 +686,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Controller/SearchVC.swift"
-            timestampString = "569590791.817402"
+            timestampString = "570135944.389156"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104">
+            startingLineNumber = "126"
+            endingLineNumber = "126">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -700,11 +700,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Model/WebCaller.swift"
-            timestampString = "569710454.68692"
+            timestampString = "570135944.389218"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "502"
-            endingLineNumber = "502"
+            startingLineNumber = "550"
+            endingLineNumber = "550"
             landmarkName = "editProfile(_:_:_:_:_:_:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -716,11 +716,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Model/WebCaller.swift"
-            timestampString = "569710454.686965"
+            timestampString = "570135944.389279"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "503"
-            endingLineNumber = "503"
+            startingLineNumber = "551"
+            endingLineNumber = "551"
             landmarkName = "editProfile(_:_:_:_:_:_:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -732,11 +732,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Model/WebCaller.swift"
-            timestampString = "569710454.687007"
+            timestampString = "570135944.389341"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "513"
-            endingLineNumber = "513"
+            startingLineNumber = "561"
+            endingLineNumber = "561"
             landmarkName = "editProfile(_:_:_:_:_:_:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -892,11 +892,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Model/WebCaller.swift"
-            timestampString = "569710454.687338"
+            timestampString = "570135944.389541"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "477"
-            endingLineNumber = "477"
+            startingLineNumber = "525"
+            endingLineNumber = "525"
             landmarkName = "editProfile(_:_:_:_:_:_:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -908,11 +908,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Model/WebCaller.swift"
-            timestampString = "569710454.687379"
+            timestampString = "570135944.389608"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "478"
-            endingLineNumber = "478"
+            startingLineNumber = "526"
+            endingLineNumber = "526"
             landmarkName = "editProfile(_:_:_:_:_:_:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -940,11 +940,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Model/WebCaller.swift"
-            timestampString = "569710454.687435"
+            timestampString = "570135944.389695"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "512"
-            endingLineNumber = "512"
+            startingLineNumber = "560"
+            endingLineNumber = "560"
             landmarkName = "editProfile(_:_:_:_:_:_:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -956,11 +956,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Model/WebCaller.swift"
-            timestampString = "569710454.687477"
+            timestampString = "570135944.389753"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "501"
-            endingLineNumber = "501"
+            startingLineNumber = "549"
+            endingLineNumber = "549"
             landmarkName = "editProfile(_:_:_:_:_:_:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -971,24 +971,8 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WeYouMaster/Controller/ProfileOtherVC.swift"
-            timestampString = "569531785.274525"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "220"
-            endingLineNumber = "220"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Controller/HomeVC.swift"
-            timestampString = "569713674.490254"
+            timestampString = "570135944.389806"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
@@ -1004,7 +988,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Controller/HomeVC.swift"
-            timestampString = "569713674.4906451"
+            timestampString = "570135944.389859"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "67"
@@ -1020,7 +1004,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Controller/HomeVC.swift"
-            timestampString = "569713674.49089"
+            timestampString = "570135944.389908"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "68"
@@ -1036,7 +1020,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Controller/HomeVC.swift"
-            timestampString = "569713674.491127"
+            timestampString = "570135944.389956"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "70"
@@ -1052,11 +1036,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Controller/SearchVC.swift"
-            timestampString = "569590791.818331"
+            timestampString = "570135944.390003"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "getSearch(str:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1068,11 +1052,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Controller/SearchVC.swift"
-            timestampString = "569590791.818399"
+            timestampString = "570135944.3900501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "getSearch(str:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1084,11 +1068,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Controller/SearchVC.swift"
-            timestampString = "569590791.818467"
+            timestampString = "570135944.3901531"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "getSearch(str:)"
             landmarkType = "7">
             <Locations>
@@ -1132,11 +1116,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Model/WebCaller.swift"
-            timestampString = "569710454.687597"
+            timestampString = "570135944.390203"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "540"
-            endingLineNumber = "540"
+            startingLineNumber = "588"
+            endingLineNumber = "588"
             landmarkName = "search(_:completionHandler:)"
             landmarkType = "7">
             <Locations>
@@ -1180,11 +1164,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Model/WebCaller.swift"
-            timestampString = "569710454.687641"
+            timestampString = "570135944.390251"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "542"
-            endingLineNumber = "542"
+            startingLineNumber = "590"
+            endingLineNumber = "590"
             landmarkName = "search(_:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1196,11 +1180,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Model/WebCaller.swift"
-            timestampString = "569710454.6877"
+            timestampString = "570135944.390299"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "546"
-            endingLineNumber = "546"
+            startingLineNumber = "594"
+            endingLineNumber = "594"
             landmarkName = "search(_:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1212,11 +1196,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Model/WebCaller.swift"
-            timestampString = "569710454.687771"
+            timestampString = "570135944.390347"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "559"
-            endingLineNumber = "559"
+            startingLineNumber = "607"
+            endingLineNumber = "607"
             landmarkName = "search(_:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1228,11 +1212,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Controller/SearchVC.swift"
-            timestampString = "569590791.818735"
+            timestampString = "570135944.390397"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "getSearch(str:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1244,11 +1228,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Controller/SearchVC.swift"
-            timestampString = "569590791.8188"
+            timestampString = "570135944.390445"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "getSearch(str:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1260,11 +1244,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Controller/SearchVC.swift"
-            timestampString = "569590791.818862"
+            timestampString = "570135944.3904949"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "getSearch(str:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1276,11 +1260,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Controller/SearchVC.swift"
-            timestampString = "569590791.818925"
+            timestampString = "570135944.390563"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "updateUI()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1288,7 +1272,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/View/SearchCell.swift"
@@ -1308,11 +1292,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Controller/SearchVC.swift"
-            timestampString = "569590791.819049"
+            timestampString = "570135944.3906291"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "updateUI()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1324,7 +1308,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Controller/SearchVC.swift"
-            timestampString = "569590791.819104"
+            timestampString = "570135944.390687"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
@@ -1340,7 +1324,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Controller/SearchVC.swift"
-            timestampString = "569590791.81916"
+            timestampString = "570135944.390758"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "18"
@@ -1356,7 +1340,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Controller/SearchVC.swift"
-            timestampString = "569590791.819216"
+            timestampString = "570135944.390828"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
@@ -1372,12 +1356,572 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeYouMaster/Controller/SearchVC.swift"
-            timestampString = "569590791.819271"
+            timestampString = "570135944.390895"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "updateUI()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeYouMaster/Controller/ProfileTabVC.swift"
+            timestampString = "570135944.390965"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "viewControllers(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeYouMaster/Controller/HomeOtherVC.swift"
+            timestampString = "570135944.391029"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeYouMaster/Controller/HomeOtherVC.swift"
+            timestampString = "570135944.391101"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
+            landmarkName = "getFeeds()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeYouMaster/Controller/HomeOtherVC.swift"
+            timestampString = "570135944.391165"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "getFeeds()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeYouMaster/Controller/HomeOtherVC.swift"
+            timestampString = "570135944.391227"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
+            landmarkName = "getFeeds()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeYouMaster/Controller/HomeOtherVC.swift"
+            timestampString = "570135944.391293"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
+            landmarkName = "getFeeds()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeYouMaster/Controller/HomeOtherVC.swift"
+            timestampString = "570135944.391373"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "getFeeds()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeYouMaster/Controller/HomeOtherVC.swift"
+            timestampString = "570135944.391441"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "getFeeds()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeYouMaster/Model/WebCaller.swift"
+            timestampString = "570135944.3915991"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
+            landmarkName = "getUserFeed(_:_:_:_:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeYouMaster/Controller/SearchVC.swift"
+            timestampString = "570135944.391693"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeYouMaster/Controller/SearchVC.swift"
+            timestampString = "570135944.391782"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeYouMaster/Controller/ProfileOtherVC.swift"
+            timestampString = "570135944.391866"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "firstButtonClicked(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeYouMaster/Controller/ProfileOtherVC.swift"
+            timestampString = "570135944.391953"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "firstButtonClicked(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeYouMaster/Controller/ProfileOtherVC.swift"
+            timestampString = "570135944.392025"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "221"
+            endingLineNumber = "221"
+            landmarkName = "getProfileInfo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeYouMaster/Controller/ProfileOtherVC.swift"
+            timestampString = "570135944.3921"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "224"
+            endingLineNumber = "224"
+            landmarkName = "getProfileInfo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeYouMaster/Controller/ProfileOtherVC.swift"
+            timestampString = "570135944.392171"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "222"
+            endingLineNumber = "222"
+            landmarkName = "getProfileInfo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeYouMaster/Controller/ProfileOtherVC.swift"
+            timestampString = "570135944.392246"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "228"
+            endingLineNumber = "228"
+            landmarkName = "getProfileInfo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeYouMaster/Controller/ProfileOtherVC.swift"
+            timestampString = "570135944.392345"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
+            landmarkName = "getProfileInfo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeYouMaster/Controller/ProfileOtherVC.swift"
+            timestampString = "570135944.39246"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "237"
+            endingLineNumber = "237"
+            landmarkName = "getProfileInfo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeYouMaster/Controller/ProfileOtherVC.swift"
+            timestampString = "570135944.392567"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "callDisLike(follow:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WeYouMaster.ProfileOtherVC.callDisLike(follow: Swift.Int) -&gt; ()"
+                  moduleName = "WeYouMaster"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alireza/Documents/WeYouMaster/WeYouMaster/Controller/ProfileOtherVC.swift"
+                  timestampString = "570135944.663627"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "118"
+                  endingLineNumber = "118"
+                  offsetFromSymbolStart = "38">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in WeYouMaster.ProfileOtherVC.callDisLike(follow: Swift.Int) -&gt; ()"
+                  moduleName = "WeYouMaster"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alireza/Documents/WeYouMaster/WeYouMaster/Controller/ProfileOtherVC.swift"
+                  timestampString = "570135944.665642"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "86">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeYouMaster/Model/WebCaller.swift"
+            timestampString = "570135944.3926899"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "480"
+            endingLineNumber = "480"
+            landmarkName = "userInfo(_:_:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeYouMaster/Model/WebCaller.swift"
+            timestampString = "570135944.392769"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "490"
+            endingLineNumber = "490"
+            landmarkName = "userInfo(_:_:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeYouMaster/Controller/ProfileOtherVC.swift"
+            timestampString = "570135944.392836"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
+            landmarkName = "getProfileInfo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeYouMaster/Controller/SendPmVC.swift"
+            timestampString = "570135944.392905"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "sendMessage()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WeYouMaster.SendPmVC.sendMessage() -&gt; ()"
+                  moduleName = "WeYouMaster"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alireza/Documents/WeYouMaster/WeYouMaster/Controller/SendPmVC.swift"
+                  timestampString = "570135529.982022"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "2182">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;WeYouMaster.errorMessage&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in WeYouMaster.SendPmVC.sendMessage() -&gt; ()"
+                  moduleName = "WeYouMaster"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alireza/Documents/WeYouMaster/WeYouMaster/Controller/SendPmVC.swift"
+                  timestampString = "570135529.984042"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "73">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeYouMaster/Controller/SendPmVC.swift"
+            timestampString = "570135944.392971"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "sendMessage()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeYouMaster/Controller/SendPmVC.swift"
+            timestampString = "570135944.393033"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "sendMessage()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeYouMaster/Controller/SendPmVC.swift"
+            timestampString = "570135944.393095"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "sendMessage()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeYouMaster/Controller/SendPmVC.swift"
+            timestampString = "570135944.393157"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "sendMessage()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;WeYouMaster.errorMessage&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in WeYouMaster.SendPmVC.sendMessage() -&gt; ()"
+                  moduleName = "WeYouMaster"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alireza/Documents/WeYouMaster/WeYouMaster/Controller/SendPmVC.swift"
+                  timestampString = "570135664.5327899"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "697">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Optional&lt;WeYouMaster.errorMessage&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in WeYouMaster.SendPmVC.sendMessage() -&gt; ()"
+                  moduleName = "WeYouMaster"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alireza/Documents/WeYouMaster/WeYouMaster/Controller/SendPmVC.swift"
+                  timestampString = "570135664.5347199"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "106"
+                  endingLineNumber = "106"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeYouMaster/Controller/SendPmVC.swift"
+            timestampString = "570135944.393217"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "sendMessage()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
