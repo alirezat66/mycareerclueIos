@@ -8,5 +8,5 @@
 
 import Foundation
 struct CollectionOtherList : Decodable {
-    public var collections : [CollectionOther]
+    public var records : [CollectionOther]
 }

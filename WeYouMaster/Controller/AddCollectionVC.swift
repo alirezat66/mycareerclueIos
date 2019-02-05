@@ -19,6 +19,8 @@ import DropDown
 
 class AddCollectionVC: UIViewController,UITextViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate
     {
+    
+    
     var strSelectedSkill = String()
     let dropDown = DropDown()
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

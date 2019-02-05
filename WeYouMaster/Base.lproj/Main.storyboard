@@ -5438,7 +5438,7 @@
                                                                             </constraints>
                                                                         </imageView>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="nHf-6q-jcp">
-                                                                            <rect key="frame" x="8" y="31" width="362" height="114"/>
+                                                                            <rect key="frame" x="8" y="22.333333333333329" width="362" height="131.33333333333337"/>
                                                                             <subviews>
                                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="colicon" translatesAutoresizingMaskIntoConstraints="NO" id="QeT-ws-MJm">
                                                                                     <rect key="frame" x="157" y="0.0" width="48" height="48"/>
@@ -5448,17 +5448,40 @@
                                                                                     </constraints>
                                                                                 </imageView>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="برنامه نویسی آی او اس" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hd-l3-CyS">
-                                                                                    <rect key="frame" x="81.666666666666686" y="57" width="199" height="28"/>
+                                                                                    <rect key="frame" x="70.333333333333329" y="57" width="221.33333333333337" height="38.333333333333343"/>
                                                                                     <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="24"/>
                                                                                     <color key="textColor" red="0.28235294119999998" green="0.0078431372550000003" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="( ۱۳۶ مشارکت )" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyv-hQ-lWC">
-                                                                                    <rect key="frame" x="131.33333333333334" y="94" width="99.333333333333343" height="20"/>
+                                                                                    <rect key="frame" x="127" y="104.33333333333334" width="108" height="27"/>
                                                                                     <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="17"/>
                                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
+                                                                            </subviews>
+                                                                        </stackView>
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="5IN-kf-AGj">
+                                                                            <rect key="frame" x="82" y="146" width="214" height="30"/>
+                                                                            <subviews>
+                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jbt-0u-3ep">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="96" height="30"/>
+                                                                                    <state key="normal" title="ویرایش مجموعه">
+                                                                                        <color key="titleColor" red="0.96065557339999996" green="0.54993253259999997" blue="0.1082219014" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                                    </state>
+                                                                                    <connections>
+                                                                                        <action selector="onEditButton:" destination="p30-Tn-bgA" eventType="touchUpInside" id="B5w-gf-CC6"/>
+                                                                                    </connections>
+                                                                                </button>
+                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97A-Gt-7mF">
+                                                                                    <rect key="frame" x="128" y="0.0" width="86" height="30"/>
+                                                                                    <state key="normal" title="حذف مجموعه">
+                                                                                        <color key="titleColor" red="0.96065557339999996" green="0.54993253259999997" blue="0.1082219014" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                                    </state>
+                                                                                    <connections>
+                                                                                        <action selector="onDeleteButton:" destination="p30-Tn-bgA" eventType="touchUpInside" id="Rme-Jm-RW7"/>
+                                                                                    </connections>
+                                                                                </button>
                                                                             </subviews>
                                                                         </stackView>
                                                                     </subviews>
@@ -5466,7 +5489,9 @@
                                                                     <constraints>
                                                                         <constraint firstItem="6FP-JQ-KAr" firstAttribute="top" secondItem="tsd-8E-GoK" secondAttribute="top" id="0W8-d8-HCK"/>
                                                                         <constraint firstAttribute="trailing" secondItem="6FP-JQ-KAr" secondAttribute="trailing" id="2fY-Tn-tHS"/>
+                                                                        <constraint firstItem="5IN-kf-AGj" firstAttribute="centerX" secondItem="tsd-8E-GoK" secondAttribute="centerX" id="EAT-0l-IGC"/>
                                                                         <constraint firstItem="nHf-6q-jcp" firstAttribute="leading" secondItem="tsd-8E-GoK" secondAttribute="leading" constant="8" id="J9c-Eg-JgA"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="5IN-kf-AGj" secondAttribute="bottom" id="JOB-QR-sq5"/>
                                                                         <constraint firstItem="nHf-6q-jcp" firstAttribute="centerY" secondItem="tsd-8E-GoK" secondAttribute="centerY" id="NaG-DT-b0D"/>
                                                                         <constraint firstItem="6FP-JQ-KAr" firstAttribute="leading" secondItem="tsd-8E-GoK" secondAttribute="leading" id="QBM-rx-geX"/>
                                                                         <constraint firstItem="nHf-6q-jcp" firstAttribute="centerX" secondItem="tsd-8E-GoK" secondAttribute="centerX" id="XyE-BS-a8z"/>
@@ -5480,13 +5505,13 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="294" height="60"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="الناز محمدی" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucN-lK-URT">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="294" height="39.666666666666664"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="294" height="33.666666666666664"/>
                                                                                     <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="17"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="شیراز" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vLw-Wu-Bba">
-                                                                                    <rect key="frame" x="0.0" y="43.666666666666657" width="294" height="16.333333333333329"/>
+                                                                                    <rect key="frame" x="0.0" y="37.666666666666657" width="294" height="22.333333333333329"/>
                                                                                     <fontDescription key="fontDescription" name="IRANSansMobileFaNum" family="IRANSansMobile(FaNum)" pointSize="14"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
@@ -5562,6 +5587,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="btnDelete" destination="97A-Gt-7mF" id="vXf-Nz-I5R"/>
+                                            <outlet property="btnEdit" destination="Jbt-0u-3ep" id="4eF-do-sCJ"/>
                                             <outlet property="collectionNumberFields" destination="gyv-hQ-lWC" id="iYu-hg-cqI"/>
                                             <outlet property="collectionOwner" destination="ucN-lK-URT" id="Mp4-c9-WJi"/>
                                             <outlet property="collectionOwnerImage" destination="Fml-4d-CH2" id="q2h-ys-rK9"/>
@@ -5588,7 +5615,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QTq-EI-28k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7922.3999999999996" y="138.0809595202399"/>
+            <point key="canvasLocation" x="7921.739130434783" y="137.77173913043478"/>
         </scene>
         <!--Home OtherVC-->
         <scene sceneID="BhP-My-keP">

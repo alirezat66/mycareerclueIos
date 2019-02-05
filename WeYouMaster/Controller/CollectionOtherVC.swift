@@ -11,7 +11,7 @@ import SVProgressHUD
 import XLPagerTabStrip
 
 class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataSource ,IndicatorInfoProvider {
-    
+    var isOwner = Bool()
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo.init(title: "مجموعه ها")
     }
@@ -36,10 +36,16 @@ class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataS
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionCell") as? CollectionCellOtherTVC{
             let collection = myCollections[indexPath.row]
-            cell.updateView(collection:collection)
+            cell.updateView(collection:collection , isOwner: self.isOwner)
             cell.onButtonTappedOnShow = {
-                let name = collection.ownerName
-               self.openDetail(degree: collection.ownerDegree, name: name, title: collection.Title, image: collection.ownerImage,collectionId: collection.collectionId,numOfPost: 2,startDate: "نامشخص")
+                let name = collection.owner_name + " " + collection.owner_lName
+               self.openDetail(degree: collection.ownerDegree, name: name, title: collection.Collection_Title, image: collection.collection_owner_image,collectionId: collection.collectionId,numOfPost: collection.collection_posts_number,startDate: collection.Published_Date)
+            }
+            cell.onButtonDelete = {
+                self.deleteItem(collectionId: collection.collectionId,index: indexPath.row)
+            }
+            cell.onButtonEdit =  {
+                
             }
             return cell
         }else{
@@ -61,6 +67,15 @@ class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataS
     @IBOutlet weak var collectionTV :UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        let userDefaults = UserDefaults.standard
+        let userId = userDefaults.value(forKey: "otherUser") as! String
+        let owner = userDefaults.value(forKey: "owner") as! String
+        
+        if(userId == owner){
+            isOwner = true
+        }else {
+            isOwner = false
+        }
         addRefreshControl()
         
     }
@@ -71,11 +86,53 @@ class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataS
         SVProgressHUD.show(withStatus: "لطفا منتظر بمانید ... \n\n")
         getCloolections()
     }
-    
+    func deleteItem(collectionId : String , index : Int){
+        
+        let refreshAlert = UIAlertController(title: "حذف", message: "آیا واقعا تمایل به حذف دارید؟", preferredStyle: UIAlertControllerStyle.alert)
+        
+        refreshAlert.addAction(UIAlertAction(title: "بله", style: .default, handler: { (action: UIAlertAction!) in
+            print("Handle Ok logic here")
+            SVProgressHUD.show(withStatus: "لطفا منتظر بمانید ... \n\n")
+            let userDefaults = UserDefaults.standard
+            let owner = userDefaults.value(forKey: "owner") as! String
+            
+            WebCaller.deleteCollection(owner,collectionId) { (errorMessage , error) in
+                if let error = error{
+                    self.updateError()
+                    print(error)
+                    return
+                }
+                guard let errorMessage = errorMessage else{
+                    self.updateError()
+                    print("error getting collections")
+                    return
+                }
+                
+                
+                if(errorMessage.error==0){
+                    self.myCollections.remove(at: index)
+                    self.updateUI()
+                }
+                
+                
+                
+            }
+        }))
+        
+        refreshAlert.addAction(UIAlertAction(title: "خیر", style: .cancel, handler: { (action: UIAlertAction!) in
+            print("Handle Cancel Logic here")
+        }))
+        
+        present(refreshAlert, animated: true, completion: nil)
+        
+        
+        
+    }
     func getCloolections(){
         let userDefaults = UserDefaults.standard
-        let owner = userDefaults.value(forKey: "otherUser") as! String
-        WebCaller.getCollectionOther(20,1,owner: "24",userId: owner) { (collections , error) in
+        let userId = userDefaults.value(forKey: "otherUser") as! String
+        let owner = userDefaults.value(forKey: "owner") as! String
+        WebCaller.getCollectionOther(20,1,owner: owner,userId: userId) { (collections , error) in
             if let error = error{
                 self.updateError()
                 print(error)
@@ -88,7 +145,7 @@ class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataS
             }
             
             
-            for collect in collections.collections{
+            for collect in collections.records{
                 self.myCollections.append(collect)
             }
             self.updateUI()

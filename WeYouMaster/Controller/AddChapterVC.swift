@@ -189,8 +189,8 @@ UICollectionViewDelegate,UITextViewDelegate  {
             
             }
             self.collectionList.remove(at: 0)
-            for collect in collections.collections{
-                self.collectionList.append(collect.Title)
+            for collect in collections.records{
+                self.collectionList.append(collect.Collection_Title)
                 self.myCollection.append(collect)
             }
             self.updateUIForCollection()

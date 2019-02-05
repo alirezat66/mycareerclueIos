@@ -205,8 +205,8 @@ class AddFeedVC: UIViewController, UITableViewDataSource,UITableViewDelegate{
             }
             self.typeList.remove(at: 0)
             
-            for collect in collections.collections{
-                self.typeList.append(collect.Title)
+            for collect in collections.records{
+                self.typeList.append(collect.Collection_Title)
             }
             self.updateUI()
             
