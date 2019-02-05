@@ -115,7 +115,7 @@ class HomeCell: UITableViewCell {
         let owner = userDefaults.value(forKey: "owner") as! String
         
         
-        WebCaller.likeAndDisLike(0, owner, myContent.postId! , liked_id: myContent.owner_id!) { (state, error) in
+        WebCaller.likeAndDisLike(0, owner, String(myContent.postId!) , liked_id: myContent.owner_id!) { (state, error) in
             if let error = error{
                 print(error)
                 return
@@ -140,7 +140,7 @@ class HomeCell: UITableViewCell {
         let owner = userDefaults.value(forKey: "owner") as! String
         
         
-        WebCaller.likeAndDisLike(1, owner, myContent.postId!,liked_id: myContent.owner_id!) { (state, error) in
+        WebCaller.likeAndDisLike(1, owner, String(myContent.postId!),liked_id: myContent.owner_id!) { (state, error) in
             if let error = error{
                 print(error)
                 return

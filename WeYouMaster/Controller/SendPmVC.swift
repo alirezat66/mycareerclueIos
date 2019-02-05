@@ -44,8 +44,7 @@ class SendPmVC: UIViewController,UITextViewDelegate {
         super.viewDidLoad()
         edt_text.text = "پیام خود را بنویسید"
         edt_text.textColor = UIColor.lightGray
-        
-       edt_text.delegate = self
+        edt_text.delegate = self
         
         btnSendOut.layer.cornerRadius = 2
         btnSendOut.layer.borderWidth = 1

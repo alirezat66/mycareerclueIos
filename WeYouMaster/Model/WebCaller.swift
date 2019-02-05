@@ -1153,7 +1153,7 @@ public class WebCaller {
     
     static func uploadImageToCollection(imageData: Data?, parameters: [String : Any], completionHandler: @escaping (Int?, Error?) -> Void){
         
-        let endpoint = "https://weyoumaster.com/api/upload_collection_photo" /* your API url */
+        let endpoint = "https://weyoumaster.com/api/upload_contribution_photo" /* your API url */
         
         let headers: HTTPHeaders = [
             /* "Authorization": "your_access_token",  in case you need authorization header */

@@ -10,22 +10,20 @@ import UIKit
 import Dropper
 import SearchTextField
 import SwiftMessages
+import DropDown
 
-class AddChapterVC: UIViewController ,DropperDelegate,UICollectionViewDataSource,
-UICollectionViewDelegate,UIImagePickerControllerDelegate,
-UINavigationControllerDelegate  {
+class AddChapterVC: UIViewController ,UICollectionViewDataSource,
+UICollectionViewDelegate,UITextViewDelegate  {
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var labelCollectionView: UICollectionView!
-    
+    var strSelectedSkill = String()
+
+    let dropDown = DropDown()
     @IBOutlet weak var skillSearchTextField: SearchTextField!
     @IBOutlet weak var dropdown : UIButton!
-    let dropper = Dropper(width: 300, height: 2000)
-    let dropperType = Dropper(width: 300, height: 2000)
     
-    @IBOutlet weak var picOne: UIImageView!
     @IBOutlet weak var picTwo: UIImageView!
     @IBOutlet weak var backOne: UIView!
-    @IBOutlet weak var backTwo: UIView!
     @IBOutlet weak var backThree: UIView!
     @IBOutlet weak var viewStepTwo: UIView!
     @IBOutlet weak var UIViewThree: UIView!
@@ -43,7 +41,14 @@ UINavigationControllerDelegate  {
     @IBOutlet weak var btnSaveOut: UIButton!
     @IBOutlet weak var viewSteper: UIView!
     
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
     var Profile_photo_link : String = ""
     var Owner: String = ""
     var publicType  = 1
@@ -102,17 +107,17 @@ UINavigationControllerDelegate  {
 
         
         
-        getLabeles()
+      //  getLabeles()
         getCloolections()
+        
+        edtDesc.textColor = UIColor.lightGray
+        edtDesc.delegate = self
         labelCollectionView.dataSource = self
         labelCollectionView.delegate = self
         
         viewStepOne.isHidden=false
         backOne.layer.cornerRadius = backOne.layer.frame.width/2
         backOne.clipsToBounds = true
-        
-        backTwo.layer.cornerRadius = backTwo.layer.frame.width/2
-        backTwo.clipsToBounds = true
         
         backThree.layer.cornerRadius = backThree.layer.frame.width/2
         backThree.clipsToBounds = true
@@ -144,6 +149,7 @@ UINavigationControllerDelegate  {
                 }
             }
         }
+         edtDesc.textColor = UIColor.lightGray
         // Do any additional setup after loading the view.
     }
     
@@ -152,6 +158,18 @@ UINavigationControllerDelegate  {
     }
     
     
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if edtDesc.textColor == UIColor.lightGray {
+            edtDesc.text = ""
+            edtDesc.textColor = UIColor.black
+        }
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if edtDesc.text.isEmpty {
+            edtDesc.text = " در رابطه با فصل برای رصدکنندگان خود توضیح دهید"
+            edtDesc.textColor = UIColor.lightGray
+        }
+    }
     
     func getCloolections(){
         loadingView.isHidden = false
@@ -180,13 +198,7 @@ UINavigationControllerDelegate  {
     }
     func updateUIForCollection(){
         // first we add dropper
-        
-        dropper.items = collectionList // Items to be displayed
-        dropper.delegate = self
-        dropper.theme = Dropper.Themes.black(nil)
-        dropper.cornerRadius = 10
-        dropper.spacing = 20
-        dropper.border = (width: 2, color: UIColor.white)
+        dropDown.dataSource = collectionList
         DispatchQueue.main.async{
             self.loadingView.isHidden = true
             //self.alertController.dismiss(animated: true, completion: nil);
@@ -243,32 +255,38 @@ UINavigationControllerDelegate  {
         }
     }
     @IBAction func skillPush(_ sender: Any) {
-        if dropperType.status == .hidden {
+        
+        dropDown.selectionAction = { [unowned self ] (index: Int, item : String) in
             
-            dropperType.showWithAnimation(0.25, options: Dropper.Alignment.center, button: skilbutton)
-            UIViewThree.addSubview(dropperType)
-        } else {
-            dropperType.hideWithAnimation(0.2)
+            self.strSelectedSkill = item
+            self.skilbutton.setTitle(item, for: .normal)
+            self.filterList()
+            self.dropDown.hide()
+            
         }
+        dropDown.customCellConfiguration = {(index, item, cell:DropDownCell) ->Void in cell.optionLabel.textAlignment = .center}
+        dropDown.width = 300
+        dropDown.show()
     }
     @IBAction func choseImage(_ sender: Any) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.allowsEditing = false
-        imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
-        self.present(imagePicker,animated: true,completion: nil)
+       
         //  present(self.imagePicker, animated: true, completion: nil)
         
         
     }
     @IBAction func btnChose(_ sender: Any) {
-        if dropper.status == .hidden {
+        dropDown.dataSource = collectionList
+        dropDown.selectionAction = {[unowned self ] (index: Int, item : String) in
+            self.dropdown.setTitle(item, for: .normal)
+            self.dropDown.hide()
+            self.edtDesc.delegate = self
+            self.collectionId = self.myCollection[index].collectionId
+
             
-            dropper.showWithAnimation(0.25, options: Dropper.Alignment.center, button: dropdown)
-            viewStepOne.addSubview(dropper)
-        } else {
-            dropper.hideWithAnimation(0.2)
         }
+        dropDown.customCellConfiguration = {(index, item, cell:DropDownCell) ->Void in cell.optionLabel.textAlignment = .center}
+        dropDown.width = 300
+        dropDown.show()
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -287,14 +305,17 @@ UINavigationControllerDelegate  {
     
     
     func updateUI(){
-        // first we add dropper
-        dropperType.items = skilType // Items to be displayed
-        dropperType.delegate = self
-        dropperType.theme = Dropper.Themes.black(nil)
-        dropperType.cornerRadius = 10
-        dropperType.spacing = 20
-        dropperType.border = (width: 2, color: UIColor.white)
-        makeSearchList()
+        
+        
+        DispatchQueue.main.async{
+            // first we add dropper
+            
+            self.dropDown.anchorView = self.skilbutton
+            self.dropDown.dataSource = self.skilType
+            self.dropDown.cornerRadius = 10
+            self.makeSearchList()
+            self.loadingView.isHidden = true
+        }
         
         // second we add search list
     }
@@ -386,7 +407,7 @@ UINavigationControllerDelegate  {
                     return
                 }
                 guard let answer = answer else{
-                    
+                    self.showError()
                     print("error getting labeles")
                     return
                 }
@@ -394,7 +415,7 @@ UINavigationControllerDelegate  {
                 if(answer.error==0){
                     
                     self.chapterId = answer.chapterId
-                    self.stepTwo()
+                    self.stepThree()
                 }else{
                     self.showError()
                 }
@@ -418,7 +439,6 @@ UINavigationControllerDelegate  {
             self.lblPublic.isHidden = true
             self.rtlSwitch.isHidden = true
             self.publicSwitch.isHidden = true
-            self.backTwo.backgroundColor = self.activeColor
             self.count = 2
         }
     }
@@ -426,14 +446,14 @@ UINavigationControllerDelegate  {
         DispatchQueue.main.async{
             
             //self.alertController.dismiss(animated: true, completion: nil);
-            
-            self.loadingView.isHidden = true
+           
             self.lblPublic.text  = "step two" + String(self.count)
             self.viewStepOne.isHidden = true
             self.viewStepTwo.isHidden = true
             self.UIViewThree.isHidden = false
             self.backThree.backgroundColor = self.activeColor
             self.count = 3
+            self.getLabeles()
         }
     }
     func addLabeles(){

@@ -9,17 +9,19 @@
 import UIKit
 import Dropper
 import SearchTextField
+import DropDown
+import Alamofire
+
 import SwiftMessages
-class AddContribution: UIViewController,DropperDelegate,UICollectionViewDataSource,
+class AddContribution: UIViewController,UICollectionViewDataSource,
     UICollectionViewDelegate,UIImagePickerControllerDelegate,
-UINavigationControllerDelegate {
+UINavigationControllerDelegate,UITextViewDelegate {
 
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var labelCollectionView: UICollectionView!
     
     @IBOutlet weak var skillSearchTextField: SearchTextField!
     @IBOutlet weak var dropdown : UIButton!
-    let dropperType = Dropper(width: 300, height: 2000)
     @IBOutlet weak var picOne: UIImageView!
     @IBOutlet weak var picTwo: UIImageView!
     @IBOutlet weak var backOne: UIView!
@@ -41,6 +43,9 @@ UINavigationControllerDelegate {
     @IBOutlet weak var btnSaveOut: UIButton!
     @IBOutlet weak var viewSteper: UIView!
     
+     let dropDown = DropDown()
+    var strSelectedSkill = String()
+
     var Profile_photo_link : String = ""
     var Owner: String = ""
     var publicType  = 1
@@ -89,8 +94,23 @@ UINavigationControllerDelegate {
             rtl = 0
         }
     }
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if edtDesc.textColor == UIColor.lightGray {
+            edtDesc.text = ""
+            edtDesc.textColor = UIColor.black
+        }
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if edtDesc.text.isEmpty {
+            edtDesc.text = " در رابطه با مشارکت برای رصدکنندگان خود توضیح دهید"
+            edtDesc.textColor = UIColor.lightGray
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        edtDesc.textColor = UIColor.lightGray
+        edtDesc.delegate = self
         
         labelCollectionView.dataSource = self
         labelCollectionView.delegate = self
@@ -181,13 +201,17 @@ UINavigationControllerDelegate {
         }
     }
     @IBAction func skillPush(_ sender: Any) {
-        if dropperType.status == .hidden {
+        dropDown.selectionAction = { [unowned self ] (index: Int, item : String) in
             
-            dropperType.showWithAnimation(0.25, options: Dropper.Alignment.center, button: skilbutton)
-            UIViewThree.addSubview(dropperType)
-        } else {
-            dropperType.hideWithAnimation(0.2)
+            self.strSelectedSkill = item
+            self.skilbutton.setTitle(item, for: .normal)
+            self.filterList()
+            self.dropDown.hide()
+            
         }
+        dropDown.customCellConfiguration = {(index, item, cell:DropDownCell) ->Void in cell.optionLabel.textAlignment = .center}
+        dropDown.width = 300
+        dropDown.show()
     }
     @IBAction func choseImage(_ sender: Any) {
         let imagePicker = UIImagePickerController()
@@ -235,14 +259,13 @@ UINavigationControllerDelegate {
     
     func updateUI(){
         // first we add dropper
-        dropperType.items = skilType // Items to be displayed
-        dropperType.delegate = self
-        dropperType.theme = Dropper.Themes.black(nil)
-        dropperType.cornerRadius = 10
-        dropperType.spacing = 20
-        dropperType.border = (width: 2, color: UIColor.white)
+        dropDown.anchorView = skilbutton
+        dropDown.dataSource = skilType
+        dropDown.cornerRadius = 10
         makeSearchList()
-        
+         DispatchQueue.main.async{
+        self.loadingView.isHidden = true
+        }
         // second we add search list
     }
     
@@ -276,8 +299,8 @@ UINavigationControllerDelegate {
         }else if count==2{
             if(chosenImage){
                 
-                //upload()
-                stepThree()
+                upload()
+               // stepThree()
             }else{
                 stepThree()
             }
@@ -285,7 +308,32 @@ UINavigationControllerDelegate {
             addLabeles()
         }
     }
-    
+    func upload() {
+        
+        
+        
+        
+        loadingView.isHidden = false
+        let timestamp = NSDate().timeIntervalSince1970
+        let myTimeInterval = TimeInterval(timestamp)
+        let fileName = "img_" + String(myTimeInterval) + "_" + contributionId + ".png"
+        let parameters: Parameters = [
+            "contributionId" : contributionId,
+            "filename":fileName
+        ]
+        WebCaller.uploadImageToCollection(imageData: self.imageData, parameters: parameters){
+            (resp , error) in
+            if let error = error{
+                print(error)
+                 DispatchQueue.main.async{
+                self.loadingView.isHidden = true
+                }
+                return
+            }
+            self.stepThree()
+            
+        }
+    }
     
     
     
@@ -358,8 +406,7 @@ UINavigationControllerDelegate {
         DispatchQueue.main.async{
             
             //self.alertController.dismiss(animated: true, completion: nil);
-            
-            self.loadingView.isHidden = true
+            self.getLabeles()
             self.lblPublic.text  = "step two" + String(self.count)
             self.viewStepOne.isHidden = true
             self.viewStepTwo.isHidden = true
@@ -470,7 +517,7 @@ UINavigationControllerDelegate {
             let collectionName = userDefaults.value(forKey: "selectedCollectionName")
             dropdown.setTitle(collectionName as? String, for: .normal)
         }
-        getLabeles()
+        
     }
     @IBAction func btnChose(_ sender: Any) {
         

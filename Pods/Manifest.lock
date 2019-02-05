@@ -32,6 +32,7 @@ PODS:
     - BraintreeDropIn/UIKit
   - BraintreeDropIn/UIKit (7.0.0)
   - DLRadioButton (1.4.12)
+  - DropDown (2.3.2)
   - Dropper (2.7.6)
   - ExpandableLabel (0.5.1)
   - JJFloatingActionButton (0.10.0)
@@ -49,6 +50,7 @@ DEPENDENCIES:
   - Alamofire (~> 4.4)
   - BraintreeDropIn
   - DLRadioButton (~> 1.4)
+  - DropDown (= 2.3.2)
   - Dropper
   - ExpandableLabel
   - JJFloatingActionButton
@@ -66,6 +68,7 @@ SPEC REPOS:
     - Braintree
     - BraintreeDropIn
     - DLRadioButton
+    - DropDown
     - Dropper
     - ExpandableLabel
     - JJFloatingActionButton
@@ -82,6 +85,7 @@ SPEC CHECKSUMS:
   Braintree: 1659b7e4f28a667eb65427f211933776ec5ea212
   BraintreeDropIn: 7eb460717213ae39a3b457c90671f9975747dcab
   DLRadioButton: d7c4e225ed0e8013cef7be61455230c7557ad7c1
+  DropDown: 7f87abecc28f9b4edad810fe1211c5c018c257e5
   Dropper: 52a020beb6fef2e4b1d55447f17099e5776954ef
   ExpandableLabel: 80783721b4d849bc62c19b44bbb88aa8bb518423
   JJFloatingActionButton: 7e9e924d0819ebeb6a566dade9d5dbed63ff8add
@@ -93,6 +97,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   XLPagerTabStrip: 22d4c58200d7c105e0e407ab6bfd01a5d85014be
 
-PODFILE CHECKSUM: d108aa997a94398550e25121b394336a77ac5478
+PODFILE CHECKSUM: c004095bee1ae9aaeeecb6f03d609351d52278bd
 
 COCOAPODS: 1.5.3

@@ -14,9 +14,17 @@ import SearchTextField
 import Photos
 import Alamofire
 import SwiftyJSON
+import DropDown
 
-class AddCollectionVC: UIViewController , UIImagePickerControllerDelegate,UITextFieldDelegate, UINavigationControllerDelegate ,DropperDelegate , UICollectionViewDataSource,UICollectionViewDelegate
-{
+
+class AddCollectionVC: UIViewController,UITextViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate
+    {
+    var strSelectedSkill = String()
+    let dropDown = DropDown()
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+    }
     @IBOutlet weak var stackOfUiOne: UIStackView!
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -42,17 +50,14 @@ class AddCollectionVC: UIViewController , UIImagePickerControllerDelegate,UIText
     
     @IBOutlet weak var skillSearchTextField: SearchTextField!
     @IBOutlet weak var dropdown : UIButton!
-    let dropper = Dropper(width: 300, height: 2000)
-    let dropperType = Dropper(width: 300, height: 2000)
+
     
     @IBAction func imgBackAct(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBOutlet weak var picOne: UIImageView!
     @IBOutlet weak var picTwo: UIImageView!
     @IBOutlet weak var backOne: UIView!
-    @IBOutlet weak var backTwo: UIView!
     @IBOutlet weak var backThree: UIView!
     @IBOutlet weak var viewStepFour: UIView!
     @IBOutlet weak var viewStepTwo: UIView!
@@ -113,26 +118,38 @@ class AddCollectionVC: UIViewController , UIImagePickerControllerDelegate,UIText
                 
                 DispatchQueue.main.async{
                     self.labelCollectionView.reloadData()
-                    //self.alertController.dismiss(animated: true, completion: nil);
-                    
+                    //dropper.delegate self.alertController.dismiss(animated: true, completion: nil);
                 }
                
             }
         }
     }
+    
+    
     @IBAction func skillPush(_ sender: Any) {
-        if dropperType.status == .hidden {
+        
+        dropDown.selectionAction = { [unowned self ] (index: Int, item : String) in
             
+            self.strSelectedSkill = item
+            self.skilbutton.setTitle(item, for: .normal)
+            self.filterList()
+            self.dropDown.hide()
+            
+        }
+        dropDown.customCellConfiguration = {(index, item, cell:DropDownCell) ->Void in cell.optionLabel.textAlignment = .center}
+        dropDown.width = 300
+        dropDown.show()
+       /* if dropperType.status == .hidden {
+            dropper.delegate = self
             dropperType.showWithAnimation(0.25, options: Dropper.Alignment.center, button: skilbutton)
             UIViewThree.addSubview(dropperType)
         } else {
             dropperType.hideWithAnimation(0.2)
-        }
+        }*/
     }
     @IBAction func choseImage(_ sender: Any) {
         let imagePicker = UIImagePickerController()
         imagePicker.allowsEditing = false
-        imagePicker.delegate = self
         imagePicker.sourceType = .photoLibrary
         self.present(imagePicker,animated: true,completion: nil)
       //  present(self.imagePicker, animated: true, completion: nil)
@@ -194,13 +211,32 @@ class AddCollectionVC: UIViewController , UIImagePickerControllerDelegate,UIText
     }
     
     @IBAction func btnChose(_ sender: Any) {
-        if dropper.status == .hidden {
-           
+        edtDesc.delegate = nil
+        dropDown.dataSource = catList
+        dropDown.selectionAction = { [unowned self ] (index: Int, item : String) in
+            self.dropdown.setTitle(item, for: .normal)
+            self.dropDown.hide()
+            self.edtDesc.delegate = self
+            
+        }
+        dropDown.customCellConfiguration = {(index, item, cell:DropDownCell) ->Void in cell.optionLabel.textAlignment = .center}
+        dropDown.width = 300
+        dropDown.show()
+        
+     /*   if dropper.status == .hidden {
+            dropper.items = catList // Items to be displayed
+            dropper.theme = Dropper.Themes.black(nil)
+            dropper.cornerRadius = 10
+            dropper.spacing = 20
+            dropper.border = (width: 2, color: UIColor.white)
+            
+            dropper.delegate = self
+
             dropper.showWithAnimation(0.25, options: Dropper.Alignment.center, button: dropdown)
             viewStepOne.addSubview(dropper)
         } else {
             dropper.hideWithAnimation(0.2)
-        }
+        }*/
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -252,8 +288,21 @@ class AddCollectionVC: UIViewController , UIImagePickerControllerDelegate,UIText
             
             UIView.animate(withDuration: 0.25, animations: {
                 self.view.layoutIfNeeded()
-                self.bottomConstraint.constant = rect.height + 20
+                
             })
+        }
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if edtDesc.textColor == UIColor.lightGray {
+            edtDesc.text = ""
+            edtDesc.textColor = UIColor.black
+        }
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if edtDesc.text.isEmpty {
+            edtDesc.text = " در رابطه با مجموعه برای رصدکنندگان خود توضیح دهید"
+            edtDesc.textColor = UIColor.lightGray
         }
     }
     
@@ -280,7 +329,7 @@ class AddCollectionVC: UIViewController , UIImagePickerControllerDelegate,UIText
             if(answer.error==0){
                 
                 self.collectionId = answer.collectionId
-                self.stepTwo()
+                self.stepThree()
             }
            
             
@@ -342,11 +391,13 @@ class AddCollectionVC: UIViewController , UIImagePickerControllerDelegate,UIText
         }
     }
     func addPrice(){
-       
+        if(edtPrice.text==""){
+             self.stepFinish()
+        }else {
             let userDefaults = UserDefaults.standard
             let owner = userDefaults.value(forKey: "owner") as! String
             self.loadingView.isHidden = false
-        WebCaller.addPrice(_owner: owner, _collectionId: collectionId, _price: edtPrice.text!, _currency: lastCurrency, _desc: edtDesc.text!){
+        WebCaller.addPrice(_owner: owner, _collectionId: collectionId, _price: edtPrice.text!, _currency: lastCurrency, _desc:  edtPriceDec.text!){
                 (answer, error) in
                 if let error = error{
                     print(error)
@@ -365,6 +416,7 @@ class AddCollectionVC: UIViewController , UIImagePickerControllerDelegate,UIText
                 
                 
             }
+        }
             
             
         
@@ -384,6 +436,7 @@ class AddCollectionVC: UIViewController , UIImagePickerControllerDelegate,UIText
             
             self.loadingView.isHidden = true
             self.count = 4
+            self.uiBottom.isHidden = true
             self.viewStepOne.isHidden = true
             self.viewStepTwo.isHidden = true
             self.UIViewThree.isHidden = true
@@ -406,7 +459,6 @@ class AddCollectionVC: UIViewController , UIImagePickerControllerDelegate,UIText
             self.lblPublic.isHidden = true
             self.rtlSwitch.isHidden = true
             self.publicSwitch.isHidden = true
-            self.backTwo.backgroundColor = self.activeColor
             self.count = 2
         }
     }
@@ -415,14 +467,15 @@ class AddCollectionVC: UIViewController , UIImagePickerControllerDelegate,UIText
         DispatchQueue.main.async{
             
             //self.alertController.dismiss(animated: true, completion: nil);
+            self.edtDesc.delegate = nil
             
-            self.loadingView.isHidden = true
             self.lblPublic.text  = "step two" + String(self.count)
             self.viewStepOne.isHidden = true
             self.viewStepTwo.isHidden = true
             self.UIViewThree.isHidden = false
             self.backThree.backgroundColor = self.activeColor
             self.count = 3
+            self.getLabeles()
         }
     }
     @IBAction func btnSave(_ sender: Any) {
@@ -450,16 +503,15 @@ class AddCollectionVC: UIViewController , UIImagePickerControllerDelegate,UIText
         }
         
     
-    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
-    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        dropDown.anchorView = dropdown
         let tab : UITapGestureRecognizer = UITapGestureRecognizer(target : self , action : #selector(DismissKeyboard))
         view.addGestureRecognizer(tab)
-       
-       
-        getLabeles()
+        edtDesc.textColor = UIColor.lightGray
+        edtDesc.delegate = self
         labelCollectionView.dataSource = self
         labelCollectionView.delegate = self
        
@@ -467,8 +519,7 @@ class AddCollectionVC: UIViewController , UIImagePickerControllerDelegate,UIText
         backOne.layer.cornerRadius = backOne.layer.frame.width/2
         backOne.clipsToBounds = true
         
-        backTwo.layer.cornerRadius = backTwo.layer.frame.width/2
-        backTwo.clipsToBounds = true
+       
         
         backThree.layer.cornerRadius = backThree.layer.frame.width/2
         backThree.clipsToBounds = true
@@ -478,12 +529,7 @@ class AddCollectionVC: UIViewController , UIImagePickerControllerDelegate,UIText
         imgProfile.clipsToBounds = true
         
         
-        dropper.items = catList // Items to be displayed
-        dropper.delegate = self
-        dropper.theme = Dropper.Themes.black(nil)
-        dropper.cornerRadius = 10
-        dropper.spacing = 20
-        dropper.border = (width: 2, color: UIColor.white)
+       
         // make ui
         
         let userDefaults = UserDefaults.standard
@@ -506,6 +552,8 @@ class AddCollectionVC: UIViewController , UIImagePickerControllerDelegate,UIText
             }
         }
         
+        edtDesc.textColor = UIColor.lightGray
+
       
         
         
@@ -547,18 +595,11 @@ class AddCollectionVC: UIViewController , UIImagePickerControllerDelegate,UIText
     func completeImageLoad(json:JSON) -> Void {
         
     }
-    func DropperSelectedRow(_ path: IndexPath, contents: String) {
-        if(count==1){
-        dropdown.setTitle(contents, for: .normal)
-        }else{
-            skilbutton.setTitle(contents, for: .normal)
-            filterList()
-        }
-    }
+    
     func filterList() {
         skilList.removeAll()
         for label in myLabeles {
-            if label.type == skilbutton.title(for: .normal)
+            if label.type == strSelectedSkill
             {
                 skilList.append(label.title)
             }
@@ -597,16 +638,29 @@ class AddCollectionVC: UIViewController , UIImagePickerControllerDelegate,UIText
         
             
         }
+    @IBAction func btnFinish(_ sender: Any) {
+        addPrice()
+    }
+    @IBOutlet weak var uiBottom: UIView!
     func updateUI(){
+        
+        dropDown.anchorView = skilbutton
+        dropDown.dataSource = skilType
+        dropDown.cornerRadius = 10
         // first we add dropper
-        dropperType.items = skilType // Items to be displayed
+        /*dropperType.items = skilType // Items to be displayed
         dropperType.delegate = self
         dropperType.theme = Dropper.Themes.black(nil)
         dropperType.cornerRadius = 10
         dropperType.spacing = 20
-        dropperType.border = (width: 2, color: UIColor.white)
-        makeSearchList()
+        dropperType.border = (width: 2, color: UIColor.white)*/
         
+        
+        makeSearchList()
+         DispatchQueue.main.async{
+        self.loadingView.isHidden = true
+        }
+
         // second we add search list
     }
     func makeSearchList()  {
