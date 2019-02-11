@@ -27,8 +27,7 @@ struct Content : Decodable {
     public var ownerPic : String?
     public var allignment : String? // rtl or ltr
     public var owner_id : String?
-    
-    
+  
     
     
     

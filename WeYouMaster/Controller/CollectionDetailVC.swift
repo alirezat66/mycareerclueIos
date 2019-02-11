@@ -14,7 +14,7 @@ class CollectionDetailVC:
     
 UIViewController,UITableViewDelegate,UITableViewDataSource , IndicatorInfoProvider {
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo.init(title: "محتوا")
+        return IndicatorInfo.init(title: "مشارکت ها")
     }
     
     var refreshControll : UIRefreshControl?

@@ -22,7 +22,13 @@ class AddCollectionVC: UIViewController,UITextViewDelegate,UICollectionViewDataS
     
     
     var strSelectedSkill = String()
+    
+    var editCollectionTitle = String()
+    var editCollectionDesc  = String()
+    var editCollectionId    = String()
+    var editPrice    = String()
     let dropDown = DropDown()
+    var type = Int() // 0 for add 1 for edit
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
         super.touchesBegan(touches, with: event)
@@ -87,7 +93,6 @@ class AddCollectionVC: UIViewController,UITextViewDelegate,UICollectionViewDataS
     var publicType  = 1
     var rtl = 1
     var step = 1
-    var type  = 0
     var count = 1
     var chosenImage = false
     var lastCurrency : String = ""
@@ -285,7 +290,7 @@ class AddCollectionVC: UIViewController,UITextViewDelegate,UICollectionViewDataS
     @objc func keyboardWillShow(notification:NSNotification)
     {
         if let info = notification.userInfo{
-            let rect:CGRect = info["UIKeyboardFrameEndUserInfoKey"] as! CGRect
+            let _:CGRect = info["UIKeyboardFrameEndUserInfoKey"] as! CGRect
             self.view.layoutIfNeeded()
             
             UIView.animate(withDuration: 0.25, animations: {
@@ -315,10 +320,12 @@ class AddCollectionVC: UIViewController,UITextViewDelegate,UICollectionViewDataS
         loadingView.isHidden = false
         let userDefaults = UserDefaults.standard
         let owner = userDefaults.value(forKey: "owner") as! String
+            
+            
+        if(type == 0){
         WebCaller.saveCollection(owner: owner, title: self.edtTitle.text!, description: self.edtDesc.text!, isPublic: publicType, isRtl: rtl, link: "")
         { (answer, error) in
             if let error = error{
-                
                 print(error)
                 return
             }
@@ -327,16 +334,35 @@ class AddCollectionVC: UIViewController,UITextViewDelegate,UICollectionViewDataS
                 print("error getting labeles")
                 return
             }
-            
             if(answer.error==0){
-                
                 self.collectionId = answer.collectionId
-                self.stepThree()
+                self.stepFour()
             }
-           
-            
         }
+        
+        }else {
+            WebCaller.editCollection(owner: owner,collectionId: editCollectionId, title: self.edtTitle.text!, description: self.edtDesc.text!, isPublic: publicType, isRtl: rtl, link: "")
+            { (answer, error) in
+                if let error = error{
+                    
+                    print(error)
+                    return
+                }
+                guard let answer = answer else{
+                    
+                    print("error getting labeles")
+                    return
+                }
+                
+                if(answer.error==0){
+                    self.collectionId = self.editCollectionId
+                    self.stepFour()
+                }
+                
+                
+            }
         }
+    }
     }
     
     
@@ -445,6 +471,7 @@ class AddCollectionVC: UIViewController,UITextViewDelegate,UICollectionViewDataS
             self.viewStepFour.isHidden = false
             self.viewSteper.isHidden = true
             self.btnSaveOut.setTitle("اتمام", for: .normal)
+            self.edtPrice.text = self.editPrice
         }
     }
     func stepTwo()  {
@@ -557,6 +584,15 @@ class AddCollectionVC: UIViewController,UITextViewDelegate,UICollectionViewDataS
         edtDesc.textColor = UIColor.lightGray
 
       
+        if(editCollectionId != ""){
+            type = 1 //edit
+            edtTitle.text =  editCollectionTitle
+            edtDesc.text = editCollectionDesc
+            edtDesc.textColor = UIColor.black
+            collectionId = editCollectionId
+        }else{
+            type = 0 // add
+        }
         
         
         

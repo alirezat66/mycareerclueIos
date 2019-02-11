@@ -572,6 +572,51 @@ public class WebCaller {
     }
     
     
+    static func deleteContent(_ owner:String ,_ contentId : String , completionHandler: @escaping (errorMessage?, Error?) -> Void) {
+        let endpoint = "https://weyoumaster.com/api/delete_contribution"
+        guard let url = URL(string: endpoint)
+            else {
+                print("Error: cannot create URL")
+                let error = BackendError.urlError(reason: "Could not construct URL")
+                completionHandler(nil, error)
+                return
+        }
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        let postString = "owner=" + owner + "&contributionId=" + contentId;
+        
+        urlRequest.httpBody = postString.data(using: String.Encoding.utf8)
+        let session = URLSession.shared
+        let task = session.dataTask(with: urlRequest, completionHandler: {
+            (data, response, error) in
+            guard error == nil else {
+                completionHandler(nil, error!)
+                return
+            }
+            guard let responseData = data else {
+                print("Error: did not receive data")
+                let error = BackendError.objectSerialization(reason: "No data in response")
+                completionHandler(nil, error)
+                return
+            }
+            
+            // parse the result as JSON
+            // then create a Todo from the JSON
+            do {
+                let  contentL  = try JSONDecoder().decode(errorMessage.self,from: responseData)
+                completionHandler(contentL,nil)
+            } catch {
+                // error trying to convert the data to JSON using JSONSerialization.jsonObject
+                completionHandler(nil, error)
+                return
+            }
+        })
+        task.resume()
+        
+        
+    }
+    
+    
     static func userInfo(_ owner: String ,_ userInfo:String , completionHandler: @escaping (UserInfo?, Error?) -> Void) {
         let endpoint = "https://weyoumaster.com/api/userInfo"
         guard let url = URL(string: endpoint)
@@ -1569,7 +1614,76 @@ public class WebCaller {
         task.resume()
         
     }
-    
+    static func editCollection(owner: String , collectionId : String, title : String , description : String ,  isPublic : Int, isRtl : Int ,link : String , completionHandler: @escaping (errorMessage?, Error?) -> Void){
+        
+        // set up URLRequest with URL
+        let endpoint = "https://weyoumaster.com/api/edit_collection"
+        guard let url = URL(string: endpoint)
+            else {
+                print("Error: cannot create URL")
+                let error = BackendError.urlError(reason: "Could not construct URL")
+                completionHandler(nil, error)
+                return
+        }
+        
+        
+        
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        var postString = "";
+        postString.append("owner=")
+        postString.append(owner)
+        postString.append("&isPublic=")
+        postString.append(String(isPublic))
+        postString.append("&collectionId="+collectionId)
+        let b = "&title="
+        postString.append(b)
+        postString.append(title)
+        postString.append("&isRtl=")
+        postString.append(String(isRtl))
+        
+        postString.append("&description=")
+        postString.append(description)
+        postString.append("&link=")
+        postString.append(link)
+        
+        urlRequest.httpBody = postString.data(using: String.Encoding.utf8)
+        
+        // Make request
+        let session = URLSession.shared
+        let task = session.dataTask(with: urlRequest, completionHandler: {
+            (data, response, error) in
+            // handle response to request
+            // check for error
+            guard error == nil else {
+                completionHandler(nil, error!)
+                return
+            }
+            // make sure we got data in the response
+            guard let responseData = data else {
+                print("Error: did not receive data")
+                let error = BackendError.objectSerialization(reason: "No data in response")
+                completionHandler(nil, error)
+                return
+            }
+            
+            // parse the result as JSON
+            // then create a Todo from the JSON
+            do {
+                print(responseData)
+                let  resp  = try JSONDecoder().decode(errorMessage.self,from: responseData)
+                completionHandler(resp,nil)
+                
+            } catch {
+                // error trying to convert the data to JSON using JSONSerialization.jsonObject
+                completionHandler(nil, error)
+                return
+            }
+        })
+        task.resume()
+        
+    }
    static func makeQaList() -> [QA] {
         var qaQastions = [QA]()
         qaQastions.append(QA(title: "چرا من به این سیستم دعوت شده ام؟", description: "ما تمایل داریم با کارشناسان و مدیرانی که تجارب بین المللی دارند - همچون خود شما - ارتباط برقرار نموده و دیدگاه آنان را در رابطه با ایده اولیه ویومستر و نحوه اجرای آن بدانیم. این به ما کمک شایانی خواهد نمود تا سیستمی بی نقص را در اختیار کاربران قرار دهیم. ویومستر تمایل دارد تا فیدبک ارزشمند شما را در رابطه با میزان اثربخشی این سیستم و احتمال موفقیت آن در بین فارسی زبانان بداند"))

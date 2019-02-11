@@ -12,6 +12,8 @@ class HomeOtherCell: UITableViewCell {
 
     
     var onButtonTapped : (() -> Void)? = nil
+    var onButtonEditTapped : (() -> Void)? = nil
+    var onButtonDeleteTapped : (() -> Void)? = nil
     @IBAction func btnCollection(_ sender: Any) {
     }
     @IBOutlet weak var btnCollection: UIButton!
@@ -31,6 +33,7 @@ class HomeOtherCell: UITableViewCell {
     @IBOutlet weak var lblEducation: UILabel!
     
     
+    @IBOutlet weak var EditUI: UIView!
     
     var likeCounter : Int = 0
     var myContent  : OtherContent = OtherContent()
@@ -47,6 +50,16 @@ class HomeOtherCell: UITableViewCell {
         }
     }
     
+    @IBAction func editClick(_ sender: Any) {
+        if let onButtonEditTapped = self.onButtonEditTapped {
+            onButtonEditTapped()
+        }
+    }
+    @IBAction func deleteClick(_ sender: Any) {
+        if let onButtonDeleteTapped = self.onButtonDeleteTapped {
+            onButtonDeleteTapped()
+        }
+    }
     @IBAction func imageClicked(_ sender: Any) {
         
         if let onButtonTapped = self.onButtonTapped {
@@ -171,6 +184,24 @@ class HomeOtherCell: UITableViewCell {
     public func updateView(content : OtherContent){
         self.myContent = content
         contentText = content.contentText
+        
+        
+        let userDefaults = UserDefaults.standard
+        
+        
+        
+        
+        
+        
+        let owner = userDefaults.value(forKey: "owner") as! String
+        
+        let otherOwner = userDefaults.value(forKey: "otherUser") as! String
+        
+        if(owner == otherOwner){
+            EditUI.isHidden = false
+        }else {
+            EditUI.isHidden = true
+        }
        /* if(content.allignment != "rtl"){
             lblTitle.textAlignment = .left
             lblContent.textAlignment = .left
@@ -187,7 +218,6 @@ class HomeOtherCell: UITableViewCell {
             btnCollection.isHidden = false
             lblCollectionTitle.isHidden = false
         }
-        let userDefaults = UserDefaults.standard
        
         let otherImage = userDefaults.value(forKey: "otherImage") as! String
         if(otherImage != "")

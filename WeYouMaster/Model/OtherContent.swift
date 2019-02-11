@@ -27,6 +27,8 @@ struct OtherContent : Decodable {
     public var additionalSource : String
     public var ownerPic : String
     public var allignment : String
+    
+    
         init (){
         ownerId = ""
         postId = ""

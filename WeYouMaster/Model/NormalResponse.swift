@@ -9,6 +9,6 @@
 import Foundation
 struct  NormalResponse : Codable {
 
-    var error : Int
+    var  error : Int
     var  errorMessage : String
 }

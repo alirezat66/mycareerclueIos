@@ -45,6 +45,7 @@ class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataS
                 self.deleteItem(collectionId: collection.collectionId,index: indexPath.row)
             }
             cell.onButtonEdit =  {
+                 self.editCollection(collection.Collection_Description,collection.Collection_Title,collection.collection_price,collection.collectionId)
                 
             }
             return cell
@@ -169,6 +170,17 @@ class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataS
 
             
         }
+    }
+    public func editCollection(_ Collection_Description : String , _ Collection_Title : String , _ collection_price  : String , _  collectionId : String ){
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let add = storyBoard.instantiateViewController(withIdentifier: "addCollection") as! AddCollectionVC
+        
+        add.editCollectionId = collectionId
+        add.editCollectionTitle = Collection_Title
+        add.editCollectionDesc = Collection_Description
+        add.editPrice = collection_price
+        self.present(add, animated: true, completion: nil)
+        
     }
     public func openDetail(degree : String , name : String ,title : String , image : String ,collectionId : String , numOfPost : Int,startDate : String){
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)

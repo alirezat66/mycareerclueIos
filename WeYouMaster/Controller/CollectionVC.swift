@@ -140,7 +140,10 @@ class CollectionVC: UIViewController,UITableViewDelegate , UITableViewDataSource
     }
    
     func getCloolections(){
-        WebCaller.getCollection(20,1,owner: "24",userId: "-1",state: "on") { (collections , error) in
+        
+        let userDefaults = UserDefaults.standard
+        let owner = userDefaults.value(forKey: "owner") as! String
+        WebCaller.getCollection(20,1,owner: owner,userId: "-1",state: "on") { (collections , error) in
             if let error = error{
                 self.updateError()
                 print(error)

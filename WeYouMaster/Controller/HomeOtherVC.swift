@@ -61,7 +61,7 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , 
     
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo.init(title: "تایم لاین")
+        return IndicatorInfo.init(title: "مشارکت ها")
     }
     
     var myContent : [OtherContent] = []
@@ -102,6 +102,12 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , 
             cell.lblContent.collapsed = true
             cell.lblContent.text = content.contentText
             cell.lblContent.textAlignment = NSTextAlignment.right
+            cell.onButtonDeleteTapped = {
+                 self.deleteItem(contentId: content.postId,index: indexPath.row)
+            }
+            cell.onButtonEditTapped = {
+               
+            }
             return cell
         }else{
             return HomeCell()
@@ -109,6 +115,48 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , 
         }else{
             return HomeCell()
         }
+    }
+    func deleteItem(contentId : String , index : Int){
+        
+        let refreshAlert = UIAlertController(title: "حذف", message: "آیا واقعا تمایل به حذف دارید؟", preferredStyle: UIAlertControllerStyle.alert)
+        
+        refreshAlert.addAction(UIAlertAction(title: "بله", style: .default, handler: { (action: UIAlertAction!) in
+            print("Handle Ok logic here")
+            SVProgressHUD.show(withStatus: "لطفا منتظر بمانید ... \n\n")
+            let userDefaults = UserDefaults.standard
+            let owner = userDefaults.value(forKey: "owner") as! String
+            
+            WebCaller.deleteContent(owner,contentId) { (errorMessage , error) in
+                if let error = error{
+                    self.updateError()
+                    print(error)
+                    return
+                }
+                guard let errorMessage = errorMessage else{
+                    self.updateError()
+                    print("error getting collections")
+                    return
+                }
+                
+                
+                if(errorMessage.error==0){
+                    self.myContent.remove(at: index)
+                    self.updateUI()
+                }
+                
+                
+                
+            }
+        }))
+        
+        refreshAlert.addAction(UIAlertAction(title: "خیر", style: .cancel, handler: { (action: UIAlertAction!) in
+            print("Handle Cancel Logic here")
+        }))
+        
+        present(refreshAlert, animated: true, completion: nil)
+        
+        
+        
     }
     func openProfile(content:Content) {
         
