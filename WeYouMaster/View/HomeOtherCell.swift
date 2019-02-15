@@ -33,8 +33,10 @@ class HomeOtherCell: UITableViewCell {
     @IBOutlet weak var lblEducation: UILabel!
     
     
-    @IBOutlet weak var EditUI: UIView!
     
+    @IBOutlet weak var btnDelete: UIButton!
+    @IBOutlet weak var btnEdit: UIButton!
+    @IBOutlet weak var divider: UIView!
     var likeCounter : Int = 0
     var myContent  : OtherContent = OtherContent()
     var contentText : String = ""
@@ -198,9 +200,13 @@ class HomeOtherCell: UITableViewCell {
         let otherOwner = userDefaults.value(forKey: "otherUser") as! String
         
         if(owner == otherOwner){
-            EditUI.isHidden = false
+            btnDelete.isHidden = false
+            btnEdit.isHidden = false
+            divider.isHidden = false
         }else {
-            EditUI.isHidden = true
+            btnDelete.isHidden = true
+            btnEdit.isHidden = true
+            divider.isHidden = true
         }
        /* if(content.allignment != "rtl"){
             lblTitle.textAlignment = .left

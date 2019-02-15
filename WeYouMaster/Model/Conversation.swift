@@ -15,4 +15,7 @@ struct Conversation : Decodable {
     var lastMessage : MessageObj
     
     
+    
+    
+    
 }

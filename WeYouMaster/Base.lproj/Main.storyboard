@@ -5958,10 +5958,12 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="EditUI" destination="AwI-Id-y4r" id="7OF-LN-5Pf"/>
                                             <outlet property="btnCollection" destination="lvZ-Am-G5o" id="1jM-8p-PT2"/>
+                                            <outlet property="btnDelete" destination="Odp-dg-XlX" id="pgQ-dg-YSM"/>
+                                            <outlet property="btnEdit" destination="uQw-t4-BaJ" id="dqN-IY-XI9"/>
                                             <outlet property="btnLikeOutlet" destination="UK3-Kp-ukU" id="Qa5-aZ-tMU"/>
                                             <outlet property="btnShowLink" destination="BTc-du-zyS" id="3ue-kw-bza"/>
+                                            <outlet property="divider" destination="Hp0-oM-FNc" id="0VM-9S-6fN"/>
                                             <outlet property="imgConstrant" destination="HHU-1d-CC8" id="BMF-WB-TnE"/>
                                             <outlet property="imgContent" destination="Kh8-OS-YaE" id="FNA-UY-beO"/>
                                             <outlet property="imgPerson" destination="8TA-6i-xzW" id="chN-P1-Vdn"/>

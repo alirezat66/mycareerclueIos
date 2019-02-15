@@ -33,12 +33,16 @@ class ConversationCell: UITableViewCell {
         }
     
         lblTime.text = conversation.lastMessage.timestamp
-  //      lblCount.text = String( conversation.unReadedMessage)
+        lblCount.text = String( conversation.unReadedMessage)
        
         
         lblCount.layer.cornerRadius = lblCount.frame.size.width/2
         lblCount.clipsToBounds = true
-        
+        if(conversation.unReadedMessage == 0){
+            lblCount.isHidden = true
+        }else{
+            lblCount.isHidden = false
+        }
         imgPerson.layer.cornerRadius = imgPerson.frame.size.width/2
         imgPerson.clipsToBounds = true
         let url = URL(string : conversation.displayPhoto)

@@ -126,8 +126,6 @@ class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataS
         
         present(refreshAlert, animated: true, completion: nil)
         
-        
-        
     }
     func getCloolections(){
         let userDefaults = UserDefaults.standard

@@ -22,7 +22,6 @@ class AddCollectionVC: UIViewController,UITextViewDelegate,UICollectionViewDataS
     
     
     var strSelectedSkill = String()
-    
     var editCollectionTitle = String()
     var editCollectionDesc  = String()
     var editCollectionId    = String()

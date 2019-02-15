@@ -59,7 +59,7 @@ let purpleInspireColor = UIColor.init(red: 61/256, green: 13/256, blue: 71/256, 
     let three = storyBoard.instantiateViewController(withIdentifier: "child1") as! Child1VC
     
     let four = storyBoard.instantiateViewController(withIdentifier: "child2") as! Child2VC
-        return [four,three,two,one]
+        return [three,four,two,one]
     
     }
     override func viewWillAppear(_ animated: Bool) {

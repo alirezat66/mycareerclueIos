@@ -14,4 +14,6 @@ struct MessageObj : Decodable {
     var timestamp : String ;
     var content : String
     var size :   Int
+    
+    
 }
