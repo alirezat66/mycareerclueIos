@@ -109,7 +109,7 @@ let purpleInspireColor = UIColor.init(red: 61/256, green: 13/256, blue: 71/256, 
         userDefaults.set(profileId, forKey: "otherUser")
         userDefaults.set(getImage, forKey: "otherImage")
         let child_1 = profile
-        let child_2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "likeOthers")
+        let child_2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "resourceVC")
         let child_3 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CollectionOtherVC")
         let child_4 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeOtherVC")
        

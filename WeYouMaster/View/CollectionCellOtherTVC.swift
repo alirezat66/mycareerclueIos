@@ -11,9 +11,12 @@ import SVProgressHUD
 
 class CollectionCellOtherTVC: UITableViewCell {
     var onButtonTapped : (() -> Void)? = nil
+    @IBOutlet weak var btnShow: UIButton!
     var onButtonTappedOnShow : (() -> Void)? = nil
+    var onPricingTap : (() -> Void)? = nil
     var onButtonDelete : (() -> Void)? = nil
     var onButtonEdit : (() -> Void)? = nil
+    @IBOutlet weak var priceButton: UIButton!
     @IBAction func showClick(_ sender: Any) {
         if let onButtonTappedOnShow = self.onButtonTappedOnShow {
             onButtonTappedOnShow()
@@ -28,6 +31,11 @@ class CollectionCellOtherTVC: UITableViewCell {
     @IBAction func onDeleteButton(_ sender: Any) {
         if let onButtonDelete = self.onButtonDelete {
             onButtonDelete()
+        }
+    }
+    @IBAction func onPriceButton(_ sender: Any) {
+        if let onPricingTap = self.onPricingTap {
+            onPricingTap()
         }
     }
     @IBAction func imageClicked(_ sender: Any) {
@@ -56,6 +64,15 @@ class CollectionCellOtherTVC: UITableViewCell {
         if(!isOwner){
             btnEdit.isHidden = true
             btnDelete.isHidden = true
+            priceButton.isHidden = true
+        }else{
+            priceButton.backgroundColor = .white
+            priceButton.layer.cornerRadius = 5
+            priceButton.layer.borderWidth = 1
+            priceButton.layer.borderColor = UIColor.purple.cgColor
+            btnShow.backgroundColor = .orange
+            btnShow.setTitle("مشارکت جدید", for: .normal)
+            
         }
         collectionOwnerImage.layer.cornerRadius = collectionOwnerImage.frame.size.width/2
         collectionOwnerImage.clipsToBounds = true

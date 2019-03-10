@@ -45,7 +45,7 @@ UINavigationControllerDelegate,UITextViewDelegate {
     
      let dropDown = DropDown()
     var strSelectedSkill = String()
-
+    
     var Profile_photo_link : String = ""
     var Owner: String = ""
     var publicType  = 1
@@ -60,6 +60,7 @@ UINavigationControllerDelegate,UITextViewDelegate {
     var activeColor = UIColor.init(red: 73.0/255.0, green: 2/255.0, blue: 78/255.0, alpha: 1.0)
     
     var collectionId = "0"
+    var collName = "";
     var isOpen = false
     var isOpenCat = false
     var skilList=[""]
@@ -515,11 +516,24 @@ UINavigationControllerDelegate,UITextViewDelegate {
     }
     override func viewDidAppear(_ animated: Bool) {
         let userDefaults = UserDefaults.standard
-        collectionId = userDefaults.value(forKey: "selectedCollection") as! String
-        if(collectionId != "0"){
-            let collectionName = userDefaults.value(forKey: "selectedCollectionName")
-            dropdown.setTitle(collectionName as? String, for: .normal)
+        
+        if(collName != ""){
+            dropdown.setTitle(collName, for: .normal)
+            collName = ""
+        }else{
+            collectionId = userDefaults.value(forKey: "selectedCollection") as! String
+            
+            if(collectionId != "0"){
+                
+                if(collName != ""){
+                    
+                }else{
+                    let collectionName = userDefaults.value(forKey: "selectedCollectionName")
+                    dropdown.setTitle(collectionName as? String, for: .normal)
+                }
+            }
         }
+        
         
     }
     @IBAction func btnChose(_ sender: Any) {

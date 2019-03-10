@@ -9,7 +9,6 @@
 import UIKit
 import SVProgressHUD
 import XLPagerTabStrip
-
 class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataSource ,IndicatorInfoProvider {
     var isOwner = Bool()
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
@@ -37,9 +36,26 @@ class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataS
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionCell") as? CollectionCellOtherTVC{
             let collection = myCollections[indexPath.row]
             cell.updateView(collection:collection , isOwner: self.isOwner)
+            cell.onPricingTap = {
+                let userDefaults = UserDefaults.standard
+                let planStatus = userDefaults.value(forKey: "planStatus") as! Int
+                
+                if(planStatus >= 2){
+                    
+                }else {
+                    let alert = UIAlertController(title: "هشدار", message: "شما مجاز به تغییر قیمت نیستید.", preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "متوجه شدم", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
             cell.onButtonTappedOnShow = {
+                
+                if(!self.isOwner){
                 let name = collection.owner_name + " " + collection.owner_lName
                self.openDetail(degree: collection.ownerDegree, name: name, title: collection.Collection_Title, image: collection.collection_owner_image,collectionId: collection.collectionId,numOfPost: collection.collection_posts_number,startDate: collection.Published_Date)
+                }else {
+                    self.openCollectionType(collectionId: collection.collectionId,collectionName: collection.Collection_Title)
+                }
             }
             cell.onButtonDelete = {
                 self.deleteItem(collectionId: collection.collectionId,index: indexPath.row)
@@ -179,6 +195,14 @@ class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataS
         add.editPrice = collection_price
         self.present(add, animated: true, completion: nil)
         
+    }
+    
+    public func openCollectionType(collectionId : String, collectionName : String){
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let contributionType = storyBoard.instantiateViewController(withIdentifier: "selectContributeType") as! SelectContriButeType
+        contributionType.getCollectionId = collectionId
+        
+        self.present(contributionType, animated: true, completion: nil)
     }
     public func openDetail(degree : String , name : String ,title : String , image : String ,collectionId : String , numOfPost : Int,startDate : String){
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)

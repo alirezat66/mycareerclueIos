@@ -9,6 +9,9 @@
 import UIKit
 
 class SelectContriButeType: UIViewController , UITableViewDelegate,UITableViewDataSource{
+     var getCollectionId = String()
+    var  getCollectionName = String()
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        return tableViewData.count
     }
@@ -36,6 +39,11 @@ class SelectContriButeType: UIViewController , UITableViewDelegate,UITableViewDa
             userDefaults.set(self.tableViewData[indexPath.item], forKey: "selectedType")
             let stroyBoard = UIStoryboard(name: "Main", bundle: nil)
             let add = stroyBoard.instantiateViewController(withIdentifier: "addcontribution" ) as? AddContribution
+            if(self.getCollectionId != ""){
+                add?.collectionId = self.getCollectionId
+                add?.collName = self.getCollectionName
+            }
+            
             pvc?.present(add!, animated: true, completion: nil)
         })
        

@@ -60,7 +60,7 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
         if(isOwner){
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
             let profEdit = storyBoard.instantiateViewController(withIdentifier: "profilePage") as! ProfileVC
-           profEdit.bio = bio
+            profEdit.bio = bio
             profEdit.getImage = getImage
             profEdit.getCity = getCity
             profEdit.getRole = getRole
@@ -170,17 +170,23 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
             
             
         }else{
-            btnSetting.isHidden=true
-            btnEdit.isHidden=true
+            btnSetting.setTitleColor(.white, for: .normal)
+             btnEdit.setTitleColor(.white, for: .normal)
+            //btnEdit.isHidden=true
             loadViewIfNeeded()
             btnFirst.setTitle("درخواست مشاوره", for: .normal)
-            
+            btnFirst.backgroundColor = .white
+            btnFirst.layer.cornerRadius = 5
+            btnFirst.layer.borderWidth = 1
+            btnFirst.layer.borderColor = UIColor.purple.cgColor
             if(followedByMe==1){
                 btnSecond.setTitle("در حال رصد", for: .normal)
             }else{
                 btnSecond.setTitle("رصد کن", for: .normal)
             }
+            
             btnSecond.backgroundColor = UIColor.init(red: 66/256, green: 129/256, blue: 191/256, alpha: 1.0)
+            btnSecond.isHidden = true
         }
         
         indicator.isHidden = true
@@ -264,6 +270,9 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
             let job = userDefaults.value(forKey: "job") as! String
             let bio = userDefaults.value(forKey: "bio") as! String
             lblBio.text = bio
+            
+            
+
             lblrole.text = job
             lblName.text = name + " " + lName
             lblPlace.text = city

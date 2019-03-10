@@ -113,6 +113,7 @@ func getLogin(_ email: String,_ pass : String,_ myVc : LogInVC) {
                 userDefaults.set(todo.Sold_sofar, forKey: "sales")
                 userDefaults.set(todo.LinkedIn, forKey: "linkedIn")
                 userDefaults.set(3, forKey: "loginState")
+                userDefaults.set(todo.planStatus, forKey: "planStatus")
                 
                 OneSignal.setEmail(todo.Email)
                 

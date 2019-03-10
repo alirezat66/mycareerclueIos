@@ -104,6 +104,10 @@
 		BBB75C872122E50F00C1CAA9 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB75C862122E50F00C1CAA9 /* CardView.swift */; };
 		BBB75C892122FDB700C1CAA9 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB75C882122FDB700C1CAA9 /* DashboardVC.swift */; };
 		BBB75C8F212457F000C1CAA9 /* CollectionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB75C8E212457F000C1CAA9 /* CollectionList.swift */; };
+		BBC111FE2234E3EA00536B34 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC111FD2234E3EA00536B34 /* Resource.swift */; };
+		BBC112002234E49B00536B34 /* ResourceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC111FF2234E49B00536B34 /* ResourceList.swift */; };
+		BBC112022234E54500536B34 /* ResourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC112012234E54500536B34 /* ResourceCell.swift */; };
+		BBC112042234EBD000536B34 /* ResourceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC112032234EBD000536B34 /* ResourceVC.swift */; };
 		BBCFA95D219B11D6005261BF /* AddCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCFA95C219B11D6005261BF /* AddCollectionVC.swift */; };
 		BBCFA95F219B814C005261BF /* AddChapterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCFA95E219B814C005261BF /* AddChapterVC.swift */; };
 		BBCFA961219B8165005261BF /* AddContribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCFA960219B8165005261BF /* AddContribution.swift */; };
@@ -258,6 +262,10 @@
 		BBB75C862122E50F00C1CAA9 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		BBB75C882122FDB700C1CAA9 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 		BBB75C8E212457F000C1CAA9 /* CollectionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionList.swift; sourceTree = "<group>"; };
+		BBC111FD2234E3EA00536B34 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		BBC111FF2234E49B00536B34 /* ResourceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceList.swift; sourceTree = "<group>"; };
+		BBC112012234E54500536B34 /* ResourceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCell.swift; sourceTree = "<group>"; };
+		BBC112032234EBD000536B34 /* ResourceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceVC.swift; sourceTree = "<group>"; };
 		BBCFA95C219B11D6005261BF /* AddCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCollectionVC.swift; sourceTree = "<group>"; };
 		BBCFA95E219B814C005261BF /* AddChapterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChapterVC.swift; sourceTree = "<group>"; };
 		BBCFA960219B8165005261BF /* AddContribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContribution.swift; sourceTree = "<group>"; };
@@ -372,6 +380,7 @@
 				BB4F254121B888E700690652 /* SelectCollectionAndChapterVC.swift */,
 				BBEEE8B721E8871600AAD1A6 /* fullScreenImageVC.swift */,
 				BB8E8B3F21F2E5CE00988C9F /* SearchVC.swift */,
+				BBC112032234EBD000536B34 /* ResourceVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -417,6 +426,8 @@
 				BB8E8B3721F2DF7800988C9F /* SearchObj.swift */,
 				BB8E8B3921F2DFEA00988C9F /* SearchList.swift */,
 				BB4B8C5621FB494800DD989B /* UserInfo.swift */,
+				BBC111FD2234E3EA00536B34 /* Resource.swift */,
+				BBC111FF2234E49B00536B34 /* ResourceList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -495,6 +506,7 @@
 				BB4F254D21B90FE700690652 /* FeedTypeCell.swift */,
 				BB8E8B3B21F2E26F00988C9F /* SearchCell.swift */,
 				BB8E8B4121F3224400988C9F /* SearchTwo.swift */,
+				BBC112012234E54500536B34 /* ResourceCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -757,6 +769,7 @@
 				BBCFA95D219B11D6005261BF /* AddCollectionVC.swift in Sources */,
 				BB8E8B3821F2DF7800988C9F /* SearchObj.swift in Sources */,
 				BBAE0E2121045B2C00CF4FF2 /* HomeVC.swift in Sources */,
+				BBC112042234EBD000536B34 /* ResourceVC.swift in Sources */,
 				BBECFA942154229900009C4F /* Child2VC.swift in Sources */,
 				BB968CDB213EA5EC009DE929 /* HomeOtherVC.swift in Sources */,
 				BB4F254C21B8FF3700690652 /* ExpendedCollection.swift in Sources */,
@@ -778,6 +791,7 @@
 				BB55DCBC21EBBB7900706988 /* ChatList.swift in Sources */,
 				BBCFA961219B8165005261BF /* AddContribution.swift in Sources */,
 				BB4194A321035C8E00823353 /* DetailCell.swift in Sources */,
+				BBC112022234E54500536B34 /* ResourceCell.swift in Sources */,
 				BB19CAA4214BFEBE00E61510 /* RegisterResponse.swift in Sources */,
 				BBEDB0CB21355DD9004BE37E /* AboutUsVC.swift in Sources */,
 				BB3C1E3E211EDEE800075EEB /* WebCaller.swift in Sources */,
@@ -834,10 +848,12 @@
 				BB968CEB213EBB76009DE929 /* CollectionCellOtherTVC.swift in Sources */,
 				BBB75C8F212457F000C1CAA9 /* CollectionList.swift in Sources */,
 				BB569EA72158FF3C00DB8D1B /* CollectionDetailTwoVC.swift in Sources */,
+				BBC112002234E49B00536B34 /* ResourceList.swift in Sources */,
 				BBCFA95F219B814C005261BF /* AddChapterVC.swift in Sources */,
 				BB968CDD213EA60D009DE929 /* CommentLikeOtherVC.swift in Sources */,
 				BB3958C320FF5F9E0038DB53 /* PadingLable.swift in Sources */,
 				BBAB362A211713570031273A /* ProfileVC.swift in Sources */,
+				BBC111FE2234E3EA00536B34 /* Resource.swift in Sources */,
 				BB8E8B4021F2E5CE00988C9F /* SearchVC.swift in Sources */,
 				BB55DCB621E9B01B00706988 /* MessageObj.swift in Sources */,
 				BBB0D44E20FF66A9000CAC15 /* CollectionVC.swift in Sources */,

@@ -431,6 +431,57 @@ public class WebCaller {
         
         
     }
+    static func getMyResources(_ ownerId: String ,_ currentPage: Int,_ itemPerPage:Int , completionHandler: @escaping (ResourceList?, Error?) -> Void) {
+        let endpoint = "https://weyoumaster.com/api/resources"
+        guard let url = URL(string: endpoint)
+            else {
+                print("Error: cannot create URL")
+                let error = BackendError.urlError(reason: "Could not construct URL")
+                completionHandler(nil, error)
+                return
+        }
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        let postString = "itemPerPage=" + String(itemPerPage) + "&currentPage=" + String(currentPage) + "&ownerId=" + ownerId
+        
+        urlRequest.httpBody = postString.data(using: String.Encoding.utf8)
+        
+        
+        let session = URLSession.shared
+        let task = session.dataTask(with: urlRequest, completionHandler: {
+            (data, response, error) in
+            // handle response to request
+            // check for error
+            guard error == nil else {
+                completionHandler(nil, error!)
+                return
+            }
+            // make sure we got data in the response
+            guard let responseData = data else {
+                print("Error: did not receive data")
+                let error = BackendError.objectSerialization(reason: "No data in response")
+                completionHandler(nil, error)
+                return
+            }
+            
+            // parse the result as JSON
+            // then create a Todo from the JSON
+            do {
+                
+                
+                let  contentL  = try JSONDecoder().decode(ResourceList.self,from: responseData)
+                completionHandler(contentL,nil)
+                
+            } catch {
+                // error trying to convert the data to JSON using JSONSerialization.jsonObject
+                completionHandler(nil, error)
+                return
+            }
+        })
+        task.resume()
+        
+        
+    }
     
     static func getChatList(_ per_page: Int ,_ current_page: Int,_ owner:String ,_ reciverOwner : String , completionHandler: @escaping (ChatList?, Error?) -> Void) {
         let endpoint = "https://weyoumaster.com/api/chatList"
