@@ -53,12 +53,13 @@ let purpleInspireColor = UIColor.init(red: 61/256, green: 13/256, blue: 71/256, 
     about.getTitle = getTitle
     let one = about
     
-    let collectionFeeds = storyBoard.instantiateViewController(withIdentifier: "CollectionDetailVC") as! CollectionDetailVC
+    let collectionFeeds = storyBoard.instantiateViewController(withIdentifier: "HomeOtherVC") as! HomeOtherVC
     collectionFeeds.collectionId = collectionId
     let two = collectionFeeds
-    let three = storyBoard.instantiateViewController(withIdentifier: "child1") as! Child1VC
-    
+    let three = storyBoard.instantiateViewController(withIdentifier: "collectionResource") as! CollectionResource
+    three.getCollection = collectionId
     let four = storyBoard.instantiateViewController(withIdentifier: "child2") as! Child2VC
+    four.collectionId = collectionId
         return [three,four,two,one]
     
     }

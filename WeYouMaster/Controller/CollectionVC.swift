@@ -47,6 +47,8 @@ class CollectionVC: UIViewController,UITableViewDelegate , UITableViewDataSource
                 self.openProfile(collection : collection)
             }
             cell.onButtonTappedOnShow = {
+                let userDefaults = UserDefaults.standard
+                userDefaults.set(collection.Owner, forKey: "otherUser")
                 let name = collection.owner_name + " " + collection.owner_lName
                 self.openDetail(degree: collection.ownerDegree, name: name, title: collection.Collection_Title, image: collection.collection_owner_image,collectionId: collection.collectionId,numOfPost: collection.collection_posts_number,startDate: collection.Published_Date)
             }
@@ -186,6 +188,7 @@ class CollectionVC: UIViewController,UITableViewDelegate , UITableViewDataSource
     public func openDetail(degree : String , name : String ,title : String , image : String ,collectionId : String , numOfPost : Int,startDate : String){
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let detail = storyBoard.instantiateViewController(withIdentifier: "collectionDetail") as! CollectionDetailTwoVC
+        
         detail.getDegree = degree
         detail.getName = name
         detail.getTitle = title

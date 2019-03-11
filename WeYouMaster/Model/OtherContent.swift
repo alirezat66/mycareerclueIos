@@ -8,7 +8,7 @@
 
 import Foundation
 struct OtherContent : Decodable {
-    public var ownerId: String
+    public var owner_id: String
     public var  postId : String
     public var fName : String
     public var lName : String
@@ -30,7 +30,7 @@ struct OtherContent : Decodable {
     
     
         init (){
-        ownerId = ""
+        owner_id = ""
         postId = ""
         fName = ""
         lName = ""

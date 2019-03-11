@@ -56,10 +56,32 @@ class CollectionDetailVCTwo: UIViewController , IndicatorInfoProvider{
                 }
             }
         }
+        let userDefaults = UserDefaults.standard
+        let userId = userDefaults.value(forKey: "otherUser") as! String
+        let owner = userDefaults.value(forKey: "owner") as! String
         
+        if(userId == owner){
+            btnFirst.setTitle("قیمت گذاری", for: .normal)
+            
+            btnFirst.backgroundColor = .white
+            btnFirst.layer.cornerRadius = 5
+            btnFirst.layer.borderWidth = 1
+            btnFirst.layer.borderColor = UIColor.purple.cgColor
+            btnSecond.backgroundColor = .orange
+        }else {
+            btnFirst.setTitle("رایگان", for: .normal)
+            
+            btnFirst.backgroundColor = .white
+            btnFirst.layer.cornerRadius = 5
+            btnFirst.layer.borderWidth = 1
+            btnFirst.layer.borderColor = UIColor.purple.cgColor
+            btnSecond.setTitle("+رصد مجموعه", for: .normal)
+        }
         
     }
-
+    @IBOutlet weak var btnFirst: UIButton!
+    
+    @IBOutlet weak var btnSecond: UIButton!
     
 
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {

@@ -12,6 +12,7 @@ import XLPagerTabStrip
 import ExpandableLabel
 
 class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , IndicatorInfoProvider , ExpandableLabelDelegate{
+    var collectionId = String()
     var states : Array<Bool>!
     func willExpandLabel(_ label: ExpandableLabel) {
         label.textAlignment = NSTextAlignment.right
@@ -199,6 +200,9 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , 
         
         let userId = userDefaults.value(forKey: "otherUser") as! String
         let owner = userDefaults.value(forKey: "owner") as! String
+        
+        
+        if(collectionId == ""){
         WebCaller.getUserFeed(50, 1,userId,owner
         ) { (contents, error) in
             if let error = error{
@@ -216,6 +220,24 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , 
             }
              self.states = [Bool](repeating: true, count: contentList.contributions.count)
             self.updateUI()
+        }
+        }else{
+            WebCaller.getFeedsOfCollection(collectionId
+            ) { (contents, error) in
+                if let error = error{
+                    print(error)
+                    return
+                }
+                guard let contentList = contents else{
+                    print("error getting collections")
+                    return
+                }
+                for content in (contentList.contributions) {
+                    self.myContent.append(content)
+                }
+                self.updateUI()
+                
+            }
         }
     }
     

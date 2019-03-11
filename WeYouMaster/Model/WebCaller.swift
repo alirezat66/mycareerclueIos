@@ -66,7 +66,59 @@ public class WebCaller {
     }
     
 
-    
+    static func getChapters(_ items_per_page: Int ,_ startPage: Int,_ randomStatus : String ,_ owner :String ,_ collectionId :String, completionHandler: @escaping (ChapterList?, Error?) -> Void) {
+        
+        let endpoint = "https://weyoumaster.com/api/chapters/"
+        guard let url = URL(string: endpoint)
+            else {
+                print("Error: cannot create URL")
+                let error = BackendError.urlError(reason: "Could not construct URL")
+                completionHandler(nil, error)
+                return
+        }
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        let postString = "owner=" + owner +  "&collectionId=" + collectionId + "&items_per_page=" + String(items_per_page) + "&startPage=" + String(startPage) + "&randomStatus=" + randomStatus
+        
+        
+        urlRequest.httpBody = postString.data(using: String.Encoding.utf8)
+        
+        
+        let session = URLSession.shared
+        let task = session.dataTask(with: urlRequest, completionHandler: {
+            (data, response, error) in
+            // handle response to request
+            // check for error
+            guard error == nil else {
+                completionHandler(nil, error!)
+                return
+            }
+            // make sure we got data in the response
+            guard let responseData = data else {
+                print("Error: did not receive data")
+                let error = BackendError.objectSerialization(reason: "No data in response")
+                completionHandler(nil, error)
+                return
+            }
+            
+            // parse the result as JSON
+            // then create a Todo from the JSON
+            do {
+                
+                print(responseData)
+                let  contentL  = try JSONDecoder().decode(ChapterList.self,from: responseData)
+                completionHandler(contentL,nil)
+                
+            } catch {
+                // error trying to convert the data to JSON using JSONSerialization.jsonObject
+                completionHandler(nil, error)
+                return
+            }
+        })
+        task.resume()
+        
+        
+    }
     static func getCollectionOther(_ items_per_page : Int ,_ startPage :Int ,
                               owner : String  , userId : String ,
                               completionHandler: @escaping (CollectionOtherList?, Error?) -> Void){
@@ -279,7 +331,7 @@ public class WebCaller {
         
     }
     
-    static func getFeedsOfCollection(_ collectionId :String , completionHandler: @escaping (CollectionPost?, Error?) -> Void) {
+    static func getFeedsOfCollection(_ collectionId :String , completionHandler: @escaping (OtherContentList?, Error?) -> Void) {
         let endpoint = "https://weyoumaster.com/api/contributions_of_a_collection"
         guard let url = URL(string: endpoint)
             else {
@@ -315,7 +367,7 @@ public class WebCaller {
             // then create a Todo from the JSON
             do {
                 print(responseData)
-                let  collectionPost  = try JSONDecoder().decode(CollectionPost.self,from: responseData)
+                let  collectionPost  = try JSONDecoder().decode(OtherContentList.self,from: responseData)
             
                 completionHandler(collectionPost,nil)
                 
@@ -483,6 +535,57 @@ public class WebCaller {
         
     }
     
+    static func getMyResourcesCollection(_ ownerId: String ,_ collectionId: String, completionHandler: @escaping (ResourceList?, Error?) -> Void) {
+        let endpoint = "https://weyoumaster.com/api/resources_of_collection"
+        guard let url = URL(string: endpoint)
+            else {
+                print("Error: cannot create URL")
+                let error = BackendError.urlError(reason: "Could not construct URL")
+                completionHandler(nil, error)
+                return
+        }
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        let postString = "ownerId=" + ownerId + "&collectionId=" + collectionId 
+        
+        urlRequest.httpBody = postString.data(using: String.Encoding.utf8)
+        
+        
+        let session = URLSession.shared
+        let task = session.dataTask(with: urlRequest, completionHandler: {
+            (data, response, error) in
+            // handle response to request
+            // check for error
+            guard error == nil else {
+                completionHandler(nil, error!)
+                return
+            }
+            // make sure we got data in the response
+            guard let responseData = data else {
+                print("Error: did not receive data")
+                let error = BackendError.objectSerialization(reason: "No data in response")
+                completionHandler(nil, error)
+                return
+            }
+            
+            // parse the result as JSON
+            // then create a Todo from the JSON
+            do {
+                
+                
+                let  contentL  = try JSONDecoder().decode(ResourceList.self,from: responseData)
+                completionHandler(contentL,nil)
+                
+            } catch {
+                // error trying to convert the data to JSON using JSONSerialization.jsonObject
+                completionHandler(nil, error)
+                return
+            }
+        })
+        task.resume()
+        
+        
+    }
     static func getChatList(_ per_page: Int ,_ current_page: Int,_ owner:String ,_ reciverOwner : String , completionHandler: @escaping (ChatList?, Error?) -> Void) {
         let endpoint = "https://weyoumaster.com/api/chatList"
         guard let url = URL(string: endpoint)

@@ -105,7 +105,7 @@ UIViewController,UITableViewDelegate,UITableViewDataSource , IndicatorInfoProvid
     func getFeeds(){
        
        
-        WebCaller.getFeedsOfCollection(collectionId
+     /*   WebCaller.getFeedsOfCollection(collectionId
         ) { (contents, error) in
             if let error = error{
                 print(error)
@@ -120,7 +120,7 @@ UIViewController,UITableViewDelegate,UITableViewDataSource , IndicatorInfoProvid
             }
             self.updateUI()
         
-        }
+        }*/
     }
     
     func updateUI(){
