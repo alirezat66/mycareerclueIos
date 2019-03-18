@@ -14,18 +14,58 @@ class ResourceCell: UITableViewCell {
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblDesc: UILabel!
     @IBOutlet weak var lyEdit: UIView!
+    @IBOutlet weak var lyLink: UIView!
+    @IBOutlet weak var btnLink2: UIButton!
+    @IBOutlet weak var btnLink1: UIButton!
+    @IBOutlet weak var btnLink3: UIButton!
+    
+    var link1  : String = ""
+    var link2 : String = ""
+    var link3 : String = ""
+    @IBAction func btnLinkOne(_ sender: Any) {
+        guard let url = URL(string:link1) else { return }
+        UIApplication.shared.open(url)
+    }
+    @IBAction func btnLinkTwo(_ sender: Any) {
+        guard let url = URL(string:link2) else { return }
+        UIApplication.shared.open(url)
+    }
+    @IBAction func btnLinkThree(_ sender: Any) {
+        guard let url = URL(string:link3) else { return }
+        UIApplication.shared.open(url)
+    }
     @IBAction func btnDelete(_ sender: Any) {
     }
     @IBAction func btnEdit(_ sender: Any) {
     }
     public func updateView(source : Resource,isOwner : Bool){
+        link1 = source.lnk1
+        link2 = source.lnk2
+        link3 = source.lnk3
         if(isOwner){
             lyEdit.isHidden = false
+            lyLink.isHidden = true
         }else {
             lyEdit.isHidden = true
+            lyLink.isHidden  =  false
         }
         imageFromServerURL(urlString: source.resPic)
         lblTitle.text = source.resTitle
+        if(source.lnk1 == ""){
+            btnLink1.isHidden = true
+        }else {
+            btnLink1.isHidden = false
+        }
+        if(source.lnk2 == ""){
+            btnLink2.isHidden = true
+        }else {
+            btnLink2.isHidden = false
+        }
+        if(source.lnk3 == ""){
+            btnLink3.isHidden = true
+        }else {
+            btnLink3.isHidden = false
+        }
         var desc = ""
         if(source.phone != ""){
             desc = desc + " " + "شماره تماس:  " + source.phone
@@ -36,9 +76,13 @@ class ResourceCell: UITableViewCell {
         if (source.address != ""){
             desc = desc + "آدرس : " + source.address
         }
-        
+        if(desc == ""){
+            desc = "---"
+        }
         lblDesc.text = desc
-    
+        
+        self.img.layer.cornerRadius = self.img.frame.size.width/2
+        self.img.clipsToBounds = true
     
     
     }

@@ -169,6 +169,8 @@ class CollectionVC: UIViewController,UITableViewDelegate , UITableViewDataSource
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedRow = myCollections[indexPath.row]
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(selectedRow.Owner, forKey: "otherUser")
         let name = selectedRow.owner_name + " " + selectedRow.owner_lName
         openDetail(degree: selectedRow.ownerDegree, name: name, title: selectedRow.Collection_Title, image: selectedRow.collection_owner_image,collectionId: selectedRow.collectionId,numOfPost: selectedRow.collection_posts_number,startDate: selectedRow.Published_Date)
     }

@@ -21,4 +21,8 @@ struct Resource : Decodable{
     let lnk1 : String
     let lnk2 : String
     let lnk3 : String
+    
+    
+    
+    
 }

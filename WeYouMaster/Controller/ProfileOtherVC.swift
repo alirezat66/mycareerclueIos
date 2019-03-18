@@ -224,9 +224,7 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
     }
     func getProfileInfo()  {
         
-        if(getFName != ""){
-            showInfo();
-        }else{
+        
             WebCaller.userInfo(getOwner, profileId)
             {
                 (contents, error) in
@@ -242,12 +240,13 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
                 }
                 self.updateUI(content: content)
             }
-        }
+        
         
     }
     func updateUI(content : UserInfo){
         DispatchQueue.main.async{
             SVProgressHUD.dismiss()
+            self.bio = content.bio
             self.getFName = content.userName
             self.getLName = ""
             self.getCity = content.location
