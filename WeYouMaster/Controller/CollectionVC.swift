@@ -201,4 +201,29 @@ class CollectionVC: UIViewController,UITableViewDelegate , UITableViewDataSource
         self.present(detail, animated: true, completion: nil)
 
     }
+    
+    @IBAction func btnGoToDashbord(_ sender: Any) {
+        openMyProfile()
+    }
+    func openMyProfile()  {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let profile = storyBoard.instantiateViewController(withIdentifier: "tablayout") as! ProfileTabVC
+        
+        let userDefaults = UserDefaults.standard
+        let owner = userDefaults.value(forKey: "owner") as! String
+        let name = userDefaults.value(forKey: "fName") as! String
+        let lName = userDefaults.value(forKey: "lName") as! String
+        profile.getFName = name
+        profile.getLName = lName
+        profile.getCity = userDefaults.value(forKey: "City") as! String
+        profile.getRole = userDefaults.value(forKey: "job")as! String
+        
+        profile.getImage = userDefaults.value(forKey: "profilePhoto")as! String
+        profile.followedByMe = 1
+        profile.profileId = owner
+        profile.getOwner = owner
+        profile.bio = userDefaults.value(forKey: "bio")as! String
+        self.present(profile, animated: true, completion: nil)
+        
+    }
 }

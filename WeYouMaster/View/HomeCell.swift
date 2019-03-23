@@ -10,7 +10,11 @@ import UIKit
 import ExpandableLabel
 class HomeCell: UITableViewCell {
     var onButtonTapped : (() -> Void)? = nil
+      var onCollectionTap : (() -> Void)? = nil
     @IBAction func btnCollection(_ sender: Any) {
+        if let onCollectionTap = self.onCollectionTap {
+            onCollectionTap()
+        }
     }
     @IBOutlet weak var btnCollection: UIButton!
     

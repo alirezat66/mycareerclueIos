@@ -16,6 +16,7 @@ struct Content : Decodable {
     public var date : String?
     public var location : String?
     public var collectionName : String?
+    public var collectionId : String?
     public var title : String?
     public var contentText : String?
     public var contentType : Int? // 1== text 2 == img 3==video 4== sound
@@ -43,6 +44,7 @@ struct Content : Decodable {
         contentText = ""
         contentType = 1
         linkAddress = ""
+        collectionId = ""
         likeCount  = 0
         likeByMe = 0
         imgSource = ""

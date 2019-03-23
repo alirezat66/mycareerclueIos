@@ -81,7 +81,7 @@ class CollectionResource: UIViewController ,UITableViewDelegate , UITableViewDat
     }
     func getResources(){
         let userDefaults = UserDefaults.standard
-        let userId = userDefaults.value(forKey: "owner") as! String
+        let userId = userDefaults.value(forKey: "otherUser") as! String
         WebCaller.getMyResourcesCollection(userId , getCollection) { (resources , error) in
             if let error = error{
                 self.updateError()

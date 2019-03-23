@@ -8,6 +8,7 @@
 
 import UIKit
 import XLPagerTabStrip
+import SVProgressHUD
 
 class CollectionDetailVCTwo: UIViewController , IndicatorInfoProvider{
 
@@ -29,6 +30,20 @@ class CollectionDetailVCTwo: UIViewController , IndicatorInfoProvider{
     var numberOdPost = Int()
     override func viewDidLoad() {
         super.viewDidLoad()
+        SVProgressHUD.show(withStatus: "لطفا منتظر بمانید ... \n\n")
+
+        getCollectionInfo()
+    }
+    func show(content : ColInfo){
+        
+
+        getName = content.owner_name
+         getDegree = content.education
+         getTitle = content.title
+        getImage = content.profilePic
+        
+         getStartDate = content.startDate
+         numberOdPost = 3
         lblName.text = getName
         lblDegree.text = getDegree
         lblTitle.text = getTitle
@@ -37,7 +52,16 @@ class CollectionDetailVCTwo: UIViewController , IndicatorInfoProvider{
         imgPerson.layer.cornerRadius = imgPerson.frame.size.width/2
         imgPerson.clipsToBounds = true
         
-        let description = "این مجموعه در تاریخ " + getStartDate + " توسط " + getName + " تولید شده است.جهت مشاهده محتوا و منابع بکار گرفته شده در این مجموعه، سایر صفحات را ملاحظه کنید. ضمنا، محتویات این مجموعه متناسب با نوع مشارکت ها در تب انواع قابل مشاهده است."
+        var description = "این مجموعه در تاریخ " + getStartDate + " توسط " + getName + " تولید شده است."
+        
+          var desc = "جهت مشاهده محتوا و منابع بکار گرفته شده در این مجموعه، سایر صفحات را ملاحظه کنید. ضمنا، محتویات این مجموعه متناسب با نوع مشارکت ها در تب انواع قابل مشاهده است."
+        if(content.description == ""){
+            description = description + desc;
+        }else{
+            description = description + content.description
+        }
+        
+      
         lblDescription.text = description
         if(getImage != "")
         {
@@ -47,7 +71,7 @@ class CollectionDetailVCTwo: UIViewController , IndicatorInfoProvider{
                 if let data = try? Data(contentsOf: url!) {
                     if let image = UIImage(data: data) {
                         DispatchQueue.main.async {
-                          
+                            
                             self?.imgPerson.setBackgroundImage(image, for: UIControlState.normal)
                             self?.imgPerson.layoutIfNeeded()
                             self?.imgPerson.subviews.first?.contentMode = .scaleAspectFill
@@ -76,8 +100,11 @@ class CollectionDetailVCTwo: UIViewController , IndicatorInfoProvider{
             btnFirst.layer.borderWidth = 1
             btnFirst.layer.borderColor = UIColor.purple.cgColor
             btnSecond.setTitle("+رصد مجموعه", for: .normal)
+            btnSecond.backgroundColor = .orange
         }
-        
+        DispatchQueue.main.async{
+            SVProgressHUD.dismiss()
+        }
     }
     @IBOutlet weak var btnFirst: UIButton!
     
@@ -86,5 +113,31 @@ class CollectionDetailVCTwo: UIViewController , IndicatorInfoProvider{
 
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo.init(title: "درباره")
+    }
+    func getCollectionInfo()  {
+        
+        
+        WebCaller.collectionInfo(collectionId)
+        {
+            (contents, error) in
+            if let error = error{
+                self.updateError()
+                print(error)
+                return
+            }
+            guard let content = contents else{
+                self.updateError()
+                print("error getting collections")
+                return
+            }
+            self.show(content: content)
+        }
+        
+        
+    }
+    func updateError(){
+        DispatchQueue.main.async{
+            SVProgressHUD.dismiss()
+        }
     }
 }

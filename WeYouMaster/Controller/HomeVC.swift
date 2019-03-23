@@ -136,7 +136,9 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource, Expand
                 lblText.textAlignment = .right
             }
             lblText.text = content.contentText*/
-
+            cell.onCollectionTap = {
+                self.collectionTaped(content : content)
+            }
             cell.onButtonTapped = {
                 self.openProfile(content : content)
             }
@@ -186,6 +188,23 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource, Expand
         profile.bio = userDefaults.value(forKey: "bio")as! String
         self.present(profile, animated: true, completion: nil)
 
+    }
+    
+    
+    func collectionTaped(content:Content) {
+        
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let detail = storyBoard.instantiateViewController(withIdentifier: "collectionDetail") as! CollectionDetailTwoVC
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(content.owner_id, forKey: "otherUser")
+        detail.getDegree = content.education!
+        detail.getName = content.fName! + " " + content.lName! 
+        detail.getTitle = content.collectionName ?? ""
+        detail.getImage = content.ownerPic ?? ""
+        detail.collectionId = content.collectionId ?? ""
+        detail.numberOdPost = 1
+        detail.getStartDate = content.date ?? ""
+        self.present(detail, animated: true, completion: nil)
     }
     func openProfile(content:Content) {
         

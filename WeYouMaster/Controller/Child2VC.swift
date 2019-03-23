@@ -39,14 +39,6 @@ class Child2VC: UIViewController,UITableViewDelegate , UITableViewDataSource, In
             let collection = myCollections[indexPath.row]
             cell.updateView(chapter: collection, isOwner: self.isOwner)
             
-            
-          /*  cell.onButtonDelete = {
-                self.deleteItem(collectionId: collection.collectionId,index: indexPath.row)
-            }
-            cell.onButtonEdit =  {
-                self.editCollection(collection.Collection_Description,collection.Collection_Title,collection.collection_price,collection.collectionId)
-                
-            }*/
             return cell
         }else{
             return  ChapterCell()

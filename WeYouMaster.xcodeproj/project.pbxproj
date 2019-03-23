@@ -57,6 +57,7 @@
 		BB570C612152443900D72D8B /* ProfileTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB570C602152443900D72D8B /* ProfileTabVC.swift */; };
 		BB7BE65C21340AC8008EC1F3 /* MenuPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7BE65B21340AC8008EC1F3 /* MenuPage.swift */; };
 		BB7F83F421B47DCF00FC81CB /* TestCVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7F83F321B47DCF00FC81CB /* TestCVViewController.swift */; };
+		BB83CD68224504A800792266 /* ColInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB83CD67224504A800792266 /* ColInfo.swift */; };
 		BB8852D8219BAD230017AFF4 /* RoundedBorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8852D7219BAD230017AFF4 /* RoundedBorderButton.swift */; };
 		BB8B73D22235C2E1007D75AD /* CollectionChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8B73D12235C2E1007D75AD /* CollectionChapter.swift */; };
 		BB8B73D42235C80C007D75AD /* ChapterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8B73D32235C80C007D75AD /* ChapterCell.swift */; };
@@ -218,6 +219,7 @@
 		BB7F83F321B47DCF00FC81CB /* TestCVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCVViewController.swift; sourceTree = "<group>"; };
 		BB7F83F521B485BA00FC81CB /* RSSelectionMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RSSelectionMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB7F83F721B4879600FC81CB /* RSSelectionMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RSSelectionMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB83CD67224504A800792266 /* ColInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColInfo.swift; sourceTree = "<group>"; };
 		BB8852D7219BAD230017AFF4 /* RoundedBorderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBorderButton.swift; sourceTree = "<group>"; };
 		BB8891A9215B95DF00D09051 /* WeYouMaster.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WeYouMaster.entitlements; sourceTree = "<group>"; };
 		BB8B73D12235C2E1007D75AD /* CollectionChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionChapter.swift; sourceTree = "<group>"; };
@@ -445,6 +447,7 @@
 				BB8B73D52236BAB4007D75AD /* ChapterList.swift */,
 				BB8B73D72236C29C007D75AD /* OtherCollectionFeed.swift */,
 				BBB00A94223EF8C2009BC456 /* InfoObject.swift */,
+				BB83CD67224504A800792266 /* ColInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -796,6 +799,7 @@
 				BBB00A95223EF8C2009BC456 /* InfoObject.swift in Sources */,
 				BB968CDF213EA628009DE929 /* CollectionOtherVC.swift in Sources */,
 				BB7F83F421B47DCF00FC81CB /* TestCVViewController.swift in Sources */,
+				BB83CD68224504A800792266 /* ColInfo.swift in Sources */,
 				BBC112062235695F00536B34 /* CollectionResource.swift in Sources */,
 				BBAE0E2721048C7D00CF4FF2 /* HomeCell.swift in Sources */,
 				BBB57804216D804800E4ED3A /* SendPmVC.swift in Sources */,
