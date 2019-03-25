@@ -80,6 +80,16 @@ class CollectionVC: UIViewController,UITableViewDelegate , UITableViewDataSource
         
     }
     @IBOutlet weak var collectionTV :UITableView!
+    
+    
+    @objc func notifTap() {
+        // present modally
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let detail = storyBoard.instantiateViewController(withIdentifier: "likeOthers") as! CommentLikeOtherVC
+        self.present(detail, animated: true, completion: nil)
+    }
+    
+    @IBOutlet weak var stackNotif: UIStackView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -95,6 +105,11 @@ class CollectionVC: UIViewController,UITableViewDelegate , UITableViewDataSource
         makeButtonCirc(obj: imgNot7)
         makeButtonCirc(obj: imgNot8)
         makeButtonCirc(obj: imgNot9)
+        let singleTap = UITapGestureRecognizer(target: self,action:#selector(CollectionVC.notifTap))
+
+        stackNotif.isUserInteractionEnabled = true
+        stackNotif.addGestureRecognizer(singleTap)
+
         let userDefaults = UserDefaults.standard
 
         let Profile_photo_link = userDefaults.value(forKey: "profilePhoto") as! String

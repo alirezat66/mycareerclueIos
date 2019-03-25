@@ -106,8 +106,10 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , 
             cell.onButtonDeleteTapped = {
                  self.deleteItem(contentId: content.postId,index: indexPath.row)
             }
+            
             cell.onButtonEditTapped = {
-               
+                self.editItem(contentId : content.postId,index : indexPath.row)
+
             }
             return cell
         }else{
@@ -116,6 +118,13 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , 
         }else{
             return HomeCell()
         }
+    }
+    func editItem(contentId : String , index : Int){
+        
+        
+        
+        
+        
     }
     func deleteItem(contentId : String , index : Int){
         
@@ -235,6 +244,7 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , 
                 for content in (contentList.contributions) {
                     self.myContent.append(content)
                 }
+                 self.states = [Bool](repeating: true, count: contentList.contributions.count)
                 self.updateUI()
                 
             }

@@ -13,6 +13,7 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
 
     
     
+    @IBOutlet weak var allview: UIScrollView!
     @IBOutlet weak var lblBio: UILabel!
     @IBOutlet weak var imgProfile: UIImageView!
     @IBOutlet weak var lblName: UILabel!
@@ -102,6 +103,7 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
             userDefaults.set("0", forKey: "selectedCollection")
             self.present(add, animated: true, completion: nil)
         }else{
+            allview.isHidden = true
             SVProgressHUD.show(withStatus: "لطفا منتظر بمانید ... \n\n")
 
             if(followedByMe==1){
@@ -154,44 +156,48 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
     override func viewDidLoad() {
         super.viewDidLoad()
         getProfileInfo();
+         self.allview.contentSize = CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height+100)
         }
     func showInfo() {
-        lblName.text = getFName + " " + getLName
-        lblPlace.text = getCity
-        lblrole.text = getRole
-        if(getOwner==profileId){
-            isOwner = true
+        
+        DispatchQueue.main.async{
+            
+            self.lblName.text = self.getFName + " " + self.getLName
+            self.lblPlace.text = self.getCity
+            self.lblrole.text = self.getRole
+            if(self.getOwner==self.profileId){
+                self.isOwner = true
         }else{
-            isOwner = false
+                self.isOwner = false
         }
-        if(isOwner){
-            btnFirst.setTitle("مجموعه جدید", for: .normal)
-            btnSecond.setTitle("مشارکت جدید", for: .normal)
+            if(self.isOwner){
+                self.btnFirst.setTitle("مجموعه جدید", for: .normal)
+                self.btnSecond.setTitle("مشارکت جدید", for: .normal)
             
             
         }else{
-            btnSetting.setTitleColor(.white, for: .normal)
-             btnEdit.setTitleColor(.white, for: .normal)
+                self.btnSetting.setTitleColor(.white, for: .normal)
+                self.btnEdit.setTitleColor(.white, for: .normal)
             //btnEdit.isHidden=true
-            loadViewIfNeeded()
-            btnFirst.setTitle("درخواست مشاوره", for: .normal)
-            btnFirst.backgroundColor = .white
-            btnFirst.layer.cornerRadius = 5
-            btnFirst.layer.borderWidth = 1
-            btnFirst.layer.borderColor = UIColor.purple.cgColor
-            if(followedByMe==1){
-                btnSecond.setTitle("در حال رصد", for: .normal)
+            self.loadViewIfNeeded()
+                self.btnFirst.setTitle("درخواست مشاوره", for: .normal)
+                self.btnFirst.backgroundColor = .white
+                self.btnFirst.layer.cornerRadius = 5
+                self.btnFirst.layer.borderWidth = 1
+                self.btnFirst.layer.borderColor = UIColor.purple.cgColor
+                if(self.followedByMe==1){
+                    self.btnSecond.setTitle("در حال رصد", for: .normal)
             }else{
-                btnSecond.setTitle("رصد کن", for: .normal)
+                    self.btnSecond.setTitle("رصد کن", for: .normal)
             }
             
-            btnSecond.backgroundColor = UIColor.init(red: 66/256, green: 129/256, blue: 191/256, alpha: 1.0)
-            btnSecond.isHidden = true
+                self.btnSecond.backgroundColor = UIColor.init(red: 66/256, green: 129/256, blue: 191/256, alpha: 1.0)
+                self.btnSecond.isHidden = true
         }
         
-        indicator.isHidden = true
-        if(getImage != ""){
-            let url = URL(string: getImage)
+            self.indicator.isHidden = true
+            if(self.getImage != ""){
+                let url = URL(string: self.getImage)
             
             
             DispatchQueue.global().async { [weak self] in
@@ -211,20 +217,23 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
         
         
         
-        if(bio==""){
-            lblBio.text = getFName + " " + getLName + " از ویومستر جهت به اشتراک گذاشتن تجارب ارزشمند خود استفاده خواهد کرد. در صورتیکه تمایل دارید جدیدترین و بروزترین ها را دریافت کنید ، لطفا بر روی گزینه رصد کن کلیک نمایید."
+            if(self.bio==""){
+                self.lblBio.text = self.getFName + " " + self.getLName + " از ویومستر جهت به اشتراک گذاشتن تجارب ارزشمند خود استفاده خواهد کرد. در صورتیکه تمایل دارید جدیدترین و بروزترین ها را دریافت کنید ، لطفا بر روی گزینه رصد کن کلیک نمایید."
         }else{
-            lblBio.text =  bio
+                self.lblBio.text =  self.bio
         }
         
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped(tapGestureRecognizer:)))
         tapGestureRecognizer.numberOfTapsRequired = 1
-        imgProfile.isUserInteractionEnabled = true
-        imgProfile.addGestureRecognizer(tapGestureRecognizer)
+            self.imgProfile.isUserInteractionEnabled = true
+            self.imgProfile.addGestureRecognizer(tapGestureRecognizer)
+            self.allview.isHidden = false
+        }
+        holeView.isHidden = false
     }
     func getProfileInfo()  {
         
-        
+            holeView.isHidden = true
             WebCaller.userInfo(getOwner, profileId)
             {
                 (contents, error) in
@@ -243,9 +252,10 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
         
         
     }
+    @IBOutlet weak var holeView: UIView!
     func updateUI(content : UserInfo){
         DispatchQueue.main.async{
-            SVProgressHUD.dismiss()
+            
             self.bio = content.bio
             self.getFName = content.userName
             self.getLName = ""
@@ -253,6 +263,8 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
             self.getRole = content.education
             self.getImage = content.photo
             self.showInfo()
+            
+            SVProgressHUD.dismiss()
         }
     }
     func updateError(){

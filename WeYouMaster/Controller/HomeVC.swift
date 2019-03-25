@@ -189,8 +189,14 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource, Expand
         self.present(profile, animated: true, completion: nil)
 
     }
+    @objc func notifTap() {
+        // present modally
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let detail = storyBoard.instantiateViewController(withIdentifier: "likeOthers") as! CommentLikeOtherVC
+        self.present(detail, animated: true, completion: nil)
+    }
     
-    
+    @IBOutlet weak var stackNotif: UIStackView!
     func collectionTaped(content:Content) {
         
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
@@ -232,6 +238,8 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource, Expand
     @IBOutlet weak var homeTable: UITableView!
     override func viewDidLoad() {
         myContent = []
+        stackNotif.isUserInteractionEnabled = true
+        stackNotif.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.notifTap)))
 
         homeTable.dataSource = self
         homeTable.delegate = self

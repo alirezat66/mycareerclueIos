@@ -41,7 +41,14 @@ class ConversationVC: UIViewController,UITableViewDelegate,UITableViewDataSource
             return ConversationCell()
         }
     }
+    @objc func notifTap() {
+        // present modally
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let detail = storyBoard.instantiateViewController(withIdentifier: "likeOthers") as! CommentLikeOtherVC
+        self.present(detail, animated: true, completion: nil)
+    }
     
+    @IBOutlet weak var stackNotif: UIStackView!
 
     @IBOutlet weak var lyNew: UIButton!
     @IBOutlet weak var tvConversation: UITableView!
@@ -64,6 +71,10 @@ class ConversationVC: UIViewController,UITableViewDelegate,UITableViewDataSource
         makeButtonCirc(obj: imgNot7)
         makeButtonCirc(obj: imgNot8)
         makeButtonCirc(obj: imgNot9)
+        let singleTap = UITapGestureRecognizer(target: self,action:#selector(ConversationVC.notifTap))
+        
+        stackNotif.isUserInteractionEnabled = true
+        stackNotif.addGestureRecognizer(singleTap)
         let userDefaults = UserDefaults.standard
         
         let Profile_photo_link = userDefaults.value(forKey: "profilePhoto") as! String

@@ -30,8 +30,16 @@ class SendPmVC: UIViewController,UITextViewDelegate {
     }
     @IBOutlet weak var btnSendOut: UIButton!
     @IBAction func btnSend(_ sender: Any) {
-        SVProgressHUD.show(withStatus: "لطفا منتظر بمانید ... \n\n")
-        sendMessage()
+        let str = edt_text.text
+        let trimed = str?.trimmingCharacters(in: .whitespacesAndNewlines)
+        if(trimed == ""){
+                let emptyAlart = UIAlertController(title: "اعلان", message: "امکان ارسال پیام خالی وجود ندارد.", preferredStyle: UIAlertControllerStyle.alert)
+                emptyAlart.addAction(UIAlertAction(title: "متوجه شدم", style: .default, handler: nil))
+                present(emptyAlart,animated: true,completion: nil)
+        }else {
+            SVProgressHUD.show(withStatus: "لطفا منتظر بمانید ... \n\n")
+            sendMessage()
+        }
     }
     func textViewDidBeginEditing(_ textView: UITextView) {
         

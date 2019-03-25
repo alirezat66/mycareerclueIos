@@ -225,11 +225,11 @@ class HomeOtherCell: UITableViewCell {
             lblCollectionTitle.isHidden = false
         }
        
-        let otherImage = userDefaults.value(forKey: "otherImage") as! String
-        if(otherImage != "")
+//        let otherImage = userDefaults.value(forKey: "otherImage") as! String
+        if(true)
         {
             self.loader.startAnimating()
-            let url = URL(string : otherImage)
+            let url = URL(string : content.ownerPic)
             self.imgPerson.setBackgroundImage(UIImage(named: "avatar_icon.png") , for: .normal)
             
             DispatchQueue.global().async { [weak self] in

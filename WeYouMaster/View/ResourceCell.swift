@@ -19,6 +19,7 @@ class ResourceCell: UITableViewCell {
     @IBOutlet weak var btnLink1: UIButton!
     @IBOutlet weak var btnLink3: UIButton!
     
+    @IBOutlet weak var lblType: UILabel!
     var link1  : String = ""
     var link2 : String = ""
     var link3 : String = ""
@@ -51,6 +52,7 @@ class ResourceCell: UITableViewCell {
         }
         imageFromServerURL(urlString: source.resPic)
         lblTitle.text = source.resTitle
+        lblType.text = "نوع منبع: " + source.resType
         if(source.lnk1 == ""){
             btnLink1.isHidden = true
         }else {
@@ -66,24 +68,13 @@ class ResourceCell: UITableViewCell {
         }else {
             btnLink3.isHidden = false
         }
-        var desc = ""
-        if(source.phone != ""){
-            desc = desc + " " + "شماره تماس:  " + source.phone
-        }
-        if(source.email != ""){
-            desc = desc + " ایمیل: " + source.email
-        }
-        if (source.address != ""){
-            desc = desc + "آدرس : " + source.address
-        }
-        if(desc == ""){
-            desc = "---"
-        }
-        lblDesc.text = desc
+        
+        lblDesc.text = source.resBio
         
         self.img.layer.cornerRadius = self.img.frame.size.width/2
         self.img.clipsToBounds = true
     
+       
     
     }
     func imageFromServerURL(urlString: String) {

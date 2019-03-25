@@ -10,9 +10,10 @@ import UIKit
 import SVProgressHUD
 import XLPagerTabStrip
 
-class CommentLikeOtherVC: UIViewController, UITableViewDelegate , UITableViewDataSource, IndicatorInfoProvider {
-    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo.init(title: "منابع")
+class CommentLikeOtherVC: UIViewController, UITableViewDelegate , UITableViewDataSource {
+    
+    @IBAction func back(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     var refreshControll : UIRefreshControl?
     
