@@ -1653,6 +1653,84 @@ public class WebCaller {
     }
    
     
+   
+    static func editFeed(contributionId : String,owner: String ,collectionId : String, title : String , description : String ,  isPublic : Int, isRtl : Int ,contentType : String,link : String , completionHandler: @escaping (NormalResponse?, Error?) -> Void){
+        
+        // set up URLRequest with URL
+        let endpoint = "https://weyoumaster.com/api/edit_contribution/"
+        guard let url = URL(string: endpoint)
+            else {
+                print("Error: cannot create URL")
+                let error = BackendError.urlError(reason: "Could not construct URL")
+                completionHandler(nil, error)
+                return
+        }
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        var postString = "";
+        postString.append("contributionId=")
+        postString.append(contributionId)
+        postString.append("&owner=")
+        postString.append(owner)
+        postString.append("&collectionId=")
+        postString.append(collectionId)
+        postString.append("&contentType=")
+        postString.append(contentType)
+        postString.append("&isPublic=")
+        postString.append(String(isPublic))
+        let b = "&title="
+        postString.append(b)
+        postString.append(title)
+        postString.append("&isRtl=")
+        postString.append(String(isRtl))
+        postString.append("&isPublic=")
+        postString.append(String(1))
+        postString.append("&description=")
+        postString.append(description)
+        postString.append("&link=")
+        postString.append(link)
+        
+        urlRequest.httpBody = postString.data(using: String.Encoding.utf8)
+        
+        // Make request
+        let session = URLSession.shared
+        let task = session.dataTask(with: urlRequest, completionHandler: {
+            (data, response, error) in
+            // handle response to request
+            // check for error
+            guard error == nil else {
+                completionHandler(nil, error!)
+                return
+            }
+            // make sure we got data in the response
+            guard let responseData = data else {
+                print("Error: did not receive data")
+                let error = BackendError.objectSerialization(reason: "No data in response")
+                completionHandler(nil, error)
+                return
+            }
+            
+            // parse the result as JSON
+            // then create a Todo from the JSON
+            do {
+                
+                print(responseData)
+                let string1 = String(data: responseData, encoding: String.Encoding.utf8) ?? "Data could not be printed"
+                print(string1)
+                let  resp  = try JSONDecoder().decode(NormalResponse.self,from: responseData)
+                completionHandler(resp,nil)
+                
+            } catch {
+                // error trying to convert the data to JSON using JSONSerialization.jsonObject
+                completionHandler(nil, error)
+                return
+            }
+        })
+        task.resume()
+        
+    }
+    
     static func saveFeed(owner: String ,collectionId : String, title : String , description : String ,  isPublic : Int, isRtl : Int ,contentType : String,link : String , completionHandler: @escaping (AddContributionRes?, Error?) -> Void){
         
         // set up URLRequest with URL

@@ -108,7 +108,7 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , 
             }
             
             cell.onButtonEditTapped = {
-                self.editItem(contentId : content.postId,index : indexPath.row)
+                self.editItem(content: content,contentId : content.postId,index : indexPath.row)
 
             }
             return cell
@@ -119,9 +119,20 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , 
             return HomeCell()
         }
     }
-    func editItem(contentId : String , index : Int){
+    func editItem(content : OtherContent ,contentId : String , index : Int){
         
+        let stroyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let add = stroyBoard.instantiateViewController(withIdentifier: "addcontribution" ) as? AddContribution
         
+        add?.isEdit = true
+        add?.editContentId = contentId
+        add?.editTitle = content.title
+        add?.editCollection = content.collectionId
+        add?.editCollectionTitle = content.collectionName
+        add?.editDescription = content.contentText
+        add?.editRtl = content.allignment
+        add?.editLocation = content.location
+        self.present(add!, animated: true, completion: nil)
         
         
         

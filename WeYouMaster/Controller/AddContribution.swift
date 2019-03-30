@@ -70,6 +70,18 @@ UINavigationControllerDelegate,UITextViewDelegate {
     var myLabeles : [LabelPrototype] = []
     var addedLabeles : [LabelPrototype] = []
     
+    
+    
+    
+    var isEdit = Bool()
+    var editTitle = String ()
+    var editCollection = String()
+    var editCollectionTitle = String()
+    var editDescription = String()
+    var editIsPublic = String()
+    var editRtl = String()
+    var editContentId = String()
+    var editLocation = String()
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
         super.touchesBegan(touches, with: event)
@@ -152,8 +164,29 @@ UINavigationControllerDelegate,UITextViewDelegate {
                 }
             }
         }
+        
+        
+        
+        if(isEdit){
+            dropdown.setTitle(editCollectionTitle, for: .normal)
+            collectionId = editCollection
+            edtTitle.text = editTitle
+            edtDesc.text = editDescription
+            contributionId = editContentId
+            if(editRtl == "rtl"){
+                lblRtl.text = "فارسی"
+                rtl = 1
+                rtlSwitch.isOn = true
+            }else{
+                lblRtl.text = "انگلیسی"
+                rtl = 0
+                rtlSwitch.isOn = false
+            }
+        }
         // Do any additional setup after loading the view.
     }
+    
+    
     @IBAction func imgBackAct(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -354,6 +387,42 @@ UINavigationControllerDelegate,UITextViewDelegate {
     }
     func addContribute() {
         
+        if(isEdit){
+            
+            if(self.edtTitle.text != ""){
+                
+                loadingView.isHidden = false
+                let userDefaults = UserDefaults.standard
+                let owner = userDefaults.value(forKey: "owner") as! String
+                let contentType = userDefaults.value(forKey: "selectedType")
+                WebCaller.editFeed(contributionId : editContentId ,owner: owner,collectionId: collectionId, title: self.edtTitle.text!, description: self.edtDesc.text!, isPublic: publicType, isRtl: rtl,contentType:contentType as! String, link: "")
+                { (answer, error) in
+                    if let error = error{
+                        
+                        print(error)
+                        self.showError()
+                        
+                        return
+                    }
+                    guard let answer = answer else{
+                        
+                        print("error getting labeles")
+                        return
+                    }
+                    
+                    if(answer.error==0){
+                        
+                        
+                        self.stepTwo()
+                    }else{
+                        self.showError()
+                    }
+                    
+                    
+                }
+            }
+        }else{
+        
         if(self.edtTitle.text != ""){
             
             loadingView.isHidden = false
@@ -385,6 +454,7 @@ UINavigationControllerDelegate,UITextViewDelegate {
                 
                 
             }
+        }
         }
     }
     

@@ -41,6 +41,12 @@ class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataS
                 let planStatus = userDefaults.value(forKey: "planStatus") as! Int
                 
                 if(planStatus >= 2){
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "AlertPriceVC") as! AlartPriceVC
+                    vc.getTitle = collection.Collection_Title
+                    vc.collectionId = collection.collectionId
+                    vc.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+                    self.addChildViewController(vc)
+                    self.view.addSubview(vc.view)
                     
                 }else {
                     let alert = UIAlertController(title: "هشدار", message: "شما مجاز به تغییر قیمت نیستید.", preferredStyle: UIAlertControllerStyle.alert)

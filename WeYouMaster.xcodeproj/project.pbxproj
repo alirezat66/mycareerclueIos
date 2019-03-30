@@ -119,6 +119,7 @@
 		BBCFA95F219B814C005261BF /* AddChapterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCFA95E219B814C005261BF /* AddChapterVC.swift */; };
 		BBCFA961219B8165005261BF /* AddContribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCFA960219B8165005261BF /* AddContribution.swift */; };
 		BBCFA963219B817B005261BF /* SelectContriButeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCFA962219B817B005261BF /* SelectContriButeType.swift */; };
+		BBD96866224D7E7200DBF6E3 /* AlartPriceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD96865224D7E7200DBF6E3 /* AlartPriceVC.swift */; };
 		BBECFA922154228700009C4F /* Child1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBECFA912154228700009C4F /* Child1VC.swift */; };
 		BBECFA942154229900009C4F /* Child2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBECFA932154229900009C4F /* Child2VC.swift */; };
 		BBEDB0CB21355DD9004BE37E /* AboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEDB0CA21355DD9004BE37E /* AboutUsVC.swift */; };
@@ -284,6 +285,7 @@
 		BBCFA95E219B814C005261BF /* AddChapterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChapterVC.swift; sourceTree = "<group>"; };
 		BBCFA960219B8165005261BF /* AddContribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContribution.swift; sourceTree = "<group>"; };
 		BBCFA962219B817B005261BF /* SelectContriButeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectContriButeType.swift; sourceTree = "<group>"; };
+		BBD96865224D7E7200DBF6E3 /* AlartPriceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlartPriceVC.swift; sourceTree = "<group>"; };
 		BBECFA912154228700009C4F /* Child1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child1VC.swift; sourceTree = "<group>"; };
 		BBECFA932154229900009C4F /* Child2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child2VC.swift; sourceTree = "<group>"; };
 		BBEDB0CA21355DD9004BE37E /* AboutUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsVC.swift; sourceTree = "<group>"; };
@@ -396,6 +398,7 @@
 				BB8E8B3F21F2E5CE00988C9F /* SearchVC.swift */,
 				BBC112032234EBD000536B34 /* ResourceVC.swift */,
 				BBC112052235695F00536B34 /* CollectionResource.swift */,
+				BBD96865224D7E7200DBF6E3 /* AlartPriceVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -825,6 +828,7 @@
 				BBAE0E3921075F3F00CF4FF2 /* PaddedLabel.swift in Sources */,
 				BB3A83A721312BD9001FFE2F /* ContentList.swift in Sources */,
 				BB8B73D82236C29C007D75AD /* OtherCollectionFeed.swift in Sources */,
+				BBD96866224D7E7200DBF6E3 /* AlartPriceVC.swift in Sources */,
 				BBF13179213D69C800B49D11 /* Posts.swift in Sources */,
 				BBECFA922154228700009C4F /* Child1VC.swift in Sources */,
 				BBF1317D213E17C600B49D11 /* ProfileOtherVC.swift in Sources */,
