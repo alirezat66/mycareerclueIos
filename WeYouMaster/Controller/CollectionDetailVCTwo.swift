@@ -29,11 +29,91 @@ class CollectionDetailVCTwo: UIViewController , IndicatorInfoProvider{
     var collectionId = String()
     var getStartDate = String()
     var numberOdPost = Int()
+    var folowByMe = Int()
     override func viewDidLoad() {
         super.viewDidLoad()
         SVProgressHUD.show(withStatus: "لطفا منتظر بمانید ... \n\n")
         holeView.isHidden = true
         getCollectionInfo()
+    }
+    @IBAction func btnSecondAction(_ sender: Any) {
+        let userDefaults = UserDefaults.standard
+        let userId = userDefaults.value(forKey: "otherUser") as! String
+        let owner = userDefaults.value(forKey: "owner") as! String
+        
+        if(userId == owner){
+            // make feed
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let add = storyBoard.instantiateViewController(withIdentifier: "selectContributeType") as! SelectContriButeType
+            let userDefaults = UserDefaults.standard
+            userDefaults.set("0", forKey: "selectedCollection")
+            self.present(add, animated: true, completion: nil)
+        }else{
+            callDisLike(follow: folowByMe)
+        }
+    }
+    
+    
+    func callDisLike(follow : Int) {
+        
+        let userDefaults = UserDefaults.standard
+       
+        let owner = userDefaults.value(forKey: "owner") as! String
+        WebCaller.followDisFollowCollection(follow, owner,collectionId) { (state, error) in
+            if let error = error{
+                print(error)
+                return
+            }
+            guard let state = state else{
+                print("error getting collections")
+                return
+            }
+            if(state == 1 ){
+                print("like done")
+                if(follow == 1){
+                    self.folowByMe = 0
+                    DispatchQueue.main.async{
+                        SVProgressHUD.dismiss()
+                        
+                       self.btnSecond.setTitle("+رصد مجموعه", for: .normal)
+                    }
+                }else{
+                    DispatchQueue.main.async{
+                        SVProgressHUD.dismiss()
+                        
+                        self.folowByMe = 0
+                        self.btnSecond.setTitle("لغو رصد", for: .normal)
+                    }
+                }
+            }
+        }
+        
+    }
+    @IBAction func btnFirstAction(_ sender: Any) {
+        let userDefaults = UserDefaults.standard
+        let userId = userDefaults.value(forKey: "otherUser") as! String
+        let owner = userDefaults.value(forKey: "owner") as! String
+        
+        if(userId == owner){
+            
+            let planStatus = userDefaults.value(forKey: "planStatus") as! Int
+            
+            if(planStatus >= 2){
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "AlertPriceVC") as! AlartPriceVC
+                vc.getTitle = getTitle
+                vc.collectionId = collectionId
+                vc.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+                self.addChildViewController(vc)
+                self.view.addSubview(vc.view)
+                
+            }else {
+                let alert = UIAlertController(title: "هشدار", message: "شما مجاز به تغییر قیمت نیستید.", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "متوجه شدم", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }else{
+            
+        }
     }
     func show(content : ColInfo){
         
@@ -44,7 +124,7 @@ class CollectionDetailVCTwo: UIViewController , IndicatorInfoProvider{
         getImage = content.profilePic
         
          getStartDate = content.startDate
-        
+        folowByMe  = content.followedByMe
         DispatchQueue.main.async{
             
             self.numberOdPost = 3
@@ -103,7 +183,12 @@ class CollectionDetailVCTwo: UIViewController , IndicatorInfoProvider{
                 self.btnFirst.layer.cornerRadius = 5
                 self.btnFirst.layer.borderWidth = 1
                 self.btnFirst.layer.borderColor = UIColor.purple.cgColor
+                
+                if(self.folowByMe == 0){
                 self.btnSecond.setTitle("+رصد مجموعه", for: .normal)
+                }else {
+                     self.btnSecond.setTitle("لغو رصد", for: .normal)
+                }
                 self.btnSecond.backgroundColor =    UIColor.init(red: 62/256, green: 143/256, blue: 223/256, alpha: 1)
 
             }

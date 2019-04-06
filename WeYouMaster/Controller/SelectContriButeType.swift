@@ -16,6 +16,9 @@ class SelectContriButeType: UIViewController , UITableViewDelegate,UITableViewDa
        return tableViewData.count
     }
     
+    @IBAction func btnBack(_ sender: Any) {
+        dismiss(animated: false, completion: nil)
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell" ) as? FeedTypeCell else {return UITableViewCell()}
         cell.updateView(message: tableViewData[indexPath.item])

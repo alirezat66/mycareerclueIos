@@ -54,6 +54,10 @@ class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataS
                     self.present(alert, animated: true, completion: nil)
                 }
             }
+            cell.onTitleTappedOnShow = {
+                 let name = collection.owner_name + " " + collection.owner_lName
+                self.openDetail(degree: collection.ownerDegree, name: name, title: collection.Collection_Title, image: collection.collection_owner_image,collectionId: collection.collectionId,numOfPost: collection.collection_posts_number,startDate: collection.Published_Date)
+            }
             cell.onButtonTappedOnShow = {
                 
                 if(!self.isOwner){
@@ -63,6 +67,7 @@ class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataS
                     self.openCollectionType(collectionId: collection.collectionId,collectionName: collection.Collection_Title)
                 }
             }
+            
             cell.onButtonDelete = {
                 self.deleteItem(collectionId: collection.collectionId,index: indexPath.row)
             }
@@ -80,6 +85,8 @@ class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataS
         
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let profile = storyBoard.instantiateViewController(withIdentifier: "profileOther") as! ProfileOtherVC
+        profile.getFName = collection.owner_name
+        profile.getLName = collection.owner_lName
        /* profile.getName = collection.owner_name + collection.owner_lName
         profile.getCity = collection.collection_place
         profile.getRole = collection.ownerDegree

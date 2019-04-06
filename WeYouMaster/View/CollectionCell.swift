@@ -32,11 +32,18 @@ class CollectionCell: UITableViewCell {
             onButtonTappedOnShow()
         }
     }
-    
+    @objc
+    func tapFunction(sender:UITapGestureRecognizer) {
+        if let onButtonTappedOnShow = self.onButtonTappedOnShow {
+            onButtonTappedOnShow()
+        }
+    }
     func updateView(collection : Collection)  {
        // collectionOwnerImage.image = UIImage(named: collection.img)
         
-        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapFunction))
+        collectionTitle.isUserInteractionEnabled = true
+        collectionTitle.addGestureRecognizer(tap)
         
         collectionOwnerImage.layer.cornerRadius = collectionOwnerImage.frame.size.width/2
         collectionOwnerImage.clipsToBounds = true

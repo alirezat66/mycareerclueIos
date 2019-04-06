@@ -1261,6 +1261,52 @@ public class WebCaller {
         
         
     }
+    
+    static func followDisFollowCollection(_ follow_status: Int ,_ follower_id: String,_ collectionId : String , completionHandler: @escaping (Int?, Error?) -> Void) {
+        let endpoint = "https://weyoumaster.com/api/follow_unfollow_collection"
+        guard let url = URL(string: endpoint)
+            else {
+                print("Error: cannot create URL")
+                let error = BackendError.urlError(reason: "Could not construct URL")
+                completionHandler(nil, error)
+                return
+        }
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        let postString = "follow_status=" + String(follow_status) + "&follower_id=" + follower_id + "&collectionId=" + collectionId
+        urlRequest.httpBody = postString.data(using: String.Encoding.utf8)
+        
+        
+        let session = URLSession.shared
+        let task = session.dataTask(with: urlRequest, completionHandler: {
+            (data, response, error) in
+            // handle response to request
+            // check for error
+            guard error == nil else {
+                completionHandler(nil, error!)
+                return
+            }
+            // make sure we got data in the response
+            guard let responseData = data else {
+                print("Error: did not receive data")
+                let error = BackendError.objectSerialization(reason: "No data in response")
+                completionHandler(nil, error)
+                return
+            }
+            
+            // parse the result as JSON
+            // then create a Todo from the JSON
+            
+            print(responseData)
+            
+            completionHandler(1,nil)
+            
+            
+        })
+        task.resume()
+        
+        
+    }
     static func signIn(_ first_name:String,_ last_name : String ,
                        _ mobile : String ,_ email_address : String,_ job_position : String ,_ password : String ,_ country : String  , completionHandler : @escaping (RegisterResponse?,Error?)->Void ){
         let endPoint = "https://weyoumaster.com/api/signup"

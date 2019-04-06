@@ -33,7 +33,7 @@ class SearchCell: UITableViewCell {
     }
     
     func imageFromServerURL(urlString: String) {
-       self.img.image = UIImage.init(named:"data_collection_img.png" )
+       self.img.image = UIImage.init(named:"avatar_icon.png" )
         URLSession.shared.dataTask(with: NSURL(string: urlString)! as URL, completionHandler: { (data, response, error) -> Void in
             
             if error != nil {

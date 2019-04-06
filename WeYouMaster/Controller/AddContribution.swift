@@ -373,7 +373,14 @@ UINavigationControllerDelegate,UITextViewDelegate {
     }
     
     
-    
+     func deleteItem( index : Int){
+        self.addedLabeles.remove(at: index)
+        DispatchQueue.main.async{
+            self.labelCollectionView.reloadData()
+            //self.alertController.dismiss(animated: true, completion: nil);
+            
+        }
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return addedLabeles.count
     }
@@ -383,6 +390,9 @@ UINavigationControllerDelegate,UITextViewDelegate {
         let label = addedLabeles[indexPath.item]
         cell.lblName.text = label.title
         cell.lblType.text = label.type
+        cell.onButtonTapped = {
+            self.deleteItem (index: indexPath.item)
+        }
         return cell
     }
     func addContribute() {
@@ -495,7 +505,7 @@ UINavigationControllerDelegate,UITextViewDelegate {
             var finalLabel : String
             finalLabel = "["
             let jsonEncoder = JSONEncoder()
-            for label in myLabeles {
+            for label in addedLabeles {
                 
                 
                 do {

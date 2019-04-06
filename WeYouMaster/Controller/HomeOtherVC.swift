@@ -111,6 +111,12 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , 
                 self.editItem(content: content,contentId : content.postId,index : indexPath.row)
 
             }
+            cell.imgContent?.tag = indexPath.row
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+            tapGestureRecognizer.numberOfTapsRequired = 1
+            cell.imgContent?.isUserInteractionEnabled = true
+            cell.imgContent?.addGestureRecognizer(tapGestureRecognizer)
+            
             return cell
         }else{
             return HomeCell()
@@ -183,12 +189,24 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , 
         
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let profile = storyBoard.instantiateViewController(withIdentifier: "profileOther") as! ProfileOtherVC
+        profile.getFName = content.fName!
+        profile.getLName = content.lName!
       /*  profile.getName = content.fName! + content.lName!
         profile.getCity = content.location!
         profile.getRole = content.education!
         profile.getImage = content.ownerPic!
         profile.followedByMe = content.followByMe!*/
         self.present(profile, animated: true, completion: nil)
+    }
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        let imgView = tapGestureRecognizer.view as! UIImageView
+        print("your taped image view tag is : \(imgView.tag)")
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let fullscreen = storyBoard.instantiateViewController(withIdentifier: "fullscreen") as! fullScreenImageVC
+        print(myContent.count)
+        fullscreen.imgAddress = myContent[imgView.tag].imgSource
+        self.present(fullscreen,animated: true,completion: nil)
     }
     func makeButtonCirc(obj : UIButton) {
         obj.layer.cornerRadius = obj.layer.frame.width/2

@@ -69,7 +69,19 @@ class SearchVC: UIViewController ,UITableViewDelegate , UITableViewDataSource {
             profile.profileId = obj.id
             profile.getOwner = owner
             self.present(profile, animated: true, completion: nil)
-    }
+        }else {
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let detail = storyBoard.instantiateViewController(withIdentifier: "collectionDetail") as! CollectionDetailTwoVC
+            
+            detail.getDegree = ""
+            detail.getName = ""
+            detail.getTitle = ""
+            detail.getImage = ""
+            detail.collectionId = obj.id
+            detail.numberOdPost = 3
+            detail.getStartDate = ""
+            self.present(detail, animated: true, completion: nil)
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()

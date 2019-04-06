@@ -13,6 +13,7 @@ class CollectionCellOtherTVC: UITableViewCell {
     var onButtonTapped : (() -> Void)? = nil
     @IBOutlet weak var btnShow: UIButton!
     var onButtonTappedOnShow : (() -> Void)? = nil
+    var onTitleTappedOnShow : (() -> Void)? = nil
     var onPricingTap : (() -> Void)? = nil
     var onButtonDelete : (() -> Void)? = nil
     var onButtonEdit : (() -> Void)? = nil
@@ -44,6 +45,12 @@ class CollectionCellOtherTVC: UITableViewCell {
             onButtonTapped()
         }
     }
+    @objc
+    func tapFunction(sender:UITapGestureRecognizer) {
+        if let onTitleTappedOnShow = self.onTitleTappedOnShow {
+            onTitleTappedOnShow()
+        }
+    }
     @IBOutlet weak var collectionTitle : UILabel!
     @IBOutlet weak var collectionNumberFields : UILabel!
     @IBOutlet weak var collectionOwner : UILabel!
@@ -60,7 +67,9 @@ class CollectionCellOtherTVC: UITableViewCell {
     func updateView(collection : CollectionOther, isOwner : Bool)  {
         // collectionOwnerImage.image = UIImage(named: collection.img)
         
-       
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapFunction))
+        collectionTitle.isUserInteractionEnabled = true
+        collectionTitle.addGestureRecognizer(tap)
         if(!isOwner){
             btnEdit.isHidden = true
             btnDelete.isHidden = true

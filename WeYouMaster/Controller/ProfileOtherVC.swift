@@ -257,8 +257,8 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
         DispatchQueue.main.async{
             
             self.bio = content.bio
-            self.getFName = content.userName
-            self.getLName = ""
+           // self.getFName = content.userName
+            //self.getLName = ""
             self.getCity = content.location
             self.getRole = content.education
             self.getImage = content.photo
