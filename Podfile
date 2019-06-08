@@ -29,4 +29,5 @@ pod 'BraintreeDropIn'
 pod 'ReverseExtension'
 pod 'ExpandableLabel'
 pod 'DropDown', '2.3.2'
+pod 'MDHTMLLabel'
 end

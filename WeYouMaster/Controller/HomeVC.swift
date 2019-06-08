@@ -9,7 +9,21 @@
 import UIKit
 import SVProgressHUD
 import ExpandableLabel
-class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource, ExpandableLabelDelegate {
+import MDHTMLLabel
+extension String {
+    var htmlToAttributedString: NSAttributedString? {
+        guard let data = data(using: .utf8) else { return NSAttributedString() }
+        do {
+            return try NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding:String.Encoding.utf8.rawValue], documentAttributes: nil)
+        } catch {
+            return NSAttributedString()
+        }
+    }
+    var htmlToString: String {
+        return htmlToAttributedString?.string ?? ""
+    }
+}
+class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource, ExpandableLabelDelegate , MDHTMLLabelDelegate {
     var states : Array<Bool>!
     func willExpandLabel(_ label: ExpandableLabel) {
         label.textAlignment = NSTextAlignment.right
@@ -82,6 +96,7 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource, Expand
     @IBOutlet weak var imgNot8: UIButton!
     @IBOutlet weak var imgNot9: UIButton!
     
+    
     @IBOutlet weak var imgProfile: UIButton!
 
     var refreshControll : UIRefreshControl?
@@ -107,16 +122,22 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource, Expand
         let content = myContent[indexPath.row]
         if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell") as? HomeCell {
             cell.updateView(content: myContent[indexPath.row])
-            cell.lblText.delegate = self
             
+          /*  cell.lblText.delegate = self
+            cell.lblText.attributedText = content.contentText?.htmlToAttributedString
             cell.lblText.collapsedAttributedLink = NSAttributedString(string: "بیشتر")
             cell.lblText.setLessLinkWith(lessLink: "کمتر", attributes: [.foregroundColor:UIColor.red], position: NSTextAlignment.left)
              cell.layoutIfNeeded()
             cell.lblText.shouldCollapse = true
             cell.lblText.textReplacementType = .word
             cell.lblText.numberOfLines =  4
-            cell.lblText.collapsed = true
-            cell.lblText.text = content.contentText
+            cell.lblText.collapsed = true*/
+            
+            cell.lblText.htmlText = content.contentText
+            cell.lblText.delegate = self
+           // cell.lblText.text = content.contentText
+            
+            //cell.lblText.text =  content.contentText.
             cell.lblText.textAlignment = NSTextAlignment.right
 
          /*   lblText.numberOfLines = 6
@@ -138,6 +159,9 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource, Expand
             lblText.text = content.contentText*/
             cell.onCollectionTap = {
                 self.collectionTaped(content : content)
+            }
+            cell.onBtnShowMeTap = {
+                self.namesaverTap(content: content)
             }
             cell.onButtonTapped = {
                 self.openProfile(content : content)
@@ -211,6 +235,13 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource, Expand
         detail.numberOdPost = 1
         detail.getStartDate = content.date ?? ""
         self.present(detail, animated: true, completion: nil)
+    }
+    func namesaverTap(content:Content) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let saverList = storyBoard.instantiateViewController(withIdentifier: "saverOfContList") as! SaverOfContributeVC
+        saverList.getOwner =  content.owner_id ?? ""
+        saverList.getContributionId = content.postId ?? ""
+        self.present(saverList, animated: true, completion: nil)
     }
     func openProfile(content:Content) {
         
@@ -384,6 +415,10 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource, Expand
         }
     }
     
-    
+    func htmlLabel(_ label: MDHTMLLabel!, didSelectLinkWith URL: URL!) {
+        guard let url = URL else { return }
+        UIApplication.shared.open(url)
+        print(URL.absoluteURL)
+    }
    
 }

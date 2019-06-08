@@ -10,8 +10,8 @@ import UIKit
 import SVProgressHUD
 import XLPagerTabStrip
 import ExpandableLabel
-
-class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , IndicatorInfoProvider , ExpandableLabelDelegate{
+import MDHTMLLabel
+class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , IndicatorInfoProvider , ExpandableLabelDelegate,MDHTMLLabelDelegate{
     var collectionId = String()
     var states : Array<Bool>!
     func willExpandLabel(_ label: ExpandableLabel) {
@@ -92,7 +92,7 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , 
         if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell") as? HomeOtherCell {
             cell.updateView(content: content)
             
-            cell.lblContent.delegate = self
+           /* cell.lblContent.delegate = self
             
             cell.lblContent.collapsedAttributedLink = NSAttributedString(string: "بیشتر")
             cell.lblContent.setLessLinkWith(lessLink: "کمتر", attributes: [.foregroundColor:UIColor.red], position: NSTextAlignment.left)
@@ -100,13 +100,21 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , 
             cell.lblContent.shouldCollapse = true
             cell.lblContent.textReplacementType = .word
             cell.lblContent.numberOfLines =  4
-            cell.lblContent.collapsed = true
-            cell.lblContent.text = content.contentText
+            cell.lblContent.collapsed = true*/
+            cell.lblContent.htmlText = content.contentText
+            cell.lblContent.delegate = self
+            // cell.lblText.text = content.contentText
+            
+            //cell.lblText.text =  content.contentText.
             cell.lblContent.textAlignment = NSTextAlignment.right
+      //      cell.lblContent.text = content.contentText
+        //    cell.lblContent.textAlignment = NSTextAlignment.right
             cell.onButtonDeleteTapped = {
                  self.deleteItem(contentId: content.postId,index: indexPath.row)
             }
-            
+            cell.onBtnShowMeTap = {
+                self.namesaverTap(content: content)
+            }
             cell.onButtonEditTapped = {
                 self.editItem(content: content,contentId : content.postId,index : indexPath.row)
 
@@ -124,6 +132,13 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , 
         }else{
             return HomeCell()
         }
+    }
+    func namesaverTap(content:OtherContent) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let saverList = storyBoard.instantiateViewController(withIdentifier: "saverOfContList") as! SaverOfContributeVC
+        saverList.getOwner =  content.owner_id
+        saverList.getContributionId = content.postId
+        self.present(saverList, animated: true, completion: nil)
     }
     func editItem(content : OtherContent ,contentId : String , index : Int){
         
@@ -260,7 +275,7 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , 
             self.updateUI()
         }
         }else{
-            WebCaller.getFeedsOfCollection(collectionId
+            WebCaller.getFeedsOfCollectionThree(collectionId
             ) { (contents, error) in
                 if let error = error{
                     print(error)
@@ -270,10 +285,10 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , 
                     print("error getting collections")
                     return
                 }
-                for content in (contentList.contributions) {
+                for content in (contentList.records) {
                     self.myContent.append(content)
                 }
-                 self.states = [Bool](repeating: true, count: contentList.contributions.count)
+                 self.states = [Bool](repeating: true, count: contentList.records.count)
                 self.updateUI()
                 
             }
@@ -298,5 +313,10 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , 
             //self.alertController.dismiss(animated: true, completion: nil);
             
         }
+    }
+    func htmlLabel(_ label: MDHTMLLabel!, didSelectLinkWith URL: URL!) {
+        guard let url = URL else { return }
+        UIApplication.shared.open(url)
+        print(URL.absoluteURL)
     }
 }

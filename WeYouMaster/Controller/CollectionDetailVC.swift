@@ -105,7 +105,7 @@ UIViewController,UITableViewDelegate,UITableViewDataSource , IndicatorInfoProvid
     func getFeeds(){
        
        
-     /*   WebCaller.getFeedsOfCollection(collectionId
+        WebCaller.getFeedsOfCollectionTwo(collectionId
         ) { (contents, error) in
             if let error = error{
                 print(error)
@@ -115,12 +115,12 @@ UIViewController,UITableViewDelegate,UITableViewDataSource , IndicatorInfoProvid
                 print("error getting collections")
                 return
             }
-            for content in (contentList.records.posts) {
+            for content in (contentList.records) {
                 self.myContent.append(content)
             }
             self.updateUI()
         
-        }*/
+        }
     }
     
     func updateUI(){

@@ -8,12 +8,21 @@
 
 import UIKit
 import ExpandableLabel
+import MDHTMLLabel
 class HomeCell: UITableViewCell {
     var onButtonTapped : (() -> Void)? = nil
       var onCollectionTap : (() -> Void)? = nil
+    var onBtnShowMeTap : (() -> Void)? = nil
+    
     @IBAction func btnCollection(_ sender: Any) {
         if let onCollectionTap = self.onCollectionTap {
             onCollectionTap()
+        }
+    }
+    @IBOutlet weak var btnShowMe: UIButton!
+    @IBAction func btnShowMe(_ sender: Any) {
+        if let onBtnShowMeTap = self.onBtnShowMeTap {
+            onBtnShowMeTap()
         }
     }
     @IBOutlet weak var btnCollection: UIButton!
@@ -76,7 +85,7 @@ class HomeCell: UITableViewCell {
             
         }).resume()
     }
-    @IBOutlet weak var lblText: ExpandableLabel!
+    @IBOutlet weak var lblText: MDHTMLLabel!
     var isLiked = false
     var isLabelAtMaxHeight = false
     
@@ -105,6 +114,12 @@ class HomeCell: UITableViewCell {
             
             btnLikeOutlet.titleLabel!.font  =  UIFont(name: btnLikeOutlet.titleLabel!.font.fontName, size: 19)!
         }
+        if(likeCounter>0){
+            btnShowMe.isHidden = false
+        }else{
+            btnShowMe.isHidden = true
+        }
+        
         lblLikeCounter.text = "(" + String( likeCounter) + ")"
     }
     
@@ -227,6 +242,11 @@ class HomeCell: UITableViewCell {
         lblPlaceAndTime.text = content.date! + " | " +  content.location!
      
         likeCounter = content.likeCount!
+        if(likeCounter>0){
+            btnShowMe.isHidden = false
+        }else{
+            btnShowMe.isHidden = true
+        }
         lblLikeCounter.text = "(" + String( content.likeCount!) + ")"
         if(content.likeByMe==1){
             isLiked = true

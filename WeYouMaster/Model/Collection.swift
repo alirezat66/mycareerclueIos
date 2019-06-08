@@ -24,6 +24,7 @@ struct  Collection : Decodable {
     public var Link : String
     public var Align : String
     public var Published_Date : String
+    public var urlOfCollection : String
 
 }
     

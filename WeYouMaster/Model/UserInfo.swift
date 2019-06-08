@@ -15,4 +15,7 @@ struct UserInfo : Decodable {
     var education : String;
     var bio : String;
     var  followByMe : Int;
+    var likesCount: Int;
+    var followingCount : Int;
+    var purchasedCount : Int;
 }

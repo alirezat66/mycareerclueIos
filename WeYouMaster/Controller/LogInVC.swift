@@ -34,8 +34,8 @@ class LogInVC: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        setborder(myTextField: edtEmail)
-        setborder(myTextField: edtPass)
+     //   setborder(myTextField: edtEmail)
+    //    setborder(myTextField: edtPass)
         // Do any additional setup after loading the view.
     }
 
@@ -139,7 +139,7 @@ func getLogin(_ email: String,_ pass : String,_ myVc : LogInVC) {
     
     func setborder(myTextField : UITextField ) {
         let bottomLine = CALayer()
-        bottomLine.frame = CGRect(x: 0, y: myTextField.frame.height, width: myTextField.frame.width-2, height: 2)
+        bottomLine.frame = CGRect(x: 0, y: myTextField.frame.height, width: myTextField.frame.width, height: 2)
         
         bottomLine.backgroundColor = UIColor.white.cgColor
         myTextField.borderStyle = UITextBorderStyle.none

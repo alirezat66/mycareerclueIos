@@ -31,7 +31,6 @@ struct Content : Decodable {
   
     
     
-    
     init (){
         postId = ""
         fName = ""

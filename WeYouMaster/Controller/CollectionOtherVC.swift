@@ -160,6 +160,8 @@ class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataS
         let userDefaults = UserDefaults.standard
         let userId = userDefaults.value(forKey: "otherUser") as! String
         let owner = userDefaults.value(forKey: "owner") as! String
+        
+        
         WebCaller.getCollectionOther(20,1,owner: owner,userId: userId) { (collections , error) in
             if let error = error{
                 self.updateError()

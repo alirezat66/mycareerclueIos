@@ -9,6 +9,7 @@
 import UIKit
 import XLPagerTabStrip
 import SVProgressHUD
+
 class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
 
     
@@ -20,12 +21,33 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
     @IBOutlet weak var lblrole: UILabel!
     @IBOutlet weak var lblPlace: UILabel!
     
+    @IBOutlet weak var lblSaves: UILabel!
+    @IBOutlet weak var lblFollowers: UILabel!
+    @IBOutlet weak var lblBuys: UILabel!
+    @IBOutlet weak var activitiesView: UIView!
     @IBOutlet weak var btnSetting : UIButton!
 
      @IBOutlet weak var btnEdit : UIButton!
     @IBOutlet weak var btnFirst : UIButton!
     @IBOutlet weak var btnSecond : UIButton!
     
+    
+    @IBOutlet weak var likeView: UIView!
+    
+    @IBOutlet weak var followersView: UIView!
+    
+    @objc func checkAction(_ sender:UITapGestureRecognizer){
+           let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let likeListPage = storyBoard.instantiateViewController(withIdentifier: "likeList") as! LikeListVC
+        
+        self.present(likeListPage, animated: true, completion: nil)
+    }
+    @objc func followingAction(_ sender:UITapGestureRecognizer){
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let folllowingListPage = storyBoard.instantiateViewController(withIdentifier: "followingList") as! FollowingCollectionVC
+        
+        self.present(folllowingListPage, animated: true, completion: nil)
+    }
     @IBOutlet weak var indicator : UIActivityIndicatorView!
     
     @IBAction func firstButtonClicked(_ sender: Any) {
@@ -155,9 +177,19 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.checkAction))
+        let gesture2 = UITapGestureRecognizer(target: self, action:  #selector(self.followingAction))
+        
+        
+        self.likeView.addGestureRecognizer(gesture)
+        self.followersView.addGestureRecognizer(gesture2)
+        self.allview.contentSize = CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height+100)
         getProfileInfo();
-         self.allview.contentSize = CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height+100)
         }
+    override func viewDidAppear(_ animated: Bool) {
+        
+    }
     func showInfo() {
         
         DispatchQueue.main.async{
@@ -190,9 +222,16 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
             }else{
                     self.btnSecond.setTitle("رصد کن", for: .normal)
             }
-            
+                
                 self.btnSecond.backgroundColor = UIColor.init(red: 66/256, green: 129/256, blue: 191/256, alpha: 1.0)
                 self.btnSecond.isHidden = true
+                self.activitiesView.isHidden = true
+        
+                self.view.layoutIfNeeded()
+                self.loadViewIfNeeded()
+                
+
+               
         }
         
             self.indicator.isHidden = true
@@ -231,6 +270,8 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
         }
         holeView.isHidden = false
     }
+    @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var bottomView: UIView!
     func getProfileInfo()  {
         
             holeView.isHidden = true
@@ -262,6 +303,10 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
             self.getCity = content.location
             self.getRole = content.education
             self.getImage = content.photo
+            self.lblSaves.text = String(content.likesCount)
+            self.lblBuys.text = String(  content.purchasedCount)
+            self.lblFollowers.text  = String(content.followingCount)
+            
             self.showInfo()
             
             SVProgressHUD.dismiss()
@@ -287,6 +332,7 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
             lblrole.text = job
             lblName.text = name + " " + lName
             lblPlace.text = city
+            
         }
         
     }

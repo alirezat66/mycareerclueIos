@@ -8,9 +8,10 @@
 
 import UIKit
 import ExpandableLabel
+import MDHTMLLabel
 class HomeOtherCell: UITableViewCell {
 
-    
+    var onBtnShowMeTap : (() -> Void)? = nil
     var onButtonTapped : (() -> Void)? = nil
     var onButtonEditTapped : (() -> Void)? = nil
     var onButtonDeleteTapped : (() -> Void)? = nil
@@ -31,9 +32,15 @@ class HomeOtherCell: UITableViewCell {
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblPlaceAndTime: UILabel!
     @IBOutlet weak var lblEducation: UILabel!
+    @IBOutlet weak var btnShowMe: UIButton!
+
     
     
-    
+    @IBAction func btnShowSavers(_ sender: Any) {
+        if let onBtnShowMeTap = self.onBtnShowMeTap {
+            onBtnShowMeTap()
+        }
+    }
     @IBOutlet weak var btnDelete: UIButton!
     @IBOutlet weak var btnEdit: UIButton!
     @IBOutlet weak var divider: UIView!
@@ -87,7 +94,7 @@ class HomeOtherCell: UITableViewCell {
             
         }).resume()
     }
-    @IBOutlet weak var lblContent: ExpandableLabel!
+    @IBOutlet weak var lblContent: MDHTMLLabel!
     var isLiked = false
     var isLabelAtMaxHeight = false
     
@@ -224,7 +231,11 @@ class HomeOtherCell: UITableViewCell {
             btnCollection.isHidden = false
             lblCollectionTitle.isHidden = false
         }
-       
+        if(content.likeCount>0){
+            btnShowMe.isHidden = false
+        }else{
+            btnShowMe.isHidden = true
+        }
 //        let otherImage = userDefaults.value(forKey: "otherImage") as! String
         if(true)
         {

@@ -36,6 +36,7 @@ PODS:
   - Dropper (2.7.6)
   - ExpandableLabel (0.5.1)
   - JJFloatingActionButton (0.10.0)
+  - MDHTMLLabel (1.0.2)
   - OneSignal (2.9.3)
   - ReverseExtension (0.5.0)
   - SearchTextField (1.2.2)
@@ -54,6 +55,7 @@ DEPENDENCIES:
   - Dropper
   - ExpandableLabel
   - JJFloatingActionButton
+  - MDHTMLLabel
   - OneSignal (< 3.0, >= 2.6.2)
   - ReverseExtension
   - SearchTextField
@@ -72,6 +74,7 @@ SPEC REPOS:
     - Dropper
     - ExpandableLabel
     - JJFloatingActionButton
+    - MDHTMLLabel
     - OneSignal
     - ReverseExtension
     - SearchTextField
@@ -89,6 +92,7 @@ SPEC CHECKSUMS:
   Dropper: 52a020beb6fef2e4b1d55447f17099e5776954ef
   ExpandableLabel: 80783721b4d849bc62c19b44bbb88aa8bb518423
   JJFloatingActionButton: 7e9e924d0819ebeb6a566dade9d5dbed63ff8add
+  MDHTMLLabel: 18bf09ec7d6c1ae396497345c005857c0493ee0a
   OneSignal: a506e3bc61d2030f0757faf9bd783a9b211c6e3c
   ReverseExtension: 21c8dd4e767f93b56fb97d873686d24160f83945
   SearchTextField: a0992739d4b05dcbb40fb3a5cc6526bd991bdd23
@@ -97,6 +101,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   XLPagerTabStrip: 22d4c58200d7c105e0e407ab6bfd01a5d85014be
 
-PODFILE CHECKSUM: c004095bee1ae9aaeeecb6f03d609351d52278bd
+PODFILE CHECKSUM: 809789c249926413dfef37d3575ffcbd68400b35
 
 COCOAPODS: 1.5.3

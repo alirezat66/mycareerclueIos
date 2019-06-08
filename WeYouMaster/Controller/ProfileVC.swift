@@ -33,6 +33,12 @@ class ProfileVC: UIViewController,UITextFieldDelegate {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func btnAddLink(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "alertDedicated") as! AlertDedicatedLink
+        vc.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        self.addChildViewController(vc)
+        self.view.addSubview(vc.view)
+    }
     var getName = String()
     var getLName = String()
 

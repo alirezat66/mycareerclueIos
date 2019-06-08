@@ -38,6 +38,47 @@ class CollectionCell: UITableViewCell {
             onButtonTappedOnShow()
         }
     }
+    func updateView(collection : FollowingResponseRecords) {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapFunction))
+        collectionTitle.isUserInteractionEnabled = true
+        collectionTitle.addGestureRecognizer(tap)
+        
+        collectionOwnerImage.layer.cornerRadius = collectionOwnerImage.frame.size.width/2
+        collectionOwnerImage.clipsToBounds = true
+        
+        if(collection.ownerPic != "")
+        {
+            self.collectionOwnerImage.setBackgroundImage(UIImage(named: "avatar_icon.png") , for: .normal)
+            
+            let url = URL(string : collection.ownerPic)
+            
+            DispatchQueue.global().async { [weak self] in
+                if let data = try? Data(contentsOf: url!) {
+                    if let image = UIImage(data: data) {
+                        DispatchQueue.main.async {
+                            self?.collectionOwnerImage.setBackgroundImage(image, for: .normal)
+                            self?.collectionOwnerImage.layoutIfNeeded()
+                            self?.collectionOwnerImage.subviews.first?.contentMode = .scaleAspectFill
+                        }
+                    }
+                }
+            }
+        }else{
+            self.collectionOwnerImage.setBackgroundImage(UIImage(named: "avatar_icon.png") , for: .normal)
+            
+        }
+        
+        
+        collectionTitle.text = collection.title
+        let name  = collection.fName + " " + collection.lName
+        collectionOwner.text = name
+        let mosharekat = "" + collection.date // + " شامل " + String(collection.) + " پست "
+        collectionNumberFields.text = mosharekat
+        
+        collectionOwnerLocation.text = collection.education
+        
+        collectionOwnerLocation.text = collection.education
+    }
     func updateView(collection : Collection)  {
        // collectionOwnerImage.image = UIImage(named: collection.img)
         
