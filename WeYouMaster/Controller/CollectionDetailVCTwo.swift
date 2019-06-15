@@ -204,6 +204,13 @@ class CollectionDetailVCTwo: UIViewController , IndicatorInfoProvider{
     @IBOutlet weak var btnSecond: UIButton!
     
 
+    @IBAction func btnShowMe(_ sender: Any) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let saverList = storyBoard.instantiateViewController(withIdentifier: "saverOfContList") as! SaverOfContributeVC
+        saverList.getCollectionId =  collectionId
+        saverList.getTitle = getTitle
+        self.present(saverList, animated: true, completion: nil)
+    }
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo.init(title: "درباره")
     }

@@ -20,6 +20,15 @@ class SaverCell: UITableViewCell {
         img.clipsToBounds = true
        
     }
+    public func updateView(search : CollectionFollower){
+        lbl.text = search.follower_name + " " + search.follower_lName
+        if(search.follower_image != ""){
+            imageFromServerURL(urlString: search.follower_image)
+        }
+        img.layer.cornerRadius = img.frame.size.width/2
+        img.clipsToBounds = true
+        
+    }
     func imageFromServerURL(urlString: String) {
         self.img.image = UIImage.init(named:"avatar_icon.png" )
         URLSession.shared.dataTask(with: NSURL(string: urlString)! as URL, completionHandler: { (data, response, error) -> Void in

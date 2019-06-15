@@ -27,6 +27,109 @@ class CollectionVC: UIViewController,UITableViewDelegate , UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        return myCollections.count
     }
+    
+    var tipId : String!
+    var tipLink : String!
+    @IBOutlet weak var uiShowLabel : UILabel!
+    @IBAction func btnShowTips(_ sender: Any) {
+        acceptTip()
+    }
+    @IBAction func btnCancelTips(_ sender: Any) {
+        cancelTip()
+    }
+    @IBOutlet weak var viewNewUse: UIView!
+    func showTip(){
+        
+        let userDefaults = UserDefaults.standard
+        let owner = userDefaults.value(forKey: "owner") as! String
+        WebCaller.getTips(owner
+        ) {
+            
+            (contents, error) in
+            if let error = error{
+                self.updateError()
+                print(error)
+                return
+            }
+            guard let contentList = contents else{
+                self.updateError()
+                print("error getting collections")
+                return
+            }
+            if(contentList.records.count > 0 ){
+                DispatchQueue.main.async{
+                    self.viewNewUse.isHidden = false
+                    self.uiShowLabel.text = contents?.records[0].tip_title
+                }
+                self.tipId = contents?.records[0].tip_id
+                self.tipLink = contents?.records[0].tip_link
+            }else {
+                DispatchQueue.main.async{
+                    self.viewNewUse.isHidden = true
+                }
+            }
+            
+            
+        }
+        
+    }
+    func cancelTip(){
+        
+        let userDefaults = UserDefaults.standard
+        let owner = userDefaults.value(forKey: "owner") as! String
+        WebCaller.cancelTips(owner,tipId
+        ) {
+            
+            (contents, error) in
+            if let error = error{
+                self.updateError()
+                print(error)
+                return
+            }
+            guard let contentList = contents else{
+                self.updateError()
+                print("error getting collections")
+                return
+            }
+            DispatchQueue.main.async{
+                self.viewNewUse.isHidden = true
+            }
+            
+            
+        }
+    }
+    func acceptTip() {
+        
+        
+        let userDefaults = UserDefaults.standard
+        let owner = userDefaults.value(forKey: "owner") as! String
+        WebCaller.acceptTips(owner,tipId
+        ) {
+            
+            (contents, error) in
+            if let error = error{
+                self.updateError()
+                print(error)
+                return
+            }
+            guard let contentList = contents else{
+                self.updateError()
+                print("error getting collections")
+                return
+            }
+            DispatchQueue.main.async{
+                self.viewNewUse.isHidden = true
+            }
+            
+            
+        }
+        let StoryBoard   = UIStoryboard(name: "Main", bundle: nil)
+        
+        let qaPage = StoryBoard.instantiateViewController(withIdentifier: "QA" ) as? QAVC
+        self.present(qaPage!, animated: true, completion: nil)
+    }
+    
+    
     func addRefreshControl() {
         refreshControll = UIRefreshControl()
         refreshControll?.tintColor = UIColor.purple
@@ -136,6 +239,7 @@ class CollectionVC: UIViewController,UITableViewDelegate , UITableViewDataSource
                 self.imgProfile.setImage(UIImage(named: "avatar_icon.png"), for: UIControlState.normal)
             }
         }
+        showTip()
     }
     func makeButtonCirc(obj : UIButton) {
         obj.layer.cornerRadius = obj.layer.frame.width/2

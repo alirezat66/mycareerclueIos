@@ -14,6 +14,8 @@
 		BB118CB02115BF5B00238A85 /* LockVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB118CAF2115BF5B00238A85 /* LockVC.swift */; };
 		BB176C54213333A700F3F79B /* NormalResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB176C53213333A700F3F79B /* NormalResponse.swift */; };
 		BB19CAA4214BFEBE00E61510 /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB19CAA3214BFEBE00E61510 /* RegisterResponse.swift */; };
+		BB2CB07B22B46B430025BF41 /* MyTipResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2CB07A22B46B430025BF41 /* MyTipResponse.swift */; };
+		BB2CB07D22B46B9C0025BF41 /* MyTipList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2CB07C22B46B9C0025BF41 /* MyTipList.swift */; };
 		BB3958B620FCA5100038DB53 /* iransansmobilefanum.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB3958B520FCA4220038DB53 /* iransansmobilefanum.ttf */; };
 		BB3958BB20FCB43D0038DB53 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3958BA20FCB43D0038DB53 /* RoundedButton.swift */; };
 		BB3958BE20FDFF2F0038DB53 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3958BD20FDFF2F0038DB53 /* LogInVC.swift */; };
@@ -21,6 +23,8 @@
 		BB3958C320FF5F9E0038DB53 /* PadingLable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3958C220FF5F9E0038DB53 /* PadingLable.swift */; };
 		BB3A83A721312BD9001FFE2F /* ContentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3A83A621312BD8001FFE2F /* ContentList.swift */; };
 		BB3A83A92132CFAB001FFE2F /* AddFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3A83A82132CFAB001FFE2F /* AddFeedVC.swift */; };
+		BB3BC57F22B4492E008BBBDE /* CollectionFollower.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3BC57E22B4492E008BBBDE /* CollectionFollower.swift */; };
+		BB3BC58122B449AB008BBBDE /* CollectionFollowerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3BC58022B449AB008BBBDE /* CollectionFollowerList.swift */; };
 		BB3C1E2F211AE72A00075EEB /* StepTwoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C1E2E211AE72A00075EEB /* StepTwoController.swift */; };
 		BB3C1E31211B16D100075EEB /* StepThreeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C1E30211B16D100075EEB /* StepThreeController.swift */; };
 		BB3C1E33211B194B00075EEB /* SplashCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C1E32211B194B00075EEB /* SplashCV.swift */; };
@@ -187,6 +191,8 @@
 		BB118CAF2115BF5B00238A85 /* LockVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockVC.swift; sourceTree = "<group>"; };
 		BB176C53213333A700F3F79B /* NormalResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalResponse.swift; sourceTree = "<group>"; };
 		BB19CAA3214BFEBE00E61510 /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
+		BB2CB07A22B46B430025BF41 /* MyTipResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTipResponse.swift; sourceTree = "<group>"; };
+		BB2CB07C22B46B9C0025BF41 /* MyTipList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTipList.swift; sourceTree = "<group>"; };
 		BB3958B520FCA4220038DB53 /* iransansmobilefanum.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iransansmobilefanum.ttf; sourceTree = "<group>"; };
 		BB3958BA20FCB43D0038DB53 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		BB3958BD20FDFF2F0038DB53 /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
@@ -194,6 +200,8 @@
 		BB3958C220FF5F9E0038DB53 /* PadingLable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadingLable.swift; sourceTree = "<group>"; };
 		BB3A83A621312BD8001FFE2F /* ContentList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentList.swift; sourceTree = "<group>"; };
 		BB3A83A82132CFAB001FFE2F /* AddFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeedVC.swift; sourceTree = "<group>"; };
+		BB3BC57E22B4492E008BBBDE /* CollectionFollower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionFollower.swift; sourceTree = "<group>"; };
+		BB3BC58022B449AB008BBBDE /* CollectionFollowerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionFollowerList.swift; sourceTree = "<group>"; };
 		BB3C1E2E211AE72A00075EEB /* StepTwoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTwoController.swift; sourceTree = "<group>"; };
 		BB3C1E30211B16D100075EEB /* StepThreeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepThreeController.swift; sourceTree = "<group>"; };
 		BB3C1E32211B194B00075EEB /* SplashCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashCV.swift; sourceTree = "<group>"; };
@@ -491,6 +499,10 @@
 				BB7B89C922AC0610009A448D /* OtherContentListTwo.swift */,
 				BB7B89CB22AC0DD7009A448D /* OtherContentListThree.swift */,
 				BB7B89CD22AC4D77009A448D /* RequestedResponse.swift */,
+				BB3BC57E22B4492E008BBBDE /* CollectionFollower.swift */,
+				BB3BC58022B449AB008BBBDE /* CollectionFollowerList.swift */,
+				BB2CB07A22B46B430025BF41 /* MyTipResponse.swift */,
+				BB2CB07C22B46B9C0025BF41 /* MyTipList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -856,6 +868,7 @@
 				BB8B73D62236BAB4007D75AD /* ChapterList.swift in Sources */,
 				BB7B89CE22AC4D77009A448D /* RequestedResponse.swift in Sources */,
 				BB3C1E33211B194B00075EEB /* SplashCV.swift in Sources */,
+				BB3BC58122B449AB008BBBDE /* CollectionFollowerList.swift in Sources */,
 				BB176C54213333A700F3F79B /* NormalResponse.swift in Sources */,
 				BBDBFF4622AB0F740086A271 /* AlertDedicatedLink.swift in Sources */,
 				BBEDB0D1213564C4004BE37E /* QAVC.swift in Sources */,
@@ -877,6 +890,7 @@
 				BB3C1E3E211EDEE800075EEB /* WebCaller.swift in Sources */,
 				BBB75C892122FDB700C1CAA9 /* DashboardVC.swift in Sources */,
 				BBAE0E3921075F3F00CF4FF2 /* PaddedLabel.swift in Sources */,
+				BB3BC57F22B4492E008BBBDE /* CollectionFollower.swift in Sources */,
 				BB3A83A721312BD9001FFE2F /* ContentList.swift in Sources */,
 				BB8B73D82236C29C007D75AD /* OtherCollectionFeed.swift in Sources */,
 				BBD96866224D7E7200DBF6E3 /* AlartPriceVC.swift in Sources */,
@@ -884,6 +898,7 @@
 				BBF13179213D69C800B49D11 /* Posts.swift in Sources */,
 				BBECFA922154228700009C4F /* Child1VC.swift in Sources */,
 				BBF1317D213E17C600B49D11 /* ProfileOtherVC.swift in Sources */,
+				BB2CB07D22B46B9C0025BF41 /* MyTipList.swift in Sources */,
 				BBAE0E332107433800CF4FF2 /* Message.swift in Sources */,
 				BB4F253A21B5B0DB00690652 /* AddCollectionResp.swift in Sources */,
 				BB4F254421B8A2CC00690652 /* CollectionExpendedCell.swift in Sources */,
@@ -929,6 +944,7 @@
 				BBEDB0CF213563D3004BE37E /* QA.swift in Sources */,
 				BBB0D45120FF68AF000CAC15 /* CollectionCell.swift in Sources */,
 				BB570C5F2151B59E00D72D8B /* TabLayout.swift in Sources */,
+				BB2CB07B22B46B430025BF41 /* MyTipResponse.swift in Sources */,
 				BBAE0E2F2107427100CF4FF2 /* InputTextCell.swift in Sources */,
 				BB570C5D2150D3F100D72D8B /* NotifResponse.swift in Sources */,
 				BBAE0E2D2105FCD300CF4FF2 /* Conversation.swift in Sources */,

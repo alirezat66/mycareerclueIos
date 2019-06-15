@@ -35,7 +35,7 @@ class HomeOtherCell: UITableViewCell {
     @IBOutlet weak var btnShowMe: UIButton!
 
     
-    
+    var onTextTap : (() -> Void)? = nil
     @IBAction func btnShowSavers(_ sender: Any) {
         if let onBtnShowMeTap = self.onBtnShowMeTap {
             onBtnShowMeTap()
@@ -48,7 +48,7 @@ class HomeOtherCell: UITableViewCell {
     var myContent  : OtherContent = OtherContent()
     var contentText : String = ""
     @IBAction func btnAttach(_ sender: Any) {
-        guard let url = URL(string: myContent.linkAddress) else {
+    /*    guard let url = URL(string: myContent.linkAddress) else {
             return //be safe
         }
         
@@ -56,6 +56,9 @@ class HomeOtherCell: UITableViewCell {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         } else {
             UIApplication.shared.openURL(url)
+        }*/
+        if let onTextTap = self.onTextTap {
+            onTextTap()
         }
     }
     
@@ -255,18 +258,18 @@ class HomeOtherCell: UITableViewCell {
                     }
                 }
             }
-        }else{
+        }/*else{
             self.imgPerson.setBackgroundImage(UIImage(named: "avatar_icon.png") , for: .normal)
             self.loader.stopAnimating();
             
-        }
+        }*/
         
-        if(content.linkAddress==""){
+      /*  if(content.linkAddress==""){
             btnShowLink.isHidden = true
             layoutIfNeeded()
         }else{
             btnShowLink.isHidden = false
-        }
+        }*/
         imgPerson.layer.cornerRadius = imgPerson.frame.size.width/2
         imgPerson.clipsToBounds = true
         let name = content.fName + " " + content.lName

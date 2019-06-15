@@ -49,6 +49,7 @@ class SearchVC: UIViewController ,UITableViewDelegate , UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if(indexPath.row > myResult.count){
         let obj = myResult[indexPath.row]
         
         if(obj.type == "User"){
@@ -82,6 +83,7 @@ class SearchVC: UIViewController ,UITableViewDelegate , UITableViewDataSource {
             detail.getStartDate = ""
             self.present(detail, animated: true, completion: nil)
         }
+    }
     }
     override func viewDidLoad() {
         super.viewDidLoad()

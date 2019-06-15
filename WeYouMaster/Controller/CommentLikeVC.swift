@@ -157,12 +157,7 @@ class CommentLikeVC: UIViewController, UITableViewDelegate , UITableViewDataSour
   
     func getLikes(){
         let userDefaults = UserDefaults.standard
-        
-        
-        
-        
-        
-        
+    
         let owner = userDefaults.value(forKey: "owner") as! String
         
         

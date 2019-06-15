@@ -101,7 +101,100 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , 
             cell.lblContent.textReplacementType = .word
             cell.lblContent.numberOfLines =  4
             cell.lblContent.collapsed = true*/
-            cell.lblContent.htmlText = content.contentText
+            cell.onTextTap = {
+                if(self.states[indexPath.row] == true){
+                    self.states[indexPath.row] = false
+                    self.homeTable.reloadRows(at: [indexPath], with: .none)
+                    
+                }else {
+                    self.states[indexPath.row] = true
+                    self.homeTable.reloadRows(at: [indexPath], with: .none)
+                    
+                }
+            }
+            if(self.states[indexPath.row] == false){
+                if(content.contentText.count > 200)
+                {
+                    cell.lblContent.htmlText = content.contentText
+                    cell.btnShowLink.setTitle("کمتر", for: .normal)
+                    cell.btnShowLink.isHidden = false
+                    
+                    
+                }else{
+                    cell.lblContent.htmlText = content.contentText
+                    cell.btnShowLink.isHidden = true
+                }
+                
+            }else {
+                if(content.contentText.count > 200)
+                {
+                    // by defualt bayad beshinim
+                    // va more bezarim
+                    let mystr =  content.contentText ;
+                    let mstr = String(mystr)
+                    // ama momkene tage <a dashte bashim
+                    if(mstr.contains("<a")){
+                        
+                        // yani tag a darim
+                        let range = mstr.range(of: "<a")
+                        
+                        let aIndex : Int = mstr.distance(from: mystr.startIndex, to: range!.lowerBound)
+                        if(aIndex < 200){
+                            let rangeEnd = mstr.range(of: "/a>")
+                            let endIndex : Int = mstr.distance(from: mystr.startIndex, to: rangeEnd!.lowerBound)
+                            // ghabl az 200 char yedoone link darim
+                            
+                            if(mstr.count > endIndex + 50){
+                                let hasan = mstr.prefix(endIndex + 50);
+                                // bad az tage a bish az 50 char darim dar natije dokme more mikhaym
+                                let ali = String(hasan)
+                                cell.lblContent.htmlText = ali;
+                                
+                                cell.btnShowLink.setTitle("بیشتر", for: .normal)
+                                cell.btnShowLink.isHidden = false
+                                
+                            }else{
+                                
+                                // inja kole matno namayesh dadim
+                                let hasan = mstr
+                                let ali = String(hasan)
+                                cell.lblContent.htmlText = ali;
+                                
+                                cell.btnShowLink.setTitle("بیشتر", for: .normal)
+                                cell.btnShowLink.isHidden = true
+                            }
+                            
+                            
+                            
+                            
+                        }
+                    }
+                    else{
+                        // tage a nadarim
+                        
+                        let hasan = mystr.prefix(200);
+                        // bad az tage a bish az 50 char darim dar natije dokme more mikhaym
+                        let ali = String(hasan)
+                        cell.lblContent.htmlText = ali;
+                        
+                        cell.btnShowLink.setTitle("بیشتر", for: .normal)
+                        cell.btnShowLink.isHidden = false
+                    }
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                }else{
+                    cell.lblContent.htmlText = content.contentText
+                    cell.btnShowLink.isHidden = true
+                    
+                }
+                
+            }
             cell.lblContent.delegate = self
             // cell.lblText.text = content.contentText
             

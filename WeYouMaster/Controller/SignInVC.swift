@@ -89,13 +89,13 @@ class SignInVC: UIViewController {
     @IBOutlet weak var myView : UIView!;
     override func viewDidLoad() {
         super.viewDidLoad()
-        setborder(myTextField: edtName)
+       /* setborder(myTextField: edtName)
         setborder(myTextField: edtLName)
         setborder(myTextField: edtEmail)
         setborder(myTextField: edtPassword)
         setborder(myTextField: edtPhone)
         setborder(myTextField: edtCountry)
-        setborder(myTextField: edtJob)
+        setborder(myTextField: edtJob)*/
         // Do any additional setup after loading the view, typically from a nib.
     }
     func setborder(myTextField : UITextField ) {

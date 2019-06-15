@@ -9,22 +9,30 @@
 import UIKit
 import ExpandableLabel
 import MDHTMLLabel
-class HomeCell: UITableViewCell {
+class HomeCell: UITableViewCell,MDHTMLLabelDelegate {
     var onButtonTapped : (() -> Void)? = nil
       var onCollectionTap : (() -> Void)? = nil
     var onBtnShowMeTap : (() -> Void)? = nil
-    
+     var onTextTap : (() -> Void)? = nil
+    @objc
+    func tapFunction(sender:UITapGestureRecognizer) {
+        if let onTextTap = self.onTextTap {
+            onTextTap()
+        }
+    }
     @IBAction func btnCollection(_ sender: Any) {
         if let onCollectionTap = self.onCollectionTap {
             onCollectionTap()
         }
     }
+    
     @IBOutlet weak var btnShowMe: UIButton!
     @IBAction func btnShowMe(_ sender: Any) {
         if let onBtnShowMeTap = self.onBtnShowMeTap {
             onBtnShowMeTap()
         }
     }
+   
     @IBOutlet weak var btnCollection: UIButton!
     
     
@@ -47,7 +55,10 @@ class HomeCell: UITableViewCell {
     var likeCounter : Int = 0
     var myContent  : Content = Content()
     @IBAction func btnAttach(_ sender: Any) {
-        guard let url = URL(string: myContent.linkAddress!) else {
+        if let onTextTap = self.onTextTap {
+            onTextTap()
+        }
+       /*    guard let url = URL(string: myContent.linkAddress!) else {
             return //be safe
         }
         
@@ -55,7 +66,7 @@ class HomeCell: UITableViewCell {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         } else {
             UIApplication.shared.openURL(url)
-        }
+        }*/
     }
     
     @IBAction func imageClicked(_ sender: Any) {
@@ -180,6 +191,25 @@ class HomeCell: UITableViewCell {
             
         })
     }*/
+ /*   public func updateContent(state : Bool , content : Content){
+        if(state){
+            if(content.contentText!.count > 100)
+            {
+                let mystr =  content.contentText ?? "" ;
+                var hasan = mystr.prefix(100);
+                hasan.append(contentsOf: "بیشتر ...");
+                let ali = String(hasan)
+                lblText.htmlText = ali;
+            }
+            
+        }else{
+            var mystr =  content.contentText ?? "" ;
+            mystr.append(contentsOf: " کمتر ...")
+            lblText.htmlText = content.contentText
+            lblText.layoutIfNeeded()
+            
+        }
+    }*/
     public func updateView(content : Content){
         self.myContent = content
     //   heightOutlet.constant = 70
@@ -190,6 +220,8 @@ class HomeCell: UITableViewCell {
         imgContent.addGestureRecognizer(tabGuester)*/
         
         
+       /* lblText.isUserInteractionEnabled = true
+        lblText.addGestureRecognizer(tap)*/
         if(content.collectionName == ""){
             btnCollection.isHidden = true
             lblCollectionTitle.isHidden = true
@@ -199,6 +231,25 @@ class HomeCell: UITableViewCell {
             btnCollection.isHidden = false
             lblCollectionTitle.isHidden = false
         }
+       /*if(content.contentText!.count > 200){
+            
+            let mystr =  content.contentText ?? "" ;
+            
+        let hasan = mystr.prefix(200);
+            btnShowLink.isHidden = false
+            //hasan.append(contentsOf: " بیشتر  ... ");
+            let ali = String(hasan)
+            lblText.htmlText = ali;
+        }else{
+            lblText.htmlText = content.contentText
+            btnShowLink.isHidden = true
+         }*/
+        lblText.delegate = self
+        lblText.htmlText = content.contentText
+        // cell.lblText.text = content.contentText
+        
+        //cell.lblText.text =  content.contentText.
+        lblText.textAlignment = NSTextAlignment.right
         if(content.ownerPic != "")
         {
             self.loader.startAnimating()
@@ -224,12 +275,12 @@ class HomeCell: UITableViewCell {
 
         }
         
-        if(content.linkAddress==""){
+       /* if(content.linkAddress==""){
             btnShowLink.isHidden = true
             layoutIfNeeded()
         }else{
             btnShowLink.isHidden = false
-        }
+        }*/
         imgPerson.layer.cornerRadius = imgPerson.frame.size.width/2
         imgPerson.clipsToBounds = true
         

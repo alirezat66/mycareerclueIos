@@ -10,6 +10,7 @@ import UIKit
 import SVProgressHUD
 import ExpandableLabel
 import MDHTMLLabel
+
 extension String {
     var htmlToAttributedString: NSAttributedString? {
         guard let data = data(using: .utf8) else { return NSAttributedString() }
@@ -25,12 +26,23 @@ extension String {
 }
 class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource, ExpandableLabelDelegate , MDHTMLLabelDelegate {
     var states : Array<Bool>!
+   
     func willExpandLabel(_ label: ExpandableLabel) {
         label.textAlignment = NSTextAlignment.right
         homeTable.beginUpdates()
         label.textAlignment = NSTextAlignment.right
 
     }
+    var tipId : String!
+    var tipLink : String!
+    @IBOutlet weak var uiShowLabel : UILabel!
+    @IBAction func btnShowTips(_ sender: Any) {
+        acceptTip()
+    }
+    @IBAction func btnCancelTips(_ sender: Any) {
+        cancelTip()
+    }
+    @IBOutlet weak var viewNewUse: UIView!
     
     func didExpandLabel(_ label: ExpandableLabel) {
         let point = label.convert(CGPoint.zero, to: homeTable)
@@ -132,13 +144,8 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource, Expand
             cell.lblText.textReplacementType = .word
             cell.lblText.numberOfLines =  4
             cell.lblText.collapsed = true*/
-            
-            cell.lblText.htmlText = content.contentText
-            cell.lblText.delegate = self
-           // cell.lblText.text = content.contentText
-            
-            //cell.lblText.text =  content.contentText.
-            cell.lblText.textAlignment = NSTextAlignment.right
+           
+           
 
          /*   lblText.numberOfLines = 6
             lblText.collapsed = true
@@ -166,6 +173,103 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource, Expand
             cell.onButtonTapped = {
                 self.openProfile(content : content)
             }
+            cell.onTextTap = {
+                if(self.states[indexPath.row] == true){
+                    self.states[indexPath.row] = false
+                
+                    self.homeTable.reloadRows(at: [indexPath], with: .automatic)
+                
+                }else {
+                    self.states[indexPath.row] = true
+                    self.homeTable.reloadRows(at: [indexPath], with: .automatic)
+                    
+                }
+            }
+            
+            if(self.states[indexPath.row] == false){
+                if(content.contentText!.count > 200)
+                {
+                     cell.lblText.htmlText = content.contentText
+                    cell.btnShowLink.setTitle("کمتر", for: .normal)
+                    cell.btnShowLink.isHidden = false
+
+                    
+                }else{
+                     cell.lblText.htmlText = content.contentText
+                    cell.btnShowLink.isHidden = true
+                }
+               
+            }else {
+                if(content.contentText!.count > 200)
+                {
+                    // by defualt bayad beshinim
+                    // va more bezarim
+                    let mystr =  content.contentText ?? "" ;
+                    let mstr = String(mystr)
+                    // ama momkene tage <a dashte bashim
+                    if(mstr.contains("<a")){
+                        
+                        // yani tag a darim
+                        let range = mstr.range(of: "<a")
+                        
+                        let aIndex : Int = mstr.distance(from: mystr.startIndex, to: range!.lowerBound)
+                        if(aIndex < 200){
+                            let rangeEnd = mstr.range(of: "/a>")
+                            let endIndex : Int = mstr.distance(from: mystr.startIndex, to: rangeEnd!.lowerBound)
+                            // ghabl az 200 char yedoone link darim
+                            
+                            if(mstr.count > endIndex + 50){
+                                let hasan = mstr.prefix(endIndex + 50);
+                                // bad az tage a bish az 50 char darim dar natije dokme more mikhaym
+                                let ali = String(hasan)
+                                cell.lblText.htmlText = ali;
+                                
+                                cell.btnShowLink.setTitle("بیشتر", for: .normal)
+                                cell.btnShowLink.isHidden = false
+                                
+                            }else{
+                                
+                                // inja kole matno namayesh dadim
+                                let hasan = mstr
+                                let ali = String(hasan)
+                                cell.lblText.htmlText = ali;
+                                
+                                cell.btnShowLink.setTitle("بیشتر", for: .normal)
+                                cell.btnShowLink.isHidden = true
+                            }
+                            
+                            
+                            
+                            
+                        }
+                    }
+                    else{
+                        // tage a nadarim
+                        
+                        let hasan = mystr.prefix(200);
+                        // bad az tage a bish az 50 char darim dar natije dokme more mikhaym
+                        let ali = String(hasan)
+                        cell.lblText.htmlText = ali;
+                        
+                        cell.btnShowLink.setTitle("بیشتر", for: .normal)
+                        cell.btnShowLink.isHidden = false
+                    }
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                }else{
+                    cell.lblText.htmlText = content.contentText
+                    cell.btnShowLink.isHidden = true
+                    
+                }
+                
+            }
+            cell.lblText.delegate = self
             cell.imgContent?.tag = indexPath.row
             
             let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
@@ -271,7 +375,8 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource, Expand
         myContent = []
         stackNotif.isUserInteractionEnabled = true
         stackNotif.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.notifTap)))
-
+        imgNot5.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.notifTap)))
+       
         homeTable.dataSource = self
         homeTable.delegate = self
         homeTable.rowHeight = UITableViewAutomaticDimension
@@ -314,7 +419,7 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource, Expand
         SVProgressHUD.show(withStatus: "لطفا منتظر بمانید ... \n\n")
         
         getFeeds()
-        
+        showTip()
         super.viewDidLoad()
         
         
@@ -372,6 +477,97 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource, Expand
             }
             
         }
+    }
+    func showTip(){
+        
+        let userDefaults = UserDefaults.standard
+        let owner = userDefaults.value(forKey: "owner") as! String
+        WebCaller.getTips(owner
+        ) {
+            
+            (contents, error) in
+            if let error = error{
+                self.updateError()
+                print(error)
+                return
+            }
+            guard let contentList = contents else{
+                self.updateError()
+                print("error getting collections")
+                return
+            }
+            if(contentList.records.count > 0 ){
+                  DispatchQueue.main.async{
+                self.viewNewUse.isHidden = false
+                self.uiShowLabel.text = contents?.records[0].tip_title
+                }
+                self.tipId = contents?.records[0].tip_id
+                
+                self.tipLink = contents?.records[0].tip_link
+            }else {
+                  DispatchQueue.main.async{
+                self.viewNewUse.isHidden = true
+                }
+            }
+           
+          
+        }
+    
+    }
+    func cancelTip(){
+        
+        let userDefaults = UserDefaults.standard
+        let owner = userDefaults.value(forKey: "owner") as! String
+        WebCaller.cancelTips(owner,tipId
+        ) {
+            
+            (contents, error) in
+            if let error = error{
+                self.updateError()
+                print(error)
+                return
+            }
+            guard let contentList = contents else{
+                self.updateError()
+                print("error getting collections")
+                return
+            }
+            DispatchQueue.main.async{
+                self.viewNewUse.isHidden = true
+            }
+            
+            
+        }
+    }
+    func acceptTip() {
+        
+        
+        let userDefaults = UserDefaults.standard
+        let owner = userDefaults.value(forKey: "owner") as! String
+        WebCaller.acceptTips(owner,tipId
+        ) {
+            
+            (contents, error) in
+            if let error = error{
+                self.updateError()
+                print(error)
+                return
+            }
+            guard let contentList = contents else{
+                self.updateError()
+                print("error getting collections")
+                return
+            }
+            DispatchQueue.main.async{
+                self.viewNewUse.isHidden = true
+            }
+            
+            
+        }
+        let StoryBoard   = UIStoryboard(name: "Main", bundle: nil)
+        
+        let qaPage = StoryBoard.instantiateViewController(withIdentifier: "QA" ) as? QAVC
+        self.present(qaPage!, animated: true, completion: nil)
     }
     func getFeeds(){
         let userDefaults = UserDefaults.standard
