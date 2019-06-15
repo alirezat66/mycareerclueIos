@@ -210,7 +210,7 @@ public class WebCaller {
     }
     static func acceptTips(_ owner : String  ,_ tipId : String,
                            completionHandler: @escaping (String?, Error?) -> Void){
-        let endpoint = "https://weyoumaster.com/api/accept_tip/"
+        let endpoint = "https://weyoumaster.com/api/cancel_tip/"
         
         guard let url = URL(string: endpoint)
             else {
