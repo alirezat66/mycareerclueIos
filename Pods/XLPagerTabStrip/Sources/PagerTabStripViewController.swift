@@ -105,16 +105,16 @@ open class PagerTabStripViewController: UIViewController, UIScrollViewDelegate {
         reloadViewControllers()
 
         let childController = viewControllers[currentIndex]
-        addChild(childController)
+        addChildViewController(childController)
         childController.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         containerView.addSubview(childController.view)
-        childController.didMove(toParent: self)
+        childController.didMove(toParentViewController: self)
     }
 
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         isViewAppearing = true
-        children.forEach { $0.beginAppearanceTransition(true, animated: animated) }
+        childViewControllers.forEach { $0.beginAppearanceTransition(true, animated: animated) }
     }
 
     override open func viewDidAppear(_ animated: Bool) {
@@ -126,17 +126,17 @@ open class PagerTabStripViewController: UIViewController, UIScrollViewDelegate {
             moveToViewController(at: preCurrentIndex)
         }
         isViewAppearing = false
-        children.forEach { $0.endAppearanceTransition() }
+        childViewControllers.forEach { $0.endAppearanceTransition() }
     }
 
     open override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        children.forEach { $0.beginAppearanceTransition(false, animated: animated) }
+        childViewControllers.forEach { $0.beginAppearanceTransition(false, animated: animated) }
     }
 
     open override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        children.forEach { $0.endAppearanceTransition() }
+        childViewControllers.forEach { $0.endAppearanceTransition() }
     }
 
     override open func viewDidLayoutSubviews() {
@@ -240,25 +240,25 @@ open class PagerTabStripViewController: UIViewController, UIScrollViewDelegate {
 
         for (index, childController) in pagerViewControllers.enumerated() {
             let pageOffsetForChild = self.pageOffsetForChild(at: index)
-            if abs(containerView.contentOffset.x - pageOffsetForChild) < containerView.bounds.width {
+            if fabs(containerView.contentOffset.x - pageOffsetForChild) < containerView.bounds.width {
                 if childController.parent != nil {
                     childController.view.frame = CGRect(x: offsetForChild(at: index), y: 0, width: view.bounds.width, height: containerView.bounds.height)
                     childController.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
                 } else {
                     childController.beginAppearanceTransition(true, animated: false)
-                    addChild(childController)
+                    addChildViewController(childController)
                     childController.view.frame = CGRect(x: offsetForChild(at: index), y: 0, width: view.bounds.width, height: containerView.bounds.height)
                     childController.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
                     containerView.addSubview(childController.view)
-                    childController.didMove(toParent: self)
+                    childController.didMove(toParentViewController: self)
                     childController.endAppearanceTransition()
                 }
             } else {
                 if childController.parent != nil {
                     childController.beginAppearanceTransition(false, animated: false)
-                    childController.willMove(toParent: nil)
+                    childController.willMove(toParentViewController: nil)
                     childController.view.removeFromSuperview()
-                    childController.removeFromParent()
+                    childController.removeFromParentViewController()
                     childController.endAppearanceTransition()
                 }
             }
@@ -284,9 +284,9 @@ open class PagerTabStripViewController: UIViewController, UIScrollViewDelegate {
         guard isViewLoaded else { return }
         for childController in viewControllers where childController.parent != nil {
             childController.beginAppearanceTransition(false, animated: false)
-            childController.willMove(toParent: nil)
+            childController.willMove(toParentViewController: nil)
             childController.view.removeFromSuperview()
-            childController.removeFromParent()
+            childController.removeFromParentViewController()
             childController.endAppearanceTransition()
         }
         reloadViewControllers()
@@ -299,7 +299,7 @@ open class PagerTabStripViewController: UIViewController, UIScrollViewDelegate {
         updateContent()
     }
 
-    // MARK: - UIScrollViewDelegate
+    // MARK: - UIScrollDelegate
 
     open func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if containerView == scrollView {

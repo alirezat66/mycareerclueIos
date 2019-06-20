@@ -2169,6 +2169,74 @@ public class WebCaller {
         })
         task.resume()
     }
+ 
+    
+    static func payment(_owner : String , _StripeApiKey : String ,_stripeToken :String ,_collectionId : String,_requested_by : String,_price : String,_cur_en :String ,_cur_fa : String ,_buyer : String , completionHandler: @escaping (NormalResponse?, Error?) -> Void){
+        let endpoint = "https://weyoumaster.com/api/pay_via_stripe"
+        guard let url = URL(string: endpoint)
+            else {
+                print("Error: cannot create URL")
+                let error = BackendError.urlError(reason: "Could not construct URL")
+                completionHandler(nil, error)
+                return
+        }
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        var postString = "";
+        postString.append("stripeApiKey=")
+        postString.append(_StripeApiKey)
+        postString.append("&owner=")
+        postString.append(_owner)
+        postString.append("&stripeToken=")
+        postString.append(_stripeToken)
+        postString.append("&collectionId=")
+        postString.append(_collectionId)
+        postString.append("&requested_by=")
+        postString.append(_requested_by)
+        postString.append("&price=")
+        postString.append(_price)
+        postString.append("&cur_en=")
+        postString.append(_cur_en)
+        postString.append("&cur_fa=")
+        postString.append(_cur_fa)
+        postString.append("&buyer=")
+        postString.append(_buyer)
+        urlRequest.httpBody = postString.data(using: String.Encoding.utf8)
+        
+        // Make request
+        let session = URLSession.shared
+        let task = session.dataTask(with: urlRequest, completionHandler: {
+            (data, response, error) in
+            // handle response to request
+            // check for error
+            guard error == nil else {
+                completionHandler(nil, error!)
+                return
+            }
+            // make sure we got data in the response
+            guard let responseData = data else {
+                print("Error: did not receive data")
+                let error = BackendError.objectSerialization(reason: "No data in response")
+                completionHandler(nil, error)
+                return
+            }
+            
+            // parse the result as JSON
+            // then create a Todo from the JSON
+            do {
+                print(responseData)
+                let  resp  = try JSONDecoder().decode(NormalResponse.self,from: responseData)
+                completionHandler(resp,nil)
+                
+            } catch {
+                // error trying to convert the data to JSON using JSONSerialization.jsonObject
+                completionHandler(nil, error)
+                return
+            }
+        })
+        task.resume()
+    }
     static func addLink(_owner : String , _link : String ,completionHandler: @escaping (NormalResponse?, Error?) -> Void){
         let endpoint = "https://weyoumaster.com/api/dedicated_link"
         guard let url = URL(string: endpoint)

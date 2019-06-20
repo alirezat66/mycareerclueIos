@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ExpandableLabel
 import MDHTMLLabel
 class HomeOtherCell: UITableViewCell {
 

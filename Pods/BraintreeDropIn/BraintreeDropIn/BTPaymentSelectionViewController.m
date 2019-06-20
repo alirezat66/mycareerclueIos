@@ -53,11 +53,11 @@
 
 @implementation BTPaymentSelectionViewController
 
-- (id)init
-{
+static BOOL _vaultedCardAppearAnalyticSent = NO;
+
+- (id)init {
     self = [super init];
-    if (self)
-    {
+    if (self) {
         self.paymentMethodNonces = @[];
         self.paymentOptionsData = @[@(BTUIKPaymentOptionTypePayPal), @(BTUIKPaymentOptionTypeUnknown)];
     }
@@ -146,7 +146,8 @@
     [self.vaultedPaymentsLabelContainerStackView addArrangedSubview:self.vaultedPaymentsEditButton];
 
     [self.stackView addArrangedSubview:self.vaultedPaymentsLabelContainerStackView];
-    
+    _vaultedCardAppearAnalyticSent = NO;
+
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     [flowLayout setScrollDirection: UICollectionViewScrollDirectionHorizontal];
     self.savedPaymentMethodsCollectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
@@ -193,7 +194,6 @@
     [self showLoadingScreen:YES];
     self.stackView.hidden = YES;
     [super loadConfiguration];
-    
 }
 
 - (void)dealloc {
@@ -219,7 +219,7 @@
             if ([[BTTokenizationService sharedService] isTypeAvailable:@"PayPal"] && [self.configuration.json[@"paypalEnabled"] isTrue] && !self.dropInRequest.paypalDisabled) {
                 [activePaymentOptions addObject:@(BTUIKPaymentOptionTypePayPal)];
             }
-            
+
             BTJSON *venmoAccessToken = self.configuration.json[@"payWithVenmo"][@"accessToken"];
             if ([[BTTokenizationService sharedService] isTypeAvailable:@"Venmo"] && venmoAccessToken.isString && !self.dropInRequest.venmoDisabled) {
                 NSURLComponents *components = [NSURLComponents componentsWithString:@"com.venmo.touch.v2://x-callback-url/vzero/auth"];
@@ -248,7 +248,7 @@
                 }
             }
 #endif
-            
+
             self.paymentOptionsData = [activePaymentOptions copy];
             [self.savedPaymentMethodsCollectionView reloadData];
             [self.paymentOptionsTableView reloadData];
@@ -261,6 +261,8 @@
                 self.paymentOptionsLabelContainerStackView.hidden = NO;
                 self.vaultedPaymentsLabelContainerStackView.hidden = NO;
                 [self.savedPaymentMethodsCollectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:([BTUIKViewUtil isLanguageLayoutDirectionRightToLeft] ? UICollectionViewScrollPositionLeft : UICollectionViewScrollPositionRight) animated:NO];
+
+                [self sendVaultedCardAppearAnalytic];
             }
             [self showLoadingScreen:NO];
             self.stackView.hidden = NO;
@@ -340,7 +342,7 @@
     return spacer;
 }
 
-- (float) sheetHeight {
+- (float)sheetHeight {
     return self.paymentMethodNonces.count == 0 ? 280 : 470;
 }
 
@@ -350,10 +352,20 @@
     }
 }
 
+- (void)sendVaultedCardAppearAnalytic {
+    for (BTPaymentMethodNonce *nonce in self.paymentMethodNonces) {
+        if ([nonce isKindOfClass: [BTCardNonce class]] && !_vaultedCardAppearAnalyticSent){
+            [self.apiClient sendAnalyticsEvent:@"ios.dropin2.vaulted-card.appear"];
+            _vaultedCardAppearAnalyticSent = YES;
+            break;
+        }
+    }
+}
+
 #pragma mark - Protocol conformance
 #pragma mark UICollectionViewDelegate
 
--(NSInteger)numberOfSectionsInCollectionView:(__unused UICollectionView *)savedPaymentMethodsCollectionView {
+- (NSInteger)numberOfSectionsInCollectionView:(__unused UICollectionView *)savedPaymentMethodsCollectionView {
     return 1;
 }
 
@@ -399,6 +411,10 @@
     BTUIPaymentMethodCollectionViewCell *cell = (BTUIPaymentMethodCollectionViewCell*)[savedPaymentMethodsCollectionView cellForItemAtIndexPath:indexPath];
     if (self.delegate) {
         [self.delegate selectionCompletedWithPaymentMethodType:[BTUIKViewUtil paymentOptionTypeForPaymentInfoType:cell.paymentMethodNonce.type] nonce:cell.paymentMethodNonce error:nil];
+
+        if ([cell.paymentMethodNonce isKindOfClass: [BTCardNonce class]]){
+            [self.apiClient sendAnalyticsEvent:@"ios.dropin2.vaulted-card.select"];
+        }
     }
 }
 
@@ -408,8 +424,7 @@
     return 1;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *simpleTableIdentifier = @"BTDropInPaymentSeletionCell";
 
     BTDropInPaymentSeletionCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier forIndexPath:indexPath];
@@ -477,7 +492,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
--(CGFloat)tableView:(__unused UITableView *)tableView heightForRowAtIndexPath:(__unused NSIndexPath *)indexPath {
+- (CGFloat)tableView:(__unused UITableView *)tableView heightForRowAtIndexPath:(__unused NSIndexPath *)indexPath {
     return 44.0;
 }
 

@@ -251,6 +251,10 @@ static NSArray *customTranslations;
     return NSLocalizedStringWithDefaultValue(@"CARDHOLDER_NAME_LABEL", [self localizationTable], [self localizationBundle], @"Cardholder Name", @"CARDHOLDER_NAME_LABEL");
 }
 
++ (NSString *)SAVE_CARD_LABEL {
+    return NSLocalizedStringWithDefaultValue(@"SAVE_CARD_LABEL", [self localizationTable], [self localizationBundle], @"Save card", @"SAVE_CARD_LABEL");
+}
+
 
 + (NSString *)PAYPAL {
     return NSLocalizedStringWithDefaultValue(@"PAYPAL", [self localizationTable], [self localizationBundle], @"PayPal", @"PAYPAL");
@@ -286,6 +290,14 @@ static NSArray *customTranslations;
 
 + (NSString *)CARD_TYPE_UNION_PAY {
     return NSLocalizedStringWithDefaultValue(@"CARD_TYPE_UNION_PAY", [self localizationTable], [self localizationBundle], @"UnionPay", @"CARD_TYPE_UNION_PAY");
+}
+
++ (NSString *)CARD_TYPE_HIPER {
+    return NSLocalizedStringWithDefaultValue(@"CARD_TYPE_HIPER", [self localizationTable], [self localizationBundle], @"Hiper", @"CARD_TYPE_HIPER");
+}
+
++ (NSString *)CARD_TYPE_HIPERCARD {
+    return NSLocalizedStringWithDefaultValue(@"CARD_TYPE_HIPERCARD", [self localizationTable], [self localizationBundle], @"Hipercard", @"CARD_TYPE_HIPERCARD");
 }
 
 + (NSString *)BRANDING_COINBASE {

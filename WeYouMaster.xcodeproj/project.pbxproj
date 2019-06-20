@@ -3,11 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		18A8DD99EFD03CD39C56E177 /* Pods_WeYouMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85F38496EC21058DA6678632 /* Pods_WeYouMaster.framework */; };
+		8D0B963D22BB561000C69A82 /* StripeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B963C22BB561000C69A82 /* StripeViewController.swift */; };
+		8D0B964322BB5BCD00C69A82 /* Stripe in Resources */ = {isa = PBXBuildFile; fileRef = 8D0B964222BB5BCD00C69A82 /* Stripe */; };
+		8D0B964522BB5C4200C69A82 /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D0B964422BB5C4100C69A82 /* PassKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		8D0B964722BB5C5400C69A82 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D0B964622BB5C5400C69A82 /* AVFoundation.framework */; };
+		8D0B964922BB5C6200C69A82 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D0B964822BB5C6200C69A82 /* CoreFoundation.framework */; };
+		8D0B964C22BB6DD100C69A82 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B964B22BB6DD100C69A82 /* PaymentViewController.swift */; };
 		BB0772B8219ADB5500A372F2 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0772B7219ADB5500A372F2 /* NotificationService.swift */; };
 		BB0772BC219ADB5500A372F2 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BB0772B5219ADB5500A372F2 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		BB118CAE2115A62400238A85 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB118CAD2115A62400238A85 /* CircleButton.swift */; };
@@ -183,6 +189,13 @@
 		5B1E52ADBC54AA7A50CC280A /* Pods-WeYouMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeYouMaster.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeYouMaster/Pods-WeYouMaster.release.xcconfig"; sourceTree = "<group>"; };
 		66645577ADDD03E27D862E4D /* Pods_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85F38496EC21058DA6678632 /* Pods_WeYouMaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeYouMaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D0B963C22BB561000C69A82 /* StripeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeViewController.swift; sourceTree = "<group>"; };
+		8D0B964222BB5BCD00C69A82 /* Stripe */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Stripe; path = "../../../Desktop/stripe/stripe-ios/Stripe"; sourceTree = "<group>"; };
+		8D0B964422BB5C4100C69A82 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
+		8D0B964622BB5C5400C69A82 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		8D0B964822BB5C6200C69A82 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		8D0B964A22BB5CB100C69A82 /* WeYouMaster-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WeYouMaster-Bridging-Header.h"; sourceTree = "<group>"; };
+		8D0B964B22BB6DD100C69A82 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		8F2FF288B4B2B31A7C5BA083 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		BB0772B5219ADB5500A372F2 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB0772B7219ADB5500A372F2 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
@@ -335,8 +348,8 @@
 		BBF1317A213D6A2000B49D11 /* CollectionCollect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCollect.swift; sourceTree = "<group>"; };
 		BBF1317C213E17C600B49D11 /* ProfileOtherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOtherVC.swift; sourceTree = "<group>"; };
 		BBF5F795211850DC00397B7D /* WeYouMaster-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WeYouMaster-Bridging-Header.h"; sourceTree = "<group>"; };
-		BBF5F79C2118554500397B7D /* DLRadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DLRadioButton.h; path = "../../../Downloads/DLRadioButton-master/DLRadioButton/DLRadioButton.h"; sourceTree = "<group>"; };
-		BBF5F79D2118554500397B7D /* DLRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DLRadioButton.m; path = "../../../Downloads/DLRadioButton-master/DLRadioButton/DLRadioButton.m"; sourceTree = "<group>"; };
+		BBF5F79C2118554500397B7D /* DLRadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DLRadioButton.h; path = ../DLRadioButton.h; sourceTree = "<group>"; };
+		BBF5F79D2118554500397B7D /* DLRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DLRadioButton.m; path = ../DLRadioButton.m; sourceTree = "<group>"; };
 		D1C6DCC201F737630AC2E77B /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -345,6 +358,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D0B964922BB5C6200C69A82 /* CoreFoundation.framework in Frameworks */,
+				8D0B964722BB5C5400C69A82 /* AVFoundation.framework in Frameworks */,
+				8D0B964522BB5C4200C69A82 /* PassKit.framework in Frameworks */,
 				18A8DD99EFD03CD39C56E177 /* Pods_WeYouMaster.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,6 +456,8 @@
 				BBDBFF4522AB0F740086A271 /* AlertDedicatedLink.swift */,
 				BBDBFF4722ABA07C0086A271 /* SaverOfContributeVC.swift */,
 				BB7B89D122AC52B9009A448D /* AcceptRequestVC.swift */,
+				8D0B963C22BB561000C69A82 /* StripeViewController.swift */,
+				8D0B964B22BB6DD100C69A82 /* PaymentViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -539,6 +557,7 @@
 		BBA8962F20FC89240098980B /* WeYouMaster */ = {
 			isa = PBXGroup;
 			children = (
+				8D0B964222BB5BCD00C69A82 /* Stripe */,
 				BB8891A9215B95DF00D09051 /* WeYouMaster.entitlements */,
 				BB3C1E34211B286200075EEB /* utils */,
 				BBB0D45420FF7034000CAC15 /* Services */,
@@ -555,6 +574,7 @@
 				BBA8963C20FC89260098980B /* Info.plist */,
 				BBF5F79C2118554500397B7D /* DLRadioButton.h */,
 				BBF5F79D2118554500397B7D /* DLRadioButton.m */,
+				8D0B964A22BB5CB100C69A82 /* WeYouMaster-Bridging-Header.h */,
 			);
 			path = WeYouMaster;
 			sourceTree = "<group>";
@@ -611,6 +631,9 @@
 		DDF486552BB3763F6C662A08 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8D0B964822BB5C6200C69A82 /* CoreFoundation.framework */,
+				8D0B964622BB5C5400C69A82 /* AVFoundation.framework */,
+				8D0B964422BB5C4100C69A82 /* PassKit.framework */,
 				BB4F253121B508B100690652 /* Dropper.framework */,
 				BB7F83F721B4879600FC81CB /* RSSelectionMenu.framework */,
 				BB7F83F521B485BA00FC81CB /* RSSelectionMenu.framework */,
@@ -675,10 +698,12 @@
 				TargetAttributes = {
 					BB0772B4219ADB5500A372F2 = {
 						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Automatic;
 					};
 					BBA8962C20FC89240098980B = {
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 0940;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -691,7 +716,7 @@
 				};
 			};
 			buildConfigurationList = BBA8962820FC89240098980B /* Build configuration list for PBXProject "WeYouMaster" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -726,6 +751,7 @@
 				BBA8963B20FC89260098980B /* LaunchScreen.storyboard in Resources */,
 				BBA8963820FC89260098980B /* Assets.xcassets in Resources */,
 				BBA8963620FC89240098980B /* Main.storyboard in Resources */,
+				8D0B964322BB5BCD00C69A82 /* Stripe in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -737,29 +763,25 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-WeYouMaster/Pods-WeYouMaster-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-WeYouMaster/Pods-WeYouMaster-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Braintree/Braintree.framework",
 				"${BUILT_PRODUCTS_DIR}/BraintreeDropIn/BraintreeDropIn.framework",
 				"${BUILT_PRODUCTS_DIR}/DLRadioButton/DLRadioButton.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/Dropper/Dropper.framework",
-				"${BUILT_PRODUCTS_DIR}/ExpandableLabel/ExpandableLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/JJFloatingActionButton/JJFloatingActionButton.framework",
 				"${BUILT_PRODUCTS_DIR}/MDHTMLLabel/MDHTMLLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/ReverseExtension/ReverseExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SearchTextField/SearchTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Braintree.framework",
@@ -767,19 +789,19 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DLRadioButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Dropper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ExpandableLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JJFloatingActionButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDHTMLLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReverseExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SearchTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeYouMaster/Pods-WeYouMaster-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WeYouMaster/Pods-WeYouMaster-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6D8B9D1F6C9C2DED0C6FFCB6 /* [CP] Check Pods Manifest.lock */ = {
@@ -787,15 +809,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-OneSignalNotificationServiceExtension-checkManifestLockResult.txt",
 			);
@@ -809,15 +827,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-WeYouMaster-checkManifestLockResult.txt",
 			);
@@ -932,6 +946,7 @@
 				BB3C1E2F211AE72A00075EEB /* StepTwoController.swift in Sources */,
 				BB4194A121033FE400823353 /* CollectionDetailVC.swift in Sources */,
 				BB118CAE2115A62400238A85 /* CircleButton.swift in Sources */,
+				8D0B964C22BB6DD100C69A82 /* PaymentViewController.swift in Sources */,
 				BBEEE8B821E8871600AAD1A6 /* fullScreenImageVC.swift in Sources */,
 				BB3958BB20FCB43D0038DB53 /* RoundedButton.swift in Sources */,
 				BBAEA02F2135EB1900B8773C /* LikeFollow.swift in Sources */,
@@ -945,6 +960,7 @@
 				BBB0D45120FF68AF000CAC15 /* CollectionCell.swift in Sources */,
 				BB570C5F2151B59E00D72D8B /* TabLayout.swift in Sources */,
 				BB2CB07B22B46B430025BF41 /* MyTipResponse.swift in Sources */,
+				8D0B963D22BB561000C69A82 /* StripeViewController.swift in Sources */,
 				BBAE0E2F2107427100CF4FF2 /* InputTextCell.swift in Sources */,
 				BB570C5D2150D3F100D72D8B /* NotifResponse.swift in Sources */,
 				BBAE0E2D2105FCD300CF4FF2 /* Conversation.swift in Sources */,
@@ -1019,11 +1035,7 @@
 				DEVELOPMENT_TEAM = 3W3Z6L4R4U;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = ir.greencode.ios.WeYouMaster.OneSignalNotificationServiceExtension;
@@ -1043,11 +1055,7 @@
 				DEVELOPMENT_TEAM = 3W3Z6L4R4U;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = ir.greencode.ios.WeYouMaster.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1183,13 +1191,10 @@
 				CODE_SIGN_ENTITLEMENTS = WeYouMaster/WeYouMaster.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3W3Z6L4R4U;
+				DEVELOPMENT_TEAM = 45PY72HQ8W;
 				INFOPLIST_FILE = WeYouMaster/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = ir.greencode.ios.WeYouMaster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1213,13 +1218,10 @@
 				CODE_SIGN_ENTITLEMENTS = WeYouMaster/WeYouMaster.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3W3Z6L4R4U;
+				DEVELOPMENT_TEAM = 45PY72HQ8W;
 				INFOPLIST_FILE = WeYouMaster/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = ir.greencode.ios.WeYouMaster;
 				PRODUCT_NAME = "$(TARGET_NAME)";

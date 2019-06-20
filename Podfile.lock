@@ -1,51 +1,49 @@
 PODS:
-  - Alamofire (4.7.3)
-  - Braintree/Card (4.21.0):
+  - Alamofire (4.8.2)
+  - Braintree/Card (4.23.1):
     - Braintree/Core
-  - Braintree/Core (4.21.0)
-  - Braintree/PaymentFlow (4.21.0):
+  - Braintree/Core (4.23.1)
+  - Braintree/PaymentFlow (4.23.1):
     - Braintree/Card
     - Braintree/Core
     - Braintree/PayPalOneTouch
-  - Braintree/PayPal (4.21.0):
+  - Braintree/PayPal (4.23.1):
     - Braintree/Core
     - Braintree/PayPalOneTouch
-  - Braintree/PayPalDataCollector (4.21.0):
+  - Braintree/PayPalDataCollector (4.23.1):
     - Braintree/Core
     - Braintree/PayPalUtils
-  - Braintree/PayPalOneTouch (4.21.0):
+  - Braintree/PayPalOneTouch (4.23.1):
     - Braintree/Core
     - Braintree/PayPalDataCollector
     - Braintree/PayPalUtils
-  - Braintree/PayPalUtils (4.21.0)
-  - Braintree/UnionPay (4.21.0):
+  - Braintree/PayPalUtils (4.23.1)
+  - Braintree/UnionPay (4.23.1):
     - Braintree/Card
     - Braintree/Core
-  - BraintreeDropIn (7.0.0):
-    - BraintreeDropIn/DropIn (= 7.0.0)
-  - BraintreeDropIn/DropIn (7.0.0):
-    - Braintree/Card (~> 4.17)
-    - Braintree/Core (~> 4.17)
-    - Braintree/PaymentFlow (~> 4.17)
-    - Braintree/PayPal (~> 4.17)
-    - Braintree/UnionPay (~> 4.17)
+  - BraintreeDropIn (7.2.0):
+    - BraintreeDropIn/DropIn (= 7.2.0)
+  - BraintreeDropIn/DropIn (7.2.0):
+    - Braintree/Card (~> 4.23)
+    - Braintree/Core (~> 4.23)
+    - Braintree/PaymentFlow (~> 4.23)
+    - Braintree/PayPal (~> 4.23)
+    - Braintree/UnionPay (~> 4.23)
     - BraintreeDropIn/UIKit
-  - BraintreeDropIn/UIKit (7.0.0)
+  - BraintreeDropIn/UIKit (7.2.0)
   - DLRadioButton (1.4.12)
   - DropDown (2.3.2)
   - Dropper (2.7.6)
-  - ExpandableLabel (0.5.1)
   - JJFloatingActionButton (0.10.0)
   - MDHTMLLabel (1.0.2)
-  - OneSignal (2.9.3)
+  - OneSignal (2.10.0)
   - ReverseExtension (0.5.0)
-  - SearchTextField (1.2.2)
+  - SearchTextField (1.2.0)
+  - Stripe (15.0.1)
   - SVProgressHUD (2.2.5)
-  - SwiftMessages (6.0.1):
-    - SwiftMessages/App (= 6.0.1)
-  - SwiftMessages/App (6.0.1)
-  - SwiftyJSON (4.2.0)
-  - XLPagerTabStrip (8.1.0)
+  - SwiftMessages (4.0.0)
+  - SwiftyJSON (4.3.0)
+  - XLPagerTabStrip (8.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
@@ -53,16 +51,16 @@ DEPENDENCIES:
   - DLRadioButton (~> 1.4)
   - DropDown (= 2.3.2)
   - Dropper
-  - ExpandableLabel
-  - JJFloatingActionButton
+  - JJFloatingActionButton (= 0.10.0)
   - MDHTMLLabel
   - OneSignal (< 3.0, >= 2.6.2)
   - ReverseExtension
-  - SearchTextField
+  - SearchTextField (= 1.2.0)
+  - Stripe
   - SVProgressHUD
-  - SwiftMessages
+  - SwiftMessages (= 4.0.0)
   - SwiftyJSON (~> 4.0)
-  - XLPagerTabStrip (~> 8.1)
+  - XLPagerTabStrip (= 8.0.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -72,35 +70,35 @@ SPEC REPOS:
     - DLRadioButton
     - DropDown
     - Dropper
-    - ExpandableLabel
     - JJFloatingActionButton
     - MDHTMLLabel
     - OneSignal
     - ReverseExtension
     - SearchTextField
+    - Stripe
     - SVProgressHUD
     - SwiftMessages
     - SwiftyJSON
     - XLPagerTabStrip
 
 SPEC CHECKSUMS:
-  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
-  Braintree: 1659b7e4f28a667eb65427f211933776ec5ea212
-  BraintreeDropIn: 7eb460717213ae39a3b457c90671f9975747dcab
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  Braintree: 21588ab236be1d1c68591f6a241658456d23aad0
+  BraintreeDropIn: b63750373474f7ec336118cee40cf767d198a977
   DLRadioButton: d7c4e225ed0e8013cef7be61455230c7557ad7c1
   DropDown: 7f87abecc28f9b4edad810fe1211c5c018c257e5
   Dropper: 52a020beb6fef2e4b1d55447f17099e5776954ef
-  ExpandableLabel: 80783721b4d849bc62c19b44bbb88aa8bb518423
   JJFloatingActionButton: 7e9e924d0819ebeb6a566dade9d5dbed63ff8add
   MDHTMLLabel: 18bf09ec7d6c1ae396497345c005857c0493ee0a
-  OneSignal: a506e3bc61d2030f0757faf9bd783a9b211c6e3c
+  OneSignal: 0f5ff711d9f25da54885e4ab06ef0abc221a46ef
   ReverseExtension: 21c8dd4e767f93b56fb97d873686d24160f83945
-  SearchTextField: a0992739d4b05dcbb40fb3a5cc6526bd991bdd23
+  SearchTextField: a5bb7e4c33affadb115afdbe8100d84ef10a8024
+  Stripe: 2c4d0a88817361a102886315ff452d90f65e898b
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  SwiftMessages: 42ed7b6e1f2f1ead9ee667dc61a0ae87e4f49570
-  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
-  XLPagerTabStrip: 22d4c58200d7c105e0e407ab6bfd01a5d85014be
+  SwiftMessages: cd565e0e7d095584be1770c012c6b5be4183b5ee
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+  XLPagerTabStrip: c908b17cbf42fcd2598ee1adfc49bae25444d88a
 
-PODFILE CHECKSUM: 809789c249926413dfef37d3575ffcbd68400b35
+PODFILE CHECKSUM: 731c305cff32ea5e126fb6a93103811c1bed2854
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.7.2

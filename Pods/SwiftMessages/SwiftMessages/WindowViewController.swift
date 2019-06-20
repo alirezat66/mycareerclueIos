@@ -8,27 +8,27 @@
 
 import UIKit
 
-open class WindowViewController: UIViewController
+class WindowViewController: UIViewController
 {
     fileprivate var window: UIWindow?
     
-    let windowLevel: UIWindow.Level
+    let windowLevel: UIWindowLevel
     let config: SwiftMessages.Config
     
-    override open var shouldAutorotate: Bool {
+    override var shouldAutorotate: Bool {
         return config.shouldAutorotate
     }
     
-    public init(windowLevel: UIWindow.Level?, config: SwiftMessages.Config)
+    init(windowLevel: UIWindowLevel = UIWindowLevelNormal, config: SwiftMessages.Config)
     {
-        self.windowLevel = windowLevel ?? UIWindow.Level.normal
+        self.windowLevel = windowLevel
         self.config = config
         let window = PassthroughWindow(frame: UIScreen.main.bounds)
         self.window = window
         super.init(nibName: nil, bundle: nil)
         self.view = PassthroughView()
         window.rootViewController = self
-        window.windowLevel = windowLevel ?? UIWindow.Level.normal
+        window.windowLevel = windowLevel
     }
     
     func install(becomeKey: Bool) {
@@ -45,17 +45,15 @@ open class WindowViewController: UIViewController
         window = nil
     }
     
-    required public init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override open var preferredStatusBarStyle: UIStatusBarStyle {
-        return config.preferredStatusBarStyle ?? super.preferredStatusBarStyle
+    override public var preferredStatusBarStyle: UIStatusBarStyle {
+        return config.preferredStatusBarStyle ?? UIApplication.shared.statusBarStyle
     }
-}
-
-extension WindowViewController {
-    static func newInstance(windowLevel: UIWindow.Level?, config: SwiftMessages.Config) -> WindowViewController {
-        return config.windowViewController?(windowLevel, config) ?? WindowViewController(windowLevel: windowLevel, config: config)
+    
+    override var prefersStatusBarHidden: Bool {
+        return UIApplication.shared.isStatusBarHidden
     }
 }

@@ -38,6 +38,7 @@
 #import "BTPayPalAccountNonce.h"
 #import "BTPayPalCreditFinancing.h"
 #import "BTPayPalDriver.h"
+#import "BTPayPalLineItem.h"
 #import "BTPayPalRequest.h"
 #import "PayPalDataCollector.h"
 #import "PPDataCollector.h"

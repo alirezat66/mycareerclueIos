@@ -8,7 +8,7 @@
 
 import UIKit
 import OneSignal
-
+import Stripe
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
+        Stripe.setDefaultPublishableKey("pk_test_nyVdwfc8GhphufSRt0fBb99T00vfs5RaAc")
         let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
         
         // Replace 'YOUR_APP_ID' with your OneSignal App ID.

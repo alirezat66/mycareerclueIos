@@ -10,24 +10,29 @@ pod 'OneSignal', '>= 2.6.2', '< 3.0'
 
 end
 
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '9.0'
+use_frameworks!
 target 'WeYouMaster' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
   # Pods for WeYouMaster
 pod 'DLRadioButton', '~> 1.4'
-pod 'JJFloatingActionButton'
 pod 'OneSignal', '>= 2.6.2', '< 3.0'
 pod 'SVProgressHUD'
-pod 'XLPagerTabStrip', '~> 8.1'
 pod 'Dropper'
-pod 'SearchTextField'
 pod 'Alamofire', '~>4.4'
 pod 'SwiftyJSON', '~> 4.0'
-pod 'SwiftMessages'
 pod 'BraintreeDropIn'
 pod 'ReverseExtension'
-pod 'ExpandableLabel'
 pod 'DropDown', '2.3.2'
+pod ‘SearchTextField’ , ’1.2.0’
+pod 'XLPagerTabStrip', ‘8.0.1’
+pod 'JJFloatingActionButton’, ‘0.10.0’
+pod 'SwiftMessages' , ‘4.0.0’
+pod 'Stripe'
 pod 'MDHTMLLabel'
+
 end
+

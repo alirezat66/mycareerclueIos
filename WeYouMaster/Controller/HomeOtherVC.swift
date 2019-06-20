@@ -9,56 +9,13 @@
 import UIKit
 import SVProgressHUD
 import XLPagerTabStrip
-import ExpandableLabel
 import MDHTMLLabel
-class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , IndicatorInfoProvider , ExpandableLabelDelegate,MDHTMLLabelDelegate{
+class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , IndicatorInfoProvider , MDHTMLLabelDelegate{
     var collectionId = String()
     var states : Array<Bool>!
-    func willExpandLabel(_ label: ExpandableLabel) {
-        label.textAlignment = NSTextAlignment.right
-        homeTable.beginUpdates()
-        label.textAlignment = NSTextAlignment.right
-        
-    }
     
-    func didExpandLabel(_ label: ExpandableLabel) {
-        let point = label.convert(CGPoint.zero, to: homeTable)
-        if let indexPath = homeTable.indexPathForRow(at: point) as IndexPath? {
-            states[indexPath.row] = false
-            
-            DispatchQueue.main.async { [weak self] in
-                self?.homeTable.scrollToRow(at: indexPath, at: .top, animated: true)
-            }
-        }
-        label.textAlignment = NSTextAlignment.right
-        homeTable.endUpdates()
-        label.textAlignment = NSTextAlignment.right
-        
-    }
     
-    func willCollapseLabel(_ label: ExpandableLabel) {
-        label.textAlignment = NSTextAlignment.right
-        
-        homeTable.beginUpdates()
-        label.textAlignment = NSTextAlignment.right
-        
-    }
-    
-    func didCollapseLabel(_ label: ExpandableLabel) {
-        
-        let point = label.convert(CGPoint.zero, to: homeTable)
-        if let indexPath = homeTable.indexPathForRow(at: point) as IndexPath? {
-            states[indexPath.row] = true
-            DispatchQueue.main.async { [weak self] in
-                self?.homeTable.scrollToRow(at: indexPath, at: .top, animated: true)
-                
-            }
-        }
-        label.textAlignment = NSTextAlignment.right
-        homeTable.endUpdates()
-        label.textAlignment = NSTextAlignment.right
-        
-    }
+   
     
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {

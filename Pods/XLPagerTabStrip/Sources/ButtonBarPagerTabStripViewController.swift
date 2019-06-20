@@ -259,11 +259,11 @@ open class ButtonBarPagerTabStripViewController: PagerTabStripViewController, Pa
 
         if reload {
             let indexPathsToReload = cells.enumerated()
-                .compactMap { (arg) -> IndexPath? in
+                .flatMap { (arg) -> IndexPath? in
                     let (index, cell) = arg
                     return cell == nil ? indexPaths[index] : nil
                 }
-                .compactMap { (indexPath: IndexPath) -> IndexPath? in
+                .flatMap { (indexPath: IndexPath) -> IndexPath? in
                     return (indexPath.item >= 0 && indexPath.item < buttonBarView.numberOfItems(inSection: indexPath.section)) ? indexPath : nil
                 }
 
@@ -349,7 +349,8 @@ open class ButtonBarPagerTabStripViewController: PagerTabStripViewController, Pa
         }
         cell.isAccessibilityElement = true
         cell.accessibilityLabel = cell.label.text
-        cell.accessibilityTraits.insert([.button, .header])
+        cell.accessibilityTraits |= UIAccessibilityTraitButton
+        cell.accessibilityTraits |= UIAccessibilityTraitHeader
         return cell
     }
 
