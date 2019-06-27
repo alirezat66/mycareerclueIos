@@ -49,7 +49,9 @@ class SearchVC: UIViewController ,UITableViewDelegate , UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if(indexPath.row > myResult.count){
+        print(indexPath.row)
+        print(myResult.count)
+        if(myResult.count>indexPath.row ){
         let obj = myResult[indexPath.row]
         
         if(obj.type == "User"){

@@ -12,6 +12,12 @@ import SVProgressHUD
 
 class PaymentViewController: UIViewController {
 
+    
+    var getCurrency = String()
+    var getFaCurrency = String()
+    var getPrice = String()
+    var getCollectionId = String ()
+    var getCollectionOwner = String()
     @IBOutlet weak var imgStore: UIImageView!
     @IBOutlet weak var edtEmail: UITextField!
     @IBOutlet weak var edtCard: UITextField!
@@ -22,10 +28,12 @@ class PaymentViewController: UIViewController {
         super.viewDidLoad()
         imgStore.layer.cornerRadius = imgStore.layer.frame.width/2
         imgStore.clipsToBounds = true
+        btnPay.setTitle("Pay " + getPrice + " " + getCurrency,for: .normal)
         // Do any additional setup after loading the view.
     }
 
     
+    @IBOutlet weak var btnPay: UIButton!
     
     @IBAction func btnPay(_ sender: Any) {
         let cardParams = STPCardParams()
@@ -70,7 +78,10 @@ class PaymentViewController: UIViewController {
                 // Present error to user...
                 return
                 }
-                WebCaller.payment(_owner:"1", _StripeApiKey: "sk_test_rZMj1B0zWIjNKedp8YdE7FRz", _stripeToken: token.tokenId, _collectionId: "17", _requested_by: "ios", _price: "9999", _cur_en: "usd", _cur_fa: "دلار استرالیا", _buyer: "24"){
+                let userDefaults = UserDefaults.standard
+                let owner = userDefaults.value(forKey: "owner") as! String
+                
+                WebCaller.payment(_owner:self.getCollectionOwner, _StripeApiKey: "sk_test_rZMj1B0zWIjNKedp8YdE7FRz", _stripeToken: token.tokenId, _collectionId: self.getCollectionId, _requested_by: "ios", _price: self.getPrice, _cur_en: self.getCurrency, _cur_fa: self.getFaCurrency, _buyer: owner){
                     (normalList,error) in
                     if let error = error{
                         print(error)
@@ -113,7 +124,6 @@ class PaymentViewController: UIViewController {
             
         }
     }
-    @IBOutlet weak var btnPay: UIButton!
    
     /*
     // MARK: - Navigation

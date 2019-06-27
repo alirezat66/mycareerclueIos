@@ -30,11 +30,11 @@ class CollectionDetailVCTwo: UIViewController , IndicatorInfoProvider{
     var getStartDate = String()
     var numberOdPost = Int()
     var folowByMe = Int()
+    var myColInfo : ColInfo? = nil
+    var isFree  = Bool()
     override func viewDidLoad() {
         super.viewDidLoad()
-        SVProgressHUD.show(withStatus: "لطفا منتظر بمانید ... \n\n")
-        holeView.isHidden = true
-        getCollectionInfo()
+       
     }
     @IBAction func btnSecondAction(_ sender: Any) {
         let userDefaults = UserDefaults.standard
@@ -112,12 +112,38 @@ class CollectionDetailVCTwo: UIViewController , IndicatorInfoProvider{
                 self.present(alert, animated: true, completion: nil)
             }
         }else{
+            if(!isFree){
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "payment") as! PaymentViewController
+                vc.getPrice = (myColInfo!.price)
+                vc.getCollectionOwner = (myColInfo!.owner)
+                vc.getCurrency = (myColInfo!.cur_en)
+                vc.getFaCurrency = (myColInfo!.cur_fa)
+                vc.getCollectionId = collectionId
+                vc.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+                self.addChildViewController(vc)
+                self.view.addSubview(vc.view)
+            }else{
+               /* let vc = self.storyboard?.instantiateViewController(withIdentifier: "payment") as! PaymentViewController
+                vc.getPrice = (myColInfo!.price)
+                vc.getCollectionOwner = (myColInfo!.owner)
+                vc.getCurrency = (myColInfo!.cur_en)
+                vc.getFaCurrency = (myColInfo!.cur_fa)
+                vc.getCollectionId = collectionId
+                vc.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+                self.addChildViewController(vc)
+                self.view.addSubview(vc.view)*/
+            }
             
         }
     }
+    override func viewDidAppear(_ animated: Bool) {
+        SVProgressHUD.show(withStatus: "لطفا منتظر بمانید ... \n\n")
+        holeView.isHidden = true
+        getCollectionInfo()
+    }
     func show(content : ColInfo){
         
-
+        myColInfo = content
         getName = content.owner_name
          getDegree = content.education
          getTitle = content.title
@@ -177,7 +203,20 @@ class CollectionDetailVCTwo: UIViewController , IndicatorInfoProvider{
                 self.btnFirst.layer.borderColor = UIColor.purple.cgColor
                 self.btnSecond.backgroundColor = .orange
             }else {
-                self.btnFirst.setTitle("رایگان", for: .normal)
+                
+                if(content.price != "0"){
+                     self.btnFirst.setTitle("پرداخت", for: .normal)
+                    if( content.boughtByMe == 1){
+                        self.isFree = true
+                    }else {
+                         self.isFree = false
+                    }
+                   
+                }else{
+                     self.btnFirst.setTitle("رایگان", for: .normal)
+                    self.isFree = true
+                }
+               
                 self.btnFirst.setImage(nil, for: .normal)
                 self.btnFirst.backgroundColor = .white
                 self.btnFirst.layer.cornerRadius = 5
@@ -216,8 +255,9 @@ class CollectionDetailVCTwo: UIViewController , IndicatorInfoProvider{
     }
     func getCollectionInfo()  {
         
-        
-        WebCaller.collectionInfo(collectionId)
+        let userDefaults = UserDefaults.standard
+        let owner = userDefaults.value(forKey: "owner") as! String
+        WebCaller.collectionInfo(collectionId,owner)
         {
             (contents, error) in
             if let error = error{

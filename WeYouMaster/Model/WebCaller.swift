@@ -1357,7 +1357,7 @@ public class WebCaller {
         
     }
     
-    static func collectionInfo(_ collectionId:String , completionHandler: @escaping (ColInfo?, Error?) -> Void) {
+    static func collectionInfo(_ collectionId:String,_ buyerId : String , completionHandler: @escaping (ColInfo?, Error?) -> Void) {
         let endpoint = "https://weyoumaster.com/api/collectionInfo"
         guard let url = URL(string: endpoint)
             else {
@@ -1368,7 +1368,8 @@ public class WebCaller {
         }
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
-        let postString = "collectionId=" + collectionId 
+        let postString = "collectionId=" + collectionId + "&buyerId=" + buyerId
+        
         
         urlRequest.httpBody = postString.data(using: String.Encoding.utf8)
         let session = URLSession.shared

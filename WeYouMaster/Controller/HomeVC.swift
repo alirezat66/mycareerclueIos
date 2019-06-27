@@ -9,7 +9,7 @@
 import UIKit
 import SVProgressHUD
 import MDHTMLLabel
-
+import AVKit
 extension String {
     var htmlToAttributedString: NSAttributedString? {
         guard let data = data(using: .utf8) else { return NSAttributedString() }
@@ -247,13 +247,27 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource , MDHTM
    
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
+        
+       
         let imgView = tapGestureRecognizer.view as! UIImageView
-        print("your taped image view tag is : \(imgView.tag)")
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let fullscreen = storyBoard.instantiateViewController(withIdentifier: "fullscreen") as! fullScreenImageVC
-        print(myContent.count)
-        fullscreen.imgAddress = myContent[imgView.tag].imgSource!
-        self.present(fullscreen,animated: true,completion: nil)
+        if(myContent[imgView.tag].contentType == 2){
+            print("your taped image view tag is : \(imgView.tag)")
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let fullscreen = storyBoard.instantiateViewController(withIdentifier: "fullscreen") as! fullScreenImageVC
+            print(myContent.count)
+            fullscreen.imgAddress = myContent[imgView.tag].imgSource!
+            self.present(fullscreen,animated: true,completion: nil)
+        }else {
+            let s =  "https://weyoumaster.com/" + myContent[imgView.tag].videoSource!
+            let mUrl = URL(string:  s)
+            let player = AVPlayer(url: mUrl! )
+            let vc = AVPlayerViewController()
+            vc.player = player
+            
+            present(vc, animated: true) {
+                vc.player?.play()
+            }
+        }
     }
   
     func openMyProfile()  {

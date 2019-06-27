@@ -316,7 +316,7 @@ class HomeCell: UITableViewCell,MDHTMLLabelDelegate {
             layoutIfNeeded()
         }
         */
-        if content.contentType == 2 {
+        if content.contentType == 2 || content.contentType == 9 {
             imageFromServerURL(urlString: content.imgSource!)
             imgContent.isHidden = false
             imgConstrant.constant = 330
