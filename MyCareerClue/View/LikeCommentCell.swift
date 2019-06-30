@@ -1,0 +1,79 @@
+//
+//  LikeComment.swift
+//  WeYouMaster
+//
+//  Created by alireza on 8/29/18.
+//  Copyright © 2018 alireza. All rights reserved.
+//
+
+import UIKit
+class LikeCommentCell : UITableViewCell {
+    var onButtonTapped : (() -> Void)? = nil
+
+    @IBOutlet weak var btnLike : UIButton!
+    @IBOutlet weak var lblTime : UILabel!
+    @IBOutlet weak var imgLogo : UIButton!
+    @IBOutlet weak var txtType : UILabel!
+    @IBOutlet weak var lblTitle : UILabel!
+    @IBAction func imageClicked(_ sender: Any) {
+        
+        if let onButtonTapped = self.onButtonTapped {
+            onButtonTapped()
+        }
+    }
+
+    public func updateView(like : LikeFollow)  {
+       
+        if(like.type == 2){
+            btnLike.backgroundColor = UIColor(red:99/256, green:213/256, blue:223/256, alpha:1.0)
+            let s = like.from;
+            let s2 = "Follow Your Collection";
+            lblTitle.text = s + s2
+            txtType.text = "New Follower"
+            
+        }else {
+            btnLike.backgroundColor = UIColor(red:239/256, green:66/256, blue:69/256, alpha:1.0)
+            let s = like.from;
+            let s2 = " Save";
+            let s3 = "";
+            let s4 = "Your Clue";
+            lblTitle.text = s + s2 + s3 + s4
+              txtType.text = "New Save"
+        }
+        btnLike.layer.cornerRadius = btnLike.layer.frame.width/2
+        btnLike.clipsToBounds = true
+        lblTime.text = like.reg_time
+        
+        if(like.senderPic != "")
+        {
+            self.imgLogo.setBackgroundImage(UIImage(named: "avatar_icon.png") , for: .normal)
+            let url = URL(string : like.senderPic)
+            
+            DispatchQueue.global().async { [weak self] in
+                if let data = try? Data(contentsOf: url!) {
+                    if let image = UIImage(data: data) {
+                        DispatchQueue.main.async {
+                            self?.imgLogo.setBackgroundImage(image, for: .normal)
+                            self?.imgLogo.layoutIfNeeded()
+                            self?.imgLogo.subviews.first?.contentMode = .scaleAspectFill
+                        }
+                    }
+                }
+            }
+        }else{
+            DispatchQueue.global().async { [weak self] in
+               
+                
+                            self?.imgLogo.setBackgroundImage( UIImage.init(named: "avatar_icon"), for: .normal)
+                    }
+        }
+        
+        imgLogo.layer.cornerRadius = imgLogo.layer.frame.width/2
+        imgLogo.clipsToBounds = true
+        
+        
+        
+        
+    
+    }
+}
