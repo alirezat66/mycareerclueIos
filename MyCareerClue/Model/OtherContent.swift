@@ -27,7 +27,9 @@ struct OtherContent : Decodable {
     public var additionalSource : String
     public var ownerPic : String
     public var allignment : String
-    
+    public var videoSource : String?
+    public var followByMe : Int?
+
     
         init (){
         owner_id = ""
@@ -49,5 +51,7 @@ struct OtherContent : Decodable {
         additionalSource = ""
         ownerPic = ""
         allignment = ""
+        videoSource = ""
+        followByMe = 0
     }
 }

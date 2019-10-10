@@ -26,7 +26,7 @@ class SelectContriButeType: UIViewController , UITableViewDelegate,UITableViewDa
     }
     
     @IBOutlet weak var tableView : UITableView!
-    var tableViewData : [String] = ["Exprience","Update","Learning Event","Quata","Education Course","Job Position"]
+    var tableViewData : [String] = ["Experience","Update","Learning Event","Quata","Education Course","Job Position"]
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self

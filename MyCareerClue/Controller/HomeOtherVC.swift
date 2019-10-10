@@ -10,13 +10,11 @@ import UIKit
 import SVProgressHUD
 import XLPagerTabStrip
 import MDHTMLLabel
+import AVKit
 class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , IndicatorInfoProvider , MDHTMLLabelDelegate{
     var collectionId = String()
+    var firstTime = true
     var states : Array<Bool>!
-    
-    
-   
-    
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo.init(title: "CLUES")
@@ -40,6 +38,15 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , 
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(myContent.count == 0 ){
+            if(!firstTime){
+                let image = UIImage(named: "AppIcon.png");
+                
+                tableView.setEmptyView(title: "No information yet", message: "Clues will be in here.",messageImage: image!)
+            }
+        }else{
+            tableView.restore()
+        }
         return myContent.count
     }
     
@@ -49,15 +56,6 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , 
         if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell") as? HomeOtherCell {
             cell.updateView(content: content)
             
-           /* cell.lblContent.delegate = self
-            
-            cell.lblContent.collapsedAttributedLink = NSAttributedString(string: "بیشتر")
-            cell.lblContent.setLessLinkWith(lessLink: "کمتر", attributes: [.foregroundColor:UIColor.red], position: NSTextAlignment.left)
-            cell.layoutIfNeeded()
-            cell.lblContent.shouldCollapse = true
-            cell.lblContent.textReplacementType = .word
-            cell.lblContent.numberOfLines =  4
-            cell.lblContent.collapsed = true*/
             cell.onTextTap = {
                 if(self.states[indexPath.row] == true){
                     self.states[indexPath.row] = false
@@ -90,24 +88,61 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , 
                     let mystr =  content.contentText ;
                     let mstr = String(mystr)
                     // ama momkene tage <a dashte bashim
-                    if(mstr.contains("<a")){
+                   if(mstr.contains("<a") || mstr.contains("<b>") || mstr.contains("<i>")){
                         
                         // yani tag a darim
-                        let range = mstr.range(of: "<a")
-                        
-                        let aIndex : Int = mstr.distance(from: mystr.startIndex, to: range!.lowerBound)
-                        if(aIndex < 200){
-                            let rangeEnd = mstr.range(of: "/a>")
+                    let range  = mstr.range(of: "<a")
+                    let rangeEnd  = mstr.range(of: "/a>")
+                    let range2 = mstr.range(of: "<b>")
+                    let range2End = mstr.range(of: "</b>")
+                    let range3 = mstr.range(of: "<i>")
+                    let range3End = mstr.range(of: "</i>")
+                    var aIndex = 0;
+                    var aIndexEnd = 0
+                    var bIndex = 0;
+                    var bIndexEnd = 0
+                    var cIndex = 0
+                    var cIndexEnd = 0
+                    if(range != nil && rangeEnd != nil){
+                        aIndex  = mstr.distance(from: mystr.startIndex, to: range!.lowerBound)
+                        aIndexEnd = mstr.distance(from: mystr.startIndex, to: rangeEnd!.lowerBound)
+                    }
+                    if(range2 != nil && range2 != nil){
+                        bIndex = mstr.distance(from: mystr.startIndex, to: range2!.lowerBound)
+                        bIndexEnd = mstr.distance(from: mystr.startIndex, to: range2End!.lowerBound)
+                    }
+                    if(range3 != nil && range3End != nil){
+                        cIndex = mstr.distance(from: mystr.startIndex, to: range3!.lowerBound)
+                        cIndexEnd = mstr.distance(from: mystr.startIndex, to: range3End!.lowerBound)
+                    }
+
+                        if((aIndex < 200 && aIndexEnd>200) || (bIndex < 200 && bIndexEnd>200) || (cIndex < 200 && cIndexEnd>200)){
+                            if(aIndex > 200){
+                                aIndexEnd = 0
+                            }
+                            if(bIndex > 200){
+                                bIndexEnd = 0
+                            }
+                            if(cIndex > 200) {
+                                cIndexEnd = 0
+                            }
+                            let largest = max(max(aIndexEnd, bIndexEnd), cIndexEnd)
+                            var rangeEnd = mstr.range(of: "/a>")
+                            if (largest == bIndexEnd){
+                                rangeEnd = mstr.range(of: "/b>")
+                            }else if (largest == cIndexEnd) {
+                                rangeEnd = mstr.range(of: "/i>")
+                            }
                             let endIndex : Int = mstr.distance(from: mystr.startIndex, to: rangeEnd!.lowerBound)
                             // ghabl az 200 char yedoone link darim
                             
-                            if(mstr.count > endIndex + 50){
-                                let hasan = mstr.prefix(endIndex + 50);
+                            if(mstr.count > endIndex){
+                                let hasan = mstr.prefix(endIndex + 3);
                                 // bad az tage a bish az 50 char darim dar natije dokme more mikhaym
                                 let ali = String(hasan)
                                 cell.lblContent.htmlText = ali;
                                 
-                                cell.btnShowLink.setTitle("more", for: .normal)
+                                cell.btnShowLink.setTitle("More", for: .normal)
                                 cell.btnShowLink.isHidden = false
                                 
                             }else{
@@ -117,13 +152,21 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , 
                                 let ali = String(hasan)
                                 cell.lblContent.htmlText = ali;
                                 
-                                cell.btnShowLink.setTitle("more", for: .normal)
+                                cell.btnShowLink.setTitle("More", for: .normal)
                                 cell.btnShowLink.isHidden = true
                             }
                             
                             
                             
                             
+                        }else{
+                            let hasan = mystr.prefix(200);
+                            // bad az tage a bish az 50 char darim dar natije dokme more mikhaym
+                            let ali = String(hasan)
+                            cell.lblContent.htmlText = ali;
+                            
+                            cell.btnShowLink.setTitle("More", for: .normal)
+                            cell.btnShowLink.isHidden = false
                         }
                     }
                     else{
@@ -134,7 +177,7 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , 
                         let ali = String(hasan)
                         cell.lblContent.htmlText = ali;
                         
-                        cell.btnShowLink.setTitle("more", for: .normal)
+                        cell.btnShowLink.setTitle("More", for: .normal)
                         cell.btnShowLink.isHidden = false
                     }
                     
@@ -156,7 +199,6 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , 
             // cell.lblText.text = content.contentText
             
             //cell.lblText.text =  content.contentText.
-            cell.lblContent.textAlignment = NSTextAlignment.right
       //      cell.lblContent.text = content.contentText
         //    cell.lblContent.textAlignment = NSTextAlignment.right
             cell.onButtonDeleteTapped = {
@@ -265,6 +307,8 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , 
     }
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
+         let imgView = tapGestureRecognizer.view as! UIImageView
+        if(myContent[imgView.tag].contentType == 2){
         let imgView = tapGestureRecognizer.view as! UIImageView
         print("your taped image view tag is : \(imgView.tag)")
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
@@ -272,6 +316,17 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , 
         print(myContent.count)
         fullscreen.imgAddress = myContent[imgView.tag].imgSource
         self.present(fullscreen,animated: true,completion: nil)
+        }else {
+            let s =  "https://mycareerclue.com/" + myContent[imgView.tag].videoSource!
+            let mUrl = URL(string:  s)
+            let player = AVPlayer(url: mUrl! )
+            let vc = AVPlayerViewController()
+            vc.player = player
+            
+            present(vc, animated: true) {
+                vc.player?.play()
+            }
+        }
     }
     func makeButtonCirc(obj : UIButton) {
         obj.layer.cornerRadius = obj.layer.frame.width/2
@@ -319,12 +374,15 @@ class HomeOtherVC: UIViewController,UITableViewDelegate,UITableViewDataSource , 
                 return
             }
             for content in (contentList.contributions) {
+                var a = content
+                 a.contentText = content.contentText.replacingOccurrences(of: "&nbsp;", with: "")
                 self.myContent.append(content)
             }
              self.states = [Bool](repeating: true, count: contentList.contributions.count)
             self.updateUI()
         }
         }else{
+            firstTime  = false
             WebCaller.getFeedsOfCollectionThree(collectionId
             ) { (contents, error) in
                 if let error = error{

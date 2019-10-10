@@ -427,11 +427,12 @@ class AddCollectionVC: UIViewController,UITextViewDelegate,UICollectionViewDataS
         WebCaller.addPrice(_owner: owner, _collectionId: collectionId, _price: edtPrice.text!, _currency: lastCurrency, _desc:  edtPriceDec.text!){
                 (answer, error) in
                 if let error = error{
+                    self.stepFinish()
                     print(error)
                     return
                 }
                 guard let answer = answer else{
-                    
+                    self.stepFinish()
                     print("error getting labeles")
                     return
                 }
@@ -532,9 +533,33 @@ class AddCollectionVC: UIViewController,UITextViewDelegate,UICollectionViewDataS
         
     
    
-    
+    func addDoneButtonOnKeyboard()
+    {
+        
+        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+        doneToolbar.barStyle = .default
+        
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.doneButtonAction))
+        
+        let items = [flexSpace, done]
+        doneToolbar.items = items
+        doneToolbar.sizeToFit()
+        
+        self.edtTitle.inputAccessoryView = doneToolbar
+        self.edtDesc.inputAccessoryView = doneToolbar
+        self.edtPriceDec.inputAccessoryView = doneToolbar
+        
+        
+    }
+    @objc func doneButtonAction(){
+        self.edtTitle.resignFirstResponder()
+        self.edtDesc.resignFirstResponder()
+        self.edtPriceDec.resignFirstResponder()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.addDoneButtonOnKeyboard()
         dropDown.anchorView = dropdown
         let tab : UITapGestureRecognizer = UITapGestureRecognizer(target : self , action : #selector(DismissKeyboard))
         view.addGestureRecognizer(tab)
@@ -569,7 +594,7 @@ class AddCollectionVC: UIViewController,UITextViewDelegate,UICollectionViewDataS
         
         let url = URL(string: Profile_photo_link)
         
-        
+        if(url != nil){
         DispatchQueue.global().async { [weak self] in
             if let data = try? Data(contentsOf: url!) {
                 if let image = UIImage(data: data) {
@@ -578,6 +603,7 @@ class AddCollectionVC: UIViewController,UITextViewDelegate,UICollectionViewDataS
                     }
                 }
             }
+        }
         }
         
         edtDesc.textColor = UIColor.lightGray
@@ -611,7 +637,7 @@ class AddCollectionVC: UIViewController,UITextViewDelegate,UICollectionViewDataS
         let timestamp = NSDate().timeIntervalSince1970
         let myTimeInterval = TimeInterval(timestamp)
         let fileName = "img_" + String(myTimeInterval) + "_" + collectionId + ".png"
-        let parameters: Parameters = [
+        let parameters: [String : String] = [
             "collectionId" : collectionId,
             "file_name":fileName
         ]

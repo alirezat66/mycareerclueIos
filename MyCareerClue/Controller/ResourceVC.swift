@@ -11,6 +11,7 @@ import SVProgressHUD
 import XLPagerTabStrip
 class ResourceVC: UIViewController,UITableViewDelegate , UITableViewDataSource,IndicatorInfoProvider   {
     var myResources : [Resource] = []
+    var firstTime  = true
     var isOwner = Bool()
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo.init(title: "RES")
@@ -43,6 +44,7 @@ class ResourceVC: UIViewController,UITableViewDelegate , UITableViewDataSource,I
     }
     func updateUI(){
         DispatchQueue.main.async{
+            self.firstTime = false
             self.table.reloadData()
             SVProgressHUD.dismiss()
             self.refreshControll?.endRefreshing()
@@ -50,6 +52,8 @@ class ResourceVC: UIViewController,UITableViewDelegate , UITableViewDataSource,I
     }
     func updateError(){
         DispatchQueue.main.async{
+            self.firstTime = false
+            self.table.reloadData()
             SVProgressHUD.dismiss()
             self.refreshControll?.endRefreshing()
             
@@ -64,6 +68,15 @@ class ResourceVC: UIViewController,UITableViewDelegate , UITableViewDataSource,I
         getResources()
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(myResources.count == 0){
+            if(!firstTime){
+                let image = UIImage(named: "AppIcon.png");
+                
+                tableView.setEmptyView(title: "No information yet", message: "Resources will be in here.",messageImage: image!)
+            }
+        }else{
+            tableView.restore()
+        }
         return myResources.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

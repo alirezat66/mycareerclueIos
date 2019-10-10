@@ -8,13 +8,16 @@
 
 import UIKit
 import MDHTMLLabel
-class HomeOtherCell: UITableViewCell {
-
+class HomeOtherCell: UITableViewCell,MDHTMLLabelDelegate {
+    var onCollectionTap : (() -> Void)? = nil
     var onBtnShowMeTap : (() -> Void)? = nil
     var onButtonTapped : (() -> Void)? = nil
     var onButtonEditTapped : (() -> Void)? = nil
     var onButtonDeleteTapped : (() -> Void)? = nil
     @IBAction func btnCollection(_ sender: Any) {
+        if let onCollectionTap = self.onCollectionTap {
+            onCollectionTap()
+        }
     }
     @IBOutlet weak var btnCollection: UIButton!
     
@@ -217,9 +220,13 @@ class HomeOtherCell: UITableViewCell {
             btnEdit.isHidden = true
             divider.isHidden = true
         }
+        
+        lblContent.delegate = self
+        lblContent.htmlText = content.contentText
+        lblContent.textAlignment = .left
+
        /* if(content.allignment != "rtl"){
             lblTitle.textAlignment = .left
-            lblContent.textAlignment = .left
         }else {
             lblTitle.textAlignment = .right
             lblContent.textAlignment = .right
@@ -244,7 +251,8 @@ class HomeOtherCell: UITableViewCell {
             self.loader.startAnimating()
             let url = URL(string : content.ownerPic)
             self.imgPerson.setBackgroundImage(UIImage(named: "avatar_icon.png") , for: .normal)
-            
+            if(url != nil)
+            {
             DispatchQueue.global().async { [weak self] in
                 if let data = try? Data(contentsOf: url!) {
                     if let image = UIImage(data: data) {
@@ -257,6 +265,7 @@ class HomeOtherCell: UITableViewCell {
                     }
                 }
             }
+        }
         }/*else{
             self.imgPerson.setBackgroundImage(UIImage(named: "avatar_icon.png") , for: .normal)
             self.loader.stopAnimating();
@@ -292,7 +301,7 @@ class HomeOtherCell: UITableViewCell {
             
         }
         
-        if content.contentType == 2 {
+        if content.contentType == 2 || content.contentType == 9{
             imageFromServerURL(urlString: content.imgSource)
             imgContent.isHidden = false
             imgConstrant.constant = 200

@@ -10,12 +10,21 @@ import UIKit
 import SVProgressHUD
 
 class SearchVC: UIViewController ,UITableViewDelegate , UITableViewDataSource {
-    
+    var firstTime = true
     @IBOutlet weak var UITable: UITableView!
     var myResult : [SearchObj] = []
     @IBOutlet weak var edtSearch: UITextField!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(myResult.count == 0){
+            if(!firstTime){
+                let image = UIImage(named: "AppIcon.png");
+                
+                tableView.setEmptyView(title: "No information yet", message: "Search Results will be in here.",messageImage: image!)
+            }
+        }else{
+            tableView.restore()
+        }
         return myResult.count
     }
     @IBAction func btnBack(_ sender: Any) {
@@ -119,14 +128,16 @@ class SearchVC: UIViewController ,UITableViewDelegate , UITableViewDataSource {
     }
     func updateError(){
         DispatchQueue.main.async{
+            self.firstTime = false
+             self.UITable.reloadData()
             SVProgressHUD.dismiss()
-            
             //self.alertController.dismiss(animated: true, completion: nil);
             
         }
     }
     func updateUI(){
         DispatchQueue.main.async{
+            self.firstTime = false
             self.UITable.reloadData()
             
             //  self.goToLast()

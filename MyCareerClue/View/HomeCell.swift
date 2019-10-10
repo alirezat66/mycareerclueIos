@@ -10,6 +10,7 @@ import UIKit
 import MDHTMLLabel
 class HomeCell: UITableViewCell,MDHTMLLabelDelegate {
     var onButtonTapped : (() -> Void)? = nil
+    var onReportTapped :(()->Void)? = nil
       var onCollectionTap : (() -> Void)? = nil
     var onBtnShowMeTap : (() -> Void)? = nil
      var onTextTap : (() -> Void)? = nil
@@ -50,7 +51,12 @@ class HomeCell: UITableViewCell,MDHTMLLabelDelegate {
     @IBOutlet weak var lblEducation: UILabel!
     
     
-   
+    @IBAction func btnReport(_ sender: Any) {
+        if let onReportTapped = self.onReportTapped{
+            onReportTapped()
+        }
+    }
+    
     var likeCounter : Int = 0
     var myContent  : Content = Content()
     @IBAction func btnAttach(_ sender: Any) {
@@ -210,7 +216,9 @@ class HomeCell: UITableViewCell,MDHTMLLabelDelegate {
         }
     }*/
     public func updateView(content : Content){
+        
         self.myContent = content
+        
     //   heightOutlet.constant = 70
         
        /* let tabGuester = UITapGestureRecognizer(target: self, action: #selector(tabbToImageView(sender :)))
@@ -248,7 +256,7 @@ class HomeCell: UITableViewCell,MDHTMLLabelDelegate {
         // cell.lblText.text = content.contentText
         
         //cell.lblText.text =  content.contentText.
-        lblText.textAlignment = NSTextAlignment.right
+        lblText.textAlignment = NSTextAlignment.left
         if(content.ownerPic != "")
         {
             self.loader.startAnimating()

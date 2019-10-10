@@ -117,6 +117,9 @@ class SelectCollectionAndChapterVC: UIViewController , UITableViewDelegate,UITab
         }
     }
     
+    @IBAction func btnBackAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     func updateUIForCollection(){
         // first we add dropper
         

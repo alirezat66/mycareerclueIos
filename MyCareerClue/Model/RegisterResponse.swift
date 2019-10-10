@@ -11,4 +11,5 @@ struct RegisterResponse : Decodable{
     let error : Int
     let errorMessage : String
     let ownerId : String
+    let user_key : String
 }

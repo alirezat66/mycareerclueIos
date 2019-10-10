@@ -12,6 +12,7 @@ import XLPagerTabStrip
 
 class CommentLikeOtherVC: UIViewController, UITableViewDelegate , UITableViewDataSource {
     
+    var firstTime = true
     @IBAction func back(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -45,6 +46,15 @@ class CommentLikeOtherVC: UIViewController, UITableViewDelegate , UITableViewDat
         
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(myLikes.count == 0){
+            if(!firstTime){
+                let image = UIImage(named: "AppIcon.png");
+                
+                tableView.setEmptyView(title: "No information yet", message: "Notifications will be in here.",messageImage: image!)
+            }
+        }else{
+            tableView.restore()
+        }
         return myLikes.count
     }
     
@@ -69,9 +79,9 @@ class CommentLikeOtherVC: UIViewController, UITableViewDelegate , UITableViewDat
     
     func getLikes(){
         let userDefaults = UserDefaults.standard
-        let owner = userDefaults.value(forKey: "otherUser") as! String
+        let owner = userDefaults.value(forKey: "owner") as! String
         
-        
+        self.firstTime  = false
         WebCaller.getLikes(20, 1,owner) { (likeList, error) in
             if let error = error{
                 print(error)
@@ -91,6 +101,7 @@ class CommentLikeOtherVC: UIViewController, UITableViewDelegate , UITableViewDat
     }
     func updateUI(){
         DispatchQueue.main.async{
+            
             self.tableView.reloadData()
             SVProgressHUD.dismiss()
             self.refreshControll?.endRefreshing()

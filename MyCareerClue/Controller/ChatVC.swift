@@ -16,9 +16,11 @@ class ChatVC: UIViewController,UITableViewDelegate , UITableViewDataSource {
     @IBOutlet weak var txtName: UILabel!
     @IBOutlet weak var impPerson: UIButton!
     @IBAction func btnBack(_ sender: Any) {
+        timer.invalidate()
         dismiss(animated: true, completion:nil)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return messageList.count
     }
     var reciverId = String()
@@ -61,9 +63,7 @@ class ChatVC: UIViewController,UITableViewDelegate , UITableViewDataSource {
             edtChat.text = ""
             isActive = false;
             
-            impPerson.layer.cornerRadius =
-                impPerson.frame.size.width/2
-            impPerson.clipsToBounds = true
+            
             WebCaller.sendMessage(message.message,owner,reciverId) {
                 (errorMessage , error) in
                 if let error  = error {
@@ -121,8 +121,7 @@ class ChatVC: UIViewController,UITableViewDelegate , UITableViewDataSource {
      
     }*/
     
-    
-    
+   var timer = Timer()
     @IBOutlet weak var chatTable: UITableView!
     var messageList  : [Message] = []
     override func viewDidLoad() {
@@ -145,9 +144,9 @@ class ChatVC: UIViewController,UITableViewDelegate , UITableViewDataSource {
         
         
         
-        let helloWorldTimer = Timer.scheduledTimer(timeInterval: 20.0, target: self, selector: #selector(sayHello), userInfo: nil, repeats: true)
         
-        helloWorldTimer.fire()
+       let timer = Timer.scheduledTimer(timeInterval: 20.0, target: self, selector: #selector(sayHello), userInfo: nil, repeats: true)
+        timer.fire()
         
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
@@ -173,7 +172,9 @@ class ChatVC: UIViewController,UITableViewDelegate , UITableViewDataSource {
     }
     func makeHeader(){
         txtName.text = recieverName
-        
+        impPerson.layer.cornerRadius =
+            impPerson.frame.size.width/2
+        impPerson.clipsToBounds = true
         if(recieverImage != ""){
             
             let url = URL(string: recieverImage)
@@ -195,6 +196,7 @@ class ChatVC: UIViewController,UITableViewDelegate , UITableViewDataSource {
         }else{
             DispatchQueue.main.async {
                 self.impPerson.setImage(UIImage(named: "avatar_icon.png"), for: UIControlState.normal)
+                
             }
         }
         
@@ -263,7 +265,9 @@ class ChatVC: UIViewController,UITableViewDelegate , UITableViewDataSource {
     }
     
     
-
+   
   
 
 }
+
+

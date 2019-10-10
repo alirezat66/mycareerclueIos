@@ -7,13 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18A8DD99EFD03CD39C56E177 /* Pods_WeYouMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85F38496EC21058DA6678632 /* Pods_WeYouMaster.framework */; };
+		309DDF301106AF5B2B05E6B9 /* Pods_MyCareerClue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBC451C62BCD46F4A76E6BE3 /* Pods_MyCareerClue.framework */; };
 		8D0B963D22BB561000C69A82 /* StripeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B963C22BB561000C69A82 /* StripeViewController.swift */; };
 		8D0B964322BB5BCD00C69A82 /* Stripe in Resources */ = {isa = PBXBuildFile; fileRef = 8D0B964222BB5BCD00C69A82 /* Stripe */; };
 		8D0B964522BB5C4200C69A82 /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D0B964422BB5C4100C69A82 /* PassKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		8D0B964722BB5C5400C69A82 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D0B964622BB5C5400C69A82 /* AVFoundation.framework */; };
 		8D0B964922BB5C6200C69A82 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D0B964822BB5C6200C69A82 /* CoreFoundation.framework */; };
 		8D0B964C22BB6DD100C69A82 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B964B22BB6DD100C69A82 /* PaymentViewController.swift */; };
+		8D74D3C1232313D2006AD82E /* BlockObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D74D3C0232313D2006AD82E /* BlockObject.swift */; };
+		8D74D3C32323146E006AD82E /* BlockUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D74D3C22323146E006AD82E /* BlockUserCell.swift */; };
+		8D74D3C523231562006AD82E /* BlockListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D74D3C423231562006AD82E /* BlockListVC.swift */; };
+		8D74D3C7232317E6006AD82E /* BlockList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D74D3C6232317E6006AD82E /* BlockList.swift */; };
+		8D74D3C92323246A006AD82E /* UnBlockObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D74D3C82323246A006AD82E /* UnBlockObject.swift */; };
+		8D74D3CB2323A169006AD82E /* ReoportList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D74D3CA2323A169006AD82E /* ReoportList.swift */; };
+		8D74D3CD2323A1F0006AD82E /* ReportUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D74D3CC2323A1EF006AD82E /* ReportUserCell.swift */; };
+		8D74D3CF2323A21B006AD82E /* ReportObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D74D3CE2323A21B006AD82E /* ReportObject.swift */; };
+		8D74D3D12323A38F006AD82E /* UnReportList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D74D3D02323A38F006AD82E /* UnReportList.swift */; };
+		8D74D3D32323A67A006AD82E /* UndoObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D74D3D22323A67A006AD82E /* UndoObject.swift */; };
+		8D74D3D523246555006AD82E /* ProfileImageUpdateObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D74D3D423246555006AD82E /* ProfileImageUpdateObject.swift */; };
+		8DA6081D2322D6EC000BA736 /* ReportResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA6081C2322D6EC000BA736 /* ReportResp.swift */; };
+		8DA6081F232308B4000BA736 /* BlockResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA6081E232308B4000BA736 /* BlockResp.swift */; };
+		8DA6082123230F49000BA736 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA6082023230F49000BA736 /* SettingVC.swift */; };
 		BB0772B8219ADB5500A372F2 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0772B7219ADB5500A372F2 /* NotificationService.swift */; };
 		BB0772BC219ADB5500A372F2 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BB0772B5219ADB5500A372F2 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		BB118CAE2115A62400238A85 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB118CAD2115A62400238A85 /* CircleButton.swift */; };
@@ -185,10 +199,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		01E60C5826D3416F37D23EAF /* Pods-MyCareerClue.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyCareerClue.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyCareerClue/Pods-MyCareerClue.debug.xcconfig"; sourceTree = "<group>"; };
 		4B851B00DD014B85F6D48EB1 /* Pods-WeYouMaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeYouMaster.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeYouMaster/Pods-WeYouMaster.debug.xcconfig"; sourceTree = "<group>"; };
 		5B1E52ADBC54AA7A50CC280A /* Pods-WeYouMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeYouMaster.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeYouMaster/Pods-WeYouMaster.release.xcconfig"; sourceTree = "<group>"; };
 		66645577ADDD03E27D862E4D /* Pods_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		85F38496EC21058DA6678632 /* Pods_WeYouMaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeYouMaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D0B963C22BB561000C69A82 /* StripeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeViewController.swift; sourceTree = "<group>"; };
 		8D0B964222BB5BCD00C69A82 /* Stripe */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Stripe; path = "../../../Desktop/stripe/stripe-ios/Stripe"; sourceTree = "<group>"; };
 		8D0B964422BB5C4100C69A82 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
@@ -196,7 +210,22 @@
 		8D0B964822BB5C6200C69A82 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		8D0B964A22BB5CB100C69A82 /* MyCareerClue-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyCareerClue-Bridging-Header.h"; sourceTree = "<group>"; };
 		8D0B964B22BB6DD100C69A82 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		8D74D3C0232313D2006AD82E /* BlockObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockObject.swift; sourceTree = "<group>"; };
+		8D74D3C22323146E006AD82E /* BlockUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserCell.swift; sourceTree = "<group>"; };
+		8D74D3C423231562006AD82E /* BlockListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockListVC.swift; sourceTree = "<group>"; };
+		8D74D3C6232317E6006AD82E /* BlockList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockList.swift; sourceTree = "<group>"; };
+		8D74D3C82323246A006AD82E /* UnBlockObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnBlockObject.swift; sourceTree = "<group>"; };
+		8D74D3CA2323A169006AD82E /* ReoportList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReoportList.swift; sourceTree = "<group>"; };
+		8D74D3CC2323A1EF006AD82E /* ReportUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportUserCell.swift; sourceTree = "<group>"; };
+		8D74D3CE2323A21B006AD82E /* ReportObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportObject.swift; sourceTree = "<group>"; };
+		8D74D3D02323A38F006AD82E /* UnReportList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnReportList.swift; sourceTree = "<group>"; };
+		8D74D3D22323A67A006AD82E /* UndoObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UndoObject.swift; sourceTree = "<group>"; };
+		8D74D3D423246555006AD82E /* ProfileImageUpdateObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageUpdateObject.swift; sourceTree = "<group>"; };
+		8DA6081C2322D6EC000BA736 /* ReportResp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportResp.swift; sourceTree = "<group>"; };
+		8DA6081E232308B4000BA736 /* BlockResp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockResp.swift; sourceTree = "<group>"; };
+		8DA6082023230F49000BA736 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 		8F2FF288B4B2B31A7C5BA083 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		9092B15FAFD79C61A4A4B3B4 /* Pods-MyCareerClue.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyCareerClue.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyCareerClue/Pods-MyCareerClue.release.xcconfig"; sourceTree = "<group>"; };
 		BB0772B5219ADB5500A372F2 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB0772B7219ADB5500A372F2 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		BB0772B9219ADB5500A372F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -323,6 +352,7 @@
 		BBC112012234E54500536B34 /* ResourceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCell.swift; sourceTree = "<group>"; };
 		BBC112032234EBD000536B34 /* ResourceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceVC.swift; sourceTree = "<group>"; };
 		BBC112052235695F00536B34 /* CollectionResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionResource.swift; sourceTree = "<group>"; };
+		BBC451C62BCD46F4A76E6BE3 /* Pods_MyCareerClue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyCareerClue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBCFA95C219B11D6005261BF /* AddCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCollectionVC.swift; sourceTree = "<group>"; };
 		BBCFA95E219B814C005261BF /* AddChapterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChapterVC.swift; sourceTree = "<group>"; };
 		BBCFA960219B8165005261BF /* AddContribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContribution.swift; sourceTree = "<group>"; };
@@ -361,7 +391,7 @@
 				8D0B964922BB5C6200C69A82 /* CoreFoundation.framework in Frameworks */,
 				8D0B964722BB5C5400C69A82 /* AVFoundation.framework in Frameworks */,
 				8D0B964522BB5C4200C69A82 /* PassKit.framework in Frameworks */,
-				18A8DD99EFD03CD39C56E177 /* Pods_WeYouMaster.framework in Frameworks */,
+				309DDF301106AF5B2B05E6B9 /* Pods_MyCareerClue.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +488,9 @@
 				BB7B89D122AC52B9009A448D /* AcceptRequestVC.swift */,
 				8D0B963C22BB561000C69A82 /* StripeViewController.swift */,
 				8D0B964B22BB6DD100C69A82 /* PaymentViewController.swift */,
+				8DA6082023230F49000BA736 /* SettingVC.swift */,
+				8D74D3C423231562006AD82E /* BlockListVC.swift */,
+				8D74D3D02323A38F006AD82E /* UnReportList.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -521,6 +554,15 @@
 				BB3BC58022B449AB008BBBDE /* CollectionFollowerList.swift */,
 				BB2CB07A22B46B430025BF41 /* MyTipResponse.swift */,
 				BB2CB07C22B46B9C0025BF41 /* MyTipList.swift */,
+				8DA6081C2322D6EC000BA736 /* ReportResp.swift */,
+				8DA6081E232308B4000BA736 /* BlockResp.swift */,
+				8D74D3C0232313D2006AD82E /* BlockObject.swift */,
+				8D74D3C6232317E6006AD82E /* BlockList.swift */,
+				8D74D3C82323246A006AD82E /* UnBlockObject.swift */,
+				8D74D3CA2323A169006AD82E /* ReoportList.swift */,
+				8D74D3CE2323A21B006AD82E /* ReportObject.swift */,
+				8D74D3D22323A67A006AD82E /* UndoObject.swift */,
+				8D74D3D423246555006AD82E /* ProfileImageUpdateObject.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -605,6 +647,8 @@
 				BB8B73D32235C80C007D75AD /* ChapterCell.swift */,
 				BB7B89C722ABA729009A448D /* SaverCell.swift */,
 				BB7B89CF22AC4E4F009A448D /* RequestedMessageCell.swift */,
+				8D74D3C22323146E006AD82E /* BlockUserCell.swift */,
+				8D74D3CC2323A1EF006AD82E /* ReportUserCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -624,6 +668,8 @@
 				D1C6DCC201F737630AC2E77B /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */,
 				4B851B00DD014B85F6D48EB1 /* Pods-WeYouMaster.debug.xcconfig */,
 				5B1E52ADBC54AA7A50CC280A /* Pods-WeYouMaster.release.xcconfig */,
+				01E60C5826D3416F37D23EAF /* Pods-MyCareerClue.debug.xcconfig */,
+				9092B15FAFD79C61A4A4B3B4 /* Pods-MyCareerClue.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -639,7 +685,7 @@
 				BB7F83F521B485BA00FC81CB /* RSSelectionMenu.framework */,
 				BB7F83F121B3FB0800FC81CB /* iOSDropDown.framework */,
 				66645577ADDD03E27D862E4D /* Pods_OneSignalNotificationServiceExtension.framework */,
-				85F38496EC21058DA6678632 /* Pods_WeYouMaster.framework */,
+				BBC451C62BCD46F4A76E6BE3 /* Pods_MyCareerClue.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -764,10 +810,8 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WeYouMaster/Pods-WeYouMaster-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-MyCareerClue/Pods-MyCareerClue-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Braintree/Braintree.framework",
-				"${BUILT_PRODUCTS_DIR}/BraintreeDropIn/BraintreeDropIn.framework",
 				"${BUILT_PRODUCTS_DIR}/DLRadioButton/DLRadioButton.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/Dropper/Dropper.framework",
@@ -784,8 +828,6 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Braintree.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BraintreeDropIn.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DLRadioButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Dropper.framework",
@@ -801,7 +843,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WeYouMaster/Pods-WeYouMaster-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyCareerClue/Pods-MyCareerClue-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6D8B9D1F6C9C2DED0C6FFCB6 /* [CP] Check Pods Manifest.lock */ = {
@@ -833,7 +875,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-WeYouMaster-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-MyCareerClue-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -859,11 +901,14 @@
 				BBAE0E312107428B00CF4FF2 /* OutPutTextCell.swift in Sources */,
 				BB968CE5213EB034009DE929 /* OtherContentList.swift in Sources */,
 				BB8B73D42235C80C007D75AD /* ChapterCell.swift in Sources */,
+				8D74D3C7232317E6006AD82E /* BlockList.swift in Sources */,
 				BBCFA963219B817B005261BF /* SelectContriButeType.swift in Sources */,
 				BBAEA0332135EDB000B8773C /* CommentLikeVC.swift in Sources */,
 				BBCFA95D219B11D6005261BF /* AddCollectionVC.swift in Sources */,
+				8DA6081F232308B4000BA736 /* BlockResp.swift in Sources */,
 				BB8E8B3821F2DF7800988C9F /* SearchObj.swift in Sources */,
 				BBAE0E2121045B2C00CF4FF2 /* HomeVC.swift in Sources */,
+				8D74D3C92323246A006AD82E /* UnBlockObject.swift in Sources */,
 				BBC112042234EBD000536B34 /* ResourceVC.swift in Sources */,
 				BBDBFF4822ABA07C0086A271 /* SaverOfContributeVC.swift in Sources */,
 				BBECFA942154229900009C4F /* Child2VC.swift in Sources */,
@@ -886,6 +931,8 @@
 				BB176C54213333A700F3F79B /* NormalResponse.swift in Sources */,
 				BBDBFF4622AB0F740086A271 /* AlertDedicatedLink.swift in Sources */,
 				BBEDB0D1213564C4004BE37E /* QAVC.swift in Sources */,
+				8D74D3CB2323A169006AD82E /* ReoportList.swift in Sources */,
+				8D74D3CF2323A21B006AD82E /* ReportObject.swift in Sources */,
 				BB4F253C21B85BA600690652 /* AddChapterRes.swift in Sources */,
 				BB968CEF213EC007009DE929 /* CollectionOtherList.swift in Sources */,
 				BBB75C872122E50F00C1CAA9 /* CardView.swift in Sources */,
@@ -896,24 +943,29 @@
 				BB55DCBC21EBBB7900706988 /* ChatList.swift in Sources */,
 				BBCFA961219B8165005261BF /* AddContribution.swift in Sources */,
 				BB4194A321035C8E00823353 /* DetailCell.swift in Sources */,
+				8D74D3C1232313D2006AD82E /* BlockObject.swift in Sources */,
 				BB7B89CA22AC0610009A448D /* OtherContentListTwo.swift in Sources */,
 				BBC112022234E54500536B34 /* ResourceCell.swift in Sources */,
 				BB7B89C622ABA6D4009A448D /* SaverList.swift in Sources */,
 				BB19CAA4214BFEBE00E61510 /* RegisterResponse.swift in Sources */,
 				BBEDB0CB21355DD9004BE37E /* AboutUsVC.swift in Sources */,
 				BB3C1E3E211EDEE800075EEB /* WebCaller.swift in Sources */,
+				8DA6081D2322D6EC000BA736 /* ReportResp.swift in Sources */,
 				BBB75C892122FDB700C1CAA9 /* DashboardVC.swift in Sources */,
 				BBAE0E3921075F3F00CF4FF2 /* PaddedLabel.swift in Sources */,
 				BB3BC57F22B4492E008BBBDE /* CollectionFollower.swift in Sources */,
 				BB3A83A721312BD9001FFE2F /* ContentList.swift in Sources */,
 				BB8B73D82236C29C007D75AD /* OtherCollectionFeed.swift in Sources */,
 				BBD96866224D7E7200DBF6E3 /* AlartPriceVC.swift in Sources */,
+				8D74D3D32323A67A006AD82E /* UndoObject.swift in Sources */,
 				BB7B89CC22AC0DD7009A448D /* OtherContentListThree.swift in Sources */,
 				BBF13179213D69C800B49D11 /* Posts.swift in Sources */,
 				BBECFA922154228700009C4F /* Child1VC.swift in Sources */,
 				BBF1317D213E17C600B49D11 /* ProfileOtherVC.swift in Sources */,
+				8D74D3C523231562006AD82E /* BlockListVC.swift in Sources */,
 				BB2CB07D22B46B9C0025BF41 /* MyTipList.swift in Sources */,
 				BBAE0E332107433800CF4FF2 /* Message.swift in Sources */,
+				8D74D3CD2323A1F0006AD82E /* ReportUserCell.swift in Sources */,
 				BB4F253A21B5B0DB00690652 /* AddCollectionResp.swift in Sources */,
 				BB4F254421B8A2CC00690652 /* CollectionExpendedCell.swift in Sources */,
 				BB8E8B3A21F2DFEA00988C9F /* SearchList.swift in Sources */,
@@ -928,6 +980,7 @@
 				BB8B73D22235C2E1007D75AD /* CollectionChapter.swift in Sources */,
 				BB4F254621B8A3A800690652 /* MainCollection.swift in Sources */,
 				BBA8963320FC89240098980B /* SignInVC.swift in Sources */,
+				8D74D3D12323A38F006AD82E /* UnReportList.swift in Sources */,
 				BB3C1E31211B16D100075EEB /* StepThreeController.swift in Sources */,
 				BBAE0E352107451B00CF4FF2 /* User.swift in Sources */,
 				BB968CED213EBDD6009DE929 /* ListOfCollectionOther.swift in Sources */,
@@ -950,6 +1003,7 @@
 				BBEEE8B821E8871600AAD1A6 /* fullScreenImageVC.swift in Sources */,
 				BB3958BB20FCB43D0038DB53 /* RoundedButton.swift in Sources */,
 				BBAEA02F2135EB1900B8773C /* LikeFollow.swift in Sources */,
+				8DA6082123230F49000BA736 /* SettingVC.swift in Sources */,
 				BBAEA0312135ECB300B8773C /* FollowCommentCell.swift in Sources */,
 				BBDBFF4022AAC4E00086A271 /* FollowingCollectionVC.swift in Sources */,
 				BB4F253421B5584E00690652 /* LabelResponse.swift in Sources */,
@@ -961,6 +1015,7 @@
 				BB570C5F2151B59E00D72D8B /* TabLayout.swift in Sources */,
 				BB2CB07B22B46B430025BF41 /* MyTipResponse.swift in Sources */,
 				8D0B963D22BB561000C69A82 /* StripeViewController.swift in Sources */,
+				8D74D3C32323146E006AD82E /* BlockUserCell.swift in Sources */,
 				BBAE0E2F2107427100CF4FF2 /* InputTextCell.swift in Sources */,
 				BB570C5D2150D3F100D72D8B /* NotifResponse.swift in Sources */,
 				BBAE0E2D2105FCD300CF4FF2 /* Conversation.swift in Sources */,
@@ -993,6 +1048,7 @@
 				BB55DCBA21EA8D8100706988 /* errorMessage.swift in Sources */,
 				BB118CB02115BF5B00238A85 /* LockVC.swift in Sources */,
 				BB8E8B3C21F2E26F00988C9F /* SearchCell.swift in Sources */,
+				8D74D3D523246555006AD82E /* ProfileImageUpdateObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1032,15 +1088,16 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3W3Z6L4R4U;
+				DEVELOPMENT_TEAM = 45PY72HQ8W;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = ir.greencode.ios.MyCareerClue.OneSignalNotificationServiceExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = itboost.com.au.ios.MyCareerClue.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1052,14 +1109,15 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3W3Z6L4R4U;
+				DEVELOPMENT_TEAM = 45PY72HQ8W;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = ir.greencode.ios.MyCareerClue.OneSignalNotificationServiceExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = itboost.com.au.ios.MyCareerClue.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1173,15 +1231,14 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		BBA8964020FC89260098980B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4B851B00DD014B85F6D48EB1 /* Pods-WeYouMaster.debug.xcconfig */;
+			baseConfigurationReference = 01E60C5826D3416F37D23EAF /* Pods-MyCareerClue.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APPLICATION_EXTENSION_API_ONLY = NO;
@@ -1196,7 +1253,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				NEW_SETTING = "";
-				PRODUCT_BUNDLE_IDENTIFIER = ir.greencode.ios.MyCareerClue;
+				PRODUCT_BUNDLE_IDENTIFIER = itboost.com.au.ios.MyCareerClue;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MyCareerClue-Bridging-Header.h";
@@ -1208,7 +1265,7 @@
 		};
 		BBA8964120FC89260098980B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B1E52ADBC54AA7A50CC280A /* Pods-WeYouMaster.release.xcconfig */;
+			baseConfigurationReference = 9092B15FAFD79C61A4A4B3B4 /* Pods-MyCareerClue.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APPLICATION_EXTENSION_API_ONLY = NO;
@@ -1223,7 +1280,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				NEW_SETTING = "";
-				PRODUCT_BUNDLE_IDENTIFIER = ir.greencode.ios.MyCareerClue;
+				PRODUCT_BUNDLE_IDENTIFIER = itboost.com.au.ios.MyCareerClue;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MyCareerClue-Bridging-Header.h";

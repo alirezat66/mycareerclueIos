@@ -1,36 +1,5 @@
 PODS:
   - Alamofire (4.8.2)
-  - Braintree/Card (4.23.1):
-    - Braintree/Core
-  - Braintree/Core (4.23.1)
-  - Braintree/PaymentFlow (4.23.1):
-    - Braintree/Card
-    - Braintree/Core
-    - Braintree/PayPalOneTouch
-  - Braintree/PayPal (4.23.1):
-    - Braintree/Core
-    - Braintree/PayPalOneTouch
-  - Braintree/PayPalDataCollector (4.23.1):
-    - Braintree/Core
-    - Braintree/PayPalUtils
-  - Braintree/PayPalOneTouch (4.23.1):
-    - Braintree/Core
-    - Braintree/PayPalDataCollector
-    - Braintree/PayPalUtils
-  - Braintree/PayPalUtils (4.23.1)
-  - Braintree/UnionPay (4.23.1):
-    - Braintree/Card
-    - Braintree/Core
-  - BraintreeDropIn (7.2.0):
-    - BraintreeDropIn/DropIn (= 7.2.0)
-  - BraintreeDropIn/DropIn (7.2.0):
-    - Braintree/Card (~> 4.23)
-    - Braintree/Core (~> 4.23)
-    - Braintree/PaymentFlow (~> 4.23)
-    - Braintree/PayPal (~> 4.23)
-    - Braintree/UnionPay (~> 4.23)
-    - BraintreeDropIn/UIKit
-  - BraintreeDropIn/UIKit (7.2.0)
   - DLRadioButton (1.4.12)
   - DropDown (2.3.2)
   - Dropper (2.7.6)
@@ -47,7 +16,6 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
-  - BraintreeDropIn
   - DLRadioButton (~> 1.4)
   - DropDown (= 2.3.2)
   - Dropper
@@ -65,8 +33,6 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
-    - Braintree
-    - BraintreeDropIn
     - DLRadioButton
     - DropDown
     - Dropper
@@ -83,8 +49,6 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
-  Braintree: 21588ab236be1d1c68591f6a241658456d23aad0
-  BraintreeDropIn: b63750373474f7ec336118cee40cf767d198a977
   DLRadioButton: d7c4e225ed0e8013cef7be61455230c7557ad7c1
   DropDown: 7f87abecc28f9b4edad810fe1211c5c018c257e5
   Dropper: 52a020beb6fef2e4b1d55447f17099e5776954ef
@@ -99,6 +63,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   XLPagerTabStrip: c908b17cbf42fcd2598ee1adfc49bae25444d88a
 
-PODFILE CHECKSUM: 731c305cff32ea5e126fb6a93103811c1bed2854
+PODFILE CHECKSUM: ce859ff036efb8e5af748a02cabcdcd9a02c4410
 
 COCOAPODS: 1.7.2

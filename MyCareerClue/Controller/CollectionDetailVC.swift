@@ -16,7 +16,7 @@ UIViewController,UITableViewDelegate,UITableViewDataSource , IndicatorInfoProvid
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo.init(title: "CLUES")
     }
-    
+    var firstTime = true
     var refreshControll : UIRefreshControl?
     
     func addRefreshControl() {
@@ -28,6 +28,15 @@ UIViewController,UITableViewDelegate,UITableViewDataSource , IndicatorInfoProvid
     var myContent : [Content] = []
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(myContent.count == 0 ){
+            if(!firstTime){
+                let image = UIImage(named: "AppIcon.png");
+                
+                tableView.setEmptyView(title: "No information yet", message: "Clues will be in here.",messageImage: image!)
+            }
+        }else{
+            tableView.restore()
+        }
        return myContent.count //DataService.instance.getContent().count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -104,7 +113,7 @@ UIViewController,UITableViewDelegate,UITableViewDataSource , IndicatorInfoProvid
 
     func getFeeds(){
        
-       
+       firstTime = false
         WebCaller.getFeedsOfCollectionTwo(collectionId
         ) { (contents, error) in
             if let error = error{

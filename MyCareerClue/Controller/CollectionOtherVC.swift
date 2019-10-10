@@ -11,6 +11,7 @@ import SVProgressHUD
 import XLPagerTabStrip
 class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataSource ,IndicatorInfoProvider {
     var isOwner = Bool()
+    var firstTime = true
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo.init(title: "COLS")
     }
@@ -28,6 +29,13 @@ class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataS
     }
     var myCollections : [CollectionOther] = []
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(myCollections.count == 0){
+            if(!firstTime){
+                let image = UIImage(named: "AppIcon.png");
+                
+                tableView.setEmptyView(title: "No information yet", message: "Collections will be in here.",messageImage: image!)
+            }
+        }
         return myCollections.count
     }
     
@@ -125,7 +133,7 @@ class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataS
             SVProgressHUD.show(withStatus: "Please Wait  ... \n\n")
             let userDefaults = UserDefaults.standard
             let owner = userDefaults.value(forKey: "owner") as! String
-            
+           
             WebCaller.deleteCollection(owner,collectionId) { (errorMessage , error) in
                 if let error = error{
                     self.updateError()
@@ -161,15 +169,14 @@ class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataS
         let userId = userDefaults.value(forKey: "otherUser") as! String
         let owner = userDefaults.value(forKey: "owner") as! String
         
-        
         WebCaller.getCollectionOther(20,1,owner: owner,userId: userId) { (collections , error) in
             if let error = error{
-                self.updateError()
+                self.updateListError()
                 print(error)
                 return
             }
             guard let collections = collections else{
-                self.updateError()
+                self.updateListError()
                 print("error getting collections")
                 return
             }
@@ -187,6 +194,7 @@ class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataS
     
     func updateUI(){
         DispatchQueue.main.async{
+            self.firstTime = false
             self.collectionTV.reloadData()
             SVProgressHUD.dismiss()
             self.refreshControll?.endRefreshing()
@@ -195,8 +203,16 @@ class CollectionOtherVC: UIViewController,UITableViewDelegate , UITableViewDataS
     func updateError(){
         DispatchQueue.main.async{
             SVProgressHUD.dismiss()
-            self.refreshControll?.endRefreshing()
 
+            
+        }
+    }
+    func updateListError(){
+        DispatchQueue.main.async{
+            self.collectionTV.reloadData()
+            SVProgressHUD.dismiss()
+            self.refreshControll?.endRefreshing()
+            
             
         }
     }

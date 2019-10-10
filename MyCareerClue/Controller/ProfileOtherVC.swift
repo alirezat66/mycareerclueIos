@@ -14,6 +14,7 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
 
     
     
+    @IBOutlet weak var btnBlock: UIButton!
     @IBOutlet weak var allview: UIScrollView!
     @IBOutlet weak var lblBio: UILabel!
     @IBOutlet weak var imgProfile: UIImageView!
@@ -35,7 +36,6 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
     @IBOutlet weak var likeView: UIView!
     
     @IBOutlet weak var followersView: UIView!
-    
     @objc func checkAction(_ sender:UITapGestureRecognizer){
            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let likeListPage = storyBoard.instantiateViewController(withIdentifier: "likeList") as! LikeListVC
@@ -54,7 +54,7 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
         if(!isOwner){
             let userDefaults = UserDefaults.standard
             userDefaults.set(getFName  + " " + getLName, forKey: "lastname")
-            userDefaults.set(getOwner, forKey: "lastId")
+            userDefaults.set(profileId, forKey: "lastId")
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
             let sendPm = storyBoard.instantiateViewController(withIdentifier: "sendPm") as! SendPmVC
             
@@ -66,6 +66,62 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
             
             self.present(detail, animated: true, completion: nil)
         }
+    }
+    @IBAction func btnBlock(_ sender: Any) {
+        
+        
+        let refreshAlert = UIAlertController(title: "Block User", message: "Are you sure?", preferredStyle: UIAlertControllerStyle.alert)
+        
+        refreshAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
+            print("Handle Ok logic here")
+            SVProgressHUD.show(withStatus: "Please Wait... \n\n")
+            
+            SVProgressHUD.show(withStatus: "Please Wait... \n\n")
+            let userDefaults = UserDefaults.standard
+            let owner = userDefaults.value(forKey: "owner") as! String
+            WebCaller.block(self.profileId,owner
+            ) {
+                
+                (contents, error) in
+                if let error = error{
+                    self.updateError()
+                    print(error)
+                    return
+                }
+                guard let contentList = contents else{
+                    self.updateError()
+                    print("error getting collections")
+                    return
+                }
+                
+                if(contentList.error==0){
+                    DispatchQueue.main.async{
+                        SVProgressHUD.dismiss()
+                        let userDefaults = UserDefaults.standard
+                        userDefaults.set(contentList.profileId, forKey: "deletedId")
+                        self.dismiss(animated: false, completion: nil)
+                    }
+                    
+                }else{
+                    DispatchQueue.main.async{
+                        SVProgressHUD.dismiss()
+                    }
+                }
+                
+            }
+            
+            
+        }))
+        
+        refreshAlert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { (action: UIAlertAction!) in
+            print("Handle Cancel Logic here")
+        }))
+        
+        present(refreshAlert, animated: true, completion: nil)
+        
+        
+        
+        
     }
     
     var getFName = String()
@@ -90,7 +146,9 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
             profEdit.getOwner = getOwner
             profEdit.getName = getFName
             profEdit.getLName = getLName
-         
+            profEdit.onDoneBlock = { result in
+                self.reload()
+            }
             self.present(profEdit,animated: true,completion: nil)
         }
     }
@@ -109,7 +167,27 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
         let city = userDefaults.value(forKey: "City") as! String
         let job = userDefaults.value(forKey: "job") as! String
         let bio = userDefaults.value(forKey: "bio") as! String
-        
+        if(UserDefaults.standard.object(forKey: "imageUpdated") != nil){
+            let profileImage = userDefaults.value(forKey: "profilePhoto") as! String
+            
+            if(profileImage != ""){
+                let url = URL(string: profileImage)
+                
+                
+                DispatchQueue.global().async { [weak self] in
+                    if let data = try? Data(contentsOf: url!) {
+                        if let image = UIImage(data: data) {
+                            DispatchQueue.main.async {
+                                self?.imgProfile.image = image
+                                self?.imgProfile.layer.cornerRadius = (self?.imgProfile.layer.frame.size.width)!/2
+                                self?.imgProfile.clipsToBounds = true
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
         lblBio.text = bio
         lblrole.text = job
         lblName.text = name + " " + lName
@@ -135,6 +213,7 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
             }
         }
     }
+
     
     func callDisLike(follow : Int) {
 
@@ -188,6 +267,8 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
         getProfileInfo();
         }
     override func viewDidAppear(_ animated: Bool) {
+        reload()
+        
         
     }
     func showInfo() {
@@ -205,7 +286,7 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
             if(self.isOwner){
                 self.btnFirst.setTitle("New Collection", for: .normal)
                 self.btnSecond.setTitle("New Clue", for: .normal)
-            
+                self.btnBlock.isHidden = true
             
         }else{
                 self.btnSetting.setTitleColor(.white, for: .normal)
@@ -226,7 +307,7 @@ class ProfileOtherVC: UIViewController , IndicatorInfoProvider{
                 self.btnSecond.backgroundColor = UIColor.init(red: 66/256, green: 129/256, blue: 191/256, alpha: 1.0)
                 self.btnSecond.isHidden = true
                 self.activitiesView.isHidden = true
-        
+                
                 self.view.layoutIfNeeded()
                 self.loadViewIfNeeded()
                 

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct Content : Decodable {
+struct Content : Decodable  , Equatable{
     public var followByMe : Int?
     public var postId : String?
     public var fName : String?

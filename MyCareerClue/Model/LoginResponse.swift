@@ -23,6 +23,7 @@ struct LoginResponse: Codable  {
     let Profile_photo_link : String
     let total_contributions : Int
     let  planStatus  : Int
+    let  user_key : String
 
 
     init?(json: [String: Any]) {
@@ -39,7 +40,8 @@ struct LoginResponse: Codable  {
             let Sold_sofar = json["Sold_sofar"] as? String ,
             let Profile_photo_link = json["Profile_photo_link"] as? String ,
             let total_contributions = json["total_contributions"] as? Int,
-            let planStatus = json["planStatus"] as? Int
+            let planStatus = json["planStatus"] as? Int,
+            let user_key  = json["user_key"] as? String
       else {
                 return nil
         }
@@ -58,6 +60,7 @@ struct LoginResponse: Codable  {
         self.Sold_sofar = Sold_sofar
         self.LinkedIn = LinkedIn
         self.planStatus = planStatus
+        self.user_key = user_key;
     }
    
    

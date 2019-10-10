@@ -62,8 +62,8 @@ class AlartPriceVC: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        lblTitr.text = "قیمت گذاری مجموعه " + getTitle
-        // Do any additional setup after loading the view.
+        lblTitr.text = "Set price for " + getTitle
+        // Do any additional setup aftت گذاری مجموعهer loading the view.
     }
     
 

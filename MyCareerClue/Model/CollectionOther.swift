@@ -23,8 +23,9 @@ struct CollectionOther : Decodable {
     public var Published_Date : String
     public var Align : String
     public var followByMe : Int
-    
+    public var collectionOwner : String
     public var collectionId : String;
+    public var collection : String
     public var urlOfCollection : String;
    
 }

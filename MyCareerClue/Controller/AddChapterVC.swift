@@ -41,6 +41,33 @@ UICollectionViewDelegate,UITextViewDelegate  {
     @IBOutlet weak var btnSaveOut: UIButton!
     @IBOutlet weak var viewSteper: UIView!
     
+    
+    
+    
+    func addDoneButtonOnKeyboard()
+    {
+        
+        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+        doneToolbar.barStyle = .default
+        
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.doneButtonAction))
+        
+        let items = [flexSpace, done]
+        doneToolbar.items = items
+        doneToolbar.sizeToFit()
+        
+        self.edtTitle.inputAccessoryView = doneToolbar
+        self.edtDesc.inputAccessoryView = doneToolbar
+        self.skillSearchTextField.inputAccessoryView = doneToolbar
+        
+        
+    }
+    @objc func doneButtonAction(){
+        self.edtTitle.resignFirstResponder()
+        self.edtDesc.resignFirstResponder()
+        self.skillSearchTextField.resignFirstResponder()
+    }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
         super.touchesBegan(touches, with: event)
@@ -104,6 +131,7 @@ UICollectionViewDelegate,UITextViewDelegate  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.addDoneButtonOnKeyboard()
 
         
         
@@ -139,7 +167,7 @@ UICollectionViewDelegate,UITextViewDelegate  {
         
         let url = URL(string: Profile_photo_link)
         
-        
+        if(url != nil){
         DispatchQueue.global().async { [weak self] in
             if let data = try? Data(contentsOf: url!) {
                 if let image = UIImage(data: data) {
@@ -148,6 +176,7 @@ UICollectionViewDelegate,UITextViewDelegate  {
                     }
                 }
             }
+        }
         }
          edtDesc.textColor = UIColor.lightGray
         // Do any additional setup after loading the view.

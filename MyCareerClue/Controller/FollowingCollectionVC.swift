@@ -11,7 +11,7 @@ import SVProgressHUD
 
 class FollowingCollectionVC: UIViewController ,UITableViewDelegate , UITableViewDataSource{
     var refreshControll : UIRefreshControl?
-
+    var firstTime = true
     var myCollections : [FollowingResponseRecords] = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +31,15 @@ class FollowingCollectionVC: UIViewController ,UITableViewDelegate , UITableView
         self.dismiss(animated: false, completion: nil)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(myCollections.count == 0){
+            if(!firstTime){
+                let image = UIImage(named: "AppIcon.png");
+                
+                tableView.setEmptyView(title: "No information yet", message: "Collections will be in here.",messageImage: image!)
+            }
+        }else{
+            tableView.restore()
+        }
         return myCollections.count
     }
     
@@ -51,6 +60,7 @@ class FollowingCollectionVC: UIViewController ,UITableViewDelegate , UITableView
         let owner = userDefaults.value(forKey: "owner") as! String
         WebCaller.getFollowerList(viewer_id: owner) { (collections , error) in
             if let error = error{
+                
                 self.updateError()
                 print(error)
                 return
@@ -79,12 +89,15 @@ class FollowingCollectionVC: UIViewController ,UITableViewDelegate , UITableView
     }
     func updateError(){
         DispatchQueue.main.async{
+            self.firstTime = false
+            self.collectionTV.reloadData()
             self.refreshControll?.endRefreshing()
             SVProgressHUD.dismiss()
         }
     }
     func updateUI(){
         DispatchQueue.main.async{
+            self.firstTime = false
             self.collectionTV.reloadData()
             SVProgressHUD.dismiss()
             self.refreshControll?.endRefreshing()

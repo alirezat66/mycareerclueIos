@@ -15,7 +15,7 @@ class AcceptRequestVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
     }
     @IBOutlet weak var tvConversation: UITableView!
     var myConversation : [Conversation] = []
-
+    var isFirst = true;
     override func viewDidLoad() {
         super.viewDidLoad()
         myConversation = []
@@ -26,6 +26,16 @@ class AcceptRequestVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
         // Do any additional setup after loading the view.
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(myConversation.count == 0){
+            if(!isFirst){
+                let image = UIImage(named: "AppIcon.png");
+                
+                tableView.setEmptyView(title: "No information yet", message: "Acceptable Requests will be in here.",messageImage: image!)
+            }
+            
+        }else{
+            tableView.restore()
+        }
         return myConversation.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -79,6 +89,7 @@ class AcceptRequestVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
     
     func updateUI(){
         DispatchQueue.main.async{
+            self.isFirst = false
             self.tvConversation.reloadData()
             SVProgressHUD.dismiss()
         }
@@ -161,6 +172,7 @@ class AcceptRequestVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
     }
     func updateError(){
         DispatchQueue.main.async{
+            self.isFirst  = false
             SVProgressHUD.dismiss()
             
             //self.alertController.dismiss(animated: true, completion: nil);
@@ -169,6 +181,7 @@ class AcceptRequestVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
     }
     func updateUI(conv : RequestedResponse){
         DispatchQueue.main.async{
+            self.isFirst = false
             self.tvConversation.reloadData()
             SVProgressHUD.dismiss()
         

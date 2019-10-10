@@ -39,7 +39,7 @@ class LogInVC: UIViewController {
         self.present(signInVc, animated: true, completion: nil)
     }
     @IBAction func btnForgetPass(_ sender: Any) {
-        guard let url = URL(string: "https://weyoumaster.com/reset") else {
+        guard let url = URL(string: "https://mycareerclue.com/reset") else {
             return //be safe
         }
         
@@ -57,6 +57,7 @@ class LogInVC: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    
     func startLoading() {
         spinnerIndicator.center = CGPoint(x: 135.0, y: 65.5)
         spinnerIndicator.color = UIColor.black
@@ -136,6 +137,7 @@ func getLogin(_ email: String,_ pass : String,_ myVc : LogInVC) {
                 userDefaults.set(todo.LinkedIn, forKey: "linkedIn")
                 userDefaults.set(3, forKey: "loginState")
                 userDefaults.set(todo.planStatus, forKey: "planStatus")
+                userDefaults.set(todo.user_key , forKey: "user_key")
                 
                 OneSignal.setEmail(todo.Email)
                 

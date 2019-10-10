@@ -13,7 +13,9 @@ import SVProgressHUD
 class CollectionDetailVCTwo: UIViewController , IndicatorInfoProvider{
     
     
+    @IBOutlet weak var lblInclude: UILabel!
     
+    @IBOutlet weak var lblFrom: UILabel!
     @IBOutlet weak var holeView: UIScrollView!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblDegree: UILabel!
@@ -32,6 +34,7 @@ class CollectionDetailVCTwo: UIViewController , IndicatorInfoProvider{
     var folowByMe = Int()
     var myColInfo : ColInfo? = nil
     var isFree  = Bool()
+    @IBOutlet weak var detailView: UIStackView!
     override func viewDidLoad() {
         super.viewDidLoad()
         getCollectionInfo()
@@ -139,6 +142,8 @@ class CollectionDetailVCTwo: UIViewController , IndicatorInfoProvider{
     override func viewDidAppear(_ animated: Bool) {
         SVProgressHUD.show(withStatus: "Please Wait ... \n\n")
         holeView.isHidden = true
+        lblFrom.isHidden = true
+        lblInclude.isHidden = true
         getCollectionInfo()
     }
     func show(content : ColInfo){
@@ -152,13 +157,23 @@ class CollectionDetailVCTwo: UIViewController , IndicatorInfoProvider{
         getStartDate = content.startDate
         folowByMe  = content.followedByMe
         DispatchQueue.main.async{
-            
+            self.lblFrom.isHidden = false
+            self.lblInclude.isHidden = false
             self.numberOdPost = 3
             self.lblName.text = self.getName
             self.lblDegree.text = self.getDegree
             self.lblTitle.text = self.getTitle
             self.lblCount.text =  String(self.numberOdPost)
-            self.lblDate.text = self.getStartDate
+            if(self.getStartDate != nil){
+                if(self.getStartDate == ""){
+                    self.detailView.isHidden = true
+                }else{
+                      self.lblDate.text = self.getStartDate
+                }
+            }else{
+                self.detailView.isHidden = true
+            }
+          
             self.imgPerson.layer.cornerRadius = self.imgPerson.frame.size.width/2
             self.imgPerson.clipsToBounds = true
             

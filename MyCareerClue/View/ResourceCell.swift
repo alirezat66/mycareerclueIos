@@ -52,7 +52,7 @@ class ResourceCell: UITableViewCell {
         }
         imageFromServerURL(urlString: source.resPic)
         lblTitle.text = source.resTitle
-        lblType.text = "نوع منبع: " + source.resType
+        lblType.text = "Resource Type: " + source.resType
         if(source.lnk1 == ""){
             btnLink1.isHidden = true
         }else {

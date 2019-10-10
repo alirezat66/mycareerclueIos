@@ -10,10 +10,20 @@ import UIKit
 import SVProgressHUD
 
 class ConversationVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    
+    var firstTime = true
+    @IBOutlet weak var btnShow: UIButton!
     var myConversation : [Conversation] = []
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(myConversation.count == 0){
+            if(!firstTime){
+                let image = UIImage(named: "AppIcon.png");
+                
+                tableView.setEmptyView(title: "No information yet", message: "Conversations will be in here.",messageImage: image!)
+            }
+        }else{
+            tableView.restore()
+        }
         return myConversation.count
     }
     @IBOutlet weak var imgNot1: UIButton!
@@ -57,6 +67,7 @@ class ConversationVC: UIViewController,UITableViewDelegate,UITableViewDataSource
                 DispatchQueue.main.async{
                     self.viewNewUse.isHidden = false
                     self.uiShowLabel.text = contents?.records[0].tip_title
+                    self.btnShow.setTitle(contents?.records[0].tip_subtitle, for: .normal)
                 }
                 self.tipId = contents?.records[0].tip_id
                 self.tipLink = contents?.records[0].tip_link
@@ -209,30 +220,7 @@ class ConversationVC: UIViewController,UITableViewDelegate,UITableViewDataSource
     @IBOutlet weak var tvConversation: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        myConversation = []
-        tvConversation.dataSource = self
-        tvConversation.delegate = self
-        SVProgressHUD.show(withStatus: "Please Wait   ... \n\n")
-        getConversation()
-        showTip()
-        imgProfile.layer.cornerRadius = imgProfile.layer.frame.width/2
-        imgProfile.clipsToBounds = true
-        makeButtonCirc(obj: imgNot1)
-        makeButtonCirc(obj: imgNot2)
-        makeButtonCirc(obj: imgNot3)
-        makeButtonCirc(obj: imgNot4)
-        makeButtonCirc(obj: imgNot5)
-        makeButtonCirc(obj: imgNot6)
-        makeButtonCirc(obj: imgNot7)
-        makeButtonCirc(obj: imgNot8)
-        makeButtonCirc(obj: imgNot9)
-        getNotifs()
-
-        let singleTap = UITapGestureRecognizer(target: self,action:#selector(ConversationVC.notifTap))
-        
-        stackNotif.isUserInteractionEnabled = true
-        stackNotif.addGestureRecognizer(singleTap)
-        imgNot5.addGestureRecognizer(singleTap)
+     
         let userDefaults = UserDefaults.standard
         
         let Profile_photo_link = userDefaults.value(forKey: "profilePhoto") as! String
@@ -262,6 +250,32 @@ class ConversationVC: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         // Do any additional setup after loading the view.
     }
+    override func viewDidAppear(_ animated: Bool) {
+        myConversation = []
+        tvConversation.dataSource = self
+        tvConversation.delegate = self
+        SVProgressHUD.show(withStatus: "Please Wait   ... \n\n")
+        getConversation()
+        showTip()
+        imgProfile.layer.cornerRadius = imgProfile.layer.frame.width/2
+        imgProfile.clipsToBounds = true
+        makeButtonCirc(obj: imgNot1)
+        makeButtonCirc(obj: imgNot2)
+        makeButtonCirc(obj: imgNot3)
+        makeButtonCirc(obj: imgNot4)
+        makeButtonCirc(obj: imgNot5)
+        makeButtonCirc(obj: imgNot6)
+        makeButtonCirc(obj: imgNot7)
+        makeButtonCirc(obj: imgNot8)
+        makeButtonCirc(obj: imgNot9)
+        getNotifs()
+        
+        let singleTap = UITapGestureRecognizer(target: self,action:#selector(ConversationVC.notifTap))
+        
+        stackNotif.isUserInteractionEnabled = true
+        stackNotif.addGestureRecognizer(singleTap)
+        imgNot5.addGestureRecognizer(singleTap)
+    }
     func makeButtonCirc(obj : UIButton) {
         obj.layer.cornerRadius = obj.layer.frame.width/2
         obj.clipsToBounds = true
@@ -280,22 +294,31 @@ class ConversationVC: UIViewController,UITableViewDelegate,UITableViewDataSource
     func getConversation() {
         let userDefaults = UserDefaults.standard
         let owner = userDefaults.value(forKey: "owner") as! String
+        firstTime = false
         WebCaller.getConversation(50,1,owner) {
             (ConversationResponse , error) in
             if let error  = error {
                 print(error)
-                self.updateError()
+                self.updateListError()
                 return
             }
             guard let conversation = ConversationResponse else {
                 print("error getting collections")
-                self.updateError()
+                self.updateListError()
                 return
             }
             for conv in (conversation.messages) {
                 self.myConversation.append(conv)
             }
             self.updateUI(conv :conversation)
+        }
+    }
+    func updateListError(){
+        DispatchQueue.main.async{
+            SVProgressHUD.dismiss()
+            
+            //self.alertController.dismiss(animated: true, completion: nil);
+            
         }
     }
     func updateError(){
@@ -308,6 +331,7 @@ class ConversationVC: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     func updateUI(conv : ConversationResponse){
         DispatchQueue.main.async{
+            
             self.tvConversation.reloadData()
             SVProgressHUD.dismiss()
             if(conv.allRequestedMessageNumber==0){

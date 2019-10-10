@@ -10,13 +10,33 @@ import UIKit
 import SVProgressHUD
 
 class SaverOfContributeVC: UIViewController ,UITableViewDelegate , UITableViewDataSource {
+    var isFirst = true
     var myResult : [SaverResp] = []
     var myResult2 : [CollectionFollower] = []
     @IBOutlet weak var lblTitle: UILabel!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(isCollection){
+            if(myResult2.count == 0 ){
+                if(!isFirst){
+                let image = UIImage(named: "AppIcon.png");
+                
+                tableView.setEmptyView(title: "No information yet", message: "Saved Contributions will be in here.",messageImage: image!)
+                }
+            }else{
+                tableView.reloadData()
+            }
             return myResult2.count
+            
         }else{
+            if(myResult.count == 0 ){
+                if(!isFirst){
+                let image = UIImage(named: "AppIcon.png");
+                
+                tableView.setEmptyView(title: "No information yet", message: "Saved Contributions will be in here.",messageImage: image!)
+                }
+            }else{
+                tableView.restore()
+            }
         return myResult.count
         }
     }
@@ -88,6 +108,8 @@ class SaverOfContributeVC: UIViewController ,UITableViewDelegate , UITableViewDa
     }
     func updateError(){
         DispatchQueue.main.async{
+            self.isFirst = false
+            self.uiTabelSavers.reloadData()
             SVProgressHUD.dismiss()
             
             //self.alertController.dismiss(animated: true, completion: nil);
@@ -96,6 +118,7 @@ class SaverOfContributeVC: UIViewController ,UITableViewDelegate , UITableViewDa
     }
     func updateUI(){
         DispatchQueue.main.async{
+            self.isFirst = false
             self.uiTabelSavers.reloadData()
             
             //  self.goToLast()

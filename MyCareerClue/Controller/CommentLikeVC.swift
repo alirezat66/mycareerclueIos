@@ -25,6 +25,7 @@ class CommentLikeVC: UIViewController, UITableViewDelegate , UITableViewDataSour
     
 
    @IBOutlet weak var tableView : UITableView!
+    var firtTime = true
     var myLikes : [LikeFollow] = []
     var refreshControll : UIRefreshControl?
     func addRefreshControl() {
@@ -103,6 +104,15 @@ class CommentLikeVC: UIViewController, UITableViewDelegate , UITableViewDataSour
 
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(myLikes.count == 0 ){
+            if(!firtTime){
+                let image = UIImage(named: "AppIcon.png");
+                
+                tableView.setEmptyView(title: "No information yet", message: "Notifications will be in here.",messageImage: image!)
+            }
+        }else{
+            tableView.restore()
+        }
         return myLikes.count
     }
     
@@ -160,7 +170,7 @@ class CommentLikeVC: UIViewController, UITableViewDelegate , UITableViewDataSour
     
         let owner = userDefaults.value(forKey: "owner") as! String
         
-        
+        firtTime = false
         WebCaller.getLikes(20, 1,owner) { (likeList, error) in
             if let error = error{
                 print(error)
@@ -180,6 +190,7 @@ class CommentLikeVC: UIViewController, UITableViewDelegate , UITableViewDataSour
     }
     func updateError(){
         DispatchQueue.main.async{
+            self.tableView.reloadData()
             SVProgressHUD.dismiss()
             self.refreshControll?.endRefreshing()
             //self.alertController.dismiss(animated: true, completion: nil);

@@ -11,6 +11,7 @@ import SVProgressHUD
 import XLPagerTabStrip
 class CollectionResource: UIViewController ,UITableViewDelegate , UITableViewDataSource,IndicatorInfoProvider   {
     var myResources : [Resource] = []
+    var firtTime = true
     var isOwner = Bool()
     var getCollection = String()
 
@@ -45,6 +46,7 @@ class CollectionResource: UIViewController ,UITableViewDelegate , UITableViewDat
     }
     func updateUI(){
         DispatchQueue.main.async{
+            self.firtTime = false
             self.table.reloadData()
             SVProgressHUD.dismiss()
             self.refreshControll?.endRefreshing()
@@ -52,6 +54,8 @@ class CollectionResource: UIViewController ,UITableViewDelegate , UITableViewDat
     }
     func updateError(){
         DispatchQueue.main.async{
+            self.firtTime = false
+            self.table.reloadData()
             SVProgressHUD.dismiss()
             self.refreshControll?.endRefreshing()
             
@@ -66,6 +70,16 @@ class CollectionResource: UIViewController ,UITableViewDelegate , UITableViewDat
         getResources()
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(myResources.count == 0){
+            if(!firtTime){
+                let image = UIImage(named: "AppIcon.png");
+                
+                tableView.setEmptyView(title: "No information yet", message: "Collections will be in here.",messageImage: image!)
+            }
+            
+        }else{
+                tableView.restore()
+        }
         return myResources.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -18,7 +18,27 @@ class SendPmVC: UIViewController,UITextViewDelegate {
         self.dismiss(animated: true, completion:nil)
     }
     
-
+    func addDoneButtonOnKeyboard()
+    {
+        
+        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+        doneToolbar.barStyle = .default
+        
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.doneButtonAction))
+        
+        let items = [flexSpace, done]
+        doneToolbar.items = items
+        doneToolbar.sizeToFit()
+        
+        self.edt_text.inputAccessoryView = doneToolbar
+        
+        
+    }
+    @objc func doneButtonAction(){
+        self.edt_text.resignFirstResponder()
+        
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
@@ -50,6 +70,7 @@ class SendPmVC: UIViewController,UITextViewDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.addDoneButtonOnKeyboard()
         edt_text.text = "Write Your Message"
         edt_text.textColor = UIColor.lightGray
         edt_text.delegate = self
@@ -70,7 +91,7 @@ class SendPmVC: UIViewController,UITextViewDelegate {
        
         
         let last_name = userDefaults.value(forKey: "lastname") as! String
-        txt_name.text = "Send Message To" + last_name
+        txt_name.text = "Send Message To " + last_name
        
         
         

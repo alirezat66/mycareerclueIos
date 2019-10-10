@@ -235,7 +235,7 @@ public class WebCaller {
                 return
             }
             // make sure we got data in the response
-            guard let responseData = data else {
+            guard data != nil else {
                 print("Error: did not receive data")
                 let error = BackendError.objectSerialization(reason: "No data in response")
                 completionHandler(nil, error)
@@ -312,7 +312,7 @@ public class WebCaller {
                               completionHandler: @escaping (CollectionOtherList?, Error?) -> Void){
         
         if(owner==userId){
-            let endpoint = "https://mycareerclue.com/api/my_collections"
+            let endpoint = "https://mycareerclue.com/api/my_collections/"
             
             guard let url = URL(string: endpoint)
                 else {
@@ -359,7 +359,7 @@ public class WebCaller {
             })
             task.resume()
         }else{
-            let endpoint = "https://mycareerclue.com/api/collections"
+            let endpoint = "https://mycareerclue.com/api/my_collections"
             
             guard let url = URL(string: endpoint)
                 else {
@@ -371,7 +371,7 @@ public class WebCaller {
             var urlRequest = URLRequest(url: url)
             urlRequest.httpMethod = "POST"
             let postString = "items_per_page=" + String(items_per_page) + "&startPage=" + String(startPage) +
-                "&userId=" + userId + "&owner=" + owner
+                "&userId=" + userId + "&owner=" + userId
             urlRequest.httpBody = postString.data(using: String.Encoding.utf8)
             
             // Make request
@@ -410,10 +410,338 @@ public class WebCaller {
      
     }
     
+    static func block(_ profileId: String ,_ viewer_id: String, completionHandler: @escaping (BlockResp?, Error?) -> Void) {
+        
+        let userDefaults = UserDefaults.standard
+        let key = userDefaults.value(forKey: "user_key") as! String
+        let endpoint = "https://mycareerclue.com/api/block"
+        guard let url = URL(string: endpoint)
+            else {
+                print("Error: cannot create URL")
+                let error = BackendError.urlError(reason: "Could not construct URL")
+                completionHandler(nil, error)
+                return
+        }
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        let postString = "profileId=" + String(profileId) +
+            "&viewer_id=" + viewer_id
+        urlRequest.httpBody = postString.data(using: String.Encoding.utf8)
+        urlRequest.setValue(key, forHTTPHeaderField: "Authorization")
+        
+        
+        let session = URLSession.shared
+        let task = session.dataTask(with: urlRequest, completionHandler: {
+            (data, response, error) in
+            // handle response to request
+            // check for error
+            guard error == nil else {
+                completionHandler(nil, error!)
+                return
+            }
+            // make sure we got data in the response
+            guard let responseData = data else {
+                print("Error: did not receive data")
+                let error = BackendError.objectSerialization(reason: "No data in response")
+                completionHandler(nil, error)
+                return
+            }
+            
+            // parse the result as JSON
+            // then create a Todo from the JSON
+            do {
+                print(responseData)
+                let  contentL  = try JSONDecoder().decode(BlockResp.self,from: responseData)
+                completionHandler(contentL,nil)
+                
+            } catch {
+                // error trying to convert the data to JSON using JSONSerialization.jsonObject
+                completionHandler(nil, error)
+                return
+            }
+        })
+        task.resume()
+        
+        
+    }
+    static func blockList(_ viewer_id: String, completionHandler: @escaping (BlockList?, Error?) -> Void) {
+        
+        let userDefaults = UserDefaults.standard
+        let key = userDefaults.value(forKey: "user_key") as! String
+        let endpoint = "https://mycareerclue.com/api/showmyblockedusers"
+        guard let url = URL(string: endpoint)
+            else {
+                print("Error: cannot create URL")
+                let error = BackendError.urlError(reason: "Could not construct URL")
+                completionHandler(nil, error)
+                return
+        }
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        let postString = "viewer_id=" + String(viewer_id) +
+            "&itemPerPage=100"
+        + "&currentPage=1"
+        urlRequest.httpBody = postString.data(using: String.Encoding.utf8)
+        urlRequest.setValue(key, forHTTPHeaderField: "Authorization")
+        
+        
+        let session = URLSession.shared
+        let task = session.dataTask(with: urlRequest, completionHandler: {
+            (data, response, error) in
+            // handle response to request
+            // check for error
+            guard error == nil else {
+                completionHandler(nil, error!)
+                return
+            }
+            // make sure we got data in the response
+            guard let responseData = data else {
+                print("Error: did not receive data")
+                let error = BackendError.objectSerialization(reason: "No data in response")
+                completionHandler(nil, error)
+                return
+            }
+            
+            // parse the result as JSON
+            // then create a Todo from the JSON
+            do {
+                print(responseData)
+                let  contentL  = try JSONDecoder().decode(BlockList.self,from: responseData)
+                completionHandler(contentL,nil)
+                
+            } catch {
+                // error trying to convert the data to JSON using JSONSerialization.jsonObject
+                completionHandler(nil, error)
+                return
+            }
+        })
+        task.resume()
+        
+        
+    }
+    static func reportList(_ viewer_id: String, completionHandler: @escaping (ReportList?, Error?) -> Void) {
+        
+        let userDefaults = UserDefaults.standard
+        let key = userDefaults.value(forKey: "user_key") as! String
+        let endpoint = "https://mycareerclue.com/api/showmyreportedclues"
+        guard let url = URL(string: endpoint)
+            else {
+                print("Error: cannot create URL")
+                let error = BackendError.urlError(reason: "Could not construct URL")
+                completionHandler(nil, error)
+                return
+        }
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        let postString = "viewer_id=" + String(viewer_id) +
+            "&itemPerPage=100"
+            + "&currentPage=1"
+        urlRequest.httpBody = postString.data(using: String.Encoding.utf8)
+        urlRequest.setValue(key, forHTTPHeaderField: "Authorization")
+        
+        
+        let session = URLSession.shared
+        let task = session.dataTask(with: urlRequest, completionHandler: {
+            (data, response, error) in
+            // handle response to request
+            // check for error
+            guard error == nil else {
+                completionHandler(nil, error!)
+                return
+            }
+            // make sure we got data in the response
+            guard let responseData = data else {
+                print("Error: did not receive data")
+                let error = BackendError.objectSerialization(reason: "No data in response")
+                completionHandler(nil, error)
+                return
+            }
+            
+            // parse the result as JSON
+            // then create a Todo from the JSON
+            do {
+                print(responseData)
+                let  contentL  = try JSONDecoder().decode(ReportList.self,from: responseData)
+                completionHandler(contentL,nil)
+                
+            } catch {
+                // error trying to convert the data to JSON using JSONSerialization.jsonObject
+                completionHandler(nil, error)
+                return
+            }
+        })
+        task.resume()
+        
+        
+    }
+    static func unReport(_ clueId: String ,_ viewer_id: String, completionHandler: @escaping (UndoObject?, Error?) -> Void) {
+        
+        let userDefaults = UserDefaults.standard
+        let key = userDefaults.value(forKey: "user_key") as! String
+        let endpoint = "https://mycareerclue.com/api/undoreport"
+        guard let url = URL(string: endpoint)
+            else {
+                print("Error: cannot create URL")
+                let error = BackendError.urlError(reason: "Could not construct URL")
+                completionHandler(nil, error)
+                return
+        }
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        let postString = "clueId=" + String(clueId) +
+            "&viewer_id=" + viewer_id
+        urlRequest.httpBody = postString.data(using: String.Encoding.utf8)
+        urlRequest.setValue(key, forHTTPHeaderField: "Authorization")
+        
+        
+        let session = URLSession.shared
+        let task = session.dataTask(with: urlRequest, completionHandler: {
+            (data, response, error) in
+            // handle response to request
+            // check for error
+            guard error == nil else {
+                completionHandler(nil, error!)
+                return
+            }
+            // make sure we got data in the response
+            guard let responseData = data else {
+                print("Error: did not receive data")
+                let error = BackendError.objectSerialization(reason: "No data in response")
+                completionHandler(nil, error)
+                return
+            }
+            
+            // parse the result as JSON
+            // then create a Todo from the JSON
+            do {
+                print(responseData)
+                let  contentL  = try JSONDecoder().decode(UndoObject.self,from: responseData)
+                completionHandler(contentL,nil)
+                
+            } catch {
+                // error trying to convert the data to JSON using JSONSerialization.jsonObject
+                completionHandler(nil, error)
+                return
+            }
+        })
+        task.resume()
+        
+        
+    }
+    static func unblock(_ profileId: String ,_ viewer_id: String, completionHandler: @escaping (UnBlockObject?, Error?) -> Void) {
+        
+        let userDefaults = UserDefaults.standard
+        let key = userDefaults.value(forKey: "user_key") as! String
+        let endpoint = "https://mycareerclue.com/api/unblock"
+        guard let url = URL(string: endpoint)
+            else {
+                print("Error: cannot create URL")
+                let error = BackendError.urlError(reason: "Could not construct URL")
+                completionHandler(nil, error)
+                return
+        }
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        let postString = "profileId=" + String(profileId) +
+            "&viewer_id=" + viewer_id
+        urlRequest.httpBody = postString.data(using: String.Encoding.utf8)
+        urlRequest.setValue(key, forHTTPHeaderField: "Authorization")
+        
+        
+        let session = URLSession.shared
+        let task = session.dataTask(with: urlRequest, completionHandler: {
+            (data, response, error) in
+            // handle response to request
+            // check for error
+            guard error == nil else {
+                completionHandler(nil, error!)
+                return
+            }
+            // make sure we got data in the response
+            guard let responseData = data else {
+                print("Error: did not receive data")
+                let error = BackendError.objectSerialization(reason: "No data in response")
+                completionHandler(nil, error)
+                return
+            }
+            
+            // parse the result as JSON
+            // then create a Todo from the JSON
+            do {
+                print(responseData)
+                let  contentL  = try JSONDecoder().decode(UnBlockObject.self,from: responseData)
+                completionHandler(contentL,nil)
+                
+            } catch {
+                // error trying to convert the data to JSON using JSONSerialization.jsonObject
+                completionHandler(nil, error)
+                return
+            }
+        })
+        task.resume()
+        
+        
+    }
     
-    
+    static func report(_ clueId: String ,_ viewer_id: String, completionHandler: @escaping (ReportResp?, Error?) -> Void) {
+        
+        let userDefaults = UserDefaults.standard
+        let key = userDefaults.value(forKey: "user_key") as! String
+        let endpoint = "https://mycareerclue.com/api/report"
+        guard let url = URL(string: endpoint)
+            else {
+                print("Error: cannot create URL")
+                let error = BackendError.urlError(reason: "Could not construct URL")
+                completionHandler(nil, error)
+                return
+        }
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        let postString = "clueId=" + String(clueId) +
+            "&viewer_id=" + viewer_id
+        urlRequest.httpBody = postString.data(using: String.Encoding.utf8)
+        urlRequest.setValue(key, forHTTPHeaderField: "Authorization")
+        
+        
+        let session = URLSession.shared
+        let task = session.dataTask(with: urlRequest, completionHandler: {
+            (data, response, error) in
+            // handle response to request
+            // check for error
+            guard error == nil else {
+                completionHandler(nil, error!)
+                return
+            }
+            // make sure we got data in the response
+            guard let responseData = data else {
+                print("Error: did not receive data")
+                let error = BackendError.objectSerialization(reason: "No data in response")
+                completionHandler(nil, error)
+                return
+            }
+            
+            // parse the result as JSON
+            // then create a Todo from the JSON
+            do {
+                print(responseData)
+                let  contentL  = try JSONDecoder().decode(ReportResp.self,from: responseData)
+                completionHandler(contentL,nil)
+                
+            } catch {
+                // error trying to convert the data to JSON using JSONSerialization.jsonObject
+                completionHandler(nil, error)
+                return
+            }
+        })
+        task.resume()
+        
+        
+    }
     
     static func getFeeds(_ per_page: Int ,_ current_page: Int,_ viewer_id :String , completionHandler: @escaping (ContentList?, Error?) -> Void) {
+        
+        let userDefaults = UserDefaults.standard
+        let key = userDefaults.value(forKey: "user_key") as! String
         let endpoint = "https://mycareerclue.com/api/feed"
         guard let url = URL(string: endpoint)
             else {
@@ -427,7 +755,8 @@ public class WebCaller {
         let postString = "itemPerPage=" + String(per_page) + "&currentPage=" + String(current_page) +
             "&viewer_id=" + viewer_id
         urlRequest.httpBody = postString.data(using: String.Encoding.utf8)
-        
+        urlRequest.setValue(key, forHTTPHeaderField: "Authorization")
+
         
         let session = URLSession.shared
         let task = session.dataTask(with: urlRequest, completionHandler: {
@@ -880,7 +1209,7 @@ public class WebCaller {
         }
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
-        let postString = "sender_owner=" + sender_owner + "&acceptedOwner=" + acceptedOwner
+        let postString = "sender_ownersender_owner=" + sender_owner + "&acceptedOwner=" + acceptedOwner
         
         urlRequest.httpBody = postString.data(using: String.Encoding.utf8)
         
@@ -1402,7 +1731,6 @@ public class WebCaller {
         })
         task.resume()
         
-        
     }
     
     static func editProfile(_ profileId: String ,_ first_name:String ,_ last_name : String ,_ job_position :String , _ city :String ,_ bio : String , completionHandler: @escaping (errorMessage?, Error?) -> Void) {
@@ -1414,7 +1742,7 @@ public class WebCaller {
                 completionHandler(nil, error)
                 return
         }
-        
+       
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
@@ -2291,58 +2619,130 @@ public class WebCaller {
         task.resume()
     }
     
-    
-    
-    
-    static func uploadImageToCollection(imageData: Data?, parameters: [String : Any], completionHandler: @escaping (Int?, Error?) -> Void){
+    static func generateBundry() -> String {
         
-        let endpoint = "https://mycareerclue.com/api/upload_contribution_photo" /* your API url */
-        
-        let headers: HTTPHeaders = [
-            /* "Authorization": "your_access_token",  in case you need authorization header */
-            "Content-type": "multipart/form-data"
-        ]
-        
-       
-        guard let myUrl = URL(string: endpoint)
-            else {
-                print("Error: cannot create URL")
-                let error = BackendError.urlError(reason: "Could not construct URL")
-                completionHandler(nil, error)
-                return
-        }
-        
-        var urlRequest = URLRequest(url: myUrl)
-        urlRequest.httpMethod = "POST"
-        
-        Alamofire.upload(multipartFormData: { (multipartFormData) in
-            for (key, value) in parameters {
-                multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
-            }
-            
-            if let data = imageData{
-                multipartFormData.append(data, withName: "file", mimeType: "image/png")
-            }
-            
-        }, usingThreshold: UInt64.init(), to: endpoint, method: .post, headers: headers) { (result) in
-            switch result{
-            case .success(let upload, _, _):
-                upload.responseString { response in
-                    print("Succesfully uploaded")
-                    if let err = response.error{
-                        completionHandler(nil, err)
-                        return
-                    }
-                    completionHandler(1, nil)
-                }
-            case .failure(let error):
-                print("Error in upload: \(error.localizedDescription)")
-                completionHandler(nil, error)
-
-            }
-        }
+        return "Boundary-\(NSUUID().uuidString)"
     }
     
+    static func createBodyWithParameters(parameters: [String: String]?, filePathKey: String?, imageDataKey: Data, boundary: String) -> Data {
+        let body = NSMutableData();
+        
+        if parameters != nil {
+            for (key, value) in parameters! {
+                body.append("--\(boundary)\r\n".data(using: String.Encoding.utf8)!)
+                body.append("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n".data(using: String.Encoding.utf8)!)
+                body.append("\(value)\r\n".data(using: String.Encoding.utf8)!)
+            }
+        }
+        
+        let filename = "user-profile.png"
+        let mimetype = "image/png"
+        
+        body.append("--\(boundary)\r\n".data(using: String.Encoding.utf8)!)
+        body.append("Content-Disposition: form-data; name=\"\(filePathKey!)\"; filename=\"\(filename)\"\r\n".data(using: String.Encoding.utf8)!)
+        body.append("Content-Type: \(mimetype)\r\n\r\n".data(using: String.Encoding.utf8)!)
+        body.append(imageDataKey)
+        body.append("\r\n".data(using: String.Encoding.utf8)!)
+        
+        
+        
+        body.append("--\(boundary)--\r\n".data(using: String.Encoding.utf8)!)
+        
+        return body as Data
+    }
+    static func uploadImageToCollection(imageData: Data?, parameters: [String : String], completionHandler: @escaping (Int?, Error?) -> Void){
+        
+        let endpoint = "https://mycareerclue.com/api/upload_contribution_photo" /* your API url */
+        let myUrl = URL(string: endpoint)
+        var request = URLRequest(url:myUrl!);
+        request.httpMethod = "POST"
+        let boundry = generateBundry()
+        request.setValue("multipart/form-data; boundary=\(boundry)", forHTTPHeaderField: "Content-Type")
+       
+        request.httpBody = createBodyWithParameters(parameters: parameters, filePathKey: "file", imageDataKey: imageData!, boundary: boundry)
+        let task = URLSession.shared.dataTask(with: request) {
+            data, response, error in
+            
+            if error != nil {
+                print("error=\(error)")
+                return
+            }
+            
+            // You can print out response object
+            print("******* response = \(response)")
+            
+            // Print out reponse body
+            let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+            print("****** response data = \(responseString!)")
+            
+            do {
+                let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary
+                
+                print(json)
+                
+               completionHandler(1, nil)
+                
+            }catch
+            {
+                completionHandler(nil, error)
+                return
+            }
+            
+        }
+        
+        task.resume()
+        
+        
+   
+    }
+    
+ 
+    static func uploadImageToProfile(imageData: Data?, parameters: [String : Any], completionHandler: @escaping (ProfileImageUpdateObject?, Error?) -> Void){
+        
+        let endpoint = "https://mycareerclue.com/api/upload_profile_photo" /* your API url */
+        let myUrl = URL(string: endpoint)
+        var request = URLRequest(url:myUrl!);
+        request.httpMethod = "POST"
+        let boundry = generateBundry()
+        request.setValue("multipart/form-data; boundary=\(boundry)", forHTTPHeaderField: "Content-Type")
+        
+        request.httpBody = createBodyWithParameters(parameters: parameters as? [String : String], filePathKey: "file", imageDataKey: imageData!, boundary: boundry)
+        
+        
+        let task = URLSession.shared.dataTask(with: request) {
+            data, response, error in
+            
+            if error != nil {
+                return
+            }
+            
+            // You can print out response object
+            
+            // Print out reponse body
+            guard let responseData = data else {
+                print("Error: did not receive data")
+                let error = BackendError.objectSerialization(reason: "No data in response")
+                completionHandler(nil, error)
+                return
+            }
+            
+            do {
+                
+                let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary
+                
+                let  resp  = try JSONDecoder().decode(ProfileImageUpdateObject.self,from: responseData)
+                completionHandler(resp, nil)
+                
+            }catch
+            {
+                completionHandler(nil, error)
+                return
+            }
+            
+        }
+        
+        task.resume()
+    }
     
     static func getChapters(owner: String  , completionHandler: @escaping (CollChap?, Error?) -> Void){
         
@@ -2766,40 +3166,13 @@ public class WebCaller {
     }
    static func makeQaList() -> [QA] {
         var qaQastions = [QA]()
-        qaQastions.append(QA(title: "چرا من به این سیستم دعوت شده ام؟", description: "ما تمایل داریم با کارشناسان و مدیرانی که تجارب بین المللی دارند - همچون خود شما - ارتباط برقرار نموده و دیدگاه آنان را در رابطه با ایده اولیه ویومستر و نحوه اجرای آن بدانیم. این به ما کمک شایانی خواهد نمود تا سیستمی بی نقص را در اختیار کاربران قرار دهیم. ویومستر تمایل دارد تا فیدبک ارزشمند شما را در رابطه با میزان اثربخشی این سیستم و احتمال موفقیت آن در بین فارسی زبانان بداند"))
-        
-        var a = "ویومستر یا View-Master در گذشته ابزاری برای تماشای دنیای فرنگ بود. ابزاری شبیه یک دوربین که با فشردن دکمه سمت راست آن، عکس‌های داخل آن - که عمدتا تصاویر شهرهای مدرن دنیا بود - تعویض می‌شد ."
-        var b = "هدف نهائی پروژه‌ای که ما به دنبال اجرایش بودیم به صورت نمادین و به طرز عجیبی، View-Master را در ذهن ما تداعی کرد ."
-        
-        
-        var c = "دلایل مرتبط با حقوق کپی رایت، ما را مجبور نمود که نحوه نگارش ویومستر به زبان انگلیسی را کمی تغییر داده و این پروژه را به صورت WeYouMaster به دنیا معرفی نمائیم. شاید این عنوان تداعی‌گر آن باشد که ایرانیان ساکن ایران و ایرانیان مقیم خارج از کشور تنها با یکی‌شدن و اتحاد می‌توانند به قله های موفقیت برسند!"
-        
-        let d = a + b + c
-        
-        qaQastions.append(QA(title: "وی‌یو‌مستر به چه معناست؟", description: d))
-        
-        
-        
-        a = "بله ۱۰۰٪. ویومستر از طریق شبکه گسترده ۲۰ هزار نفری خود قادر خواهد بود تا برای مجموعه‌های شما بازاریابی نماید و آنها را از طریق سامانه مدیریت پرداخت حرفه‌ای خود بفروش برساند."
-        b = "در هشت سال گذشته، سامانه آموزش و توسعه شرکت رافابس سیستم MeetNeed.ir حجم انبوهی از نیازهای آموزشی و دانشی کاربران خود را شناسایی و آنها را تجزیه و تحلیل نموده است. این نیازها که عمدتا توسط شرکت‌ها، سازمان‌ها و دانشجویان تولید شده است از طریق مجموعه‌ها و مشارکت‌های تولیدشده در ویومستر برآورده خواهد شد"
-        
-        qaQastions.append(QA(title: "آیا من واقعا می‌توانم از ویومستر درآمد داشته باشم؟", description: a + b))
-        
-        
-        qaQastions.append(QA(title: "ویومستر متعلق به کیست؟", description: "مهران شفیعی و رسول بهمنی - ساکنین ملبورن استرالیا - از موسسان اولیه ویومستر هستند . کلیه امور مرتبط با توسعه فنی ویومستر توسط تیم توسعه رافابس سیستم Rafabece.ir توسعه و پشتیبانی می‌شود"))
-        qaQastions.append(QA(title: "وی‌یو‌مستر با چه فناوری تولید شده است؟", description: "ما از فریمورک CodeIgniter برای توسعه ویومستر استفاده کرده‌ایم. زبان‌های برنامه‌نویسی PHP, Javascript و فناوری AJAX برای توسعه بکند و فرونت‌اند این وب‌اپ استفاده شده است. اگر تمایل دارید برای توسعه این سامانه و همچنین توسعه اپ‌های اندروید و iOS به ما ملحق شوید، لطفا لینک زیر را ملاحظه فرمائید . موقعیت‌های شغلی رافابس سیستم"))
-        
-        
-        a = "در فازهای آتی این پروژه، اپ های اندروید و iOS ویومستر توسعه خواهد یافت."
-        b = "\n"
-        c = "ضمنا، کاربران علاوه بر فروش مجموعه ها قادر خواهند بود تا مشارکت های خود را نیز به صورت انفرادی به فروش برسانند. همچنین، کاربران قادر خواهند بود علاوه بر اشخاص، مجموعه ها را نیز رصد کنند."
-        qaQastions.append(QA(title: "فازهای آتی ویومستر چه هستند؟", description: a + b + c))
-        
-        
-        a = "نه‌تنها مدیریت برچسب‌ها کمک می‌کند تا مشارکت‌ها و مجموعه‌های مشابه در کنار یکدیگر نمایش داده شود، بلکه ویومستر پس از اضافه‌شدن یک برچسب متناسب با نوع آن - شرکت یا شخص یا مهارت - آن را به منابع شما اضافه می کند"
-        b = "\n"
-        c = "به عبارت دیگر ما معتقد هستیم برای ارتقا در مسیر شغلی منابع شخص باید تقویت گردد. این منابع شامل مهارت‌های شخص، شرکت‌هایی که شخص در حوزه فعالیت خود می‌شناسد و همچنین الگوهایی است که شخص از آنها ایده می‌گیرد"
-        qaQastions.append(QA(title: "مدیریت برچسب‌ها چیست؟", description: a + b + c))
+        qaQastions.append(QA(title: "Why am I invited?", description: "We truly value the feedback of the first users of our system. Your feedback will be evaluated by our technical teams hence fixing up the issues, making it function smoother"))
+    
+        qaQastions.append(QA(title: "Can I really make money?", description: "100%. Our community consists of 20,000 experts and students who are eager to learn the latest and the most up-to-date lessons from others who work in the same field as theirs."))
+    
+        qaQastions.append(QA(title: "Who owns mycareerclue.com?", description: "Mehran Shafiei and Rasoul Bahmani, living in Melbourne, Australia own mycareerclue.com and IT BOOST Australia is responsible for getting everything up and running"))
+    
+        qaQastions.append(QA(title: "Resources Management", description: "Resources work the same way as tags or hashtags in other systems do. They help connect relevant contents and display on the same page. When you add a resource to your contribution, it will be saved in your resources library for future use. People, Companies, Books, etc are the resource types you can choose to include in your resources management section."))
         return qaQastions
     }
     

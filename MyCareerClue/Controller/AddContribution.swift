@@ -118,13 +118,37 @@ UINavigationControllerDelegate,UITextViewDelegate {
     }
     func textViewDidEndEditing(_ textView: UITextView) {
         if edtDesc.text.isEmpty {
-            edtDesc.text = "Describe Your Clue"
+            edtDesc.text = "Described Your Clue"
             edtDesc.textColor = UIColor.lightGray
         }
     }
+    func addDoneButtonOnKeyboard()
+    {
+        
+        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+        doneToolbar.barStyle = .default
+        
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.doneButtonAction))
+        
+        let items = [flexSpace, done]
+        doneToolbar.items = items
+        doneToolbar.sizeToFit()
+        
+        self.edtTitle.inputAccessoryView = doneToolbar
+        self.edtDesc.inputAccessoryView = doneToolbar
+        self.skillSearchTextField.inputAccessoryView = doneToolbar
+      
+        
+    }
+    @objc func doneButtonAction(){
+        self.edtTitle.resignFirstResponder()
+        self.edtDesc.resignFirstResponder()
+        self.skillSearchTextField.resignFirstResponder()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.addDoneButtonOnKeyboard()
         edtDesc.textColor = UIColor.lightGray
         edtDesc.delegate = self
         
@@ -153,7 +177,7 @@ UINavigationControllerDelegate,UITextViewDelegate {
         
         
         let url = URL(string: Profile_photo_link)
-        
+        if(url != nil){
         
         DispatchQueue.global().async { [weak self] in
             if let data = try? Data(contentsOf: url!) {
@@ -163,6 +187,7 @@ UINavigationControllerDelegate,UITextViewDelegate {
                     }
                 }
             }
+        }
         }
         
         
@@ -267,7 +292,7 @@ UINavigationControllerDelegate,UITextViewDelegate {
         let image = imageInfo.object(forKey: UIImagePickerControllerOriginalImage) as! UIImage
         imgPictureCollection.image = image
         
-        self.imageData = UIImagePNGRepresentation(image)!
+        // ProfileVC.resize(image: image, maxHeight: 600, maxWidth: 800, compressionQuality: 0.6)
         chosenImage = true
         dismiss(animated: true, completion: nil)
     }
@@ -354,24 +379,61 @@ UINavigationControllerDelegate,UITextViewDelegate {
         let timestamp = NSDate().timeIntervalSince1970
         let myTimeInterval = TimeInterval(timestamp)
         let fileName = "img_" + String(myTimeInterval) + "_" + contributionId + ".png"
-        let parameters: Parameters = [
+        let parameters: [String : String] = [
             "contributionId" : contributionId,
             "filename":fileName
         ]
-        WebCaller.uploadImageToCollection(imageData: self.imageData, parameters: parameters){
-            (resp , error) in
-            if let error = error{
-                print(error)
-                 DispatchQueue.main.async{
-                self.loadingView.isHidden = true
+        self.imageData = UIImageJPEGRepresentation(imgPictureCollection.image!, 1)
+        if(self.imageData != nil){
+            WebCaller.uploadImageToCollection(imageData: self.imageData, parameters: parameters){
+                (resp , error) in
+                if let error = error{
+                    print(error)
+                    DispatchQueue.main.async{
+                        self.loadingView.isHidden = true
+                    }
+                    return
                 }
-                return
+                self.stepThree()
+                
             }
+        }else{
             self.stepThree()
-            
         }
+        
     }
-    
+    static func resize(image: UIImage, maxHeight: Float = 500.0, maxWidth: Float = 500.0, compressionQuality: Float = 0.5) -> Data? {
+        var actualHeight: Float = Float(image.size.height)
+        var actualWidth: Float = Float(image.size.width)
+        var imgRatio: Float = actualWidth / actualHeight
+        let maxRatio: Float = maxWidth / maxHeight
+        
+        if actualHeight > maxHeight || actualWidth > maxWidth {
+            if imgRatio < maxRatio {
+                //adjust width according to maxHeight
+                imgRatio = maxHeight / actualHeight
+                actualWidth = imgRatio * actualWidth
+                actualHeight = maxHeight
+            }
+            else if imgRatio > maxRatio {
+                //adjust height according to maxWidth
+                imgRatio = maxWidth / actualWidth
+                actualHeight = imgRatio * actualHeight
+                actualWidth = maxWidth
+            }
+            else {
+                actualHeight = maxHeight
+                actualWidth = maxWidth
+            }
+        }
+        let rect = CGRect(x: 0.0, y: 0.0, width: CGFloat(actualWidth), height: CGFloat(actualHeight))
+        UIGraphicsBeginImageContext(rect.size)
+        image.draw(in:rect)
+        let img = UIGraphicsGetImageFromCurrentImageContext()
+        let imageData = UIImageJPEGRepresentation(img!,CGFloat(compressionQuality))
+        UIGraphicsEndImageContext()
+        return imageData
+    }
     
      func deleteItem( index : Int){
         self.addedLabeles.remove(at: index)
@@ -552,6 +614,8 @@ UINavigationControllerDelegate,UITextViewDelegate {
             }
             
             
+        }else{
+             self.stepFinish()
         }
     }
     func stepFinish() {

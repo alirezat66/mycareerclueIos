@@ -21,10 +21,19 @@ class CollectionVC: UIViewController,UITableViewDelegate , UITableViewDataSource
     @IBOutlet weak var imgNot9: UIButton!
     
     @IBOutlet weak var imgProfile: UIButton!
-    
+    var firstTime = true
     var refreshControll : UIRefreshControl?
     var myCollections : [Collection] = []
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(myCollections.count == 0 ){
+            if(!firstTime){
+                let image = UIImage(named: "AppIcon.png");
+                
+                tableView.setEmptyView(title: "No information yet", message: "Collection will be in here.",messageImage: image!)
+            }
+        }else{
+            tableView.restore()
+        }
        return myCollections.count
     }
     
@@ -60,6 +69,7 @@ class CollectionVC: UIViewController,UITableViewDelegate , UITableViewDataSource
                 DispatchQueue.main.async{
                     self.viewNewUse.isHidden = false
                     self.uiShowLabel.text = contents?.records[0].tip_title
+                     self.btnShow.setTitle(contents?.records[0].tip_subtitle, for: .normal)
                 }
                 self.tipId = contents?.records[0].tip_id
                 self.tipLink = contents?.records[0].tip_link
@@ -250,11 +260,8 @@ class CollectionVC: UIViewController,UITableViewDelegate , UITableViewDataSource
     }
     override func viewDidAppear(_ animated: Bool) {
         
-        
+        firstTime = true
         myCollections = []
-        
-        updateUI()
-        
         collectionTV.dataSource = self
         collectionTV.delegate = self
         
@@ -263,10 +270,12 @@ class CollectionVC: UIViewController,UITableViewDelegate , UITableViewDataSource
         addRefreshControl()
     }
    
+    @IBOutlet weak var btnShow: UIButton!
     func getCloolections(){
         
         let userDefaults = UserDefaults.standard
         let owner = userDefaults.value(forKey: "owner") as! String
+        
         WebCaller.getCollection(20,1,owner: owner,userId: "-1",state: "on") { (collections , error) in
             if let error = error{
                 self.updateError()
@@ -283,6 +292,7 @@ class CollectionVC: UIViewController,UITableViewDelegate , UITableViewDataSource
             for collect in collections.records{
                 self.myCollections.append(collect)
             }
+            
             self.updateUI()
             
             
@@ -304,6 +314,7 @@ class CollectionVC: UIViewController,UITableViewDelegate , UITableViewDataSource
     }
     func updateUI(){
         DispatchQueue.main.async{
+        self.firstTime = false
         self.collectionTV.reloadData()
         SVProgressHUD.dismiss()
         self.refreshControll?.endRefreshing()

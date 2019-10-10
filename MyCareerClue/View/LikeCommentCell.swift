@@ -34,7 +34,7 @@ class LikeCommentCell : UITableViewCell {
         }else {
             btnLike.backgroundColor = UIColor(red:239/256, green:66/256, blue:69/256, alpha:1.0)
             let s = like.from;
-            let s2 = " Save";
+            let s2 = " Saved ";
             let s3 = "";
             let s4 = "Your Clue";
             lblTitle.text = s + s2 + s3 + s4
